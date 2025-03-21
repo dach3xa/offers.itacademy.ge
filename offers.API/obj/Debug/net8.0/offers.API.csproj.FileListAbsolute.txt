@@ -1,0 +1,7 @@
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.csproj.AssemblyReference.cache
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.AssemblyInfoInputs.cache
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.AssemblyInfo.cs
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.csproj.CoreCompileInputs.cache
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\dacho\Desktop\offers.itacademy.ge\offers.API\obj\Debug\net8.0\offers.API.MvcApplicationPartsAssemblyInfo.cache

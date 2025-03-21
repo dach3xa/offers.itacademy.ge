@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A6E11FEE-EB1A-4A1A-8052-EF134F9CEC5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{34153D03-9150-4452-8D69-4F1C029B0913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9FC93F0F-2F40-49A4-A7EA-234FF9C18600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{EA6AAFE9-AC3C-4F1A-B220-C3C1A32D0711}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C7DE5365-9428-475A-AE48-89EEB3A9414B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "offers.API", "offers.API\offers.API.csproj", "{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34153D03-9150-4452-8D69-4F1C029B0913} = {A6E11FEE-EB1A-4A1A-8052-EF134F9CEC5B}
+		{9FC93F0F-2F40-49A4-A7EA-234FF9C18600} = {A6E11FEE-EB1A-4A1A-8052-EF134F9CEC5B}
+		{EA6AAFE9-AC3C-4F1A-B220-C3C1A32D0711} = {A6E11FEE-EB1A-4A1A-8052-EF134F9CEC5B}
+		{C7DE5365-9428-475A-AE48-89EEB3A9414B} = {A6E11FEE-EB1A-4A1A-8052-EF134F9CEC5B}
+		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F} = {EA6AAFE9-AC3C-4F1A-B220-C3C1A32D0711}
+	EndGlobalSection
+EndGlobal
