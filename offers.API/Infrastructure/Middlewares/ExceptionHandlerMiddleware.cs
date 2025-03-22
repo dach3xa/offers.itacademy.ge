@@ -2,6 +2,8 @@
 using System.Data;
 using System.Net;
 using Newtonsoft.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using offers.Application.Exceptions;
 
 namespace offers.API.Infrastructure.Middlewares
 {
@@ -30,7 +32,10 @@ namespace offers.API.Infrastructure.Middlewares
         {
             var error = new ApiError(context, ex);
 
-            var result = JsonConvert.SerializeObject(error);
+            var result = JsonConvert.SerializeObject(error, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
 
             context.Response.Clear();
             context.Response.ContentType = "application/json";
@@ -42,26 +47,30 @@ namespace offers.API.Infrastructure.Middlewares
 
     public class ApiError : ProblemDetails
     {
-        public const string UnhandlerErrorCode = "UnhandledError";
         private HttpContext _httpContext;
         private Exception _exception;
-
         public LogLevel LogLevel { get; set; }
-        public string Code { get; set; }
 
         public string? TraceId
         {
             get
             {
-                if (Extensions.TryGetValue("TraceId", out var traceId))
-                {
-                    return (string?)traceId;
-                }
-
-                return null;
+                Extensions.TryGetValue("TraceId", out var traceId);
+                return (string?)traceId;
             }
 
             set => Extensions["TraceId"] = value;
+        }
+
+        public List<string>? Errors
+        {
+            get
+            {
+                Extensions.TryGetValue("Errors", out var errors);
+                return (List<string>?)errors;
+            }
+
+            set => Extensions["Errors"] = value;
         }
 
         public ApiError(HttpContext httpContext, Exception exception)
@@ -70,46 +79,21 @@ namespace offers.API.Infrastructure.Middlewares
             _exception = exception;
 
             TraceId = httpContext.TraceIdentifier;
-
-            //default
-            Code = UnhandlerErrorCode;
-            Status = (int)HttpStatusCode.InternalServerError;
-            Title = "მოხდა შეცდომა სერვერზე"; //TODO ეს მესიჯი არ უნდა ნახოს.
-            LogLevel = LogLevel.Error;
             Instance = httpContext.Request.Path;
-            HandleException((dynamic)exception); //TODO
+
+            Status = (int)HttpStatusCode.InternalServerError;
+            Title = "there was an error on the server"; 
+            LogLevel = LogLevel.Error;
+            HandleException((dynamic)exception);
         }
 
-        private void HandleException(PersonNotFoundException exception)
+        private void HandleException(AccountCouldNotValidateException exception)
         {
-            Code = exception.Code;
-            Status = (int)HttpStatusCode.NotFound;
-            Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.4";
+            Type = "https://example.com/probs/Bad-Request";
             Title = exception.Message;
+            Status = StatusCodes.Status400BadRequest;
+            Errors = exception.Errors;
             LogLevel = LogLevel.Information;
-        }
-
-        private void HandleException(PersonAlreadyExistsException exception)
-        {
-            Code = exception.Code;
-            Status = (int)HttpStatusCode.Conflict;
-            Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.9";
-            Title = exception.Message;
-            LogLevel = LogLevel.Information;
-        }
-
-        //private void HandleException(InvalidCompanyNameException exception)
-        //{
-        //    Code = exception.Code;
-        //    Status = (int)HttpStatusCode.BadRequest;
-        //    Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1";
-        //    Title = exception.Message;
-        //    LogLevel = LogLevel.Information;
-        //}
-
-        private void HandleException(Exception exception)
-        {
-
         }
     }
 }
