@@ -1,4 +1,4 @@
-﻿using offers.Application.Accounts;
+﻿using offers.Application.Services.Accounts;
 
 namespace offers.API.Infrastructure.Extensions
 {

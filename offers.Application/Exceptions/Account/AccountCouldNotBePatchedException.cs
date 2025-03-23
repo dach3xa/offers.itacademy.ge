@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace offers.Application.Exceptions
+namespace offers.Application.Exceptions.Account
 {
-    public class AccountCouldNotValidateException : Exception
+    public class AccountCouldNotBePatchedException : Exception
     {
         public List<string> Errors { get; }
-        public AccountCouldNotValidateException(string Message, List<string> errors = null)
+        public AccountCouldNotBePatchedException(string Message, List<string> errors = null)
             : base(Message)
         {
             Errors = errors;

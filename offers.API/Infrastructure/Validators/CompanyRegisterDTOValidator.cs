@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using offers.API.Models.CompanyDTO;
+using offers.API.Models;
 
 namespace offers.API.Infrastructure.Validators
 {
@@ -8,16 +8,17 @@ namespace offers.API.Infrastructure.Validators
         public CompanyRegisterDTOValidator()
         {
             RuleFor(x => x.CompanyName)
-            .Must(CompanyName => !string.IsNullOrWhiteSpace(CompanyName)).WithMessage("Company Name cannot be just whitespace")
-            .NotEmpty().WithMessage("field Company Name is required")
+            .Must(CompanyName => !string.IsNullOrWhiteSpace(CompanyName)).WithMessage("field Company Name is required")
             .MaximumLength(100).WithMessage("Company Name must not exceed 100 characters");
 
             RuleFor(x => x.Email)
+            .Cascade(CascadeMode.Stop)
             .NotEmpty().WithMessage("Email is required")
             .EmailAddress().WithMessage("A valid email address is required")
             .MaximumLength(255).WithMessage("Email must not exceed 255 characters");
 
             RuleFor(x => x.Phone)
+            .Cascade(CascadeMode.Stop)
             .NotEmpty().WithMessage("Phone number is required")
             .Matches(@"^\+?[0-9]{7,15}$").WithMessage("Phone number must be digits only and between 7 and 15 characters.");
 

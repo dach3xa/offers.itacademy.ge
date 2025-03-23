@@ -1,7 +1,7 @@
 ﻿using Mapster;
-using offers.API.Models.CompanyDTO;
-using offers.API.Models.UserDTO;
+using offers.API.Models;
 using offers.Application.Models;
+using offers.Domain.Enums;
 using offers.Domain.Models;
 using System;
 using System.Globalization;
@@ -16,19 +16,20 @@ namespace offers.API.Infrastructure.Mappings
             TypeAdapterConfig<CompanyRegisterDTO, Account>
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.Role, src => "Company")
+                .Map(dest => dest.Role, src => AccountRole.Admin)
                 .Map(dest => dest.PasswordHash, src => src.Password)
                 .Map(dest => dest.CompanyDetail, src => new CompanyDetail()) 
                 .AfterMapping((src, dest) =>
                 {
                     dest.CompanyDetail.CompanyName = src.CompanyName;
+                    dest.CompanyDetail.IsActive = false;
                 });
 
 
             TypeAdapterConfig<UserRegisterDTO, Account>
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.Role, src => "User")
+                .Map(dest => dest.Role, src => AccountRole.User)
                 .Map(dest => dest.PasswordHash, src => src.Password)
                 .Map(dest => dest.UserDetail, src => new UserDetail())
                 .AfterMapping((src, dest) =>
@@ -39,6 +40,14 @@ namespace offers.API.Infrastructure.Mappings
 
             TypeAdapterConfig<Account, AccountResponseModel>
                 .NewConfig();
+
+            TypeAdapterConfig<CategoryDTO, Category>
+                .NewConfig();
+
+            TypeAdapterConfig<OfferDTO, Offer>
+                .NewConfig()
+                .Map(dest => dest.Id, src => 0)
+                .Map(dest => dest.AccountId, src => int.Parse(User.FindFirst("id")?.Value))
         }
     }
 }

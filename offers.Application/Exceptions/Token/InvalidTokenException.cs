@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace offers.Application.Exceptions
+namespace offers.Application.Exceptions.Token
 {
-    public class AccountNotFoundException : Exception
+    public class InvalidTokenException : Exception
     {
         public List<string> Errors { get; }
-        public AccountNotFoundException(string Message, List<string> errors = null)
+        public InvalidTokenException(string Message, List<string> errors = null)
             : base(Message)
         {
             Errors = errors;

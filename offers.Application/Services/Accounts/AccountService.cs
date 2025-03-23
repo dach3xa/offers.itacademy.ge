@@ -8,8 +8,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using offers.Application.Exceptions.Account;
+using System.Security.Principal;
+using offers.Application.Exceptions.Account.Company;
 
-namespace offers.Application.Accounts
+namespace offers.Application.Services.Accounts
 {
     public class AccountService : IAccountService
     {
@@ -28,7 +31,7 @@ namespace offers.Application.Accounts
             var hashPassword = GenerateHash(password);
             var account = await _repository.GetAsync(Email, hashPassword, cancellationToken);
 
-            if(account == null)
+            if (account == null)
             {
                 _logger.LogWarning("Login failed for {Email}: Invalid credentials", Email);
                 throw new AccountNotFoundException("Email or password is incorrect");
@@ -48,12 +51,51 @@ namespace offers.Application.Accounts
             }
 
             account.PasswordHash = GenerateHash(account.PasswordHash);
-            var IsRegistered =  await _repository.RegisterAsync(account, cancellationToken);
+            var isRegistered = await _repository.RegisterAsync(account, cancellationToken);
 
-            if (!IsRegistered)
+            if (!isRegistered)
             {
                 _logger.LogError("failed to register an account for {Email}: unknown issue", account.Email);
-                throw new AccountCouldNotBeCreatedException("Failed to create account.");
+                throw new AccountCouldNotBeCreatedException("Failed to create account because of an unknown issue");
+            }
+        }
+
+        public async Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
+        {
+            var companies = await _repository.GetAllCompaniesAsync(cancellationToken);
+
+            return companies ?? new List<AccountResponseModel>();
+        }
+
+        public async Task<List<AccountResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
+        {
+            var users = await _repository.GetAllUsersAsync(cancellationToken);
+
+            return users ?? new List<AccountResponseModel>();
+        }
+
+        public async Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken)
+        {
+            var companyAccount = await _repository.GetAsync(id, cancellationToken);
+
+            if (companyAccount == null)
+            {
+                _logger.LogWarning("failed to Confirm a Company Account with the id {id} the company doesn't exist", id);
+                throw new AccountDoesNotExistException("an account with the provided id does not exist");
+            }
+
+            if (companyAccount.CompanyDetail.IsActive)
+            {
+                _logger.LogWarning("Failed to Confirm a Company with the id {id} because its already active", id);
+                throw new CompanyAlreadyActiveException("an account with the provided id is already active");
+            }
+
+            var isConfirmed = await _repository.ConfirmCompanyAsync(id, cancellationToken);
+
+            if (!isConfirmed)
+            {
+                _logger.LogError("Failed to varify an account with id {id}: unknown issue", id);
+                throw new AccountCouldNotBePatchedException("Failed to confirm an Account because of an unknown issue");
             }
         }
 

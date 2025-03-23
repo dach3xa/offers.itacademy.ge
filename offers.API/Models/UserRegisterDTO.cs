@@ -1,4 +1,4 @@
-﻿namespace offers.API.Models.UserDTO
+﻿namespace offers.API.Models
 {
     public class UserRegisterDTO
     {

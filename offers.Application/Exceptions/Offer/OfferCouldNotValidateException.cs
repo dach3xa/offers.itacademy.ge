@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace offers.Application.Exceptions
+namespace offers.Application.Exceptions.Offer
 {
-    public class AccountCouldNotBeCreatedException : Exception
+    public class OfferCouldNotValidateException : Exception
     {
         public List<string> Errors { get; }
-        public AccountCouldNotBeCreatedException(string Message, List<string> errors = null)
+        public OfferCouldNotValidateException(string Message, List<string> errors = null)
             : base(Message)
         {
             Errors = errors;

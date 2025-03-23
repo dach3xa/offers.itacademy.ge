@@ -1,4 +1,4 @@
-﻿namespace offers.API.Models.AccountDTO
+﻿namespace offers.API.Models
 {
     public class AccountLoginDTO
     {

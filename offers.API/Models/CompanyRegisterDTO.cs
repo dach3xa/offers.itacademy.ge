@@ -1,4 +1,4 @@
-﻿namespace offers.API.Models.CompanyDTO
+﻿namespace offers.API.Models
 {
     public class CompanyRegisterDTO
     {

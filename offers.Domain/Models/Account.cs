@@ -1,4 +1,5 @@
-﻿using System;
+﻿using offers.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,9 @@ namespace offers.Domain.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string PasswordHash { get; set; }
-        public string Role { get; set; }
+        public AccountRole Role { get; set; }
         public UserDetail? UserDetail { get; set; }
         public CompanyDetail? CompanyDetail { get; set; }
+        public List<Offer> Offers { get; set; } 
     }
 }

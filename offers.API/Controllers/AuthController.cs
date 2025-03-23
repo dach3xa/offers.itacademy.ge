@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using offers.API.Infrastructure.Auth.JWT;
-using offers.API.Models.AccountDTO;
-using offers.API.Models.CompanyDTO;
-using offers.API.Models.UserDTO;
 using FluentValidation.AspNetCore;
 using offers.Application.Exceptions;
 using System.Security.Principal;
 using offers.Domain.Models;
-using offers.Application.Accounts;
+using offers.Application.Exceptions.Account;
+using offers.API.Models;
+using offers.Application.Services.Accounts;
 
 namespace offers.API.Controllers
 {
@@ -30,10 +29,10 @@ namespace offers.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost("User/register")]
+        [HttpPost("user/register")]
         public async Task<IActionResult> Register(UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
-            ValidateModelState();
+            ValidateAccountModelState();
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
@@ -42,10 +41,10 @@ namespace offers.API.Controllers
             return StatusCode(201);
         }
 
-        [HttpPost("Company/register")]
+        [HttpPost("company/register")]
         public async Task<IActionResult> Register(CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
-            ValidateModelState();
+            ValidateAccountModelState();
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
 
             var companyAccount = companyDTO.Adapt<Account>();
@@ -58,20 +57,20 @@ namespace offers.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LogIn(AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {
-            ValidateModelState();
+            ValidateAccountModelState();
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
 
-            var result = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
-            var token = JWTHelper.GenerateSecurityToken(result.Email, result.Role, _options);
+            var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
+            var token = JWTHelper.GenerateSecurityToken(accountResponse.Email, accountResponse.Id, accountResponse.Role, _options);
             return Ok(new LoginResponseDTO
             {
                 Token = token,
-                Email = result.Email,
-                Role = result.Role
+                Email = accountResponse.Email,
+                Role = accountResponse.Role
             });
         }
 
-        private void ValidateModelState()
+        private void ValidateAccountModelState()
         {
             if (!ModelState.IsValid)
             {
@@ -80,7 +79,7 @@ namespace offers.API.Controllers
                     .Select(e => e.ErrorMessage)
                     .ToList();
 
-                throw new AccountCouldNotValidateException("Could not validate the given App user",errors);
+                throw new AccountCouldNotValidateException("Could not validate the given Account",errors);
             }
         }
     }

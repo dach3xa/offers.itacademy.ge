@@ -3,7 +3,10 @@ using System.Data;
 using System.Net;
 using Newtonsoft.Json;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using offers.Application.Exceptions.Account;
+using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions;
+using offers.Application.Exceptions.Category;
 
 namespace offers.API.Infrastructure.Middlewares
 {
@@ -87,7 +90,80 @@ namespace offers.API.Infrastructure.Middlewares
             HandleException((dynamic)exception);
         }
 
+        private void HandleException(CompanyAlreadyActiveException exception)
+        {
+            Type = "https://example.com/probs/Conflict";
+            Title = exception.Message;
+            Status = StatusCodes.Status409Conflict;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(AccountAlreadyExistsException exception)
+        {
+            Type = "https://example.com/probs/Conflict";
+            Title = exception.Message;
+            Status = StatusCodes.Status409Conflict;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(AccountCouldNotBeCreatedException exception)
+        {
+            Type = "https://example.com/probs/Server-Error";
+            Title = exception.Message;
+            Status = StatusCodes.Status500InternalServerError;
+            LogLevel = LogLevel.Error;
+        }
+
+        private void HandleException(AccountCouldNotBePatchedException exception)
+        {
+            Type = "https://example.com/probs/Server-Error";
+            Title = exception.Message;
+            Status = StatusCodes.Status500InternalServerError;
+            LogLevel = LogLevel.Error;
+        }
+
         private void HandleException(AccountCouldNotValidateException exception)
+        {
+            Type = "https://example.com/probs/Bad-Request";
+            Title = exception.Message;
+            Status = StatusCodes.Status400BadRequest;
+            Errors = exception.Errors;
+            LogLevel = LogLevel.Information;
+        }
+
+        private void HandleException(AccountDoesNotExistException exception)
+        {
+            Type = "https://example.com/probs/Not-Found";
+            Title = exception.Message;
+            Status = StatusCodes.Status404NotFound;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(AccountNotFoundException exception)
+        {
+            Type = "https://example.com/probs/Not-Found";
+            Title = exception.Message;
+            Status = StatusCodes.Status404NotFound;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(CategoryAlreadyExistsException exception)
+        {
+            Type = "https://example.com/probs/Conflict";
+            Title = exception.Message;
+            Status = StatusCodes.Status409Conflict;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(CategoryCouldNotBeCreatedException exception)
+        {
+            Type = "https://example.com/probs/Server-Error";
+            Title = exception.Message;
+            Status = StatusCodes.Status500InternalServerError;
+            LogLevel = LogLevel.Error;
+        }
+
+        private void HandleException(CategoryCouldNotValidateException exception)
         {
             Type = "https://example.com/probs/Bad-Request";
             Title = exception.Message;
