@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace offers.Application.Exceptions.Transaction
+namespace offers.Application.Exceptions.Funds
 {
-    public class TransactionInvalidAmountException : Exception
+    public class InsufficientFundsException : Exception
     {
         public List<string> Errors { get; }
-        public TransactionInvalidAmountException(string Message, List<string> errors = null)
+        public InsufficientFundsException(string Message, List<string> errors = null)
             : base(Message)
         {
             Errors = errors;

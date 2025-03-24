@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "offers.Application", "offer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "offers.Domain", "offers.Domain\offers.Domain.csproj", "{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "offers.Persistance", "offers.Persistance\offers.Persistance.csproj", "{C4083BFF-49BC-4CBE-902E-90741C2D8097}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "offers.Infrastructure", "offers.Infrastructure\offers.Infrastructure.csproj", "{07F90282-1E54-4455-AD8A-40403C527642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4083BFF-49BC-4CBE-902E-90741C2D8097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4083BFF-49BC-4CBE-902E-90741C2D8097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4083BFF-49BC-4CBE-902E-90741C2D8097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4083BFF-49BC-4CBE-902E-90741C2D8097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F90282-1E54-4455-AD8A-40403C527642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F90282-1E54-4455-AD8A-40403C527642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F90282-1E54-4455-AD8A-40403C527642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F90282-1E54-4455-AD8A-40403C527642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +61,7 @@ Global
 		{4E06B09B-5108-4594-9FE7-6FD7EB9F193F} = {EA6AAFE9-AC3C-4F1A-B220-C3C1A32D0711}
 		{26827981-E9BC-4058-9C96-DB1F884A23B8} = {34153D03-9150-4452-8D69-4F1C029B0913}
 		{C07E49BC-2ED8-450E-8713-122C8B5D4EF6} = {34153D03-9150-4452-8D69-4F1C029B0913}
+		{C4083BFF-49BC-4CBE-902E-90741C2D8097} = {9FC93F0F-2F40-49A4-A7EA-234FF9C18600}
+		{07F90282-1E54-4455-AD8A-40403C527642} = {9FC93F0F-2F40-49A4-A7EA-234FF9C18600}
 	EndGlobalSection
 EndGlobal

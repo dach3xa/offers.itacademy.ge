@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "u+c8KABts88=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\offers.Persistance.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\misho\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.3\\microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
+    "C:\\Users\\misho\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.3\\microsoft.extensions.logging.abstractions.9.0.3.nupkg.sha512",
+    "C:\\Users\\misho\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.3\\system.diagnostics.diagnosticsource.9.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

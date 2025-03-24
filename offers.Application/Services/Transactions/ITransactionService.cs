@@ -10,5 +10,6 @@ namespace offers.Application.Services.Transactions
     public interface ITransactionService
     {
         public Task CreateAsync(Transaction transaction, CancellationToken cancellationToken);
+        public Task RefundAllByOfferIdAsync(int offerId, CancellationToken cancellationToken);
     }
 }

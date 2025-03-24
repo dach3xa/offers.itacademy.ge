@@ -15,5 +15,6 @@ namespace offers.Application.Services.Accounts
         Task<List<AccountResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken);
         Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
+        Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
     }
 }

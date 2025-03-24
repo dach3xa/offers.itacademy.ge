@@ -36,6 +36,7 @@ namespace offers.API.Infrastructure.Mappings
                 {
                     dest.UserDetail.FirstName = src.FirstName;
                     dest.UserDetail.LastName = src.LastName;
+                    dest.UserDetail.Balance = 0;
                 });
 
             TypeAdapterConfig<Account, AccountResponseModel>

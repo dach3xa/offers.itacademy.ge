@@ -12,6 +12,7 @@ using offers.Application.Exceptions.Account;
 using System.Security.Principal;
 using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Category;
+using offers.Application.Exceptions.Funds;
 
 namespace offers.Application.Services.Accounts
 {
@@ -96,8 +97,32 @@ namespace offers.Application.Services.Accounts
             if (!isConfirmed)
             {
                 _logger.LogError("Failed to varify an account with id {id}: unknown issue", id);
-                throw new AccountCouldNotBePatchedException("Failed to confirm an Account because of an unknown issue");
+                throw new AccountCouldNotActivateException("Failed to confirm an Account because of an unknown issue");
             }
+        }
+
+        public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
+        {
+            var account = await _repository.GetAsync(accountId, cancellationToken);
+            if(account == null)
+            {
+                _logger.LogWarning("failed to withdraw money from account ID {id} due to it not existing", accountId);
+                throw new AccountNotFoundException("Account with the provided id does not exist");
+            }
+
+            if (account.UserDetail.Balance < amount)
+            {
+                _logger.LogWarning("failed to withdraw money from acount ID {id} becouse of insufficient funds", accountId);
+                throw new InsufficientFundsException("this account doesn't have sufficient funds for the transaction");
+            }
+
+            bool withdrawed = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+            if (!withdrawed)
+            {
+                _logger.LogError("failed to withdraw money from account ID {id} due to an unknown error", accountId);
+                throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw becouse of an unknown reason");
+            }
+            //....................
         }
 
         private string GenerateHash(string input)
@@ -117,6 +142,5 @@ namespace offers.Application.Services.Accounts
                 return sb.ToString();
             }
         }
-
     }
 }
