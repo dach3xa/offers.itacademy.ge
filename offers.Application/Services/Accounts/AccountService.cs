@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using offers.Application.Exceptions.Account;
 using System.Security.Principal;
 using offers.Application.Exceptions.Account.Company;
+using offers.Application.Exceptions.Category;
 
 namespace offers.Application.Services.Accounts
 {
@@ -81,7 +82,7 @@ namespace offers.Application.Services.Accounts
             if (companyAccount == null)
             {
                 _logger.LogWarning("failed to Confirm a Company Account with the id {id} the company doesn't exist", id);
-                throw new AccountDoesNotExistException("an account with the provided id does not exist");
+                throw new AccountNotFoundException("an account with the provided id does not exist");
             }
 
             if (companyAccount.CompanyDetail.IsActive)

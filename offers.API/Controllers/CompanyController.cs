@@ -6,6 +6,7 @@ using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Token;
 using offers.Application.Services.Accounts;
+using offers.Application.Services.Offers;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 
@@ -20,7 +21,7 @@ namespace offers.API.Controllers
         private readonly ILogger<CompanyController> _logger;
         private int _accountId;
 
-        public CompanyController(IAccountService offerService, ILogger<CompanyController> logger)
+        public CompanyController(IOfferService offerService, ILogger<CompanyController> logger)
         {
             _offerService = offerService;
             _logger = logger;
@@ -40,8 +41,7 @@ namespace offers.API.Controllers
             return accountId;
         }
 
-
-        [HttpPost]
+        [HttpPost("offers")]
         public async Task<IActionResult> Post(OfferDTO offerDTO, CancellationToken cancellation)
         {
             ValidateOfferModelState();
@@ -54,13 +54,20 @@ namespace offers.API.Controllers
             return StatusCode(201);
         }
 
-        [HttpGet]
+        [HttpGet("offers")]
         public async Task<IActionResult> GetMyOffers(CancellationToken cancellation)
         {
 
             var offers = await _offerService.GetMyOffersAsync(_accountId, cancellation);
 
             return Ok(offers);
+        }
+
+        [HttpDelete("offers/{id}")]
+        public async Task Delete(int id, CancellationToken cancellation)
+        {
+            _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
+            await _offerService.DeleteAsync(id, _accountId, cancellation);
         }
 
         private void ValidateOfferModelState()

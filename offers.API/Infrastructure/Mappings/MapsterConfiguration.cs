@@ -47,7 +47,8 @@ namespace offers.API.Infrastructure.Mappings
             TypeAdapterConfig<OfferDTO, Offer>
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.AccountId, src => int.Parse(User.FindFirst("id")?.Value))
+                .Map(dest => dest.CreatedAt, src => DateTime.Now)
+                .Map(dest => dest.IsArchived, src => false);
         }
     }
 }

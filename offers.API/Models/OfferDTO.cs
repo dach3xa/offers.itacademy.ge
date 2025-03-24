@@ -9,6 +9,7 @@ namespace offers.API.Models
         public int Count { get; set; }
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
+        public DateTime ArchiveAt { get; set; }
 
     }
 }

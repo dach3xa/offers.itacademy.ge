@@ -131,14 +131,6 @@ namespace offers.API.Infrastructure.Middlewares
             LogLevel = LogLevel.Information;
         }
 
-        private void HandleException(AccountDoesNotExistException exception)
-        {
-            Type = "https://example.com/probs/Not-Found";
-            Title = exception.Message;
-            Status = StatusCodes.Status404NotFound;
-            LogLevel = LogLevel.Warning;
-        }
-
         private void HandleException(AccountNotFoundException exception)
         {
             Type = "https://example.com/probs/Not-Found";
@@ -170,6 +162,22 @@ namespace offers.API.Infrastructure.Middlewares
             Status = StatusCodes.Status400BadRequest;
             Errors = exception.Errors;
             LogLevel = LogLevel.Information;
+        }
+
+        private void HandleException(CategoryNotFoundException exception)
+        {
+            Type = "https://example.com/probs/Not-Found";
+            Title = exception.Message;
+            Status = StatusCodes.Status404NotFound;
+            LogLevel = LogLevel.Warning;
+        }
+
+        private void HandleException(Exception exception)
+        {
+            Type = "https://example.com/probs/internal-server-error";
+            Title = "An unexpected error occurred.";
+            Status = StatusCodes.Status500InternalServerError;
+            LogLevel = LogLevel.Error;
         }
     }
 }
