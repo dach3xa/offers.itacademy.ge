@@ -13,6 +13,8 @@ using System.Security.Principal;
 using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Funds;
+using offers.Application.RepositoryInterfaces;
+using Mapster;
 
 namespace offers.Application.Services.Accounts
 {
@@ -31,7 +33,7 @@ namespace offers.Application.Services.Accounts
         public async Task<AccountResponseModel> LoginAsync(string Email, string password, CancellationToken cancellationToken)
         {
             var hashPassword = GenerateHash(password);
-            var account = await _repository.GetAsync(Email, hashPassword, cancellationToken);
+            var account = await _repository.GetAsync(Email, cancellationToken);
 
             if (account == null)
             {
@@ -66,14 +68,15 @@ namespace offers.Application.Services.Accounts
         {
             var companies = await _repository.GetAllCompaniesAsync(cancellationToken);
 
-            return companies ?? new List<AccountResponseModel>();
+
+            return companies.Adapt<List<AccountResponseModel>>() ?? new List<AccountResponseModel>();
         }
 
         public async Task<List<AccountResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
             var users = await _repository.GetAllUsersAsync(cancellationToken);
 
-            return users ?? new List<AccountResponseModel>();
+            return users.Adapt<List<AccountResponseModel>>() ?? new List<AccountResponseModel>();
         }
 
         public async Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken)
@@ -103,6 +106,12 @@ namespace offers.Application.Services.Accounts
 
         public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
+            if (amount <= 0)
+            {
+                _logger.LogWarning("Invalid withdrawal amount: {amount} for account ID {id}", amount, accountId);
+                throw new InvalidOperationException("Withdrawal amount must be greater than zero.");
+            }
+
             var account = await _repository.GetAsync(accountId, cancellationToken);
             if(account == null)
             {
@@ -122,7 +131,30 @@ namespace offers.Application.Services.Accounts
                 _logger.LogError("failed to withdraw money from account ID {id} due to an unknown error", accountId);
                 throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw becouse of an unknown reason");
             }
-            //....................
+        }
+
+
+        public async Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken)
+        {
+            if (amount <= 0)
+            {
+                _logger.LogWarning("Invalid Deposit amount: {amount} for account ID {id}", amount, accountId);
+                throw new InvalidOperationException("Deposit amount must be greater than zero.");
+            }
+
+            var account = await _repository.GetAsync(accountId, cancellationToken);
+            if (account == null)
+            {
+                _logger.LogWarning("failed to Deposit money to account ID {id} due to it not existing", accountId);
+                throw new AccountNotFoundException("Account with the provided id does not exist");
+            }
+
+            bool Deposited = await _repository.DepositAsync(accountId, amount, cancellationToken);
+            if (!Deposited)
+            {
+                _logger.LogError("failed to Deposit money to an account with the ID {id} due to an unknown error", accountId);
+                throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed due to an unknown error.");
+            }
         }
 
         private string GenerateHash(string input)

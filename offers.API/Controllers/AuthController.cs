@@ -10,6 +10,7 @@ using offers.Domain.Models;
 using offers.Application.Exceptions.Account;
 using offers.API.Models;
 using offers.Application.Services.Accounts;
+using offers.API.Controllers.Helper;
 
 namespace offers.API.Controllers
 {
@@ -32,7 +33,10 @@ namespace offers.API.Controllers
         [HttpPost("user/register")]
         public async Task<IActionResult> Register(UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
-            ValidateAccountModelState();
+            ControllerHelper.ValidateModelState(
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
@@ -44,7 +48,10 @@ namespace offers.API.Controllers
         [HttpPost("company/register")]
         public async Task<IActionResult> Register(CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
-            ValidateAccountModelState();
+            ControllerHelper.ValidateModelState(
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
 
             var companyAccount = companyDTO.Adapt<Account>();
@@ -57,7 +64,10 @@ namespace offers.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> LogIn(AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {
-            ValidateAccountModelState();
+            ControllerHelper.ValidateModelState(
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
 
             var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
@@ -68,19 +78,6 @@ namespace offers.API.Controllers
                 Email = accountResponse.Email,
                 Role = accountResponse.Role
             });
-        }
-
-        private void ValidateAccountModelState()
-        {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-
-                throw new AccountCouldNotValidateException("Could not validate the given Account",errors);
-            }
         }
     }
 }

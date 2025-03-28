@@ -13,5 +13,6 @@ namespace offers.Domain.Models
         public string LastName { get; set; }
         public int Balance { get; set; }
         public Account Account { get; set; }
+        public List<Transaction> Transactions { get; set; } 
     }
 }

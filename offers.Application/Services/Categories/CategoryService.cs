@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using offers.Application.Accounts;
 using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions;
 using offers.Domain.Models;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using offers.Application.Exceptions.Category;
+using offers.Application.RepositoryInterfaces;
 
 namespace offers.Application.Services.Categories
 {

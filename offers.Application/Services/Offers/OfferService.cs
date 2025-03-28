@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using offers.Application.Exceptions.Account;
+using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Models;
@@ -36,10 +37,19 @@ namespace offers.Application.Services.Offers
             _unitOfWork = unitOfWork;
             _logger = logger;
         }
+        private async Task AccountIsActiveCheck(int accountId, CancellationToken cancellationToken)
+        {
+            var account = await _accountRepository.GetAsync(accountId, cancellationToken); 
+            if (!account.CompanyDetail.IsActive)
+            {
+                throw new CompanyIsNotActiveException("you can't create an offer on a not activated account ");
+            }
+        }
         public async Task CreateAsync(Offer offer, CancellationToken cancellationToken)
         {
-
             await PopulateOffer(offer, cancellationToken);
+            await AccountIsActiveCheck(offer.AccountId, cancellationToken);
+
             var isAdded = await _offerRepository.CreateAsync(offer, cancellationToken);
 
             if (!isAdded)
@@ -68,16 +78,19 @@ namespace offers.Application.Services.Offers
             offer.Account = offerAccount;
             offer.Category = offerCategory;
         }
-        public async Task<List<OfferResponseModel>> GetMyOffersAsync(int accoundId, CancellationToken cancellationToken)
+        public async Task<List<OfferResponseModel>> GetMyOffersAsync(int accountId, CancellationToken cancellationToken)
         {
-            var offers = await _offerRepository.GetOffersByAccountIdAsync(accoundId, cancellationToken);
+            await AccountIsActiveCheck(accountId, cancellationToken);
+            var offers = await _offerRepository.GetOffersByAccountIdAsync(accountId, cancellationToken);
           
             return offers ?? new List<OfferResponseModel>();
         }
 
         public async Task DeleteAsync(int id, int accountId, CancellationToken cancellationToken)
         {
-            var offer = await _offerRepository.GetAsync(id);
+            await AccountIsActiveCheck(accountId, cancellationToken);
+
+            var offer = await _offerRepository.GetAsync(id, cancellationToken);
 
             ValidateDeleteOfferBusinessRules(id,accountId,offer);
 
@@ -129,13 +142,41 @@ namespace offers.Application.Services.Offers
             var categories = await _categoryRepository.GetAllWithIdsAsync(categoryIds, cancellationToken);
             if(categories.Count < categoryIds.Count)
             {
+                _logger.LogWarning("at least one of provided categories were not found");
                 throw new CategoryNotFoundException("One or more categories that you provided were not found");
             }
-
 
             var offers = await _categoryRepository.GetOffersByCategoriesAsync(categoryIds, cancellationToken);
 
             return offers?.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();
+        }
+
+        public async Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken)
+        {
+            var offer = await _offerRepository.GetAsync(id, cancellationToken);
+            if(offer == null)
+            {
+                _logger.LogWarning("offer with the ID: {id} was not found", id);
+                throw new OfferNotFoundException($"offer with the id: {id} could not be found");
+            }
+
+            if(count > offer.Count)
+            {
+                _logger.LogWarning("Failed to decrease stock for offer ID {id}: requested decrease amount exceeds available stock.", id);
+                throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer due to request decrease amount exceeding the stock amount");
+            }
+
+            var IsDecreased = await _offerRepository.DecreaseStockAsync(id, count, cancellationToken);
+            if(!IsDecreased)
+            {
+                _logger.LogWarning("Failed to decrease stock for offer ID {id} because of an unknown issue", id);
+                throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer because of an unknown issue");
+            }
+        }
+
+        public async Task ArchiveOffersAsync(CancellationToken cancellationToken)
+        {
+            await _offerRepository.ArchiveOffersAsync(cancellationToken);
         }
     }
 }

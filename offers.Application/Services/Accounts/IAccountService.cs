@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace offers.Application.Services.Accounts
 {
@@ -16,5 +18,6 @@ namespace offers.Application.Services.Accounts
         Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
         Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
+        Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken);
     }
 }

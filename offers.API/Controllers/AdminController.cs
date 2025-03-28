@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using offers.API.Controllers.Helper;
 using offers.API.Infrastructure.Auth.JWT;
 using offers.API.Models;
 using offers.Application.Exceptions;
@@ -32,7 +33,10 @@ namespace offers.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(CategoryDTO categoryDTO, CancellationToken cancellation)
         {
-            ValidateCategoryModelState();
+            ControllerHelper.ValidateModelState(
+            ModelState,
+            errors => throw new CategoryCouldNotValidateException("Could not validate the given category", errors));
+
             _logger.LogInformation("attempt to add a new category {Name}", categoryDTO.Name);
 
             var category = categoryDTO.Adapt<Category>();
@@ -63,19 +67,6 @@ namespace offers.API.Controllers
             var companies = await _accountService.GetAllCompaniesAsync(cancellation);
 
             return Ok(companies);
-        }
-
-        private void ValidateCategoryModelState()
-        {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-
-                throw new CategoryCouldNotValidateException("Could not validate the given category", errors);
-            }
         }
     }
 }

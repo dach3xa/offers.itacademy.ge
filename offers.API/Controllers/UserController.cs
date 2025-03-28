@@ -7,9 +7,12 @@ using offers.Application.Exceptions.Transaction;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
-using offers.Application.Services.Transaction;
+using offers.API.Controllers.Helper;
 using offers.Domain.Enums;
 using offers.Domain.Models;
+using offers.Application.Exceptions.Deposit;
+using offers.Application.Services.Transactions;
+using Mapster;
 
 namespace offers.API.Controllers
 {
@@ -20,26 +23,17 @@ namespace offers.API.Controllers
     {
         private readonly IOfferService _offerService;
         private readonly ITransactionService _transactionService;
+        private readonly IAccountService _accountService;
+
         private readonly ILogger<UserController> _logger;
+
         private int _accountId;
         public UserController(ITransactionService transactionService,IOfferService offerService, ILogger<UserController> logger)
         {
             _transactionService = transactionService;
             _offerService = offerService;
             _logger = logger;
-            _accountId = GetCurrentUserId();
-        }
-        private int GetCurrentUserId()
-        {
-            var accountIdString = User.FindFirst("id")?.Value;
-
-            if (string.IsNullOrEmpty(accountIdString) || !int.TryParse(accountIdString, out var accountId))
-            {
-                _logger.LogError("Invalid or missing account Id");
-                throw new InvalidTokenException("Invalid or missing account Id");
-            }
-
-            return accountId;
+            _accountId = ControllerHelper.GetUserIdFromClaims(User);
         }
 
 
@@ -54,8 +48,11 @@ namespace offers.API.Controllers
         [HttpPost("transaction")]
         public async Task<IActionResult> CreateTransaction(TransactionDTO transactionDTO, CancellationToken cancellationToken)
         {
-            ValidateTransactionModelState();
-            _logger.LogInformation("attempt to make a new Transaction on the offer with Id {OfferId}", transaction.OfferId);
+            ControllerHelper.ValidateModelState(
+                ModelState,
+                errors => new TransactionCouldNotValidateException("Validation failed", errors));
+
+            _logger.LogInformation("attempt to make a new Transaction on the offer with Id {OfferId}", transactionDTO.OfferId);
 
             var transaction = transactionDTO.Adapt<Transaction>();
             transaction.AccountId = _accountId;
@@ -64,17 +61,18 @@ namespace offers.API.Controllers
             return StatusCode(201);
         }
 
-        private void ValidateTransactionModelState()
+        [HttpPatch("deposit")]
+        public async Task<IActionResult> Deposit(DepositRequestDTO depositDTO, CancellationToken cancellationToken)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
+            ControllerHelper.ValidateModelState(
+                ModelState,
+                errors => new DepositCouldNotValidateException("Validation failed", errors));
 
-                throw new TransactionCouldNotValidateException("Could not validate the given transaction", errors);
-            }
+            _logger.LogInformation("attempt to make a Deposit");
+            await _accountService.DepositAsync(_accountId, depositDTO.Amount, cancellationToken);
+
+            return NoContent();
         }
+
     }
 }

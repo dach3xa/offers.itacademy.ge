@@ -20,5 +20,6 @@ namespace offers.Domain.Models
         public Account Account { get; set; }
         public DateTime ArchiveAt { get; set; }
         public bool IsArchived { get; set; }
+        public List<Transaction> Transactions { get; set; }
     }
 }

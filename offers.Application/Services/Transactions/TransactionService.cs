@@ -70,15 +70,10 @@ namespace offers.Application.Services.Transactions
 
         private void ValidateTransactionBusinessRules(Transaction transaction, CancellationToken cancellationToken)
         {
-            //if(transaction.Paid > transaction.Account.UserDetail!.Balance)
-            //{
-            //    _logger.LogError("Failed to create a transaction, due to insufficient funds");
-            //    throw new TransactionInvalidAmountException("you can't pay more than you have!");
-            //}
             if(transaction.Offer.Price * transaction.Count != transaction.Paid)
             {
                 _logger.LogError("Failed to create a transaction, paid amount doesnt match the excpected amount");
-                throw new TransactionInvalidAmountException("Paid amount does not match the expected total");
+                throw new TransactionCouldNotBeCreatedException("Paid amount does not match the expected total");
             }
             else if (transaction.Offer.IsArchived)
             {

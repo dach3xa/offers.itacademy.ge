@@ -6,6 +6,11 @@ using System.Reflection;
 using offers.API.Infrastructure.Mappings;
 using offers.API.Infrastructure.Auth.JWT;
 using Serilog;
+using offers.Application.BackgroundServices;
+using offers.Persistance.Context;
+using offers.Persistance.Connection;
+using Microsoft.EntityFrameworkCore;
+using offers.Persistance.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +33,13 @@ builder.Services.AddServices();
 
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-builder.Services.AddTokenAuthentication(builder.Configuration.GetSection(nameof(JWTConfiguration)).GetSection(nameof(JWTConfiguration.Secret)).Value);
+builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
+builder.Services.Configure<JWTConfiguration>(builder.Configuration.GetSection(nameof(JWTConfiguration)));
 
+builder.Services.AddTokenAuthentication(builder.Configuration.GetSection(nameof(JWTConfiguration)).GetSection(nameof(JWTConfiguration.Secret)).Value);
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnection))));
+
+builder.Services.AddHostedService<OfferArchivingService>();
 
 builder.Services.RegisterMaps();
 
@@ -53,6 +63,7 @@ app.UseMiddleware<ExceptionHandlerMiddleware>();
 try
 {
     Log.Information("starting web host");
+    AdminSeed.Initialize(app.Services);
     app.Run();
 }
 catch (Exception ex)
