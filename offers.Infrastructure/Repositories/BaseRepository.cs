@@ -26,18 +26,18 @@ namespace offers.Infrastructure.Repositories
             return await _dbSet.ToListAsync(token);
         }
 
-        public async Task<T> GetAsync(CancellationToken token, params object[] key)
+        public async Task<T?> GetAsync(int id, CancellationToken token)
         {
-            return await _dbSet.FindAsync(key, token);
+            return await _dbSet.FindAsync(id, token);
         }
 
-        public async Task AddAsync(CancellationToken token, T entity)
+        public async Task CreateAsync(T entity, CancellationToken token)
         {
             await _dbSet.AddAsync(entity, token);
             await _context.SaveChangesAsync(token);
         }
 
-        public async Task UpdateAsync(CancellationToken token, T entity)
+        public async Task UpdateAsync(T entity, CancellationToken token)
         {
             if (entity == null)
                 return;
@@ -46,14 +46,14 @@ namespace offers.Infrastructure.Repositories
             await _context.SaveChangesAsync(token);
         }
 
-        public async Task RemoveAsync(CancellationToken token, params object[] key)
+        public async Task DeleteAsync(int id, CancellationToken token)
         {
-            var entity = await GetAsync(token, key);
+            var entity = await GetAsync(id, token);
             _dbSet.Remove(entity);
             await _context.SaveChangesAsync(token);
         }
 
-        public async Task RemoveAsync(CancellationToken token, T entity)
+        public async Task DeleteAsync(T entity, CancellationToken token)
         {
             if (entity == null)
                 return;
@@ -62,7 +62,7 @@ namespace offers.Infrastructure.Repositories
             await _context.SaveChangesAsync(token);
         }
 
-        public async Task<bool> AnyAsync(CancellationToken token, Expression<Func<T, bool>> predicate)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken token)
         {
             return await _dbSet.AnyAsync(predicate, token);
         }

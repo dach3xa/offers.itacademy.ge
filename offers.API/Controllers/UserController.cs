@@ -28,7 +28,7 @@ namespace offers.API.Controllers
         private readonly ILogger<UserController> _logger;
 
         private int _accountId;
-        public UserController(ITransactionService transactionService,IOfferService offerService, ILogger<UserController> logger)
+        public UserController(ITransactionService transactionService, IOfferService offerService, ILogger<UserController> logger)
         {
             _transactionService = transactionService;
             _offerService = offerService;
@@ -38,9 +38,9 @@ namespace offers.API.Controllers
 
 
         [HttpGet("offers")]
-        public async Task<IActionResult> GetOffersByCategories([FromQuery] List<int> CategoryIds, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetOffersByCategories([FromQuery] List<int> categoryIds, CancellationToken cancellationToken)
         {
-            var responseOffers = await _offerService.GetOffersByCategoriesAsync(CategoryIds, cancellationToken);
+            var responseOffers = await _offerService.GetOffersByCategoriesAsync(categoryIds, cancellationToken);
 
             return Ok(responseOffers);
         }
@@ -56,9 +56,9 @@ namespace offers.API.Controllers
 
             var transaction = transactionDTO.Adapt<Transaction>();
             transaction.AccountId = _accountId;
-            await _transactionService.CreateAsync(transaction, cancellationToken);
+            var transactionResponse = await _transactionService.CreateAsync(transaction, cancellationToken);
 
-            return StatusCode(201);
+            return CreatedAtAction(nameof(GetMyTransaction), new { id = transactionResponse.Id }, transactionResponse);
         }
 
         [HttpPatch("deposit")]
@@ -70,6 +70,29 @@ namespace offers.API.Controllers
 
             _logger.LogInformation("attempt to make a Deposit");
             await _accountService.DepositAsync(_accountId, depositDTO.Amount, cancellationToken);
+
+            return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCurrentUser(CancellationToken cancellationToken)
+        {
+            var currentUser = await _accountService.GetUserAsync(_accountId, cancellationToken);
+            return Ok(currentUser);
+        }
+
+        [HttpGet("transactions/{id}")]
+        public async Task<IActionResult> GetMyTransaction(int id, CancellationToken cancellationToken)
+        {
+            var myTransaction = await _transactionService.GetMyTransactionAsync(id, _accountId, cancellationToken);
+            return Ok(myTransaction);
+        }
+
+        [HttpDelete("transactions/{id}")]
+        public async Task<IActionResult> RefundTransaction(int id, CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("attempt to refund a transaction");
+            await _transactionService.RefundAsync(id, _accountId, cancellationToken);
 
             return NoContent();
         }

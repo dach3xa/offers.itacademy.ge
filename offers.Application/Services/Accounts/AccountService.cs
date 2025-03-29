@@ -15,6 +15,8 @@ using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Funds;
 using offers.Application.RepositoryInterfaces;
 using Mapster;
+using offers.Application.Exceptions.Account.User;
+using offers.Application.UOF;
 
 namespace offers.Application.Services.Accounts
 {
@@ -22,12 +24,12 @@ namespace offers.Application.Services.Accounts
     {
         const string SECRET_KEY = "Secret_Hashing_Key";
         private readonly IAccountRepository _repository;
-        private readonly ILogger<AccountService> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AccountService(IAccountRepository repository, ILogger<AccountService> logger)
+        public AccountService(IAccountRepository repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
-            _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<AccountResponseModel> LoginAsync(string Email, string password, CancellationToken cancellationToken)
@@ -37,31 +39,31 @@ namespace offers.Application.Services.Accounts
 
             if (account == null)
             {
-                _logger.LogWarning("Login failed for {Email}: Invalid credentials", Email);
                 throw new AccountNotFoundException("Email or password is incorrect");
             }
 
             return account.Adapt<AccountResponseModel>();
         }
 
-        public async Task RegisterAsync(Account account, CancellationToken cancellationToken)
+        public async Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken)
         {
             var exists = await _repository.Exists(account.Email, cancellationToken);
 
             if (exists)
             {
-                _logger.LogWarning("failed to register an account for {Email}: the email is already in use", account.Email);
+                
                 throw new AccountAlreadyExistsException("There already is an account with this email");
             }
 
             account.PasswordHash = GenerateHash(account.PasswordHash);
-            var isRegistered = await _repository.RegisterAsync(account, cancellationToken);
+            var registeredAccount = await _repository.RegisterAsync(account, cancellationToken);
 
-            if (!isRegistered)
+            if (registeredAccount == null)
             {
-                _logger.LogError("failed to register an account for {Email}: unknown issue", account.Email);
                 throw new AccountCouldNotBeCreatedException("Failed to create account because of an unknown issue");
             }
+
+            return registeredAccount.Adapt<AccountResponseModel>();
         }
 
         public async Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
@@ -83,52 +85,40 @@ namespace offers.Application.Services.Accounts
         {
             var companyAccount = await _repository.GetAsync(id, cancellationToken);
 
-            if (companyAccount == null)
+            if (companyAccount == null || companyAccount.CompanyDetail == null)
             {
-                _logger.LogWarning("failed to Confirm a Company Account with the id {id} the company doesn't exist", id);
                 throw new AccountNotFoundException("an account with the provided id does not exist");
             }
 
             if (companyAccount.CompanyDetail.IsActive)
             {
-                _logger.LogWarning("Failed to Confirm a Company with the id {id} because its already active", id);
                 throw new CompanyAlreadyActiveException("an account with the provided id is already active");
             }
 
-            var isConfirmed = await _repository.ConfirmCompanyAsync(id, cancellationToken);
-
-            if (!isConfirmed)
-            {
-                _logger.LogError("Failed to varify an account with id {id}: unknown issue", id);
-                throw new AccountCouldNotActivateException("Failed to confirm an Account because of an unknown issue");
-            }
+            await _repository.ConfirmCompanyAsync(id, cancellationToken);
         }
 
         public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
             if (amount <= 0)
             {
-                _logger.LogWarning("Invalid withdrawal amount: {amount} for account ID {id}", amount, accountId);
                 throw new InvalidOperationException("Withdrawal amount must be greater than zero.");
             }
 
             var account = await _repository.GetAsync(accountId, cancellationToken);
-            if(account == null)
+            if (account == null || account.UserDetail == null)
             {
-                _logger.LogWarning("failed to withdraw money from account ID {id} due to it not existing", accountId);
                 throw new AccountNotFoundException("Account with the provided id does not exist");
             }
 
             if (account.UserDetail.Balance < amount)
             {
-                _logger.LogWarning("failed to withdraw money from acount ID {id} becouse of insufficient funds", accountId);
                 throw new InsufficientFundsException("this account doesn't have sufficient funds for the transaction");
             }
 
-            bool withdrawed = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
-            if (!withdrawed)
+            var withdrawedAccount = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+            if (account.UserDetail.Balance - withdrawedAccount.UserDetail.Balance != amount)
             {
-                _logger.LogError("failed to withdraw money from account ID {id} due to an unknown error", accountId);
                 throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw becouse of an unknown reason");
             }
         }
@@ -138,22 +128,29 @@ namespace offers.Application.Services.Accounts
         {
             if (amount <= 0)
             {
-                _logger.LogWarning("Invalid Deposit amount: {amount} for account ID {id}", amount, accountId);
                 throw new InvalidOperationException("Deposit amount must be greater than zero.");
             }
 
             var account = await _repository.GetAsync(accountId, cancellationToken);
-            if (account == null)
+            if (account == null || account.UserDetail == null)
             {
-                _logger.LogWarning("failed to Deposit money to account ID {id} due to it not existing", accountId);
                 throw new AccountNotFoundException("Account with the provided id does not exist");
             }
 
-            bool Deposited = await _repository.DepositAsync(accountId, amount, cancellationToken);
-            if (!Deposited)
+            await _unitOfWork.BeginTransactionAsync(cancellationToken);
+            try
             {
-                _logger.LogError("failed to Deposit money to an account with the ID {id} due to an unknown error", accountId);
-                throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed due to an unknown error.");
+                var depositedAccount = await _repository.DepositAsync(accountId, amount, cancellationToken);
+                if (depositedAccount.UserDetail.Balance - account.UserDetail.Balance != amount)
+                {
+                    throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed due to an unknown error.");
+                }
+                await _unitOfWork.CommitAsync(cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw;
             }
         }
 
@@ -173,6 +170,28 @@ namespace offers.Application.Services.Accounts
 
                 return sb.ToString();
             }
+        }
+
+        public async Task<AccountResponseModel> GetUserAsync(int id, CancellationToken cancellationToken)
+        {
+            var user = await _repository.GetAsync(id, cancellationToken);
+            if(user == null || user.UserDetail == null)
+            {
+                throw new UserNotFoundException($"User with the id {id} was not found");
+            }
+
+            return user.Adapt<AccountResponseModel>();
+        }
+
+        public async Task<AccountResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken)
+        {
+            var company = await _repository.GetAsync(id, cancellationToken);
+            if (company == null || company.CompanyDetail == null)
+            {
+                throw new CompanyNotFoundException($"Company with the id {id} was not found");
+            }
+
+            return company.Adapt<AccountResponseModel>();
         }
     }
 }

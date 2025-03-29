@@ -20,12 +20,14 @@ namespace offers.API.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly IOfferService _offerService;
+        private readonly IAccountService _accountService;
         private readonly ILogger<CompanyController> _logger;
         private int _accountId;
 
-        public CompanyController(IOfferService offerService, ILogger<CompanyController> logger)
+        public CompanyController(IOfferService offerService, IAccountService accountService, ILogger<CompanyController> logger)
         {
             _offerService = offerService;
+            _accountService = accountService;
             _logger = logger;
             _accountId = ControllerHelper.GetUserIdFromClaims(User);
         }
@@ -41,9 +43,9 @@ namespace offers.API.Controllers
 
             var offer = offerDTO.Adapt<Offer>();
             offer.AccountId = _accountId;
-            await _offerService.CreateAsync(offer, cancellation);
+            var offerResponse = await _offerService.CreateAsync(offer, cancellation);
 
-            return StatusCode(201);
+            return CreatedAtAction(nameof(GetMyOffer), new { id = offerResponse.Id }, offerResponse);
         }
 
         [HttpGet("offers")]
@@ -55,11 +57,30 @@ namespace offers.API.Controllers
             return Ok(offers);
         }
 
+        [HttpGet("offers/{id}")]
+        public async Task<IActionResult> GetMyOffer(int id, CancellationToken cancellation) 
+        {
+            var offerResponse = await _offerService.GetMyOfferAsync(id, _accountId, cancellation);
+
+            return Ok(offerResponse);
+        }
+
+
         [HttpDelete("offers/{id}")]
-        public async Task Delete(int id, CancellationToken cancellation)
+        public async Task<IActionResult> Delete(int id, CancellationToken cancellation)
         {
             _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
             await _offerService.DeleteAsync(id, _accountId, cancellation);
+
+            return NoContent();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCurrentCompany(CancellationToken cancellationToken)
+        {
+            var currentCompany = await _accountService.GetCompanyAsync(_accountId, cancellationToken);
+            return Ok(currentCompany);
+        }
+
     }
 }

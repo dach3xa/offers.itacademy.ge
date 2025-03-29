@@ -11,6 +11,7 @@ using offers.Application.Exceptions.Account;
 using offers.API.Models;
 using offers.Application.Services.Accounts;
 using offers.API.Controllers.Helper;
+using Azure;
 
 namespace offers.API.Controllers
 {
@@ -40,9 +41,9 @@ namespace offers.API.Controllers
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
-            await _accountService.RegisterAsync(userAccount, cancellation);
+            var userResponse = await _accountService.RegisterAsync(userAccount, cancellation);
 
-            return StatusCode(201);
+            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
         }
 
         [HttpPost("company/register")]
@@ -55,9 +56,9 @@ namespace offers.API.Controllers
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
 
             var companyAccount = companyDTO.Adapt<Account>();
-            await _accountService.RegisterAsync(companyAccount, cancellation);
+            var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
 
-            return StatusCode(201);
+            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);
 
         }
 

@@ -39,9 +39,6 @@ namespace offers.API.Infrastructure.Mappings
                     dest.UserDetail.Balance = 0;
                 });
 
-            TypeAdapterConfig<Account, AccountResponseModel>
-                .NewConfig();
-
             TypeAdapterConfig<CategoryDTO, Category>
                 .NewConfig();
 
@@ -50,6 +47,22 @@ namespace offers.API.Infrastructure.Mappings
                 .Map(dest => dest.Id, src => 0)
                 .Map(dest => dest.CreatedAt, src => DateTime.Now)
                 .Map(dest => dest.IsArchived, src => false);
+
+            TypeAdapterConfig<Account, AccountResponseModel>
+                .NewConfig();
+
+            TypeAdapterConfig<Category, CategoryResponseModel>
+                .NewConfig();
+
+            TypeAdapterConfig<Offer, OfferResponseModel>
+                .NewConfig()
+                .Map(dest => dest.CategoryName, src => src.Category.Name);
+
+            TypeAdapterConfig<Transaction, TransactionResponseModel>
+                .NewConfig()
+                .Map(dest => dest.AccountName, src => src.User.FirstName)
+                .Map(dest => dest.OfferName, src => src.Offer.Name);
+
         }
     }
 }

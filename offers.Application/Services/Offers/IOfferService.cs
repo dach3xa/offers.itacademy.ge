@@ -12,11 +12,13 @@ namespace offers.Application.Services.Offers
 {
     public interface IOfferService
     {
-        public Task CreateAsync(Offer offer, CancellationToken cancellationToken);
-        public Task<List<OfferResponseModel>> GetMyOffersAsync(int accoundId, CancellationToken cancellationToken);
+        public Task<OfferResponseModel> CreateAsync(Offer offer, CancellationToken cancellationToken);
+        public Task<List<OfferResponseModel>> GetMyOffersAsync(int accountId, CancellationToken cancellationToken);
+        public Task<OfferResponseModel> GetMyOfferAsync(int id, int accountId, CancellationToken cancellationToken);
         public Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken);   
         public Task DeleteAsync(int id, int accountId, CancellationToken cancellationToken);
         public Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken);
+        public Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken);
         public Task ArchiveOffersAsync(CancellationToken cancellationToken);
     }
 }

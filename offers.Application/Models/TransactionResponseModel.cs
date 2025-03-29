@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace offers.Application.Models
 {
-    public class OfferResponseModel
+    public class TransactionResponseModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
         public int Count { get; set; }
-        public decimal Price { get; set; }
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+        public decimal Paid { get; set; }
+        public int AccountId { get; set; }
+        public string AccountName { get; set; }
+        public int OfferId { get; set; }
+        public string OfferName { get; set; }
     }
 }

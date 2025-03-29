@@ -9,14 +9,14 @@ namespace offers.Application.RepositoryInterfaces
 {
     public interface IAccountRepository
     {
-        Task<Account> GetAsync(string Email, CancellationToken cancellationToken);
-        Task<Account> GetAsync(int id, CancellationToken cancellationToken);
+        Task<Account?> GetAsync(string Email, CancellationToken cancellationToken);
+        Task<Account?> GetAsync(int id, CancellationToken cancellationToken);
         Task<bool> Exists(string Email, CancellationToken cancellationToken);
-        Task<bool> RegisterAsync(Account account, CancellationToken cancellationToken);
-        Task<bool> GetAllCompaniesAsync(CancellationToken cancellationToken);
-        Task<bool> GetAllUsersAsync(CancellationToken cancellationToken);
-        Task<bool> ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
-        Task<bool> WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
-        Task<bool> DepositAsync(int  accountId, decimal amount, CancellationToken cancellationToken);
+        Task<Account?> RegisterAsync(Account account, CancellationToken cancellationToken);
+        Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken);
+        Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken);
+        Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
+        Task<Account?> WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
+        Task<Account?> DepositAsync(int  accountId, decimal amount, CancellationToken cancellationToken);
     }
 }

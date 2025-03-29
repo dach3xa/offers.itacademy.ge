@@ -30,7 +30,7 @@ namespace offers.API.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpPost("Category")]
         public async Task<IActionResult> Post(CategoryDTO categoryDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
@@ -40,9 +40,10 @@ namespace offers.API.Controllers
             _logger.LogInformation("attempt to add a new category {Name}", categoryDTO.Name);
 
             var category = categoryDTO.Adapt<Category>();
-            await _categoryService.CreateAsync(category, cancellation);
+            var categoryResponse = await _categoryService.CreateAsync(category, cancellation);
 
-            return StatusCode(201);
+            return CreatedAtAction(nameof(GetCategoryById), new { id = categoryResponse.Id }, categoryResponse);
+
         }
 
         [HttpGet("users")]
@@ -56,6 +57,7 @@ namespace offers.API.Controllers
         [HttpPatch("companies/{id}/confirm")]
         public async Task<IActionResult> ConfirmCompany(int id, CancellationToken cancellation)
         {
+            _logger.LogInformation("attempt to Confirm a company with the ID {id}", id);
             await _accountService.ConfirmCompanyAsync(id, cancellation);
 
             return NoContent();
@@ -67,6 +69,14 @@ namespace offers.API.Controllers
             var companies = await _accountService.GetAllCompaniesAsync(cancellation);
 
             return Ok(companies);
+        }
+
+        [HttpGet("categories/{id}")]
+        public async Task<IActionResult> GetCategoryById(int id, CancellationToken cancellation)
+        {
+            var category = await _categoryService.GetAsync(id, cancellation);
+
+            return Ok(category);
         }
     }
 }
