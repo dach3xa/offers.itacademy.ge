@@ -1,0 +1,12 @@
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\bin\Debug\net8.0\offers.Domain.deps.json
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\bin\Debug\net8.0\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\bin\Debug\net8.0\offers.Domain.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.AssemblyInfoInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.AssemblyInfo.cs
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.csproj.CoreCompileInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.sourcelink.json
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\refint\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\ref\offers.Domain.dll

@@ -9,6 +9,7 @@ using offers.Application.Models;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Offers;
+using offers.Application.Services.OfferTransactionCoordinators;
 using offers.Application.UOF;
 using offers.Domain.Models;
 using System;
@@ -26,17 +27,17 @@ namespace offers.Application.Services.Transactions
         private readonly IOfferRepository _offerRepository;
 
         private readonly IAccountService _accountService;
-        private readonly IOfferService _offerService;
+        private readonly IOfferTransactionCoordinator _offerTransactionCoordinator;
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferService offerService, IAccountService accountService, IUnitOfWork unitOfWork, ILogger<TransactionService> logger)
+        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferTransactionCoordinator offerTransactionCoordinator, IAccountService accountService, IUnitOfWork unitOfWork, ILogger<TransactionService> logger)
         {
             _transactionRepository = transactionRepository;
             _accountRepository = accountRepository;
             _offerRepository = offerRepository;
 
-            _offerService = offerService;
+            _offerTransactionCoordinator = offerTransactionCoordinator;
             _accountService = accountService;
 
             _unitOfWork = unitOfWork;
@@ -45,7 +46,6 @@ namespace offers.Application.Services.Transactions
 
         public async Task<TransactionResponseModel> CreateAsync(Transaction transaction, CancellationToken cancellationToken)
         {
-            Transaction addedTransaction;
             await PopulateTransaction(transaction, cancellationToken);
 
             ValidateTransactionBusinessRules(transaction, cancellationToken);
@@ -54,23 +54,18 @@ namespace offers.Application.Services.Transactions
             try
             {
                 await _accountService.WithdrawAsync(transaction.AccountId, transaction.Paid, cancellationToken);
-                await _offerService.DecreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
+                await _offerTransactionCoordinator.OfferServiceDecreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
+                await _transactionRepository.CreateAsync(transaction, cancellationToken);
 
-                addedTransaction = await _transactionRepository.CreateAsync(transaction, cancellationToken);
-
-                if (addedTransaction == null)
-                {
-                    throw new TransactionCouldNotBeCreatedException("Failed to create a transaction because of an unknown issue");
-                }
                 await _unitOfWork.CommitAsync(cancellationToken);
             }
             catch
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
+                throw new TransactionCouldNotBeCreatedException("Failed to create a transaction because of an unknown issue");
             }
 
-            return addedTransaction.Adapt<TransactionResponseModel>();
+            return transaction.Adapt<TransactionResponseModel>();
         }
 
         private void ValidateTransactionBusinessRules(Transaction transaction, CancellationToken cancellationToken)
@@ -113,19 +108,15 @@ namespace offers.Application.Services.Transactions
                 {
                     await _accountService.DepositAsync(transaction.AccountId, transaction.Paid, cancellationToken);
                 }
+                await _transactionRepository.DeleteByOfferIdAsync(offerId, cancellationToken);
 
-                var deletedTransactions = await _transactionRepository.DeleteByOfferIdAsync(offerId, cancellationToken);
-                if (deletedTransactions.Count != offerTransactions.Count)
-                {
-                    throw new RefundFailedException("Refund failed Due to an unknown error");
-                }
                 await _unitOfWork.CommitAsync(cancellationToken);
 
             }
             catch
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
+                throw new RefundFailedException("Refund failed Due to an unknown error");
             }
         }
 
@@ -153,20 +144,16 @@ namespace offers.Application.Services.Transactions
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                await _offerService.IncreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
+                await _offerTransactionCoordinator.OfferServiceIncreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
                 await _accountService.DepositAsync(accountId, transaction.Paid, cancellationToken);
+                await _transactionRepository.DeleteAsync(id, cancellationToken);
 
-                var deletedTransaction = await _transactionRepository.DeleteAsync(id, cancellationToken);
-                if (deletedTransaction == null)
-                {
-                    throw new TransactionCouldNotBeRefundedException("transaction could not be refunded due to an unknwon issue");
-                }
                 await _unitOfWork.CommitAsync(cancellationToken);
             }
             catch
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
+                throw new TransactionCouldNotBeRefundedException("transaction could not be refunded due to an unknwon issue");
             }
         }
 

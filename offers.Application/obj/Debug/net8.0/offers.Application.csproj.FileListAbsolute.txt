@@ -1,0 +1,16 @@
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.csproj.AssemblyReference.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.AssemblyInfoInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.AssemblyInfo.cs
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.csproj.CoreCompileInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.sourcelink.json
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\bin\Debug\net8.0\offers.Application.deps.json
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\bin\Debug\net8.0\offers.Application.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\bin\Debug\net8.0\offers.Application.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\bin\Debug\net8.0\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\bin\Debug\net8.0\offers.Domain.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.A.88E0D8D8.Up2Date
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\refint\offers.Application.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\offers.Application.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Application\obj\Debug\net8.0\ref\offers.Application.dll

@@ -12,7 +12,7 @@ namespace offers.Application.RepositoryInterfaces
         Task<Account?> GetAsync(string Email, CancellationToken cancellationToken);
         Task<Account?> GetAsync(int id, CancellationToken cancellationToken);
         Task<bool> Exists(string Email, CancellationToken cancellationToken);
-        Task<Account?> RegisterAsync(Account account, CancellationToken cancellationToken);
+        Task RegisterAsync(Account account, CancellationToken cancellationToken);
         Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken);
         Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);

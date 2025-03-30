@@ -11,6 +11,8 @@ using offers.Persistance.Context;
 using offers.Persistance.Connection;
 using Microsoft.EntityFrameworkCore;
 using offers.Persistance.Seed;
+using offers.Application.UOF;
+using offers.Persistance.UOF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,7 @@ builder.Services.Configure<JWTConfiguration>(builder.Configuration.GetSection(na
 
 builder.Services.AddTokenAuthentication(builder.Configuration.GetSection(nameof(JWTConfiguration)).GetSection(nameof(JWTConfiguration.Secret)).Value);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnection))));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddHostedService<OfferArchivingService>();
 

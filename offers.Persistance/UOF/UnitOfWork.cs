@@ -53,5 +53,10 @@ namespace offers.Persistance.UOF
             _context.Dispose();
             _transaction?.Dispose();
         }
+
+        public async Task SaveChangeAsync(CancellationToken cancellationToken)
+        {
+            await _context.SaveChangesAsync(cancellationToken);
+        }
     }
 }

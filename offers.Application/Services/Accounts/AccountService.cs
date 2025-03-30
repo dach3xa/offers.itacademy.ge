@@ -50,20 +50,23 @@ namespace offers.Application.Services.Accounts
             var exists = await _repository.Exists(account.Email, cancellationToken);
 
             if (exists)
-            {
-                
+            {    
                 throw new AccountAlreadyExistsException("There already is an account with this email");
             }
 
             account.PasswordHash = GenerateHash(account.PasswordHash);
-            var registeredAccount = await _repository.RegisterAsync(account, cancellationToken);
 
-            if (registeredAccount == null)
+            try
             {
-                throw new AccountCouldNotBeCreatedException("Failed to create account because of an unknown issue");
+                await _repository.RegisterAsync(account, cancellationToken);
+                await _unitOfWork.SaveChangeAsync(cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                throw new AccountCouldNotBeCreatedException("Account could not be created because of an unknown error");
             }
 
-            return registeredAccount.Adapt<AccountResponseModel>();
+            return account.Adapt<AccountResponseModel>();
         }
 
         public async Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
@@ -95,7 +98,16 @@ namespace offers.Application.Services.Accounts
                 throw new CompanyAlreadyActiveException("an account with the provided id is already active");
             }
 
-            await _repository.ConfirmCompanyAsync(id, cancellationToken);
+            try
+            {
+                await _repository.ConfirmCompanyAsync(id, cancellationToken);
+                await _unitOfWork.SaveChangeAsync(cancellationToken);
+            }
+            catch(Exception ex)
+            {
+                throw new AccountCouldNotActivateException("account could not activate because of an unknown error");
+            }
+
         }
 
         public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
@@ -116,10 +128,25 @@ namespace offers.Application.Services.Accounts
                 throw new InsufficientFundsException("this account doesn't have sufficient funds for the transaction");
             }
 
-            var withdrawedAccount = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
-            if (account.UserDetail.Balance - withdrawedAccount.UserDetail.Balance != amount)
+            await _unitOfWork.BeginTransactionAsync(cancellationToken);
+            try
             {
-                throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw becouse of an unknown reason");
+                var withdrawedAccount = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+                if (account.UserDetail.Balance - withdrawedAccount.UserDetail.Balance != amount)
+                {
+                    throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw the expected ammount because of an unknwon issue");
+                }
+                await _unitOfWork.CommitAsync(cancellationToken);
+            }
+            catch(AccountCouldNotWithdrawException ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw because of an unknown issue");
             }
         }
 
@@ -143,14 +170,19 @@ namespace offers.Application.Services.Accounts
                 var depositedAccount = await _repository.DepositAsync(accountId, amount, cancellationToken);
                 if (depositedAccount.UserDetail.Balance - account.UserDetail.Balance != amount)
                 {
-                    throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed due to an unknown error.");
+                    throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed the expected ammount could not be deposited because of an unknown issue");
                 }
                 await _unitOfWork.CommitAsync(cancellationToken);
+            }
+            catch(AccountCouldNotDepositException ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw; 
             }
             catch(Exception ex)
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
+                throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed because of an unknown issue");
             }
         }
 

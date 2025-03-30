@@ -9,10 +9,10 @@ namespace offers.Application.RepositoryInterfaces
 {
     public interface IOfferRepository
     {
-        Task<Offer?> CreateAsync(Offer offer, CancellationToken cancellationToken);
+        Task CreateAsync(Offer offer, CancellationToken cancellationToken);
         Task<List<Offer>> GetOffersByAccountIdAsync(int accountId, CancellationToken cancellationToken);
-        Task<Offer> GetAsync(int id, CancellationToken cancellationToken);
-        Task<Offer?> DeleteAsync(Offer offer, CancellationToken cancellationToken);
+        Task<Offer?> GetAsync(int id, CancellationToken cancellationToken);
+        void Delete(Offer offer);
         Task<List<Offer>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken);
         Task<Offer?> DecreaseStockAsync(int id, int count, CancellationToken cancellationToken);
         Task<Offer?> IncreaseStockAsync(int id, int count, CancellationToken cancellationToken);

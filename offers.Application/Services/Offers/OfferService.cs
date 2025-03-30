@@ -7,12 +7,15 @@ using offers.Application.Exceptions.Offer;
 using offers.Application.Models;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Categories;
+using offers.Application.Services.Offers.Events;
+using offers.Application.Services.OfferTransactionCoordinators;
 using offers.Application.Services.Transactions;
 using offers.Application.UOF;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,21 +27,26 @@ namespace offers.Application.Services.Offers
         private readonly IAccountRepository _accountRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        private readonly ITransactionService _transactionService;
+        private readonly IOfferTransactionCoordinator _offerTransactionCoordinator;
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public OfferService(IOfferRepository offerRepository, IAccountRepository accountRepository, ICategoryRepository categoryRepository, ITransactionService transactionService, IUnitOfWork unitOfWork)
+        public OfferService(IOfferRepository offerRepository, IAccountRepository accountRepository, ICategoryRepository categoryRepository, IOfferTransactionCoordinator offerTransactionCoordinator, IUnitOfWork unitOfWork)
         {
             _offerRepository = offerRepository;
             _accountRepository = accountRepository;
             _categoryRepository = categoryRepository;
-            _transactionService = transactionService;
+            _offerTransactionCoordinator = offerTransactionCoordinator;
             _unitOfWork = unitOfWork;
         }
         private async Task AccountIsActiveCheck(int accountId, CancellationToken cancellationToken)
         {
             var account = await _accountRepository.GetAsync(accountId, cancellationToken); 
+            if(account == null || account.CompanyDetail == null)
+            {
+                throw new CompanyNotFoundException($"company with the given account id: {accountId} was not found");
+            }
+
             if (!account.CompanyDetail.IsActive)
             {
                 throw new CompanyIsNotActiveException("you can't create an offer on a not activated account ");
@@ -49,14 +57,17 @@ namespace offers.Application.Services.Offers
             await PopulateOffer(offer, cancellationToken);
             await AccountIsActiveCheck(offer.AccountId, cancellationToken);
 
-            var addedOffer = await _offerRepository.CreateAsync(offer, cancellationToken);
-
-            if (addedOffer == null)
+            try
+            {
+                await _offerRepository.CreateAsync(offer, cancellationToken);
+                await _unitOfWork.SaveChangeAsync(cancellationToken);
+            }
+            catch(Exception ex)
             {
                 throw new OfferCouldNotBeCreatedException("Failed to create an offer because of an unknown issue");
             }
 
-            return addedOffer.Adapt<OfferResponseModel>();
+            return offer.Adapt<OfferResponseModel>();
         }
 
         private async Task PopulateOffer(Offer offer, CancellationToken cancellationToken)
@@ -105,30 +116,24 @@ namespace offers.Application.Services.Offers
             await AccountIsActiveCheck(accountId, cancellationToken);
 
             var offer = await _offerRepository.GetAsync(id, cancellationToken);
-
             ValidateDeleteOfferBusinessRules(id,accountId,offer);
 
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                await _transactionService.RefundAllUsersByOfferIdAsync(offer.Id, cancellationToken);
+                await _mediator.Publish(new OfferDeletedEvent(offer.Id), cancellationToken);//continue here....mediatr
 
-                var deletedOffer = await _offerRepository.DeleteAsync(offer, cancellationToken);
-
-                if (deletedOffer == null)
-                {
-                    throw new OfferCouldNotBeDeletedException("Unknown Issue occured");
-                }
+                _offerRepository.Delete(offer);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
             }
             catch(Exception ex)
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
+                throw new OfferCouldNotBeDeletedException("Unknown Issue occured");
             }
         }
-
+          
         private void ValidateDeleteOfferBusinessRules(int id, int accountId, Offer offer)
         {
             if (offer == null)
@@ -149,6 +154,7 @@ namespace offers.Application.Services.Offers
 
         public async Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken)
         {
+
             var categories = await _categoryRepository.GetAllWithIdsAsync(categoryIds, cancellationToken);
             if(categories.Count < categoryIds.Count)
             {
@@ -170,13 +176,28 @@ namespace offers.Application.Services.Offers
 
             if(count > offer.Count)
             {
-              
                 throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer due to request decrease amount exceeding the stock amount");
             }
 
-            var decreasedStockOffer = await _offerRepository.DecreaseStockAsync(id, count, cancellationToken);
-            if(offer.Count - decreasedStockOffer.Count != count)
+            await _unitOfWork.BeginTransactionAsync(cancellationToken);
+            try
             {
+                var decreasedStockOffer = await _offerRepository.DecreaseStockAsync(id, count, cancellationToken);
+                if (offer.Count - decreasedStockOffer.Count != count)
+                {
+                    throw new OfferCouldNotDecreaseStockException("offer stock wasn't decreased by the expected amount");
+                }
+
+                await _unitOfWork.CommitAsync(cancellationToken);
+            }
+            catch(OfferCouldNotDecreaseStockException ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
                 throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer because of an unknown issue");
             }
         }
@@ -188,9 +209,24 @@ namespace offers.Application.Services.Offers
                 throw new OfferNotFoundException($"offer with the id: {id} could not be found");
             }
 
-            var IncreasedStockOffer = await _offerRepository.IncreaseStockAsync(id, count, cancellationToken);
-            if (IncreasedStockOffer.Count - offer.Count != count)
+            await _unitOfWork.BeginTransactionAsync(cancellationToken);
+            try
             {
+                var IncreasedStockOffer = await _offerRepository.IncreaseStockAsync(id, count, cancellationToken);
+                if (IncreasedStockOffer.Count - offer.Count != count)
+                {
+                    throw new OfferCouldNotIncreaseStockException("offer stock wasn't increased by the expected amount");
+                }
+                await _unitOfWork.CommitAsync(cancellationToken);
+            }
+            catch (OfferCouldNotIncreaseStockException ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _unitOfWork.RollbackAsync(cancellationToken);
                 throw new OfferCouldNotIncreaseStockException("could not increase the stock of the offer because of an unknown issue");
             }
         }
