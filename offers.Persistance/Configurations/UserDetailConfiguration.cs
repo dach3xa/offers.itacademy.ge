@@ -30,10 +30,8 @@ namespace offers.Persistance.Configurations
 
             builder.HasOne(x => x.Account)  
                 .WithOne(x => x.UserDetail)  
-                .HasForeignKey<UserDetail>(x => x.AccountId);
-
-            builder.HasMany(x => x.Transactions)
-                .WithOne(x => x.User);
+                .HasForeignKey<UserDetail>(x => x.AccountId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

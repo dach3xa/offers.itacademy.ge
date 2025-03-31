@@ -41,9 +41,12 @@ namespace offers.Infrastructure.Repositories
             return await _dbSet.Where(off => off.AccountId == accountId).ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public Task<Offer?> GetAsync(int id, CancellationToken cancellationToken)
+        public async Task<Offer?> GetAsync(int id, CancellationToken cancellationToken)
         {
-            return base.GetAsync(id, cancellationToken);
+            return await _dbSet
+                .Include(off => off.Category)
+                .SingleOrDefaultAsync(off => off.Id == id, cancellationToken)
+                .ConfigureAwait(false);
         }
 
         public async Task<List<Offer>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken)

@@ -55,7 +55,7 @@ namespace offers.API.Controllers
             _logger.LogInformation("attempt to make a new Transaction on the offer with Id {OfferId}", transactionDTO.OfferId);
 
             var transaction = transactionDTO.Adapt<Transaction>();
-            transaction.AccountId = _accountId;
+            transaction.UserId = _accountId;
             var transactionResponse = await _transactionService.CreateAsync(transaction, cancellationToken);
 
             return CreatedAtAction(nameof(GetMyTransaction), new { id = transactionResponse.Id }, transactionResponse);

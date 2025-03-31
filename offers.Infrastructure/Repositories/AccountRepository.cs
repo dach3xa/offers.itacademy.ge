@@ -52,7 +52,11 @@ namespace offers.Infrastructure.Repositories
 
         public async Task<Account?> GetAsync(int id, CancellationToken cancellationToken)
         {
-            return await base.GetAsync(id, cancellationToken);
+            return await _dbSet
+                .Include(acc => acc.UserDetail)
+                .Include(acc => acc.CompanyDetail)
+                .FirstOrDefaultAsync(acc => acc.Id == id, cancellationToken)
+                .ConfigureAwait(false);
         }
 
         public async Task RegisterAsync(Account account, CancellationToken cancellationToken)

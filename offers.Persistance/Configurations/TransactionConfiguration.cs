@@ -28,11 +28,13 @@ namespace offers.Persistance.Configurations
 
             builder.HasOne(x => x.User)
                 .WithMany(x => x.Transactions) 
-                .HasForeignKey(x => x.AccountId);
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.Offer)
                 .WithMany(o => o.Transactions) 
-                .HasForeignKey(x => x.OfferId);
+                .HasForeignKey(x => x.OfferId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

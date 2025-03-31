@@ -377,5 +377,13 @@ namespace offers.API.Infrastructure.Middlewares
             Status = StatusCodes.Status404NotFound;
             LogLevel = LogLevel.Warning;
         }
+
+        private void HandleException(Exception exception)
+        {
+            Type = "https://example.com/probs/Unknown";
+            Title = exception.Message;
+            Status = StatusCodes.Status500InternalServerError;
+            LogLevel = LogLevel.Error;
+        }
     }
 }

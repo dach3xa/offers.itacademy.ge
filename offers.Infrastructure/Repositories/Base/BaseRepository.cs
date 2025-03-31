@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace offers.Infrastructure.Repositories.Base
@@ -23,17 +22,17 @@ namespace offers.Infrastructure.Repositories.Base
 
         public async Task<List<T>> GetAllAsync(CancellationToken token)
         {
-            return await _dbSet.ToListAsync(token).ConfigureAwait(false);
+            return await _dbSet.ToListAsync(token);
         }
 
         public async Task<T?> GetAsync(int id, CancellationToken token)
         {
-            return await _dbSet.FindAsync(id, token).ConfigureAwait(false);
+            return await _dbSet.FindAsync(id, token);
         }
 
         public async Task CreateAsync(T entity, CancellationToken token)
         {
-            await _dbSet.AddAsync(entity, token).ConfigureAwait(false);
+            await _dbSet.AddAsync(entity, token);
         }
 
         public void Update(T entity)

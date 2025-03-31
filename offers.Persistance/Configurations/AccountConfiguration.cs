@@ -34,12 +34,6 @@ namespace offers.Persistance.Configurations
                 .HasConversion<string>()
                 .HasMaxLength(50)
                 .IsUnicode(false);
-
-            builder.HasOne(x => x.UserDetail).WithOne(x => x.Account).OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasOne(x => x.CompanyDetail).WithOne(x => x.Account).OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasMany(x => x.Offers).WithOne(x => x.Account).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

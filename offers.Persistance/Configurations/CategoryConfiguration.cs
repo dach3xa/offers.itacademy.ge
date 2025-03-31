@@ -23,10 +23,6 @@ namespace offers.Persistance.Configurations
             builder.Property(x => x.Description)
                 .HasMaxLength(1000) 
                 .IsUnicode(false);  
-
-            builder.HasMany(c => c.Offer)
-                .WithOne(o => o.Category)
-                .HasForeignKey(o => o.CategoryId);
         }
     }
 }

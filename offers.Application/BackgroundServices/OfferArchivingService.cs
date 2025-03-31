@@ -21,15 +21,22 @@ namespace offers.Application.BackgroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            try
             {
-                using (var scope = _serviceProvider.CreateAsyncScope())
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    var service = scope.ServiceProvider.GetRequiredService<IOfferService>();
+                    using (var scope = _serviceProvider.CreateAsyncScope())
+                    {
+                        var service = scope.ServiceProvider.GetRequiredService<IOfferService>();
 
-                    await service.ArchiveOffersAsync(stoppingToken);
+                        await service.ArchiveOffersAsync(stoppingToken);
+                    }
+                    await Task.Delay(_checkInterval, stoppingToken);
                 }
-                await Task.Delay(_checkInterval, stoppingToken);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("an error occured in the Background worker");
             }
         }
     }

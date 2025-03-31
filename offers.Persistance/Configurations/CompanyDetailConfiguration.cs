@@ -25,7 +25,8 @@ namespace offers.Persistance.Configurations
 
             builder.HasOne(x => x.Account)  
                 .WithOne(x => x.CompanyDetail)  
-                .HasForeignKey<CompanyDetail>(x => x.AccountId);  
+                .HasForeignKey<CompanyDetail>(x => x.AccountId)
+                .OnDelete(DeleteBehavior.Restrict);  
         }
     }
 

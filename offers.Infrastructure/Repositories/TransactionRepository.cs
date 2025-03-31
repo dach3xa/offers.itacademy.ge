@@ -43,7 +43,11 @@ namespace offers.Infrastructure.Repositories
 
         public async Task<Transaction?> GetAsync(int id, CancellationToken cancellationToken)
         {
-           return await base.GetAsync(id, cancellationToken);
+           return await _dbSet
+                .Include(tran => tran.Offer)
+                .Include(tran => tran.User)
+                .SingleOrDefaultAsync(tran => tran.Id == id, cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 }

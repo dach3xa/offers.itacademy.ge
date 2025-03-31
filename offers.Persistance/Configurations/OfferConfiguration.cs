@@ -45,10 +45,8 @@ namespace offers.Persistance.Configurations
 
             builder.HasOne(x => x.Account)
                 .WithMany(x => x.Offers)
-                .HasForeignKey(x => x.AccountId);
-
-            builder.HasMany(x => x.Transactions)
-                .WithOne(x => x.Offer);
+                .HasForeignKey(x => x.AccountId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

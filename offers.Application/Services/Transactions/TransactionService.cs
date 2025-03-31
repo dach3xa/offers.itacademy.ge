@@ -9,7 +9,6 @@ using offers.Application.Models;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Offers;
-using offers.Application.Services.OfferTransactionCoordinators;
 using offers.Application.UOF;
 using offers.Domain.Models;
 using System;
@@ -27,17 +26,17 @@ namespace offers.Application.Services.Transactions
         private readonly IOfferRepository _offerRepository;
 
         private readonly IAccountService _accountService;
-        private readonly IOfferTransactionCoordinator _offerTransactionCoordinator;
+        private readonly IOfferService _offerService;
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferTransactionCoordinator offerTransactionCoordinator, IAccountService accountService, IUnitOfWork unitOfWork, ILogger<TransactionService> logger)
+        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferService offerService, IAccountService accountService, IUnitOfWork unitOfWork, ILogger<TransactionService> logger)
         {
             _transactionRepository = transactionRepository;
             _accountRepository = accountRepository;
             _offerRepository = offerRepository;
 
-            _offerTransactionCoordinator = offerTransactionCoordinator;
+            _offerService = offerService;
             _accountService = accountService;
 
             _unitOfWork = unitOfWork;
@@ -53,8 +52,8 @@ namespace offers.Application.Services.Transactions
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                await _accountService.WithdrawAsync(transaction.AccountId, transaction.Paid, cancellationToken);
-                await _offerTransactionCoordinator.OfferServiceDecreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
+                await _accountService.WithdrawAsync(transaction.UserId, transaction.Paid, cancellationToken);
+                await _offerService.DecreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
                 await _transactionRepository.CreateAsync(transaction, cancellationToken);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
@@ -82,7 +81,7 @@ namespace offers.Application.Services.Transactions
 
         private async Task PopulateTransaction(Transaction transaction, CancellationToken cancellationToken)
         {
-            var transactionAccount = await _accountRepository.GetAsync(transaction.AccountId, cancellationToken);
+            var transactionAccount = await _accountRepository.GetAsync(transaction.UserId, cancellationToken);
             if (transactionAccount == null || transactionAccount.UserDetail == null)
             {
                 throw new AccountNotFoundException("this transaction's account could not be found");
@@ -106,7 +105,7 @@ namespace offers.Application.Services.Transactions
             {
                 foreach (Transaction transaction in offerTransactions)
                 {
-                    await _accountService.DepositAsync(transaction.AccountId, transaction.Paid, cancellationToken);
+                    await _accountService.DepositAsync(transaction.UserId, transaction.Paid, cancellationToken);
                 }
                 await _transactionRepository.DeleteByOfferIdAsync(offerId, cancellationToken);
 
@@ -128,7 +127,7 @@ namespace offers.Application.Services.Transactions
             {
                 throw new TransactionNotFoundException($"Transaction with the id {id} was not found");
             }
-            if (transaction.AccountId != accountId)
+            if (transaction.UserId != accountId)
             {
                 throw new TransactionAccessDeniedException($"You cannot access this Transaction because it does not belong to you");
             }
@@ -144,7 +143,7 @@ namespace offers.Application.Services.Transactions
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                await _offerTransactionCoordinator.OfferServiceIncreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
+                await _offerService.IncreaseStockAsync(transaction.OfferId, transaction.Count, cancellationToken);
                 await _accountService.DepositAsync(accountId, transaction.Paid, cancellationToken);
                 await _transactionRepository.DeleteAsync(id, cancellationToken);
 
@@ -163,7 +162,7 @@ namespace offers.Application.Services.Transactions
             {
                 throw new TransactionNotFoundException("this transaction could not be found");
             }
-            if (transaction.AccountId != accountId)
+            if (transaction.UserId != accountId)
             {
                 throw new TransactionAccessDeniedException("you don't have an access to this transaction");
             }

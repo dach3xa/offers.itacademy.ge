@@ -12,7 +12,7 @@ namespace offers.Domain.Models
         public int Count { get; set; }
         public decimal Paid { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int AccountId { get; set; }
+        public int UserId { get; set; }
         public UserDetail User { get; set; }
         public int OfferId { get; set; }
         public Offer Offer { get; set; }

@@ -10,6 +10,7 @@ namespace offers.API.Models
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public DateTime ArchiveAt { get; set; }
+        public string PhotoURL { get; set; }
 
     }
 }

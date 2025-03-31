@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions.Account.Company;
@@ -8,7 +9,6 @@ using offers.Application.Models;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers.Events;
-using offers.Application.Services.OfferTransactionCoordinators;
 using offers.Application.Services.Transactions;
 using offers.Application.UOF;
 using offers.Domain.Models;
@@ -27,16 +27,16 @@ namespace offers.Application.Services.Offers
         private readonly IAccountRepository _accountRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        private readonly IOfferTransactionCoordinator _offerTransactionCoordinator;
+        private readonly IMediator _mediator;
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public OfferService(IOfferRepository offerRepository, IAccountRepository accountRepository, ICategoryRepository categoryRepository, IOfferTransactionCoordinator offerTransactionCoordinator, IUnitOfWork unitOfWork)
+        public OfferService(IOfferRepository offerRepository, IAccountRepository accountRepository, ICategoryRepository categoryRepository,IMediator mediator, IUnitOfWork unitOfWork)
         {
             _offerRepository = offerRepository;
             _accountRepository = accountRepository;
             _categoryRepository = categoryRepository;
-            _offerTransactionCoordinator = offerTransactionCoordinator;
+            _mediator = mediator;
             _unitOfWork = unitOfWork;
         }
         private async Task AccountIsActiveCheck(int accountId, CancellationToken cancellationToken)
@@ -121,9 +121,10 @@ namespace offers.Application.Services.Offers
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                await _mediator.Publish(new OfferDeletedEvent(offer.Id), cancellationToken);//continue here....mediatr
 
                 _offerRepository.Delete(offer);
+
+                await _mediator.Publish(new OfferDeletedEvent(offer.Id), cancellationToken);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
             }
