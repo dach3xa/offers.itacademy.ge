@@ -131,6 +131,23 @@
         ]
       }
     },
+    "/api/Admin/categories": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
     "/api/Auth/user/register": {
       "post": {
         "tags": [

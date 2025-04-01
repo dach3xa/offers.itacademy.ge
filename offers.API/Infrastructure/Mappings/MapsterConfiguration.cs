@@ -16,7 +16,7 @@ namespace offers.API.Infrastructure.Mappings
             TypeAdapterConfig<CompanyRegisterDTO, Account>
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.Role, src => AccountRole.Admin)
+                .Map(dest => dest.Role, src => AccountRole.Company)
                 .Map(dest => dest.PasswordHash, src => src.Password)
                 .Map(dest => dest.CompanyDetail, src => new CompanyDetail()) 
                 .AfterMapping((src, dest) =>
@@ -47,6 +47,17 @@ namespace offers.API.Infrastructure.Mappings
                 .Map(dest => dest.Id, src => 0)
                 .Map(dest => dest.CreatedAt, src => DateTime.Now)
                 .Map(dest => dest.IsArchived, src => false);
+
+            TypeAdapterConfig<Account, UserResponseModel>
+                .NewConfig()
+                .Map(dest => dest.FirstName, src => src.UserDetail.FirstName)
+                .Map(dest => dest.LastName, src => src.UserDetail.LastName)
+                .Map(dest => dest.Balance, src => src.UserDetail.Balance);
+
+            TypeAdapterConfig<Account, CompanyResponseModel>
+                .NewConfig()
+                .Map(dest => dest.CompanyName, src => src.CompanyDetail.CompanyName)
+                .Map(dest => dest.IsActive, src => src.CompanyDetail.IsActive);
 
             TypeAdapterConfig<Account, AccountResponseModel>
                 .NewConfig();

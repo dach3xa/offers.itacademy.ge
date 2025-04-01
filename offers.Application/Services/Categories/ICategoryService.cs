@@ -12,5 +12,6 @@ namespace offers.Application.Services.Categories
     {
         Task<CategoryResponseModel> CreateAsync(Category account, CancellationToken cancellationToken);
         Task<CategoryResponseModel> GetAsync(int id, CancellationToken cancellationToken);
+        Task<List<CategoryResponseModel>> GetAllAsync(CancellationToken cancellationToken);
     }
 }

@@ -13,5 +13,6 @@ namespace offers.Application.RepositoryInterfaces
         Task CreateAsync(Category category, CancellationToken cancellationToken);
         Task<Category?> GetAsync(int id, CancellationToken cancellationToken);
         Task<List<Category>> GetAllWithIdsAsync(List<int> ids, CancellationToken cancellationToken);
+        Task<List<Category>> GetAllAsync(CancellationToken cancellationToken);
     }
 }

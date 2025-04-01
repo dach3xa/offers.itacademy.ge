@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "offers.API.Controllers.AdminController",
+    "Method": "GetAllCategoriesAsync",
+    "RelativePath": "api/Admin/categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "offers.API.Controllers.AdminController",
     "Method": "GetCategoryById",
     "RelativePath": "api/Admin/categories/{id}",
     "HttpMethod": "GET",

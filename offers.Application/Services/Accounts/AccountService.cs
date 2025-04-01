@@ -37,7 +37,7 @@ namespace offers.Application.Services.Accounts
             var hashPassword = GenerateHash(password);
             var account = await _repository.GetAsync(Email, cancellationToken);
 
-            if (account == null)
+            if (account == null || account.PasswordHash != hashPassword)
             {
                 throw new AccountNotFoundException("Email or password is incorrect");
             }
@@ -69,19 +69,19 @@ namespace offers.Application.Services.Accounts
             return account.Adapt<AccountResponseModel>();
         }
 
-        public async Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
+        public async Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
         {
             var companies = await _repository.GetAllCompaniesAsync(cancellationToken);
 
 
-            return companies.Adapt<List<AccountResponseModel>>() ?? new List<AccountResponseModel>();
+            return companies.Adapt<List<CompanyResponseModel>>() ?? new List<CompanyResponseModel>();
         }
 
-        public async Task<List<AccountResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
+        public async Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
             var users = await _repository.GetAllUsersAsync(cancellationToken);
 
-            return users.Adapt<List<AccountResponseModel>>() ?? new List<AccountResponseModel>();
+            return users.Adapt<List<UserResponseModel>>() ?? new List<UserResponseModel>();
         }
 
         public async Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken)
@@ -131,8 +131,9 @@ namespace offers.Application.Services.Accounts
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var withdrawedAccount = await _repository.WithdrawAsync(accountId, amount, cancellationToken);
-                if (account.UserDetail.Balance - withdrawedAccount.UserDetail.Balance != amount)
+                decimal balanceBeforeWithdraw = account.UserDetail.Balance;
+                await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+                if (balanceBeforeWithdraw - account.UserDetail.Balance != amount)
                 {
                     throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw the expected ammount because of an unknwon issue");
                 }
@@ -167,8 +168,9 @@ namespace offers.Application.Services.Accounts
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
-                var depositedAccount = await _repository.DepositAsync(accountId, amount, cancellationToken);
-                if (depositedAccount.UserDetail.Balance - account.UserDetail.Balance != amount)
+                decimal balanceBeforeDeposit = account.UserDetail.Balance;
+                await _repository.DepositAsync(accountId, amount, cancellationToken);
+                if (account.UserDetail.Balance - balanceBeforeDeposit != amount)
                 {
                     throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed the expected ammount could not be deposited because of an unknown issue");
                 }
@@ -204,7 +206,7 @@ namespace offers.Application.Services.Accounts
             }
         }
 
-        public async Task<AccountResponseModel> GetUserAsync(int id, CancellationToken cancellationToken)
+        public async Task<UserResponseModel> GetUserAsync(int id, CancellationToken cancellationToken)
         {
             var user = await _repository.GetAsync(id, cancellationToken);
             if(user == null || user.UserDetail == null)
@@ -212,10 +214,10 @@ namespace offers.Application.Services.Accounts
                 throw new UserNotFoundException($"User with the id {id} was not found");
             }
 
-            return user.Adapt<AccountResponseModel>();
+            return user.Adapt<UserResponseModel>();
         }
 
-        public async Task<AccountResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken)
+        public async Task<CompanyResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken)
         {
             var company = await _repository.GetAsync(id, cancellationToken);
             if (company == null || company.CompanyDetail == null)
@@ -223,7 +225,7 @@ namespace offers.Application.Services.Accounts
                 throw new CompanyNotFoundException($"Company with the id {id} was not found");
             }
 
-            return company.Adapt<AccountResponseModel>();
+            return company.Adapt<CompanyResponseModel>();
         }
     }
 }

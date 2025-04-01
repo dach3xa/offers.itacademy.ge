@@ -1,49 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Net;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions.Account.Company;
-using offers.Application.Exceptions;
-using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Account.User;
+using offers.Application.Exceptions.Account;
+using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Deposit;
 using offers.Application.Exceptions.Funds;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Refund;
 using offers.Application.Exceptions.Token;
 using offers.Application.Exceptions.Transaction;
+using offers.Application.Exceptions;
+using System.Net;
 using System;
 
-namespace offers.API.Infrastructure.Middlewares
+namespace offers.API.Infrastructure.ExceptionHandler
 {
-    public class ExceptionHandlerMiddleware
+    public class CustomGlobalExceptionHandler : IExceptionHandler
     {
-        private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionHandlerMiddleware> _logger;
+        private readonly ILogger<CustomGlobalExceptionHandler> _logger;
 
-        public ExceptionHandlerMiddleware(RequestDelegate next, ILogger<ExceptionHandlerMiddleware> logger)
+        public CustomGlobalExceptionHandler(ILogger<CustomGlobalExceptionHandler> logger)
         {
-            _next = next;
             _logger = logger;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async ValueTask<bool> TryHandleAsync(HttpContext context, Exception exception, CancellationToken cancellationToken)
         {
-            try
-            {
-                await _next.Invoke(context);
-            }
-            catch (Exception ex)
-            {
-                await HandleExceptionAsync(context, ex);
-            }
-        }
-
-        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
-        {
-            var error = new ApiError(context, ex);
+            var error = new ApiError(context, exception);
 
             var result = JsonConvert.SerializeObject(error, new JsonSerializerSettings
             {
@@ -54,11 +39,12 @@ namespace offers.API.Infrastructure.Middlewares
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = error.Status!.Value;
 
-            await context.Response.WriteAsync(result);
-            _logger.Log(error.LogLevel, ex, "Handled exception: {Message}", ex.Message);
+            await context.Response.WriteAsync(result, cancellationToken);
+            _logger.Log(error.LogLevel, exception, "Handled exception: {Message}", exception.Message);
+
+            return true;
         }
     }
-
     public class ApiError : ProblemDetails
     {
         private HttpContext _httpContext;
@@ -96,7 +82,7 @@ namespace offers.API.Infrastructure.Middlewares
             Instance = httpContext.Request.Path;
 
             Status = (int)HttpStatusCode.InternalServerError;
-            Title = "there was an error on the server"; 
+            Title = "there was an error on the server";
             LogLevel = LogLevel.Error;
             HandleException((dynamic)exception);
         }

@@ -35,5 +35,10 @@ namespace offers.Infrastructure.Repositories
         {
             await base.CreateAsync(category, cancellationToken);
         }
+
+        public async Task<List<Category>> GetAllAsync(CancellationToken cancellationToken)
+        {
+            return await base.GetAllAsync(cancellationToken);
+        }
     }
 }

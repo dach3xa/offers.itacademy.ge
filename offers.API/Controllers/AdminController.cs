@@ -78,5 +78,12 @@ namespace offers.API.Controllers
 
             return Ok(category);
         }
+        [HttpGet("categories")]
+        public async Task<IActionResult> GetAllCategoriesAsync(CancellationToken cancellation)
+        {
+            var categories = await _categoryService.GetAllAsync(cancellation);
+
+            return Ok(categories);
+        }
     }
 }

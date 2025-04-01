@@ -58,5 +58,13 @@ namespace offers.Application.Services.Categories
 
             return category.Adapt<CategoryResponseModel>();
         }
+
+        public async Task<List<CategoryResponseModel>> GetAllAsync( CancellationToken cancellationToken)
+        {
+            var categories = await _repository.GetAllAsync(cancellationToken);
+
+
+            return categories.Adapt<List<CategoryResponseModel>>() ?? new List<CategoryResponseModel>();
+        }
     }
 }

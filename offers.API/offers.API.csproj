@@ -30,4 +30,8 @@
     <ProjectReference Include="..\offers.Persistance\offers.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Infrastructure\Middlewares\" />
+  </ItemGroup>
+
 </Project>

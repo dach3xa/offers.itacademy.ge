@@ -36,7 +36,7 @@ namespace offers.Persistance.Seed
             {
                 Email = "randomuser@example.com",
                 Phone = "+1-800-555-1234",
-                PasswordHash = "cdff0bbc4debe3a45e4558db28385b52e30db9b5fecb110f293eb890852b40c76a461649d01280cfdb14c24b3f14d4892d021c7404aaaf77737d83f3ae6f90ee",
+                PasswordHash = "15C6EA984B2717BF0B9E9A51DC48451612EA380055337FBD38510A0C3E3EF16332B0DF3362E5C83DC89D6FCA336FB124FFDEF33F317391482C228FE0F63944E3",
                 Role = AccountRole.Admin
             };
 

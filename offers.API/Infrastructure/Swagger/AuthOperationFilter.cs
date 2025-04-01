@@ -17,7 +17,7 @@ namespace offers.API.Infrastructure.Swagger
             if (hasAuthorize && !hasAllowAnonymous)
             {
                 operation.Security = new List<OpenApiSecurityRequirement>
-            {
+                {
                 new OpenApiSecurityRequirement
                 {
                     {
@@ -32,7 +32,7 @@ namespace offers.API.Infrastructure.Swagger
                         Array.Empty<string>()
                     }
                 }
-            };
+                };
             }
         }
     }

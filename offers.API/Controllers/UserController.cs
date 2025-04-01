@@ -26,14 +26,12 @@ namespace offers.API.Controllers
         private readonly IAccountService _accountService;
 
         private readonly ILogger<UserController> _logger;
-
-        private int _accountId;
-        public UserController(ITransactionService transactionService, IOfferService offerService, ILogger<UserController> logger)
+        public UserController(ITransactionService transactionService, IOfferService offerService, IAccountService accountService, ILogger<UserController> logger)
         {
             _transactionService = transactionService;
             _offerService = offerService;
+            _accountService = accountService;
             _logger = logger;
-            _accountId = ControllerHelper.GetUserIdFromClaims(User);
         }
 
 
@@ -55,7 +53,7 @@ namespace offers.API.Controllers
             _logger.LogInformation("attempt to make a new Transaction on the offer with Id {OfferId}", transactionDTO.OfferId);
 
             var transaction = transactionDTO.Adapt<Transaction>();
-            transaction.UserId = _accountId;
+            transaction.UserId = ControllerHelper.GetUserIdFromClaims(User); ;
             var transactionResponse = await _transactionService.CreateAsync(transaction, cancellationToken);
 
             return CreatedAtAction(nameof(GetMyTransaction), new { id = transactionResponse.Id }, transactionResponse);
@@ -69,7 +67,7 @@ namespace offers.API.Controllers
                 errors => new DepositCouldNotValidateException("Validation failed", errors));
 
             _logger.LogInformation("attempt to make a Deposit");
-            await _accountService.DepositAsync(_accountId, depositDTO.Amount, cancellationToken);
+            await _accountService.DepositAsync(ControllerHelper.GetUserIdFromClaims(User), depositDTO.Amount, cancellationToken);
 
             return NoContent();
         }
@@ -77,14 +75,14 @@ namespace offers.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCurrentUser(CancellationToken cancellationToken)
         {
-            var currentUser = await _accountService.GetUserAsync(_accountId, cancellationToken);
+            var currentUser = await _accountService.GetUserAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
             return Ok(currentUser);
         }
 
         [HttpGet("transactions/{id}")]
         public async Task<IActionResult> GetMyTransaction(int id, CancellationToken cancellationToken)
         {
-            var myTransaction = await _transactionService.GetMyTransactionAsync(id, _accountId, cancellationToken);
+            var myTransaction = await _transactionService.GetMyTransactionAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
             return Ok(myTransaction);
         }
 
@@ -92,7 +90,7 @@ namespace offers.API.Controllers
         public async Task<IActionResult> RefundTransaction(int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("attempt to refund a transaction");
-            await _transactionService.RefundAsync(id, _accountId, cancellationToken);
+            await _transactionService.RefundAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
 
             return NoContent();
         }

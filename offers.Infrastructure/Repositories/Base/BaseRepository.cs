@@ -35,14 +35,6 @@ namespace offers.Infrastructure.Repositories.Base
             await _dbSet.AddAsync(entity, token);
         }
 
-        public void Update(T entity)
-        {
-            if (entity == null)
-                return;
-
-            _dbSet.Update(entity);
-        }
-
         public async Task DeleteAsync(int id, CancellationToken token)
         {
             var entity = await GetAsync(id, token).ConfigureAwait(false); ;

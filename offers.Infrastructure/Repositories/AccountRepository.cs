@@ -22,12 +22,10 @@ namespace offers.Infrastructure.Repositories
             account.CompanyDetail.IsActive = true;
         }
 
-        public async Task<Account?> DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken)
+        public async Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
             var account = await _dbSet.FindAsync(accountId, cancellationToken).ConfigureAwait(false); ;
             account.UserDetail.Balance += amount;
-
-            return account;
         }
 
         public async Task<bool> Exists(string Email, CancellationToken cancellationToken)
@@ -37,17 +35,24 @@ namespace offers.Infrastructure.Repositories
 
         public async Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken)
         {
-            return await _dbSet.Where(acc => acc.Role == AccountRole.Company).ToListAsync(cancellationToken).ConfigureAwait(false); ;
+            return await _dbSet
+                .Include(acc => acc.CompanyDetail)
+                .Where(acc => acc.Role == AccountRole.Company).ToListAsync(cancellationToken).ConfigureAwait(false); ;
         }
 
         public async Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
-            return await _dbSet.Where(acc => acc.Role == AccountRole.User).ToListAsync(cancellationToken).ConfigureAwait(false); ;
+            return await _dbSet
+                .Include(acc => acc.UserDetail)
+                .Where(acc => acc.Role == AccountRole.User).ToListAsync(cancellationToken).ConfigureAwait(false); ;
         }
 
         public async Task<Account?> GetAsync(string Email, CancellationToken cancellationToken)
         {
-            return await _dbSet.SingleOrDefaultAsync(acc => acc.Email == Email, cancellationToken).ConfigureAwait(false); ;
+            return await _dbSet
+                .Include(acc => acc.UserDetail)
+                .Include(acc => acc.CompanyDetail)
+                .SingleOrDefaultAsync(acc => acc.Email == Email, cancellationToken).ConfigureAwait(false); ;
         }
 
         public async Task<Account?> GetAsync(int id, CancellationToken cancellationToken)
@@ -64,12 +69,10 @@ namespace offers.Infrastructure.Repositories
             await base.CreateAsync(account, cancellationToken);
         }
 
-        public async Task<Account?> WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
+        public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
             var account = await _dbSet.FindAsync(accountId, cancellationToken).ConfigureAwait(false); ;
             account.UserDetail.Balance -= amount;
-
-            return account;
         }
     }
 }

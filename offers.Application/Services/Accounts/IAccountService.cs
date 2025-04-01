@@ -14,10 +14,10 @@ namespace offers.Application.Services.Accounts
     {
         Task<AccountResponseModel> LoginAsync(string username, string password, CancellationToken cancellationToken);
         Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken);
-        Task<List<AccountResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken);
-        Task<List<AccountResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);
-        Task<AccountResponseModel> GetUserAsync(int id, CancellationToken cancellationToken);
-        Task<AccountResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken);
+        Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken);
+        Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);
+        Task<UserResponseModel> GetUserAsync(int id, CancellationToken cancellationToken);
+        Task<CompanyResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
         Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
         Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken);

@@ -70,7 +70,6 @@ namespace offers.API.Controllers
             errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
-
             var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
             var token = JWTHelper.GenerateSecurityToken(accountResponse.Email, accountResponse.Id, accountResponse.Role, _options);
             return Ok(new LoginResponseDTO

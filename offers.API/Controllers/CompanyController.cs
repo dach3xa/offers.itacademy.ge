@@ -22,14 +22,12 @@ namespace offers.API.Controllers
         private readonly IOfferService _offerService;
         private readonly IAccountService _accountService;
         private readonly ILogger<CompanyController> _logger;
-        private int _accountId;
 
         public CompanyController(IOfferService offerService, IAccountService accountService, ILogger<CompanyController> logger)
         {
             _offerService = offerService;
             _accountService = accountService;
             _logger = logger;
-            _accountId = ControllerHelper.GetUserIdFromClaims(User);
         }
 
         [HttpPost("offers")]
@@ -42,7 +40,7 @@ namespace offers.API.Controllers
             _logger.LogInformation("attempt to add a new Offer {Name}", offerDTO.Name);
 
             var offer = offerDTO.Adapt<Offer>();
-            offer.AccountId = _accountId;
+            offer.AccountId = ControllerHelper.GetUserIdFromClaims(User); ;
             var offerResponse = await _offerService.CreateAsync(offer, cancellation);
 
             return CreatedAtAction(nameof(GetMyOffer), new { id = offerResponse.Id }, offerResponse);
@@ -52,7 +50,7 @@ namespace offers.API.Controllers
         public async Task<IActionResult> GetMyOffers(CancellationToken cancellation)
         {
 
-            var offers = await _offerService.GetMyOffersAsync(_accountId, cancellation);
+            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), cancellation);
 
             return Ok(offers);
         }
@@ -60,7 +58,7 @@ namespace offers.API.Controllers
         [HttpGet("offers/{id}")]
         public async Task<IActionResult> GetMyOffer(int id, CancellationToken cancellation) 
         {
-            var offerResponse = await _offerService.GetMyOfferAsync(id, _accountId, cancellation);
+            var offerResponse = await _offerService.GetMyOfferAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
 
             return Ok(offerResponse);
         }
@@ -70,7 +68,7 @@ namespace offers.API.Controllers
         public async Task<IActionResult> Delete(int id, CancellationToken cancellation)
         {
             _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
-            await _offerService.DeleteAsync(id, _accountId, cancellation);
+            await _offerService.DeleteAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
 
             return NoContent();
         }
@@ -78,7 +76,7 @@ namespace offers.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCurrentCompany(CancellationToken cancellationToken)
         {
-            var currentCompany = await _accountService.GetCompanyAsync(_accountId, cancellationToken);
+            var currentCompany = await _accountService.GetCompanyAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
             return Ok(currentCompany);
         }
 

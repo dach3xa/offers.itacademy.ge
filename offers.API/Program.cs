@@ -11,11 +11,10 @@ using offers.Persistance.Context;
 using offers.Persistance.Connection;
 using Microsoft.EntityFrameworkCore;
 using offers.Persistance.Seed;
-using offers.Application.UOF;
-using offers.Persistance.UOF;
 using offers.Application.Services.Offers.Events;
 using Microsoft.OpenApi.Models;
 using offers.API.Infrastructure.Swagger;
+using offers.API.Infrastructure.ExceptionHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +49,8 @@ builder.Services.AddServices();
 
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
+builder.Services.AddProblemDetails();
+
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
 builder.Services.Configure<JWTConfiguration>(builder.Configuration.GetSection(nameof(JWTConfiguration)));
 
@@ -61,35 +62,23 @@ builder.Services.AddHostedService<OfferArchivingService>();
 
 builder.Services.RegisterMaps();
 
-builder.Services.AddExceptionHandler(options =>
-{
-    options.ExceptionHandler = async context =>
-    {
-        context.Response.StatusCode = 500;
-        await context.Response.WriteAsync("Unhandled server error.");
-    };
-});
+
+builder.Services.AddExceptionHandler<CustomGlobalExceptionHandler>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 
-app.UseMiddleware<ExceptionHandlerMiddleware>();
-app.UseExceptionHandler("/...");
+app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
-    app.Map("/...", () =>
-    {
-        return Results.Problem("ASP.NET default handler fallback");
-    });
 }
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
@@ -108,3 +97,4 @@ finally
 {
     Log.CloseAndFlush();
 }
+

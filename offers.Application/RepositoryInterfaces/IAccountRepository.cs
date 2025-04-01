@@ -16,7 +16,7 @@ namespace offers.Application.RepositoryInterfaces
         Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken);
         Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
-        Task<Account?> WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
-        Task<Account?> DepositAsync(int  accountId, decimal amount, CancellationToken cancellationToken);
+        Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
+        Task DepositAsync(int  accountId, decimal amount, CancellationToken cancellationToken);
     }
 }

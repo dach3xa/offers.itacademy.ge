@@ -15,13 +15,14 @@ namespace offers.API.Infrastructure.Extensions
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-                .AddJwtBearer(x => x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                .AddJwtBearer(x => x.TokenValidationParameters = new TokenValidationParameters
                 {
                     IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidIssuer = "localhost",
-                    ValidAudience = "localhost"
+                    ValidAudience = "localhost",
+                    ValidateLifetime = true
                 });
             return services;
         }

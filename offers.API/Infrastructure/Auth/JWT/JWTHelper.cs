@@ -21,7 +21,7 @@ namespace offers.API.Infrastructure.Auth.JWT
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Email, Email),
-                    new Claim(ClaimTypes.Role, nameof(Role)),
+                    new Claim(ClaimTypes.Role, Role.ToString()),
                     new Claim("id", Id.ToString())
                 }),
 
