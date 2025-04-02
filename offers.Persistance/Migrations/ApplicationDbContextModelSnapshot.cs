@@ -56,7 +56,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("Accounts", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.Category", b =>
@@ -80,7 +80,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.CompanyDetail", b =>
@@ -99,7 +99,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasKey("AccountId");
 
-                    b.ToTable("CompanyDetails");
+                    b.ToTable("CompanyDetails", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.Offer", b =>
@@ -149,7 +149,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Offers");
+                    b.ToTable("Offers", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.Transaction", b =>
@@ -181,7 +181,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transactions");
+                    b.ToTable("Transactions", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.UserDetail", b =>
@@ -206,7 +206,7 @@ namespace offers.Persistance.Migrations
 
                     b.HasKey("AccountId");
 
-                    b.ToTable("UserDetails");
+                    b.ToTable("UserDetails", (string)null);
                 });
 
             modelBuilder.Entity("offers.Domain.Models.CompanyDetail", b =>

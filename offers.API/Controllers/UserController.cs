@@ -85,6 +85,13 @@ namespace offers.API.Controllers
             var myTransaction = await _transactionService.GetMyTransactionAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
             return Ok(myTransaction);
         }
+        [HttpGet("transactions")]
+        public async Task<IActionResult> GetMyTransactions(CancellationToken cancellation)
+        {
+            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), cancellation);
+
+            return Ok(transactions);
+        }
 
         [HttpDelete("transactions/{id}")]
         public async Task<IActionResult> RefundTransaction(int id, CancellationToken cancellationToken)

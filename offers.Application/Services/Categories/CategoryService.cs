@@ -50,7 +50,7 @@ namespace offers.Application.Services.Categories
 
         public async Task<CategoryResponseModel> GetAsync(int id, CancellationToken cancellationToken)
         {
-            var category = _repository.GetAsync(id, cancellationToken);
+            var category = await _repository.GetAsync(id, cancellationToken);
             if(category == null)
             {
                 throw new CategoryNotFoundException($"category with the id {id} was not found");

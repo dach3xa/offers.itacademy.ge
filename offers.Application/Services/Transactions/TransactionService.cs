@@ -100,23 +100,14 @@ namespace offers.Application.Services.Transactions
         public async Task RefundAllUsersByOfferIdAsync(int offerId, CancellationToken cancellationToken)
         {
             var offerTransactions = await _transactionRepository.GetByOfferIdAsync(offerId, cancellationToken);
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            try
-            {
-                foreach (Transaction transaction in offerTransactions)
-                {
-                    await _accountService.DepositAsync(transaction.UserId, transaction.Paid, cancellationToken);
-                }
-                await _transactionRepository.DeleteByOfferIdAsync(offerId, cancellationToken);
 
-                await _unitOfWork.CommitAsync(cancellationToken);
-
-            }
-            catch
+            foreach (Transaction transaction in offerTransactions)
             {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new RefundFailedException("Refund failed Due to an unknown error");
+                await _accountService.DepositAsync(transaction.UserId, transaction.Paid, cancellationToken);
             }
+            await _transactionRepository.DeleteByOfferIdAsync(offerId, cancellationToken);
+
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
         public async Task<TransactionResponseModel> GetMyTransactionAsync(int id, int accountId, CancellationToken cancellationToken)
@@ -166,10 +157,17 @@ namespace offers.Application.Services.Transactions
             {
                 throw new TransactionAccessDeniedException("you don't have an access to this transaction");
             }
-            if (transaction.CreatedAt > DateTime.Now.AddMinutes(5))
+            if (transaction.CreatedAt > DateTime.UtcNow.AddMinutes(5))
             {
                 throw new TransactionCouldNotBeRefundedException("you can only refund a transaction within 5 minutes");
             }
+        }
+
+        public async Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken)
+        {
+            var transactions = await _transactionRepository.GetMyTransactionsAsync(accountId, cancellationToken);
+
+            return transactions.Adapt<List<TransactionResponseModel>>() ?? new List<TransactionResponseModel>();
         }
     }
 }

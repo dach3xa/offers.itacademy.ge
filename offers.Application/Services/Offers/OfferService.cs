@@ -121,10 +121,9 @@ namespace offers.Application.Services.Offers
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
             {
+                await _mediator.Publish(new OfferDeletedEvent(offer.Id), cancellationToken);
 
                 _offerRepository.Delete(offer);
-
-                await _mediator.Publish(new OfferDeletedEvent(offer.Id), cancellationToken);
 
                 await _unitOfWork.CommitAsync(cancellationToken);
             }
@@ -147,7 +146,7 @@ namespace offers.Application.Services.Offers
                 throw new OfferAccessDeniedException("you can't delete an offer of another account");
             }
 
-            if (DateTime.Now > offer.CreatedAt + TimeSpan.FromMinutes(10))
+            if (DateTime.UtcNow > offer.CreatedAt + TimeSpan.FromMinutes(10))
             {
                 throw new OfferCouldNotBeDeletedException("you can only delete an offer within 10 minutes of it's creation");
             }
@@ -179,28 +178,15 @@ namespace offers.Application.Services.Offers
             {
                 throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer due to request decrease amount exceeding the stock amount");
             }
+;
+            var StockCountBeforeDecrease = offer.Count;
+            await _offerRepository.DecreaseStockAsync(id, count, cancellationToken);
+            if (StockCountBeforeDecrease - offer.Count != count)
+            {
+                throw new OfferCouldNotDecreaseStockException("offer stock wasn't decreased by the expected amount");
+            }
 
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            try
-            {
-                var decreasedStockOffer = await _offerRepository.DecreaseStockAsync(id, count, cancellationToken);
-                if (offer.Count - decreasedStockOffer.Count != count)
-                {
-                    throw new OfferCouldNotDecreaseStockException("offer stock wasn't decreased by the expected amount");
-                }
-
-                await _unitOfWork.CommitAsync(cancellationToken);
-            }
-            catch(OfferCouldNotDecreaseStockException ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer because of an unknown issue");
-            }
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
         public async Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken)
         {
@@ -210,31 +196,37 @@ namespace offers.Application.Services.Offers
                 throw new OfferNotFoundException($"offer with the id: {id} could not be found");
             }
 
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            try
+            var BeforeIncreaseCount = offer.Count;
+            await _offerRepository.IncreaseStockAsync(id, count, cancellationToken);
+            if (offer.Count - BeforeIncreaseCount != count)
             {
-                var IncreasedStockOffer = await _offerRepository.IncreaseStockAsync(id, count, cancellationToken);
-                if (IncreasedStockOffer.Count - offer.Count != count)
-                {
-                    throw new OfferCouldNotIncreaseStockException("offer stock wasn't increased by the expected amount");
-                }
-                await _unitOfWork.CommitAsync(cancellationToken);
+                throw new OfferCouldNotIncreaseStockException("offer stock wasn't increased by the expected amount");
             }
-            catch (OfferCouldNotIncreaseStockException ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new OfferCouldNotIncreaseStockException("could not increase the stock of the offer because of an unknown issue");
-            }
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
         public async Task ArchiveOffersAsync(CancellationToken cancellationToken)
         {
             await _offerRepository.ArchiveOffersAsync(cancellationToken);
+        }
+
+        public async Task<List<OfferResponseModel>> GetAllAsync(CancellationToken cancellationToken)
+        {
+            var categories = await _offerRepository.GetAllAsync(cancellationToken);
+
+
+            return categories.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();
+        }
+
+        public async Task<OfferResponseModel> GetAsync(int id, CancellationToken cancellationToken)
+        {
+            var offer = await _offerRepository.GetAsync(id, cancellationToken);
+            if (offer == null)
+            {
+                throw new OfferNotFoundException($"offer with the id {id} was not found");
+            }
+
+            return offer.Adapt<OfferResponseModel>();
         }
     }
 }

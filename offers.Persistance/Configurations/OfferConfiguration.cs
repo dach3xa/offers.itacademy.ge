@@ -40,7 +40,7 @@ namespace offers.Persistance.Configurations
                 .IsRequired();
 
             builder.HasOne(x => x.Category)
-                .WithMany(x => x.Offer)
+                .WithMany(x => x.Offers)
                 .HasForeignKey(x => x.CategoryId);
 
             builder.HasOne(x => x.Account)

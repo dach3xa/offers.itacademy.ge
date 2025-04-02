@@ -15,6 +15,8 @@ using offers.Application.Services.Offers.Events;
 using Microsoft.OpenApi.Models;
 using offers.API.Infrastructure.Swagger;
 using offers.API.Infrastructure.ExceptionHandler;
+using Swashbuckle.AspNetCore.Filters;
+using offers.API.Infrastructure.Swagger.Examples;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +35,8 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
 
+    c.ExampleFilters();
+
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "Enter 'Bearer' [space] and then your valid JWT token.\nExample: Bearer abc123...",
@@ -44,6 +48,7 @@ builder.Services.AddSwaggerGen(c =>
 
     c.OperationFilter<AuthOperationFilter>();
 });
+builder.Services.AddSwaggerExamplesFromAssemblyOf<CategoryDTOMultipleExamples>();
 
 builder.Services.AddServices();
 

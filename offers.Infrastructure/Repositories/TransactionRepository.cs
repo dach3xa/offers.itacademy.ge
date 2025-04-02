@@ -49,5 +49,14 @@ namespace offers.Infrastructure.Repositories
                 .SingleOrDefaultAsync(tran => tran.Id == id, cancellationToken)
                 .ConfigureAwait(false);
         }
+
+        public async Task<List<Transaction>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken)
+        {
+            return await _dbSet
+                .Include(tran => tran.Offer)
+                .Include(tran => tran.User)
+                .Where(tran => tran.UserId == accountId)
+                .ToListAsync(cancellationToken).ConfigureAwait(false);
+        }
     }
 }

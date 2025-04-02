@@ -30,8 +30,8 @@ namespace offers.API.Infrastructure.Validators
             .GreaterThan(0).WithMessage("Category is required");
 
             RuleFor(x => x.ArchiveAt)
-            .GreaterThan(DateTime.Now.AddMinutes(10)).WithMessage("An offer has to be active for at least 10 minutes")
-            .LessThanOrEqualTo(DateTime.Now.AddDays(7)).WithMessage("An offer cannot be scheduled to archive more than 7 days from now");
+            .GreaterThan(DateTime.UtcNow.AddMinutes(10)).WithMessage("An offer has to be active for at least 10 minutes")
+            .LessThanOrEqualTo(DateTime.UtcNow.AddDays(7)).WithMessage("An offer cannot be scheduled to archive more than 7 days from now");
         }
     }
 }

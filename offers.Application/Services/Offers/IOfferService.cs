@@ -14,6 +14,8 @@ namespace offers.Application.Services.Offers
     {
         public Task<OfferResponseModel> CreateAsync(Offer offer, CancellationToken cancellationToken);
         public Task<List<OfferResponseModel>> GetMyOffersAsync(int accountId, CancellationToken cancellationToken);
+        public Task<List<OfferResponseModel>> GetAllAsync(CancellationToken cancellationToken);
+        public Task<OfferResponseModel> GetAsync(int id, CancellationToken cancellationToken);
         public Task<OfferResponseModel> GetMyOfferAsync(int id, int accountId, CancellationToken cancellationToken);
         public Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken);   
         public Task DeleteAsync(int id, int accountId, CancellationToken cancellationToken);

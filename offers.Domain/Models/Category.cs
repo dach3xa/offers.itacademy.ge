@@ -12,6 +12,6 @@ namespace offers.Domain.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
-        public List<Offer> Offer { get; set; }
+        public List<Offer> Offers { get; set; }
     }
 }

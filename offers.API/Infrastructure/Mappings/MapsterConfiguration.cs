@@ -45,7 +45,7 @@ namespace offers.API.Infrastructure.Mappings
             TypeAdapterConfig<OfferDTO, Offer>
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.CreatedAt, src => DateTime.Now)
+                .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
                 .Map(dest => dest.IsArchived, src => false);
 
             TypeAdapterConfig<Account, UserResponseModel>
@@ -68,6 +68,10 @@ namespace offers.API.Infrastructure.Mappings
             TypeAdapterConfig<Offer, OfferResponseModel>
                 .NewConfig()
                 .Map(dest => dest.CategoryName, src => src.Category.Name);
+
+            TypeAdapterConfig<TransactionDTO, Transaction>
+                .NewConfig()
+                .Map(dest => dest.CreatedAt, src => DateTime.UtcNow);
 
             TypeAdapterConfig<Transaction, TransactionResponseModel>
                 .NewConfig()

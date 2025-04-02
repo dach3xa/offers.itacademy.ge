@@ -27,6 +27,7 @@ namespace offers.Infrastructure.Repositories.Base
 
         public async Task<T?> GetAsync(int id, CancellationToken token)
         {
+            _context.ChangeTracker.Clear();
             return await _dbSet.FindAsync(id, token);
         }
 

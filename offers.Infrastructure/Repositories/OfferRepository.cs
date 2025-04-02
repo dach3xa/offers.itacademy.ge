@@ -19,7 +19,7 @@ namespace offers.Infrastructure.Repositories
         public async Task ArchiveOffersAsync(CancellationToken cancellationToken)
         {
             var offersToArchive = await _dbSet
-                .Where(off => off.ArchiveAt <= DateTime.Now)
+                .Where(off => off.ArchiveAt <= DateTime.UtcNow)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
 
             foreach (var offer in offersToArchive)
@@ -28,17 +28,18 @@ namespace offers.Infrastructure.Repositories
             }
         }
 
-        public async Task<Offer?> DecreaseStockAsync(int id, int count, CancellationToken cancellationToken)
+        public async Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken)
         {
             var offer = await _dbSet.FindAsync(id, cancellationToken).ConfigureAwait(false);
             offer.Count -= count;
-
-            return offer;
         }
 
         public async Task<List<Offer>> GetOffersByAccountIdAsync(int accountId, CancellationToken cancellationToken)
         {
-            return await _dbSet.Where(off => off.AccountId == accountId).ToListAsync(cancellationToken).ConfigureAwait(false);
+            return await _dbSet
+                .Include(off => off.Category)
+                .Where(off => off.AccountId == accountId)
+                .ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
         public async Task<Offer?> GetAsync(int id, CancellationToken cancellationToken)
@@ -52,16 +53,14 @@ namespace offers.Infrastructure.Repositories
         public async Task<List<Offer>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken)
         {
             return await _dbSet
-                .Where(off => categoryIds.Contains(off.CategoryId))
+                .Where(off => categoryIds.Contains(off.CategoryId) && off.IsArchived == false)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<Offer?> IncreaseStockAsync(int id, int count, CancellationToken cancellationToken)
+        public async Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken)
         {
             var offer = await _dbSet.FindAsync(id, cancellationToken).ConfigureAwait(false);
             offer.Count += count;
-
-            return offer;
         }
 
         public async Task CreateAsync(Offer offer, CancellationToken cancellationToken)
@@ -72,6 +71,10 @@ namespace offers.Infrastructure.Repositories
         public void Delete(Offer offer)
         {
              base.Delete(offer);
+        }
+        public async Task<List<Offer>> GetAllAsync(CancellationToken cancellationToken)
+        {
+            return await _dbSet.Include(off => off.Category).Where(off => !off.IsArchived).ToListAsync(cancellationToken).ConfigureAwait(false);
         }
     }
 }

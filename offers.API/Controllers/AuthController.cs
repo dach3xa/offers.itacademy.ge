@@ -12,6 +12,10 @@ using offers.API.Models;
 using offers.Application.Services.Accounts;
 using offers.API.Controllers.Helper;
 using Azure;
+using offers.API.Infrastructure.ExceptionHandler;
+using offers.Application.Models;
+using offers.API.Infrastructure.Swagger.Examples;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace offers.API.Controllers
 {
@@ -31,6 +35,25 @@ namespace offers.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Registers a new user account.
+        /// </summary>
+        /// <param name="userDTO">The user registration data.</param>
+        /// <returns>
+        /// A 201 Created response with the registered user data,
+        /// or an error response if the registration fails.
+        /// </returns>
+        /// <response code="201">User account created successfully</response>
+        /// <response code="400">Validation failed (AccountCouldNotValidateException)</response>
+        /// <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
+        /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(UserResponseModel))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [SwaggerRequestExample(typeof(UserRegisterDTO), typeof(UserRegisterDTOMultipleExamples))]
         [HttpPost("user/register")]
         public async Task<IActionResult> Register(UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
@@ -46,6 +69,25 @@ namespace offers.API.Controllers
             return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
         }
 
+        /// <summary>
+        /// Registers a new company account.
+        /// </summary>
+        /// <param name="companyDTO">The company registration data.</param>
+        /// <returns>
+        /// A 201 Created response with the registered company account,
+        /// or an error response if the registration fails.
+        /// </returns>
+        /// <response code="201">Company account created successfully</response>
+        /// <response code="400">Validation failed (AccountCouldNotValidateException)</response>
+        /// <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
+        /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CompanyResponseModel))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [SwaggerRequestExample(typeof(CompanyRegisterDTO), typeof(CompanyRegisterDTOMultipleExamples))]
         [HttpPost("company/register")]
         public async Task<IActionResult> Register(CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
@@ -62,6 +104,23 @@ namespace offers.API.Controllers
 
         }
 
+        /// <summary>
+        /// Authenticates an account and returns a JWT token.
+        /// </summary>
+        /// <param name="accountLoginDTO">The login credentials (email and password).</param>
+        /// <returns>
+        /// A 200 OK response with a JWT token and account information,
+        /// or an error response if authentication fails.
+        /// </returns>
+        /// <response code="200">Login successful, returns a JWT token and account info</response>
+        /// <response code="400">Validation failed (AccountCouldNotValidateException)</response>
+        /// <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginResponseDTO))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [SwaggerRequestExample(typeof(AccountLoginDTO), typeof(AccountLoginDTOMultipleExamples))]
         [HttpPost("login")]
         public async Task<IActionResult> LogIn(AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {

@@ -128,27 +128,13 @@ namespace offers.Application.Services.Accounts
                 throw new InsufficientFundsException("this account doesn't have sufficient funds for the transaction");
             }
 
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            try
+            decimal balanceBeforeWithdraw = account.UserDetail.Balance;
+            await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+            if (balanceBeforeWithdraw - account.UserDetail.Balance != amount)
             {
-                decimal balanceBeforeWithdraw = account.UserDetail.Balance;
-                await _repository.WithdrawAsync(accountId, amount, cancellationToken);
-                if (balanceBeforeWithdraw - account.UserDetail.Balance != amount)
-                {
-                    throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw the expected ammount because of an unknwon issue");
-                }
-                await _unitOfWork.CommitAsync(cancellationToken);
+                throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw the expected ammount because of an unknwon issue");
             }
-            catch(AccountCouldNotWithdrawException ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw;
-            }
-            catch (Exception ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw because of an unknown issue");
-            }
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
 
@@ -165,27 +151,13 @@ namespace offers.Application.Services.Accounts
                 throw new AccountNotFoundException("Account with the provided id does not exist");
             }
 
-            await _unitOfWork.BeginTransactionAsync(cancellationToken);
-            try
+            decimal balanceBeforeDeposit = account.UserDetail.Balance;
+            await _repository.DepositAsync(accountId, amount, cancellationToken);
+            if (account.UserDetail.Balance - balanceBeforeDeposit != amount)
             {
-                decimal balanceBeforeDeposit = account.UserDetail.Balance;
-                await _repository.DepositAsync(accountId, amount, cancellationToken);
-                if (account.UserDetail.Balance - balanceBeforeDeposit != amount)
-                {
-                    throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed the expected ammount could not be deposited because of an unknown issue");
-                }
-                await _unitOfWork.CommitAsync(cancellationToken);
+                throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed the expected ammount could not be deposited because of an unknown issue");
             }
-            catch(AccountCouldNotDepositException ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw; 
-            }
-            catch(Exception ex)
-            {
-                await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed because of an unknown issue");
-            }
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
         private string GenerateHash(string input)

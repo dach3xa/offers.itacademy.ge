@@ -28,7 +28,7 @@ namespace offers.Infrastructure.Repositories
 
         public async Task<Category?> GetAsync(int id, CancellationToken cancellationToken)
         {
-            return await base.GetAsync(id, cancellationToken);
+            return await _dbSet.SingleOrDefaultAsync(cat => cat.Id == id, cancellationToken);
         }
 
         public async Task CreateAsync(Category category, CancellationToken cancellationToken)
