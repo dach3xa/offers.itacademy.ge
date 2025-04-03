@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "offers.API.Controllers.AdminController",
+    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
     "Method": "Post",
-    "RelativePath": "api/Admin/Category",
+    "RelativePath": "api/v1/Admin/Category",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -22,7 +22,7 @@
         "StatusCode": 201
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -36,14 +36,14 @@
         "StatusCode": 401
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 409
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AdminController",
+    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
     "Method": "GetAllCompanies",
-    "RelativePath": "api/Admin/companies",
+    "RelativePath": "api/v1/Admin/companies",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -75,7 +75,7 @@
         "StatusCode": 401
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -84,9 +84,9 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AdminController",
+    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
     "Method": "ConfirmCompany",
-    "RelativePath": "api/Admin/companies/{id}/confirm",
+    "RelativePath": "api/v1/Admin/companies/{id}/confirm",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -104,21 +104,21 @@
         "StatusCode": 204
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 400
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 404
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -127,9 +127,9 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AdminController",
+    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
     "Method": "GetAllUsers",
-    "RelativePath": "api/Admin/users",
+    "RelativePath": "api/v1/Admin/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -150,7 +150,7 @@
         "StatusCode": 401
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -159,9 +159,9 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AuthController",
+    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
     "Method": "Register",
-    "RelativePath": "api/Auth/company/register",
+    "RelativePath": "api/v1/Auth/company/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -181,21 +181,21 @@
         "StatusCode": 201
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 400
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 409
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -204,9 +204,9 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AuthController",
+    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
     "Method": "LogIn",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "api/v1/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -226,25 +226,32 @@
         "StatusCode": 200
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 400
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.AuthController",
+    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
     "Method": "Register",
-    "RelativePath": "api/Auth/user/register",
+    "RelativePath": "api/v1/Auth/user/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -264,21 +271,21 @@
         "StatusCode": 201
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 400
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 409
       },
       {
-        "Type": "offers.API.Infrastructure.ExceptionHandler.ApiError",
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
         "MediaTypes": [
           "application/json"
         ],
@@ -287,19 +294,48 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.CompanyController",
+    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
     "Method": "GetCurrentCompany",
-    "RelativePath": "api/Company",
+    "RelativePath": "api/v1/Company",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CompanyResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.CompanyController",
+    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
     "Method": "Post",
-    "RelativePath": "api/Company/offers",
+    "RelativePath": "api/v1/Company/offers",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -310,22 +346,101 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.CompanyController",
+    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
     "Method": "GetMyOffers",
-    "RelativePath": "api/Company/offers",
+    "RelativePath": "api/v1/Company/offers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.CompanyController",
+    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
     "Method": "GetMyOffer",
-    "RelativePath": "api/Company/offers/{id}",
+    "RelativePath": "api/v1/Company/offers/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -336,12 +451,55 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.CompanyController",
+    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
     "Method": "Delete",
-    "RelativePath": "api/Company/offers/{id}",
+    "RelativePath": "api/v1/Company/offers/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -352,22 +510,78 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.GuestController",
+    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
     "Method": "GetAllCategoriesAsync",
-    "RelativePath": "api/Guest/categories",
+    "RelativePath": "api/v1/Guest/categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.GuestController",
+    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
     "Method": "GetCategoryById",
-    "RelativePath": "api/Guest/categories/{id}",
+    "RelativePath": "api/v1/Guest/categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -378,22 +592,59 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CategoryResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.GuestController",
-    "Method": "GetAllOfferAsync",
-    "RelativePath": "api/Guest/offers",
+    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
+    "Method": "GetAllOffersAsync",
+    "RelativePath": "api/v1/Guest/offers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.GuestController",
+    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
     "Method": "GetOfferById",
-    "RelativePath": "api/Guest/offers/{id}",
+    "RelativePath": "api/v1/Guest/offers/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -404,22 +655,73 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "GetCurrentUser",
-    "RelativePath": "api/User",
+    "RelativePath": "api/v1/User",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.UserResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "Deposit",
-    "RelativePath": "api/User/deposit",
+    "RelativePath": "api/v1/User/deposit",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -430,12 +732,53 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "GetOffersByCategories",
-    "RelativePath": "api/User/offers",
+    "RelativePath": "api/v1/User/offers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -446,12 +789,41 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "CreateTransaction",
-    "RelativePath": "api/User/transaction",
+    "RelativePath": "api/v1/User/transaction",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -462,22 +834,73 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.TransactionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "GetMyTransactions",
-    "RelativePath": "api/User/transactions",
+    "RelativePath": "api/v1/User/transactions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "GetMyTransaction",
-    "RelativePath": "api/User/transactions/{id}",
+    "RelativePath": "api/v1/User/transactions/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -488,12 +911,48 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.TransactionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   },
   {
-    "ContainingType": "offers.API.Controllers.UserController",
+    "ContainingType": "offers.API.Controllers.Version_1.UserController",
     "Method": "RefundTransaction",
-    "RelativePath": "api/User/transactions/{id}",
+    "RelativePath": "api/v1/User/transactions/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -504,6 +963,1099 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "Method": "Post",
+    "RelativePath": "api/v2/Admin/Category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryDTO",
+        "Type": "offers.API.Models.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CategoryResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "Method": "GetAllCompanies",
+    "RelativePath": "api/v2/Admin/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "Method": "ConfirmCompany",
+    "RelativePath": "api/v2/Admin/companies/{id}/confirm",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/v2/Admin/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v2/Auth/company/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyDTO",
+        "Type": "offers.API.Models.CompanyRegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CompanyResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "Method": "LogIn",
+    "RelativePath": "api/v2/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountLoginDTO",
+        "Type": "offers.API.Models.AccountLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.API.Models.LoginResponseDTO",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v2/Auth/user/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
+        "Type": "offers.API.Models.UserRegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.UserResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v2/Auth/user/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userDTO",
+        "Type": "offers.API.Models.UserRegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.UserResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "Method": "GetCurrentCompany",
+    "RelativePath": "api/v2/Company",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CompanyResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "Method": "Post",
+    "RelativePath": "api/v2/Company/offers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offerDTO",
+        "Type": "offers.API.Models.OfferDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "Method": "GetMyOffers",
+    "RelativePath": "api/v2/Company/offers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "Method": "GetMyOffer",
+    "RelativePath": "api/v2/Company/offers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "Method": "Delete",
+    "RelativePath": "api/v2/Company/offers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "Method": "GetAllCategoriesAsync",
+    "RelativePath": "api/v2/Guest/categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "Method": "GetCategoryById",
+    "RelativePath": "api/v2/Guest/categories/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.CategoryResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "Method": "GetAllOffersAsync",
+    "RelativePath": "api/v2/Guest/offers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "Method": "GetOfferById",
+    "RelativePath": "api/v2/Guest/offers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.OfferResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "api/v2/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.UserResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "Deposit",
+    "RelativePath": "api/v2/User/deposit",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "depositDTO",
+        "Type": "offers.API.Models.DepositRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "GetOffersByCategories",
+    "RelativePath": "api/v2/User/offers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "CreateTransaction",
+    "RelativePath": "api/v2/User/transaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transactionDTO",
+        "Type": "offers.API.Models.TransactionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.TransactionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "GetMyTransactions",
+    "RelativePath": "api/v2/User/transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "GetMyTransaction",
+    "RelativePath": "api/v2/User/transactions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "offers.Application.Models.TransactionResponseModel",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "Method": "RefundTransaction",
+    "RelativePath": "api/v2/User/transactions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
   }
 ]

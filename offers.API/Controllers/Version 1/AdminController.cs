@@ -1,10 +1,11 @@
-﻿using Mapster;
+﻿using Asp.Versioning;
+using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using offers.API.Controllers.Helper;
 using offers.API.Infrastructure.Auth.JWT;
-using offers.API.Infrastructure.ExceptionHandler;
+using offers.API.Infrastructure.Middlewares;
 using offers.API.Infrastructure.Swagger.Examples;
 using offers.API.Models;
 using offers.Application.Exceptions;
@@ -16,11 +17,13 @@ using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace offers.API.Controllers
+namespace offers.API.Controllers.Version_1
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.Admin))]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AdminController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -56,7 +59,7 @@ namespace offers.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(CategoryDTO), typeof(CategoryDTOMultipleExamples))]
         [HttpPost("Category")]
-        public async Task<IActionResult> Post(CategoryDTO categoryDTO, CancellationToken cancellation)
+        public async Task<IActionResult> Post([FromBody] CategoryDTO categoryDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
             ModelState,
@@ -109,7 +112,7 @@ namespace offers.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpPatch("companies/{id}/confirm")]
-        public async Task<IActionResult> ConfirmCompany(int id, CancellationToken cancellation)
+        public async Task<IActionResult> ConfirmCompany([FromRoute] int id, CancellationToken cancellation)
         {
             _logger.LogInformation("attempt to Confirm a company with the ID {id}", id);
             await _accountService.ConfirmCompanyAsync(id, cancellation);

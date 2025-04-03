@@ -1,9 +1,3 @@
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.csproj.AssemblyReference.cache
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.AssemblyInfoInputs.cache
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.AssemblyInfo.cs
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.csproj.CoreCompileInputs.cache
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.sourcelink.json
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Persistance.deps.json
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Persistance.runtimeconfig.json
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Persistance.dll
@@ -12,6 +6,12 @@ C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Domain.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Application.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\bin\Debug\net8.0\offers.Domain.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.csproj.AssemblyReference.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.AssemblyInfoInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.AssemblyInfo.cs
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.sourcelink.json
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.P.63F52AD5.Up2Date
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\offers.Persistance.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Persistance\obj\Debug\net8.0\refint\offers.Persistance.dll

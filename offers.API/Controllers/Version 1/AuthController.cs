@@ -12,16 +12,19 @@ using offers.API.Models;
 using offers.Application.Services.Accounts;
 using offers.API.Controllers.Helper;
 using Azure;
-using offers.API.Infrastructure.ExceptionHandler;
 using offers.Application.Models;
 using offers.API.Infrastructure.Swagger.Examples;
 using Swashbuckle.AspNetCore.Filters;
+using Asp.Versioning;
+using offers.API.Infrastructure.Middlewares;
 
-namespace offers.API.Controllers
+namespace offers.API.Controllers.Version_1
 {
     [ApiController]
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {
         private readonly IAccountService _accountService;
@@ -55,7 +58,7 @@ namespace offers.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(UserRegisterDTO), typeof(UserRegisterDTOMultipleExamples))]
         [HttpPost("user/register")]
-        public async Task<IActionResult> Register(UserRegisterDTO userDTO, CancellationToken cancellation = default)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
             ModelState,
@@ -80,7 +83,7 @@ namespace offers.API.Controllers
         /// <response code="201">Company account created successfully</response>
         /// <response code="400">Validation failed (AccountCouldNotValidateException)</response>
         /// <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
-        /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
+        /// <response code="500">Internal server error during registration</response>
         [Produces("application/json")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CompanyResponseModel))]
@@ -89,7 +92,7 @@ namespace offers.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(CompanyRegisterDTO), typeof(CompanyRegisterDTOMultipleExamples))]
         [HttpPost("company/register")]
-        public async Task<IActionResult> Register(CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
+        public async Task<IActionResult> Register([FromBody] CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
             ModelState,
@@ -115,14 +118,16 @@ namespace offers.API.Controllers
         /// <response code="200">Login successful, returns a JWT token and account info</response>
         /// <response code="400">Validation failed (AccountCouldNotValidateException)</response>
         /// <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
+        /// <response code="500">Internal server error</response>
         [Produces("application/json")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginResponseDTO))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(AccountLoginDTO), typeof(AccountLoginDTOMultipleExamples))]
         [HttpPost("login")]
-        public async Task<IActionResult> LogIn(AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
+        public async Task<IActionResult> LogIn([FromBody] AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
             ModelState,

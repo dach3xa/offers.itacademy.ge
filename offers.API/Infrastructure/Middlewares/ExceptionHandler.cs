@@ -14,21 +14,34 @@ using offers.Application.Exceptions.Transaction;
 using offers.Application.Exceptions;
 using System.Net;
 using System;
+using System.Threading;
 
-namespace offers.API.Infrastructure.ExceptionHandler
+namespace offers.API.Infrastructure.Middlewares
 {
-    public class CustomGlobalExceptionHandler : IExceptionHandler
+    public class ExceptionHandler
     {
-        private readonly ILogger<CustomGlobalExceptionHandler> _logger;
-
-        public CustomGlobalExceptionHandler(ILogger<CustomGlobalExceptionHandler> logger)
+        RequestDelegate _next;
+        private readonly ILogger<ExceptionHandler> _logger;
+        public ExceptionHandler(RequestDelegate next, ILogger<ExceptionHandler> logger)
         {
+            _next = next;
             _logger = logger;
         }
 
-        public async ValueTask<bool> TryHandleAsync(HttpContext context, Exception exception, CancellationToken cancellationToken)
+        public async Task InvokeAsync(HttpContext context)
         {
-            var error = new ApiError(context, exception);
+            try
+            {
+                await _next(context);
+            }
+            catch (Exception ex)
+            {
+                await HandleException(context, ex);
+            }
+        }
+        private async Task HandleException(HttpContext context, Exception ex)
+        {
+            var error = new ApiError(context, ex);
 
             var result = JsonConvert.SerializeObject(error, new JsonSerializerSettings
             {
@@ -39,12 +52,11 @@ namespace offers.API.Infrastructure.ExceptionHandler
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = error.Status!.Value;
 
-            await context.Response.WriteAsync(result, cancellationToken);
-            _logger.Log(error.LogLevel, exception, "Handled exception: {Message}", exception.Message);
-
-            return true;
+            await context.Response.WriteAsync(result);
+            _logger.Log(error.LogLevel, ex, "Handled exception: {Message}", ex.Message);
         }
     }
+
     public class ApiError : ProblemDetails
     {
         private HttpContext _httpContext;
@@ -361,6 +373,13 @@ namespace offers.API.Infrastructure.ExceptionHandler
             Type = "https://example.com/probs/Not-Found";
             Title = exception.Message;
             Status = StatusCodes.Status404NotFound;
+            LogLevel = LogLevel.Warning;
+        }
+        private void HandleException(InvalidOperationException exception)
+        {
+            Type = "https://example.com/probs/Invalid-Operation";
+            Title = exception.Message;
+            Status = StatusCodes.Status409Conflict;
             LogLevel = LogLevel.Warning;
         }
 

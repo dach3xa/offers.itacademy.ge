@@ -1,6 +1,4 @@
 using FluentValidation;
-using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Diagnostics;
 using offers.API.Infrastructure.Extensions;
 using System.Reflection;
 using offers.API.Infrastructure.Mappings;
@@ -14,9 +12,12 @@ using offers.Persistance.Seed;
 using offers.Application.Services.Offers.Events;
 using Microsoft.OpenApi.Models;
 using offers.API.Infrastructure.Swagger;
-using offers.API.Infrastructure.ExceptionHandler;
 using Swashbuckle.AspNetCore.Filters;
 using offers.API.Infrastructure.Swagger.Examples;
+using Asp.Versioning;
+using offers.API.Infrastructure.Middlewares;
+using Asp.Versioning.Conventions;
+using Asp.Versioning.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,15 +28,36 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Offers API",
+        Version = "v1",
+        Description = "an Api for User Management",
+        Contact = new OpenApiContact
+        {
+            Name = "dachi",
+            Email = "kirvalidzedachi@gmail.com",
+            Url = new Uri("https://github.com/dachi")
+        }
+    });
 
-    c.ExampleFilters();
+    c.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Title = "Offers API",
+        Version = "v2",
+        Description = "an Api for User Management",
+        Contact = new OpenApiContact
+        {
+            Name = "dachi",
+            Email = "kirvalidzedachi@gmail.com",
+            Url = new Uri("https://github.com/dachi")
+        }
+    });
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -47,7 +69,31 @@ builder.Services.AddSwaggerGen(c =>
     });
 
     c.OperationFilter<AuthOperationFilter>();
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+    c.IncludeXmlComments(xmlPath);
+    c.ExampleFilters();
 });
+
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+    options.ApiVersionReader = ApiVersionReader.Combine(
+    new QueryStringApiVersionReader("api-version"),
+    new HeaderApiVersionReader("X-Version"),
+    new UrlSegmentApiVersionReader());
+}).AddMvc(options =>
+{
+    options.Conventions.Add(new VersionByNamespaceConvention());
+}).AddApiExplorer(options => {
+    options.GroupNameFormat = "'v'V";
+    options.SubstituteApiVersionInUrl = true;
+});
+
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CategoryDTOMultipleExamples>();
 
 builder.Services.AddServices();
@@ -67,18 +113,20 @@ builder.Services.AddHostedService<OfferArchivingService>();
 
 builder.Services.RegisterMaps();
 
-
-builder.Services.AddExceptionHandler<CustomGlobalExceptionHandler>();
-
 var app = builder.Build();
 // Configure the HTTP request pipeline.
-
+app.UseMiddleware<ExceptionHandler>();
 app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint($"/swagger/v1/swagger.json", $"v1");
+        c.SwaggerEndpoint($"/swagger/v2/swagger.json", $"v2");
+    });
 }
 app.UseHttpsRedirection();
 
@@ -86,7 +134,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 try
 {
