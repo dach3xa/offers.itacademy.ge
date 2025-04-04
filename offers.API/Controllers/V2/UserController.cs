@@ -18,7 +18,7 @@ using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 
-namespace offers.API.Controllers.Version_2
+namespace offers.API.Controllers.V2
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.User))]
@@ -41,7 +41,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Retrieves offers that belong to the specified categories.
+        /// Retrieves offers that belong to the specified categories for version 2.
         /// </summary>
         /// <param name="categoryIds">A list of category IDs to filter offers by.</param>
         /// <returns>
@@ -73,7 +73,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Creates a new transaction for the authenticated user based on the selected offer.
+        /// Creates a new transaction for the authenticated user based on the selected offer for version 2.
         /// </summary>
         /// <param name="transactionDTO">The transaction details to be created.</param>
         /// <returns>
@@ -107,7 +107,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Adds funds to the authenticated user's account.
+        /// Adds funds to the authenticated user's account for version 2.
         /// </summary>
         /// <param name="depositDTO">The deposit amount to be added.</param>
         /// <returns>
@@ -143,7 +143,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Retrieves the currently authenticated user's information.
+        /// Retrieves the currently authenticated user's information for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response with the user's details,
@@ -174,7 +174,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Retrieves a specific transaction by ID that belongs to the authenticated user.
+        /// Retrieves a specific transaction by ID that belongs to the authenticated user for version 2.
         /// </summary>
         /// <param name="id">The ID of the transaction to retrieve.</param>
         /// <returns>
@@ -210,7 +210,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Retrieves all transactions associated with the currently authenticated user.
+        /// Retrieves all transactions associated with the currently authenticated user for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response with a list of the user's transactions,
@@ -238,7 +238,7 @@ namespace offers.API.Controllers.Version_2
         }
 
         /// <summary>
-        /// Refunds a specific transaction for the authenticated user.
+        /// Refunds a specific transaction for the authenticated user for version 2.
         /// </summary>
         /// <param name="id">The ID of the transaction to refund.</param>
         /// <returns>

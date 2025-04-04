@@ -17,13 +17,13 @@ using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace offers.API.Controllers.Version_1
+namespace offers.API.Controllers.V2
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.Admin))]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [ApiExplorerSettings(GroupName = "v2")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiExplorerSettings(GroupName = "v1")]
     public class AdminController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -38,7 +38,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Creates a new category.
+        /// Creates a new category for version 2.
         /// </summary>
         /// <param name="categoryDTO">The category data to be created.</param>
         /// <returns>
@@ -62,20 +62,26 @@ namespace offers.API.Controllers.Version_1
         public async Task<IActionResult> Post([FromBody] CategoryDTO categoryDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
-            ModelState,
-            errors => throw new CategoryCouldNotValidateException("Could not validate the given category", errors));
+                ModelState,
+                errors => throw new CategoryCouldNotValidateException("Could not validate the given category", errors));
 
             _logger.LogInformation("attempt to add a new category {Name}", categoryDTO.Name);
 
             var category = categoryDTO.Adapt<Category>();
             var categoryResponse = await _categoryService.CreateAsync(category, cancellation);
 
-            return CreatedAtAction(nameof(GuestController.GetCategoryById), "Guest", new { id = categoryResponse.Id }, categoryResponse);
+            var responseV2 = new
+            {
+                categoryResponse,
+                message = "Category successfully created in v2",
+                timestamp = DateTime.UtcNow
+            };
 
+            return CreatedAtAction(nameof(GuestController.GetCategoryById), "Guest", new { id = categoryResponse.Id }, responseV2);
         }
 
         /// <summary>
-        /// Retrieves all registered users.
+        /// Retrieves all registered users for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response containing a list of users.
@@ -92,11 +98,18 @@ namespace offers.API.Controllers.Version_1
         {
             var users = await _accountService.GetAllUsersAsync(cancellation);
 
-            return Ok(users);
+            var responseV2 = new
+            {
+                users,
+                totalCount = users.Count(),
+                message = "User list from v2"
+            };
+
+            return Ok(responseV2);
         }
 
         /// <summary>
-        /// Confirms (activates) a company account by its ID.
+        /// Confirms (activates) a company account by its ID for version 2.
         /// </summary>
         /// <param name="id">The ID of the company account to confirm.</param>
         /// <returns>
@@ -114,14 +127,14 @@ namespace offers.API.Controllers.Version_1
         [HttpPatch("companies/{id}/confirm")]
         public async Task<IActionResult> ConfirmCompany([FromRoute] int id, CancellationToken cancellation)
         {
-            _logger.LogInformation("attempt to Confirm a company with the ID {id}", id);
+            _logger.LogInformation("attempt to Confirm a company with the ID {id} on version 2", id);
             await _accountService.ConfirmCompanyAsync(id, cancellation);
 
             return NoContent();
         }
 
         /// <summary>
-        /// Retrieves all registered companies.
+        /// Retrieves all registered companies for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response containing a list of companies.
@@ -138,7 +151,14 @@ namespace offers.API.Controllers.Version_1
         {
             var companies = await _accountService.GetAllCompaniesAsync(cancellation);
 
-            return Ok(companies);
+            var responseV2 = new
+            {
+                companies,
+                totalCount = companies.Count(),
+                message = "List of companies from v2"
+            };
+
+            return Ok(responseV2);
         }
     }
 }

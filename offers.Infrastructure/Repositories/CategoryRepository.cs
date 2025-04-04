@@ -14,7 +14,7 @@ namespace offers.Infrastructure.Repositories
     public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
         public CategoryRepository(ApplicationDbContext context) : base(context) { }
-        public async Task<bool> Exists(string name, CancellationToken cancellationToken)
+        public async Task<bool> ExistsAsync(string name, CancellationToken cancellationToken)
         {
             return await base.AnyAsync(ctg => ctg.Name == name, cancellationToken);
         }

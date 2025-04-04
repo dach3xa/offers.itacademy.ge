@@ -17,13 +17,13 @@ using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace offers.API.Controllers.Version_2
+namespace offers.API.Controllers.V1
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.Company))]
-    [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "v2")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class CompanyController : ControllerBase
     {
         private readonly IOfferService _offerService;
@@ -69,26 +69,19 @@ namespace offers.API.Controllers.Version_2
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(OfferDTO), typeof(OfferDTOMultipleExamples))]
         [HttpPost("offers")]
-        public async Task<IActionResult> Post([FromBody] OfferDTO offerDTO, CancellationToken cancellation)
+        public async Task<IActionResult> Post([FromBody]OfferDTO offerDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
-                ModelState,
-                errors => throw new OfferCouldNotValidateException("Could not validate the given offer", errors));
+             ModelState,
+             errors => throw new OfferCouldNotValidateException("Could not validate the given offer", errors));
 
             _logger.LogInformation("attempt to add a new Offer {Name}", offerDTO.Name);
 
             var offer = offerDTO.Adapt<Offer>();
-            offer.AccountId = ControllerHelper.GetUserIdFromClaims(User);
+            offer.AccountId = ControllerHelper.GetUserIdFromClaims(User); ;
             var offerResponse = await _offerService.CreateAsync(offer, cancellation);
 
-            var responseV2 = new
-            {
-                offerResponse,
-                timestamp = DateTime.UtcNow,
-                message = "Offer created successfully in v2"
-            };
-
-            return CreatedAtAction(nameof(GetMyOffer), new { id = offerResponse.Id }, responseV2);
+            return CreatedAtAction(nameof(GetMyOffer), new { id = offerResponse.Id }, offerResponse);
         }
 
         /// <summary>
@@ -114,14 +107,7 @@ namespace offers.API.Controllers.Version_2
         {
             var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), cancellation);
 
-            var responseV2 = new
-            {
-                offers,
-                totalCount = offers.Count(),
-                message = "Here are your offers from version 2"
-            };
-
-            return Ok(responseV2);
+            return Ok(offers);
         }
 
         /// <summary>
@@ -150,17 +136,11 @@ namespace offers.API.Controllers.Version_2
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("offers/{id}")]
-        public async Task<IActionResult> GetMyOffer([FromRoute] int id, CancellationToken cancellation)
+        public async Task<IActionResult> GetMyOffer([FromRoute] int id, CancellationToken cancellation) 
         {
             var offerResponse = await _offerService.GetMyOfferAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
-            var responseV2 = new
-            {
-                offerResponse,
-                message = "Company data fetched in version 2",
-                timestamp = DateTime.UtcNow
-            };
 
-            return Ok(responseV2);
+            return Ok(offerResponse);
         }
 
         /// <summary>
@@ -195,7 +175,7 @@ namespace offers.API.Controllers.Version_2
         [HttpDelete("offers/{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id, CancellationToken cancellation)
         {
-            _logger.LogInformation("Attempt to delete offer with id {id} in version 2", id);
+            _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
             await _offerService.DeleteAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
 
             return NoContent();
@@ -221,14 +201,7 @@ namespace offers.API.Controllers.Version_2
         public async Task<IActionResult> GetCurrentCompany(CancellationToken cancellationToken)
         {
             var currentCompany = await _accountService.GetCompanyAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
-            var responseV2 = new
-            {
-                currentCompany,
-                message = "Company data fetched in version 2",
-                timestamp = DateTime.UtcNow
-            };
-
-            return Ok(responseV2);
+            return Ok(currentCompany);
         }
 
     }

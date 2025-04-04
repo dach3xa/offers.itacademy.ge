@@ -11,7 +11,7 @@ namespace offers.Application.RepositoryInterfaces
     {
         Task<Account?> GetAsync(string Email, CancellationToken cancellationToken);
         Task<Account?> GetAsync(int id, CancellationToken cancellationToken);
-        Task<bool> Exists(string Email, CancellationToken cancellationToken);
+        Task<bool> ExistsAsync(string Email, CancellationToken cancellationToken);
         Task RegisterAsync(Account account, CancellationToken cancellationToken);
         Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken);
         Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken);

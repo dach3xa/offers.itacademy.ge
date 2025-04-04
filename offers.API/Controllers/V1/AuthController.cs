@@ -18,13 +18,13 @@ using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 
-namespace offers.API.Controllers.Version_2
+namespace offers.API.Controllers.V1
 {
     [ApiController]
     [AllowAnonymous]
-    [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "v2")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {
         private readonly IAccountService _accountService;
@@ -58,26 +58,18 @@ namespace offers.API.Controllers.Version_2
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(UserRegisterDTO), typeof(UserRegisterDTOMultipleExamples))]
         [HttpPost("user/register")]
-        [HttpPost("user/register")]
         public async Task<IActionResult> Register([FromBody] UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-                ModelState,
-                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
             var userResponse = await _accountService.RegisterAsync(userAccount, cancellation);
 
-            var responseV2 = new
-            {
-                userResponse,
-                message = "User registered successfully in v2",
-                timestamp = DateTime.UtcNow
-            };
-
-            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, responseV2);
+            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
         }
 
         /// <summary>
@@ -103,22 +95,16 @@ namespace offers.API.Controllers.Version_2
         public async Task<IActionResult> Register([FromBody] CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-                ModelState,
-                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
 
             var companyAccount = companyDTO.Adapt<Account>();
             var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
 
-            var responseV2 = new
-            {
-                companyResponse,
-                companyName = companyDTO.CompanyName,  
-                message = "Company registered successfully in v2"
-            };
+            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);
 
-            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, responseV2);
         }
 
         /// <summary>
@@ -144,22 +130,18 @@ namespace offers.API.Controllers.Version_2
         public async Task<IActionResult> LogIn([FromBody] AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-                ModelState,
-                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+            ModelState,
+            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
             var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
             var token = JWTHelper.GenerateSecurityToken(accountResponse.Email, accountResponse.Id, accountResponse.Role, _options);
-
-            var responseV2 = new
+            return Ok(new LoginResponseDTO
             {
                 Token = token,
                 Email = accountResponse.Email,
-                Role = accountResponse.Role,
-                LoginTimestamp = DateTime.UtcNow 
-            };
-
-            return Ok(responseV2);
+                Role = accountResponse.Role
+            });
         }
     }
 }

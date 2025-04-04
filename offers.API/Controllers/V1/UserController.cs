@@ -18,7 +18,7 @@ using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 
-namespace offers.API.Controllers.Version_1
+namespace offers.API.Controllers.V1
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.User))]

@@ -118,6 +118,12 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionHandler>();
 app.UseExceptionHandler();
 
+var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+foreach (var description in provider.ApiVersionDescriptions)
+{
+    Log.Information("Discovered API version: {Version}", description.GroupName);
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

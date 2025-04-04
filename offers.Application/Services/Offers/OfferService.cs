@@ -49,7 +49,7 @@ namespace offers.Application.Services.Offers
 
             if (!account.CompanyDetail.IsActive)
             {
-                throw new CompanyIsNotActiveException("you can't create an offer on a not activated account ");
+                throw new CompanyIsNotActiveException("you can't create an offer on a not activated account");
             }
         }
         public async Task<OfferResponseModel> CreateAsync(Offer offer, CancellationToken cancellationToken)
@@ -57,15 +57,8 @@ namespace offers.Application.Services.Offers
             await PopulateOffer(offer, cancellationToken);
             await AccountIsActiveCheck(offer.AccountId, cancellationToken);
 
-            try
-            {
-                await _offerRepository.CreateAsync(offer, cancellationToken);
-                await _unitOfWork.SaveChangeAsync(cancellationToken);
-            }
-            catch(Exception ex)
-            {
-                throw new OfferCouldNotBeCreatedException("Failed to create an offer because of an unknown issue");
-            }
+            await _offerRepository.CreateAsync(offer, cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
 
             return offer.Adapt<OfferResponseModel>();
         }
@@ -73,10 +66,6 @@ namespace offers.Application.Services.Offers
         private async Task PopulateOffer(Offer offer, CancellationToken cancellationToken)
         {
             var offerAccount = await _accountRepository.GetAsync(offer.AccountId, cancellationToken);
-            if (offerAccount == null)
-            {
-                throw new AccountNotFoundException("this offer's account could not be found");
-            }
 
             var offerCategory = await _categoryRepository.GetAsync(offer.CategoryId, cancellationToken);
             if (offerCategory == null)
@@ -115,7 +104,7 @@ namespace offers.Application.Services.Offers
         {
             await AccountIsActiveCheck(accountId, cancellationToken);
 
-            var offer = await _offerRepository.GetAsync(id, cancellationToken);
+            var offer = await GetAsync(id, cancellationToken);
             ValidateDeleteOfferBusinessRules(id,accountId,offer);
 
             await _unitOfWork.BeginTransactionAsync(cancellationToken);

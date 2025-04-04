@@ -16,7 +16,7 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Creates a new category.",
+        "summary": "Creates a new category for version 2.",
         "requestBody": {
           "description": "The category data to be created.",
           "content": {
@@ -105,7 +105,7 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Retrieves all registered users.",
+        "summary": "Retrieves all registered users for version 2.",
         "responses": {
           "200": {
             "description": "Returns a list of all users",
@@ -153,7 +153,7 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Confirms (activates) a company account by its ID.",
+        "summary": "Confirms (activates) a company account by its ID for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -213,7 +213,7 @@
         "tags": [
           "Admin"
         ],
-        "summary": "Retrieves all registered companies.",
+        "summary": "Retrieves all registered companies for version 2.",
         "responses": {
           "200": {
             "description": "Returns a list of all companies",
@@ -261,7 +261,7 @@
         "tags": [
           "Auth"
         ],
-        "summary": "Registers a new user account.",
+        "summary": "Registers a new user account for version 2.",
         "requestBody": {
           "description": "The user registration data.",
           "content": {
@@ -291,9 +291,7 @@
             "description": "User account created successfully",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserResponseModel"
-                }
+                "schema": { }
               }
             }
           },
@@ -335,7 +333,7 @@
         "tags": [
           "Auth"
         ],
-        "summary": "Registers a new company account.",
+        "summary": "Registers a new company account for version 2.",
         "requestBody": {
           "description": "The company registration data.",
           "content": {
@@ -365,9 +363,7 @@
             "description": "Company account created successfully",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyResponseModel"
-                }
+                "schema": { }
               }
             }
           },
@@ -409,7 +405,7 @@
         "tags": [
           "Auth"
         ],
-        "summary": "Authenticates an account and returns a JWT token.",
+        "summary": "Authenticates an account and returns a JWT token for version 2.",
         "requestBody": {
           "description": "The login credentials (email and password).",
           "content": {
@@ -448,9 +444,7 @@
             "description": "Login successful, returns a JWT token and account info",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LoginResponseDTO"
-                }
+                "schema": { }
               }
             }
           },
@@ -492,7 +486,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Creates a new offer for the currently authenticated account.",
+        "summary": "Creates a new offer for the currently authenticated account for version 2.",
         "requestBody": {
           "description": "The offer data to be created.",
           "content": {
@@ -502,13 +496,13 @@
               },
               "examples": {
                 "Bakery Clearance": {
-                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-03T16:55:44.8243445Z","photoURL":"https://example.com/images/croissants.jpg"}
+                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-04T11:52:03.8871773Z","photoURL":"https://example.com/images/croissants.jpg"}
                 },
                 "Sushi Leftovers": {
-                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-03T15:55:44.8256674Z","photoURL":"https://example.com/images/sushi-combo.jpg"}
+                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-04T10:52:03.8890526Z","photoURL":"https://example.com/images/sushi-combo.jpg"}
                 },
                 "Fruit Clearance Box": {
-                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-03T17:55:44.8262288Z","photoURL":"https://example.com/images/fruit-box.jpg"}
+                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-04T12:52:03.8906885Z","photoURL":"https://example.com/images/fruit-box.jpg"}
                 }
               }
             }
@@ -586,7 +580,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieves all offers created by the currently authenticated account.",
+        "summary": "Retrieves all offers created by the currently authenticated account for version 2.",
         "responses": {
           "200": {
             "description": "Returns a list of offers created by the authenticated user",
@@ -654,7 +648,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieves a specific offer by ID that belongs to the authenticated user.",
+        "summary": "Retrieves a specific offer by ID that belongs to the authenticated user for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -739,7 +733,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Deletes a specific offer belonging to the authenticated user.",
+        "summary": "Deletes a specific offer belonging to the authenticated user for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -819,7 +813,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieves the company associated with the currently authenticated user.",
+        "summary": "Retrieves the company associated with the currently authenticated user for version 2.",
         "responses": {
           "200": {
             "description": "Returns the company associated with the user",
@@ -874,7 +868,7 @@
         "tags": [
           "Guest"
         ],
-        "summary": "Retrieves all available categories.",
+        "summary": "Retrieves all available categories for version 2.",
         "responses": {
           "200": {
             "description": "Returns a list of all categories",
@@ -959,7 +953,7 @@
         "tags": [
           "Guest"
         ],
-        "summary": "Retrieves all available offers.",
+        "summary": "Retrieves all available offers for version 2.",
         "responses": {
           "200": {
             "description": "Returns a list of all offers",
@@ -992,7 +986,7 @@
         "tags": [
           "Guest"
         ],
-        "summary": "Retrieves a specific offer by its ID.",
+        "summary": "Retrieves a specific offer by its ID for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -1044,7 +1038,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Retrieves offers that belong to the specified categories.",
+        "summary": "Retrieves offers that belong to the specified categories for version 2.",
         "parameters": [
           {
             "name": "categoryIds",
@@ -1116,7 +1110,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Creates a new transaction for the authenticated user based on the selected offer.",
+        "summary": "Creates a new transaction for the authenticated user based on the selected offer for version 2.",
         "requestBody": {
           "description": "The transaction details to be created.",
           "content": {
@@ -1181,7 +1175,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Adds funds to the authenticated user's account.",
+        "summary": "Adds funds to the authenticated user's account for version 2.",
         "requestBody": {
           "description": "The deposit amount to be added.",
           "content": {
@@ -1259,7 +1253,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Retrieves the currently authenticated user's information.",
+        "summary": "Retrieves the currently authenticated user's information for version 2.",
         "responses": {
           "200": {
             "description": "Returns the current user's information",
@@ -1314,7 +1308,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Retrieves a specific transaction by ID that belongs to the authenticated user.",
+        "summary": "Retrieves a specific transaction by ID that belongs to the authenticated user for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -1389,7 +1383,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Refunds a specific transaction for the authenticated user.",
+        "summary": "Refunds a specific transaction for the authenticated user for version 2.",
         "parameters": [
           {
             "name": "id",
@@ -1469,7 +1463,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Retrieves all transactions associated with the currently authenticated user.",
+        "summary": "Retrieves all transactions associated with the currently authenticated user for version 2.",
         "responses": {
           "200": {
             "description": "Returns the list of transactions for the current user",
@@ -1718,23 +1712,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "LoginResponseDTO": {
-        "type": "object",
-        "properties": {
-          "token": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "role": {
-            "$ref": "#/components/schemas/AccountRole"
-          }
-        },
-        "additionalProperties": false
       },
       "OfferDTO": {
         "type": "object",

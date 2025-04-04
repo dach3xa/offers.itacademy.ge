@@ -28,7 +28,7 @@ namespace offers.Infrastructure.Repositories
             account.UserDetail.Balance += amount;
         }
 
-        public async Task<bool> Exists(string Email, CancellationToken cancellationToken)
+        public async Task<bool> ExistsAsync(string Email, CancellationToken cancellationToken)
         {
             return await base.AnyAsync(acc => acc.Email == Email, cancellationToken);
         }

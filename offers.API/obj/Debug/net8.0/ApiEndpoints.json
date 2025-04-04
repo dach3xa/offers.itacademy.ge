@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
+    "ContainingType": "offers.API.Controllers.V1.AdminController",
     "Method": "Post",
     "RelativePath": "api/v1/Admin/Category",
     "HttpMethod": "POST",
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
+    "ContainingType": "offers.API.Controllers.V1.AdminController",
     "Method": "GetAllCompanies",
     "RelativePath": "api/v1/Admin/companies",
     "HttpMethod": "GET",
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
+    "ContainingType": "offers.API.Controllers.V1.AdminController",
     "Method": "ConfirmCompany",
     "RelativePath": "api/v1/Admin/companies/{id}/confirm",
     "HttpMethod": "PATCH",
@@ -127,7 +127,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AdminController",
+    "ContainingType": "offers.API.Controllers.V1.AdminController",
     "Method": "GetAllUsers",
     "RelativePath": "api/v1/Admin/users",
     "HttpMethod": "GET",
@@ -159,7 +159,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
+    "ContainingType": "offers.API.Controllers.V1.AuthController",
     "Method": "Register",
     "RelativePath": "api/v1/Auth/company/register",
     "HttpMethod": "POST",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
+    "ContainingType": "offers.API.Controllers.V1.AuthController",
     "Method": "LogIn",
     "RelativePath": "api/v1/Auth/login",
     "HttpMethod": "POST",
@@ -249,7 +249,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.AuthController",
+    "ContainingType": "offers.API.Controllers.V1.AuthController",
     "Method": "Register",
     "RelativePath": "api/v1/Auth/user/register",
     "HttpMethod": "POST",
@@ -294,7 +294,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "GetCurrentCompany",
     "RelativePath": "api/v1/Company",
     "HttpMethod": "GET",
@@ -333,7 +333,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "Post",
     "RelativePath": "api/v1/Company/offers",
     "HttpMethod": "POST",
@@ -392,7 +392,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "GetMyOffers",
     "RelativePath": "api/v1/Company/offers",
     "HttpMethod": "GET",
@@ -438,7 +438,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "GetMyOffer",
     "RelativePath": "api/v1/Company/offers/{id}",
     "HttpMethod": "GET",
@@ -497,7 +497,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.CompanyController",
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "Delete",
     "RelativePath": "api/v1/Company/offers/{id}",
     "HttpMethod": "DELETE",
@@ -554,7 +554,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
+    "ContainingType": "offers.API.Controllers.V1.GuestController",
     "Method": "GetAllCategoriesAsync",
     "RelativePath": "api/v1/Guest/categories",
     "HttpMethod": "GET",
@@ -579,7 +579,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
+    "ContainingType": "offers.API.Controllers.V1.GuestController",
     "Method": "GetCategoryById",
     "RelativePath": "api/v1/Guest/categories/{id}",
     "HttpMethod": "GET",
@@ -617,7 +617,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
+    "ContainingType": "offers.API.Controllers.V1.GuestController",
     "Method": "GetAllOffersAsync",
     "RelativePath": "api/v1/Guest/offers",
     "HttpMethod": "GET",
@@ -642,7 +642,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.GuestController",
+    "ContainingType": "offers.API.Controllers.V1.GuestController",
     "Method": "GetOfferById",
     "RelativePath": "api/v1/Guest/offers/{id}",
     "HttpMethod": "GET",
@@ -680,7 +680,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "GetCurrentUser",
     "RelativePath": "api/v1/User",
     "HttpMethod": "GET",
@@ -719,7 +719,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "Deposit",
     "RelativePath": "api/v1/User/deposit",
     "HttpMethod": "PATCH",
@@ -776,7 +776,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "GetOffersByCategories",
     "RelativePath": "api/v1/User/offers",
     "HttpMethod": "GET",
@@ -821,7 +821,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "CreateTransaction",
     "RelativePath": "api/v1/User/transaction",
     "HttpMethod": "POST",
@@ -866,7 +866,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "GetMyTransactions",
     "RelativePath": "api/v1/User/transactions",
     "HttpMethod": "GET",
@@ -898,7 +898,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "GetMyTransaction",
     "RelativePath": "api/v1/User/transactions/{id}",
     "HttpMethod": "GET",
@@ -950,7 +950,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_1.UserController",
+    "ContainingType": "offers.API.Controllers.V1.UserController",
     "Method": "RefundTransaction",
     "RelativePath": "api/v1/User/transactions/{id}",
     "HttpMethod": "DELETE",
@@ -1007,7 +1007,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "ContainingType": "offers.API.Controllers.V2.AdminController",
     "Method": "Post",
     "RelativePath": "api/v2/Admin/Category",
     "HttpMethod": "POST",
@@ -1059,7 +1059,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "ContainingType": "offers.API.Controllers.V2.AdminController",
     "Method": "GetAllCompanies",
     "RelativePath": "api/v2/Admin/companies",
     "HttpMethod": "GET",
@@ -1091,7 +1091,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "ContainingType": "offers.API.Controllers.V2.AdminController",
     "Method": "ConfirmCompany",
     "RelativePath": "api/v2/Admin/companies/{id}/confirm",
     "HttpMethod": "PATCH",
@@ -1134,7 +1134,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AdminController",
+    "ContainingType": "offers.API.Controllers.V2.AdminController",
     "Method": "GetAllUsers",
     "RelativePath": "api/v2/Admin/users",
     "HttpMethod": "GET",
@@ -1166,7 +1166,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "ContainingType": "offers.API.Controllers.V2.AuthController",
     "Method": "Register",
     "RelativePath": "api/v2/Auth/company/register",
     "HttpMethod": "POST",
@@ -1181,7 +1181,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CompanyResponseModel",
+        "Type": "System.Object",
         "MediaTypes": [
           "application/json"
         ],
@@ -1211,7 +1211,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "ContainingType": "offers.API.Controllers.V2.AuthController",
     "Method": "LogIn",
     "RelativePath": "api/v2/Auth/login",
     "HttpMethod": "POST",
@@ -1226,7 +1226,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.API.Models.LoginResponseDTO",
+        "Type": "System.Object",
         "MediaTypes": [
           "application/json"
         ],
@@ -1256,7 +1256,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
+    "ContainingType": "offers.API.Controllers.V2.AuthController",
     "Method": "Register",
     "RelativePath": "api/v2/Auth/user/register",
     "HttpMethod": "POST",
@@ -1271,7 +1271,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.UserResponseModel",
+        "Type": "System.Object",
         "MediaTypes": [
           "application/json"
         ],
@@ -1301,52 +1301,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.AuthController",
-    "Method": "Register",
-    "RelativePath": "api/v2/Auth/user/register",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userDTO",
-        "Type": "offers.API.Models.UserRegisterDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "offers.Application.Models.UserResponseModel",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 201
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 409
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "ContainingType": "offers.API.Controllers.V2.CompanyController",
     "Method": "GetCurrentCompany",
     "RelativePath": "api/v2/Company",
     "HttpMethod": "GET",
@@ -1385,7 +1340,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "ContainingType": "offers.API.Controllers.V2.CompanyController",
     "Method": "Post",
     "RelativePath": "api/v2/Company/offers",
     "HttpMethod": "POST",
@@ -1444,7 +1399,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "ContainingType": "offers.API.Controllers.V2.CompanyController",
     "Method": "GetMyOffers",
     "RelativePath": "api/v2/Company/offers",
     "HttpMethod": "GET",
@@ -1490,7 +1445,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "ContainingType": "offers.API.Controllers.V2.CompanyController",
     "Method": "GetMyOffer",
     "RelativePath": "api/v2/Company/offers/{id}",
     "HttpMethod": "GET",
@@ -1549,7 +1504,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.CompanyController",
+    "ContainingType": "offers.API.Controllers.V2.CompanyController",
     "Method": "Delete",
     "RelativePath": "api/v2/Company/offers/{id}",
     "HttpMethod": "DELETE",
@@ -1606,7 +1561,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "ContainingType": "offers.API.Controllers.V2.GuestController",
     "Method": "GetAllCategoriesAsync",
     "RelativePath": "api/v2/Guest/categories",
     "HttpMethod": "GET",
@@ -1631,7 +1586,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "ContainingType": "offers.API.Controllers.V2.GuestController",
     "Method": "GetCategoryById",
     "RelativePath": "api/v2/Guest/categories/{id}",
     "HttpMethod": "GET",
@@ -1669,7 +1624,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "ContainingType": "offers.API.Controllers.V2.GuestController",
     "Method": "GetAllOffersAsync",
     "RelativePath": "api/v2/Guest/offers",
     "HttpMethod": "GET",
@@ -1694,7 +1649,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.GuestController",
+    "ContainingType": "offers.API.Controllers.V2.GuestController",
     "Method": "GetOfferById",
     "RelativePath": "api/v2/Guest/offers/{id}",
     "HttpMethod": "GET",
@@ -1732,7 +1687,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "GetCurrentUser",
     "RelativePath": "api/v2/User",
     "HttpMethod": "GET",
@@ -1771,7 +1726,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "Deposit",
     "RelativePath": "api/v2/User/deposit",
     "HttpMethod": "PATCH",
@@ -1828,7 +1783,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "GetOffersByCategories",
     "RelativePath": "api/v2/User/offers",
     "HttpMethod": "GET",
@@ -1873,7 +1828,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "CreateTransaction",
     "RelativePath": "api/v2/User/transaction",
     "HttpMethod": "POST",
@@ -1918,7 +1873,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "GetMyTransactions",
     "RelativePath": "api/v2/User/transactions",
     "HttpMethod": "GET",
@@ -1950,7 +1905,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "GetMyTransaction",
     "RelativePath": "api/v2/User/transactions/{id}",
     "HttpMethod": "GET",
@@ -2002,7 +1957,7 @@
     ]
   },
   {
-    "ContainingType": "offers.API.Controllers.Version_2.UserController",
+    "ContainingType": "offers.API.Controllers.V2.UserController",
     "Method": "RefundTransaction",
     "RelativePath": "api/v2/User/transactions/{id}",
     "HttpMethod": "DELETE",

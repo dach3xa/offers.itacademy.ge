@@ -17,13 +17,13 @@ using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace offers.API.Controllers.Version_2
+namespace offers.API.Controllers.V1
 {
     [ApiController]
     [Authorize(Roles = nameof(AccountRole.Admin))]
-    [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "v2")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AdminController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -62,22 +62,16 @@ namespace offers.API.Controllers.Version_2
         public async Task<IActionResult> Post([FromBody] CategoryDTO categoryDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
-                ModelState,
-                errors => throw new CategoryCouldNotValidateException("Could not validate the given category", errors));
+            ModelState,
+            errors => throw new CategoryCouldNotValidateException("Could not validate the given category", errors));
 
             _logger.LogInformation("attempt to add a new category {Name}", categoryDTO.Name);
 
             var category = categoryDTO.Adapt<Category>();
             var categoryResponse = await _categoryService.CreateAsync(category, cancellation);
 
-            var responseV2 = new
-            {
-                categoryResponse,
-                message = "Category successfully created in v2",
-                timestamp = DateTime.UtcNow
-            };
+            return CreatedAtAction(nameof(GuestController.GetCategoryById), "Guest", new { id = categoryResponse.Id }, categoryResponse);
 
-            return CreatedAtAction(nameof(GuestController.GetCategoryById), "Guest", new { id = categoryResponse.Id }, responseV2);
         }
 
         /// <summary>
@@ -98,14 +92,7 @@ namespace offers.API.Controllers.Version_2
         {
             var users = await _accountService.GetAllUsersAsync(cancellation);
 
-            var responseV2 = new
-            {
-                users,
-                totalCount = users.Count(),
-                message = "User list from v2"
-            };
-
-            return Ok(responseV2);
+            return Ok(users);
         }
 
         /// <summary>
@@ -127,7 +114,7 @@ namespace offers.API.Controllers.Version_2
         [HttpPatch("companies/{id}/confirm")]
         public async Task<IActionResult> ConfirmCompany([FromRoute] int id, CancellationToken cancellation)
         {
-            _logger.LogInformation("attempt to Confirm a company with the ID {id} on version 2", id);
+            _logger.LogInformation("attempt to Confirm a company with the ID {id}", id);
             await _accountService.ConfirmCompanyAsync(id, cancellation);
 
             return NoContent();
@@ -151,14 +138,7 @@ namespace offers.API.Controllers.Version_2
         {
             var companies = await _accountService.GetAllCompaniesAsync(cancellation);
 
-            var responseV2 = new
-            {
-                companies,
-                totalCount = companies.Count(),
-                message = "List of companies from v2"
-            };
-
-            return Ok(responseV2);
+            return Ok(companies);
         }
     }
 }

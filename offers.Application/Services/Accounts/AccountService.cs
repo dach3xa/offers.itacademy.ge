@@ -47,7 +47,7 @@ namespace offers.Application.Services.Accounts
 
         public async Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken)
         {
-            var exists = await _repository.Exists(account.Email, cancellationToken);
+            var exists = await _repository.ExistsAsync(account.Email, cancellationToken);
 
             if (exists)
             {    
@@ -90,7 +90,7 @@ namespace offers.Application.Services.Accounts
 
             if (companyAccount == null || companyAccount.CompanyDetail == null)
             {
-                throw new AccountNotFoundException("an account with the provided id does not exist");
+                throw new CompanyNotFoundException("a company with the provided id does not exist");
             }
 
             if (companyAccount.CompanyDetail.IsActive)
@@ -98,15 +98,8 @@ namespace offers.Application.Services.Accounts
                 throw new CompanyAlreadyActiveException("an account with the provided id is already active");
             }
 
-            try
-            {
-                await _repository.ConfirmCompanyAsync(id, cancellationToken);
-                await _unitOfWork.SaveChangeAsync(cancellationToken);
-            }
-            catch(Exception ex)
-            {
-                throw new AccountCouldNotActivateException("account could not activate because of an unknown error");
-            }
+            await _repository.ConfirmCompanyAsync(id, cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
 
         }
 
@@ -120,7 +113,7 @@ namespace offers.Application.Services.Accounts
             var account = await _repository.GetAsync(accountId, cancellationToken);
             if (account == null || account.UserDetail == null)
             {
-                throw new AccountNotFoundException("Account with the provided id does not exist");
+                throw new UserNotFoundException("User with the provided id does not exist");
             }
 
             if (account.UserDetail.Balance < amount)
@@ -130,6 +123,7 @@ namespace offers.Application.Services.Accounts
 
             decimal balanceBeforeWithdraw = account.UserDetail.Balance;
             await _repository.WithdrawAsync(accountId, amount, cancellationToken);
+
             if (balanceBeforeWithdraw - account.UserDetail.Balance != amount)
             {
                 throw new AccountCouldNotWithdrawException($"Account with the id {accountId} could not withdraw the expected ammount because of an unknwon issue");
@@ -148,7 +142,7 @@ namespace offers.Application.Services.Accounts
             var account = await _repository.GetAsync(accountId, cancellationToken);
             if (account == null || account.UserDetail == null)
             {
-                throw new AccountNotFoundException("Account with the provided id does not exist");
+                throw new UserNotFoundException("User with the provided id does not exist");
             }
 
             decimal balanceBeforeDeposit = account.UserDetail.Balance;

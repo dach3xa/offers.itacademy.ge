@@ -4,7 +4,7 @@
         <name>offers.API</name>
     </assembly>
     <members>
-        <member name="M:offers.API.Controllers.Version_1.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new category.
             </summary>
@@ -19,7 +19,7 @@
             <response code="409">Category already exists (CategoryAlreadyExistsException)</response>
             <response code="500">Internal server error during category creation (CategoryCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AdminController.GetAllUsers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.GetAllUsers(System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered users.
             </summary>
@@ -30,7 +30,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AdminController.ConfirmCompany(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.ConfirmCompany(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Confirms (activates) a company account by its ID.
             </summary>
@@ -43,7 +43,7 @@
             <response code="404">Company account not found (AccountNotFoundException)</response>
             <response code="500">Internal server error during confirmation (AccountCouldNotActivateException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered companies.
             </summary>
@@ -54,7 +54,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new user account.
             </summary>
@@ -68,7 +68,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new company account.
             </summary>
@@ -82,7 +82,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
             <summary>
             Authenticates an account and returns a JWT token.
             </summary>
@@ -96,7 +96,7 @@
             <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new offer for the currently authenticated account.
             </summary>
@@ -120,7 +120,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
             <summary>
             Retrieves all offers created by the currently authenticated account.
             </summary>
@@ -134,7 +134,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.CompanyController.GetMyOffer(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.GetMyOffer(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves a specific offer by ID that belongs to the authenticated user.
             </summary>
@@ -154,7 +154,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.CompanyController.Delete(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.Delete(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Deletes a specific offer belonging to the authenticated user.
             </summary>
@@ -178,7 +178,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.CompanyController.GetCurrentCompany(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.GetCurrentCompany(System.Threading.CancellationToken)">
             <summary>
             Retrieves the company associated with the currently authenticated user.
             </summary>
@@ -191,7 +191,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
             <summary>
             Retrieves all available categories.
             </summary>
@@ -201,7 +201,7 @@
             <response code="200">Returns a list of all categories</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.GuestController.GetCategoryById(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetCategoryById(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves a specific category by its ID.
             </summary>
@@ -214,7 +214,7 @@
             <response code="404">Category not found (CategoryNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
             <summary>
             Retrieves all available offers.
             </summary>
@@ -224,7 +224,7 @@
             <response code="200">Returns a list of all offers</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.GuestController.GetOfferById(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetOfferById(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves a specific offer by its ID.
             </summary>
@@ -237,7 +237,7 @@
             <response code="404">Offer not found (OfferNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
             <summary>
             Retrieves offers that belong to the specified categories.
             </summary>
@@ -251,7 +251,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new transaction for the authenticated user based on the selected offer.
             </summary>
@@ -265,7 +265,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error </response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
             <summary>
             Adds funds to the authenticated user's account.
             </summary>
@@ -282,7 +282,7 @@
             <response code="409">Deposit could not be processed (AccountCouldNotDepositException, InvalidOperationException)</response>
             <response code="500">Internal server error during deposit</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.GetCurrentUser(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetCurrentUser(System.Threading.CancellationToken)">
             <summary>
             Retrieves the currently authenticated user's information.
             </summary>
@@ -295,7 +295,7 @@
             <response code="404">User not found (UserNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.GetMyTransaction(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetMyTransaction(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves a specific transaction by ID that belongs to the authenticated user.
             </summary>
@@ -311,7 +311,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.GetMyTransactions(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetMyTransactions(System.Threading.CancellationToken)">
             <summary>
             Retrieves all transactions associated with the currently authenticated user.
             </summary>
@@ -323,7 +323,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_1.UserController.RefundTransaction(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.RefundTransaction(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Refunds a specific transaction for the authenticated user.
             </summary>
@@ -348,9 +348,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
             <summary>
-            Creates a new category.
+            Creates a new category for version 2.
             </summary>
             <param name="categoryDTO">The category data to be created.</param>
             <returns>
@@ -363,9 +363,9 @@
             <response code="409">Category already exists (CategoryAlreadyExistsException)</response>
             <response code="500">Internal server error during category creation (CategoryCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AdminController.GetAllUsers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.GetAllUsers(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all registered users.
+            Retrieves all registered users for version 2.
             </summary>
             <returns>
             A 200 OK response containing a list of users.
@@ -374,9 +374,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AdminController.ConfirmCompany(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.ConfirmCompany(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Confirms (activates) a company account by its ID.
+            Confirms (activates) a company account by its ID for version 2.
             </summary>
             <param name="id">The ID of the company account to confirm.</param>
             <returns>
@@ -387,9 +387,9 @@
             <response code="404">Company account not found (AccountNotFoundException)</response>
             <response code="500">Internal server error during confirmation (AccountCouldNotActivateException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all registered companies.
+            Retrieves all registered companies for version 2.
             </summary>
             <returns>
             A 200 OK response containing a list of companies.
@@ -398,9 +398,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
             <summary>
-            Registers a new user account.
+            Registers a new user account for version 2.
             </summary>
             <param name="userDTO">The user registration data.</param>
             <returns>
@@ -412,9 +412,9 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
             <summary>
-            Registers a new company account.
+            Registers a new company account for version 2.
             </summary>
             <param name="companyDTO">The company registration data.</param>
             <returns>
@@ -426,9 +426,9 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
             <summary>
-            Authenticates an account and returns a JWT token.
+            Authenticates an account and returns a JWT token for version 2.
             </summary>
             <param name="accountLoginDTO">The login credentials (email and password).</param>
             <returns>
@@ -440,9 +440,9 @@
             <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
             <summary>
-            Creates a new offer for the currently authenticated account.
+            Creates a new offer for the currently authenticated account for version 2.
             </summary>
             <param name="offerDTO">The offer data to be created.</param>
             <returns>
@@ -464,9 +464,9 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all offers created by the currently authenticated account.
+            Retrieves all offers created by the currently authenticated account for version 2.
             </summary>
             <returns>
             A 200 OK response with a list of the user's offers,
@@ -478,9 +478,9 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.CompanyController.GetMyOffer(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.GetMyOffer(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Retrieves a specific offer by ID that belongs to the authenticated user.
+            Retrieves a specific offer by ID that belongs to the authenticated user for version 2.
             </summary>
             <param name="id">The ID of the offer to retrieve.</param>
             <returns>
@@ -498,9 +498,9 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.CompanyController.Delete(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.Delete(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Deletes a specific offer belonging to the authenticated user.
+            Deletes a specific offer belonging to the authenticated user for version 2.
             </summary>
             <param name="id">The ID of the offer to delete.</param>
             <returns>
@@ -522,9 +522,9 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.CompanyController.GetCurrentCompany(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.GetCurrentCompany(System.Threading.CancellationToken)">
             <summary>
-            Retrieves the company associated with the currently authenticated user.
+            Retrieves the company associated with the currently authenticated user for version 2.
             </summary>
             <returns>
             A 200 OK response with the current company information,
@@ -535,9 +535,9 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all available categories.
+            Retrieves all available categories for version 2.
             </summary>
             <returns>
             A 200 OK response with a list of all categories.
@@ -545,7 +545,7 @@
             <response code="200">Returns a list of all categories</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.GuestController.GetCategoryById(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetCategoryById(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves a specific category by its ID.
             </summary>
@@ -558,9 +558,9 @@
             <response code="404">Category not found (CategoryNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all available offers.
+            Retrieves all available offers for version 2.
             </summary>
             <returns>
             A 200 OK response with a list of all offers.
@@ -568,9 +568,9 @@
             <response code="200">Returns a list of all offers</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.GuestController.GetOfferById(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetOfferById(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Retrieves a specific offer by its ID.
+            Retrieves a specific offer by its ID for version 2.
             </summary>
             <param name="id">The ID of the offer to retrieve.</param>
             <returns>
@@ -581,9 +581,9 @@
             <response code="404">Offer not found (OfferNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
             <summary>
-            Retrieves offers that belong to the specified categories.
+            Retrieves offers that belong to the specified categories for version 2.
             </summary>
             <param name="categoryIds">A list of category IDs to filter offers by.</param>
             <returns>
@@ -595,9 +595,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
             <summary>
-            Creates a new transaction for the authenticated user based on the selected offer.
+            Creates a new transaction for the authenticated user based on the selected offer for version 2.
             </summary>
             <param name="transactionDTO">The transaction details to be created.</param>
             <returns>
@@ -609,9 +609,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error </response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
             <summary>
-            Adds funds to the authenticated user's account.
+            Adds funds to the authenticated user's account for version 2.
             </summary>
             <param name="depositDTO">The deposit amount to be added.</param>
             <returns>
@@ -626,9 +626,9 @@
             <response code="409">Deposit could not be processed (AccountCouldNotDepositException, InvalidOperationException)</response>
             <response code="500">Internal server error during deposit</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.GetCurrentUser(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetCurrentUser(System.Threading.CancellationToken)">
             <summary>
-            Retrieves the currently authenticated user's information.
+            Retrieves the currently authenticated user's information for version 2.
             </summary>
             <returns>
             A 200 OK response with the user's details,
@@ -639,9 +639,9 @@
             <response code="404">User not found (UserNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.GetMyTransaction(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetMyTransaction(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Retrieves a specific transaction by ID that belongs to the authenticated user.
+            Retrieves a specific transaction by ID that belongs to the authenticated user for version 2.
             </summary>
             <param name="id">The ID of the transaction to retrieve.</param>
             <returns>
@@ -655,9 +655,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.GetMyTransactions(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetMyTransactions(System.Threading.CancellationToken)">
             <summary>
-            Retrieves all transactions associated with the currently authenticated user.
+            Retrieves all transactions associated with the currently authenticated user for version 2.
             </summary>
             <returns>
             A 200 OK response with a list of the user's transactions,
@@ -667,9 +667,9 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.Version_2.UserController.RefundTransaction(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.RefundTransaction(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Refunds a specific transaction for the authenticated user.
+            Refunds a specific transaction for the authenticated user for version 2.
             </summary>
             <param name="id">The ID of the transaction to refund.</param>
             <returns>

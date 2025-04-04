@@ -8,13 +8,13 @@ using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
 using offers.Domain.Enums;
 
-namespace offers.API.Controllers.Version_1
+namespace offers.API.Controllers.V2
 {
     [ApiController]
     [AllowAnonymous]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [ApiExplorerSettings(GroupName = "v2")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiExplorerSettings(GroupName = "v1")]
     public class GuestController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -27,7 +27,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Retrieves all available categories.
+        /// Retrieves all available categories for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response with a list of all categories.
@@ -46,7 +46,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Retrieves a specific category by its ID.
+        /// Retrieves a specific category by its ID for version 2.
         /// </summary>
         /// <param name="id">The ID of the category to retrieve.</param>
         /// <returns>
@@ -69,7 +69,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Retrieves all available offers.
+        /// Retrieves all available offers for version 2.
         /// </summary>
         /// <returns>
         /// A 200 OK response with a list of all offers.
@@ -88,7 +88,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Retrieves a specific offer by its ID.
+        /// Retrieves a specific offer by its ID for version 2.
         /// </summary>
         /// <param name="id">The ID of the offer to retrieve.</param>
         /// <returns>

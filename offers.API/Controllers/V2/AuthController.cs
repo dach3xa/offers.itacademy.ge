@@ -18,13 +18,13 @@ using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 
-namespace offers.API.Controllers.Version_1
+namespace offers.API.Controllers.V2
 {
     [ApiController]
     [AllowAnonymous]
-    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [ApiExplorerSettings(GroupName = "v2")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {
         private readonly IAccountService _accountService;
@@ -39,7 +39,7 @@ namespace offers.API.Controllers.Version_1
         }
 
         /// <summary>
-        /// Registers a new user account.
+        /// Registers a new user account for version 2.
         /// </summary>
         /// <param name="userDTO">The user registration data.</param>
         /// <returns>
@@ -52,7 +52,7 @@ namespace offers.API.Controllers.Version_1
         /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         [Produces("application/json")]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(UserResponseModel))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -61,19 +61,26 @@ namespace offers.API.Controllers.Version_1
         public async Task<IActionResult> Register([FromBody] UserRegisterDTO userDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-            ModelState,
-            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+                ModelState,
+                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
             var userResponse = await _accountService.RegisterAsync(userAccount, cancellation);
 
-            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
+            var responseV2 = new
+            {
+                userResponse,
+                message = "User registered successfully in v2",
+                timestamp = DateTime.UtcNow
+            };
+
+            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, responseV2);
         }
 
         /// <summary>
-        /// Registers a new company account.
+        /// Registers a new company account for version 2.
         /// </summary>
         /// <param name="companyDTO">The company registration data.</param>
         /// <returns>
@@ -86,7 +93,7 @@ namespace offers.API.Controllers.Version_1
         /// <response code="500">Internal server error during registration</response>
         [Produces("application/json")]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CompanyResponseModel))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -95,20 +102,26 @@ namespace offers.API.Controllers.Version_1
         public async Task<IActionResult> Register([FromBody] CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-            ModelState,
-            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+                ModelState,
+                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
 
             var companyAccount = companyDTO.Adapt<Account>();
             var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
 
-            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);
+            var responseV2 = new
+            {
+                companyResponse,
+                companyName = companyDTO.CompanyName,  
+                message = "Company registered successfully in v2"
+            };
 
+            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, responseV2);
         }
 
         /// <summary>
-        /// Authenticates an account and returns a JWT token.
+        /// Authenticates an account and returns a JWT token for version 2.
         /// </summary>
         /// <param name="accountLoginDTO">The login credentials (email and password).</param>
         /// <returns>
@@ -121,7 +134,7 @@ namespace offers.API.Controllers.Version_1
         /// <response code="500">Internal server error</response>
         [Produces("application/json")]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginResponseDTO))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -130,18 +143,22 @@ namespace offers.API.Controllers.Version_1
         public async Task<IActionResult> LogIn([FromBody] AccountLoginDTO accountLoginDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
-            ModelState,
-            errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
+                ModelState,
+                errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
             var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
             var token = JWTHelper.GenerateSecurityToken(accountResponse.Email, accountResponse.Id, accountResponse.Role, _options);
-            return Ok(new LoginResponseDTO
+
+            var responseV2 = new
             {
                 Token = token,
                 Email = accountResponse.Email,
-                Role = accountResponse.Role
-            });
+                Role = accountResponse.Role,
+                LoginTimestamp = DateTime.UtcNow 
+            };
+
+            return Ok(responseV2);
         }
     }
 }

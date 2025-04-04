@@ -8,13 +8,13 @@ using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
 using offers.Domain.Enums;
 
-namespace offers.API.Controllers.Version_2
+namespace offers.API.Controllers.V1
 {
     [ApiController]
     [AllowAnonymous]
-    [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "v2")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class GuestController : ControllerBase
     {
         private readonly ICategoryService _categoryService;

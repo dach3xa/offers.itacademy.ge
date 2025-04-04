@@ -28,22 +28,15 @@ namespace offers.Application.Services.Categories
 
         public async Task<CategoryResponseModel> CreateAsync(Category category, CancellationToken cancellationToken)
         {
-            var exists = await _repository.Exists(category.Name, cancellationToken);
+            var exists = await _repository.ExistsAsync(category.Name, cancellationToken);
 
             if (exists)
             {
                 throw new CategoryAlreadyExistsException("A category with this name already exists");
             }
 
-            try
-            {
-                await _repository.CreateAsync(category, cancellationToken);
-                await _unitOfWork.SaveChangeAsync(cancellationToken);
-            }
-            catch(Exception ex)
-            {
-                throw new CategoryCouldNotBeCreatedException("Failed to create a Category because of an unknown issue");
-            }
+            await _repository.CreateAsync(category, cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
 
             return category.Adapt<CategoryResponseModel>();
         }
