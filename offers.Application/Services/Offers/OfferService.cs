@@ -86,12 +86,7 @@ namespace offers.Application.Services.Offers
         public async Task<OfferResponseModel> GetMyOfferAsync(int id, int accountId,  CancellationToken cancellationToken)
         {
             await AccountIsActiveCheck(accountId, cancellationToken);
-            var offer = await _offerRepository.GetAsync(id, cancellationToken);
-
-            if(offer == null)
-            {
-                throw new OfferNotFoundException($"offer with the id {id} was not found");
-            }
+            var offer = await GetOfferAsync(id, cancellationToken);
             if(offer.AccountId != accountId)
             {
                 throw new OfferAccessDeniedException($"You cannot access this offer because it does not belong to you");
@@ -104,7 +99,7 @@ namespace offers.Application.Services.Offers
         {
             await AccountIsActiveCheck(accountId, cancellationToken);
 
-            var offer = await GetAsync(id, cancellationToken);
+            var offer = await GetOfferAsync(id, cancellationToken);
             ValidateDeleteOfferBusinessRules(id,accountId,offer);
 
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
@@ -119,16 +114,13 @@ namespace offers.Application.Services.Offers
             catch(Exception ex)
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new OfferCouldNotBeDeletedException("Unknown Issue occured");
+                throw;
             }
         }
           
         private void ValidateDeleteOfferBusinessRules(int id, int accountId, Offer offer)
         {
-            if (offer == null)
-            {
-                throw new OfferNotFoundException("Offer not found");
-            }
+
 
             if (offer.AccountId != accountId)
             {
@@ -157,13 +149,9 @@ namespace offers.Application.Services.Offers
 
         public async Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken)
         {
-            var offer = await _offerRepository.GetAsync(id, cancellationToken);
-            if(offer == null)
-            {
-                throw new OfferNotFoundException($"offer with the id: {id} could not be found");
-            }
+            var offer = await GetOfferAsync(id, cancellationToken);
 
-            if(count > offer.Count)
+            if (count > offer.Count)
             {
                 throw new OfferCouldNotDecreaseStockException("could not decrease the stock of the offer due to request decrease amount exceeding the stock amount");
             }
@@ -179,11 +167,7 @@ namespace offers.Application.Services.Offers
         }
         public async Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken)
         {
-            var offer = await _offerRepository.GetAsync(id, cancellationToken);
-            if (offer == null)
-            {
-                throw new OfferNotFoundException($"offer with the id: {id} could not be found");
-            }
+            var offer = await GetOfferAsync(id, cancellationToken);
 
             var BeforeIncreaseCount = offer.Count;
             await _offerRepository.IncreaseStockAsync(id, count, cancellationToken);
@@ -209,13 +193,19 @@ namespace offers.Application.Services.Offers
 
         public async Task<OfferResponseModel> GetAsync(int id, CancellationToken cancellationToken)
         {
+            var offer = await GetOfferAsync(id, cancellationToken);
+            return offer.Adapt<OfferResponseModel>();
+        }
+
+        private async Task<Offer> GetOfferAsync(int id, CancellationToken cancellationToken)
+        {
             var offer = await _offerRepository.GetAsync(id, cancellationToken);
             if (offer == null)
             {
                 throw new OfferNotFoundException($"offer with the id {id} was not found");
-            }
 
-            return offer.Adapt<OfferResponseModel>();
+            }
+            return offer;
         }
     }
 }

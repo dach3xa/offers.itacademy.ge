@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using Microsoft.Extensions.Logging;
 using offers.Application.Exceptions.Account;
+using offers.Application.Exceptions.Account.User;
 using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Refund;
@@ -30,7 +31,7 @@ namespace offers.Application.Services.Transactions
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferService offerService, IAccountService accountService, IUnitOfWork unitOfWork, ILogger<TransactionService> logger)
+        public TransactionService(ITransactionRepository transactionRepository, IAccountRepository accountRepository, IOfferRepository offerRepository, IOfferService offerService, IAccountService accountService, IUnitOfWork unitOfWork)
         {
             _transactionRepository = transactionRepository;
             _accountRepository = accountRepository;
@@ -40,14 +41,13 @@ namespace offers.Application.Services.Transactions
             _accountService = accountService;
 
             _unitOfWork = unitOfWork;
-           
         }
 
         public async Task<TransactionResponseModel> CreateAsync(Transaction transaction, CancellationToken cancellationToken)
         {
             await PopulateTransaction(transaction, cancellationToken);
 
-            ValidateTransactionBusinessRules(transaction, cancellationToken);
+            ValidateCreateTransactionBusinessRules(transaction, cancellationToken);
 
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
@@ -67,7 +67,7 @@ namespace offers.Application.Services.Transactions
             return transaction.Adapt<TransactionResponseModel>();
         }
 
-        private void ValidateTransactionBusinessRules(Transaction transaction, CancellationToken cancellationToken)
+        private void ValidateCreateTransactionBusinessRules(Transaction transaction, CancellationToken cancellationToken)
         {
             if(transaction.Offer.Price * transaction.Count != transaction.Paid)
             {
@@ -84,7 +84,7 @@ namespace offers.Application.Services.Transactions
             var transactionAccount = await _accountRepository.GetAsync(transaction.UserId, cancellationToken);
             if (transactionAccount == null || transactionAccount.UserDetail == null)
             {
-                throw new AccountNotFoundException("this transaction's account could not be found");
+                throw new UserNotFoundException("this transaction's user account could not be found");
             }
 
             var transactionOffer = await _offerRepository.GetAsync(transaction.OfferId, cancellationToken);
@@ -112,6 +112,13 @@ namespace offers.Application.Services.Transactions
 
         public async Task<TransactionResponseModel> GetMyTransactionAsync(int id, int accountId, CancellationToken cancellationToken)
         {
+            var transaction = await GetMyDomainTransactionAsync(id, accountId, cancellationToken);
+
+            return transaction.Adapt<TransactionResponseModel>();
+        }
+
+        private async Task<Transaction> GetMyDomainTransactionAsync(int id, int accountId, CancellationToken cancellationToken)
+        {
             var transaction = await _transactionRepository.GetAsync(id, cancellationToken);
 
             if (transaction == null)
@@ -120,16 +127,20 @@ namespace offers.Application.Services.Transactions
             }
             if (transaction.UserId != accountId)
             {
-                throw new TransactionAccessDeniedException($"You cannot access this Transaction because it does not belong to you");
+                throw new TransactionAccessDeniedException("You cannot access this Transaction because it does not belong to you");
             }
 
-            return transaction.Adapt<TransactionResponseModel>();
+            return transaction;
         }
 
         public async Task RefundAsync(int id, int accountId, CancellationToken cancellationToken)
         {
-            var transaction = await _transactionRepository.GetAsync(id, cancellationToken);
-            RefundBusinessRulesCheck(transaction, accountId);
+            var transaction = await GetMyDomainTransactionAsync(id,accountId,cancellationToken);
+
+            if (transaction.CreatedAt > DateTime.UtcNow.AddMinutes(5))
+            {
+                throw new TransactionCouldNotBeRefundedException("you can only refund a transaction within 5 minutes");
+            }
 
             await _unitOfWork.BeginTransactionAsync(cancellationToken);
             try
@@ -143,23 +154,7 @@ namespace offers.Application.Services.Transactions
             catch
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new TransactionCouldNotBeRefundedException("transaction could not be refunded due to an unknwon issue");
-            }
-        }
-
-        private void RefundBusinessRulesCheck(Transaction transaction, int accountId)
-        {
-            if (transaction == null)
-            {
-                throw new TransactionNotFoundException("this transaction could not be found");
-            }
-            if (transaction.UserId != accountId)
-            {
-                throw new TransactionAccessDeniedException("you don't have an access to this transaction");
-            }
-            if (transaction.CreatedAt > DateTime.UtcNow.AddMinutes(5))
-            {
-                throw new TransactionCouldNotBeRefundedException("you can only refund a transaction within 5 minutes");
+                throw;
             }
         }
 

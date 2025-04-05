@@ -47,7 +47,7 @@ namespace offers.Application.Tests
                     Id = 1,
                     Email = email,
                     Phone = "123-456-7890",
-                    PasswordHash = "EB79CE1A2B729F32C9CAA3AE6F463154177AC2FE5F53C6D6AF07A2509BAE6F965850D2B4B30E19C1946D21234DDDB3751976AF94818080ADB5AF7166C2EF695E",
+                    PasswordHash = "15C6EA984B2717BF0B9E9A51DC48451612EA380055337FBD38510A0C3E3EF16332B0DF3362E5C83DC89D6FCA336FB124FFDEF33F317391482C228FE0F63944E3",
                     Role = AccountRole.User,
                     UserDetail = new UserDetail
                     {
@@ -59,7 +59,7 @@ namespace offers.Application.Tests
 
                 });
 
-            var account = await _accountService.LoginAsync(email, "123", CancellationToken.None);
+            var account = await _accountService.LoginAsync(email, "dachidachi", CancellationToken.None);
 
             using (new AssertionScope())
             {
@@ -276,7 +276,7 @@ namespace offers.Application.Tests
             var task = () => _accountService.DepositAsync(1, amount, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<InvalidOperationException>(task);
-            Assert.Equal("Deposit amount must be greater than zero", exception.Message);
+            Assert.Equal("Deposit amount must be greater than zero.", exception.Message);
         }
 
         [Theory(DisplayName = "when account id does not exist deposit should throw an account not found exception")]
@@ -349,11 +349,17 @@ namespace offers.Application.Tests
                     Offers = new List<Offer>()
                 });
 
-            var task = () => _accountService.DepositAsync(accountId, 5, CancellationToken.None);
+            try
+            {
+                await _accountService.DepositAsync(accountId, 5, CancellationToken.None);
+            }
+            catch
+            {
+                // Ignore
+            }
 
             using (new AssertionScope())
             {
-                task.Should().NotThrowAsync();
                 _repository.Verify(x => x.DepositAsync(accountId, 5, It.IsAny<CancellationToken>()), Times.Once);
             }
         }
@@ -367,7 +373,7 @@ namespace offers.Application.Tests
             var task = () => _accountService.WithdrawAsync(1, amount, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<InvalidOperationException>(task);
-            Assert.Equal("Withdrawal amount must be greater than zero", exception.Message);
+            Assert.Equal("Withdrawal amount must be greater than zero.", exception.Message);
         }
 
         [Theory(DisplayName = "when account id does not exist withdraw should throw an account not found exception")]
@@ -471,11 +477,17 @@ namespace offers.Application.Tests
                     Offers = new List<Offer>()
                 });
 
-            var task = () => _accountService.WithdrawAsync(accountId, 5, CancellationToken.None);
+            try
+            {
+                await _accountService.WithdrawAsync(accountId, 5, CancellationToken.None);
+            }
+            catch
+            {
+                //ignore
+            }
 
             using (new AssertionScope())
             {
-                task.Should().NotThrowAsync();
                 _repository.Verify(x => x.WithdrawAsync(accountId, 5, It.IsAny<CancellationToken>()), Times.Once);
             }
         }

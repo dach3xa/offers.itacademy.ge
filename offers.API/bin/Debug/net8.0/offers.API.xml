@@ -547,7 +547,7 @@
         </member>
         <member name="M:offers.API.Controllers.V2.GuestController.GetCategoryById(System.Int32,System.Threading.CancellationToken)">
             <summary>
-            Retrieves a specific category by its ID.
+            Retrieves a specific category by its ID for version 2.
             </summary>
             <param name="id">The ID of the category to retrieve.</param>
             <returns>

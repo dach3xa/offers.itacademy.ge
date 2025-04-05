@@ -1425,7 +1425,7 @@
         },
         "runtime": {
           "offers.Application.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1433,7 +1433,7 @@
       "offers.Domain/1.0.0": {
         "runtime": {
           "offers.Domain.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1446,7 +1446,7 @@
         },
         "runtime": {
           "offers.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1459,7 +1459,7 @@
         },
         "runtime": {
           "offers.Persistance.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
