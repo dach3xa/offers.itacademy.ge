@@ -1,4 +1,6 @@
-﻿using offers.Domain.Enums;
+﻿
+using Microsoft.AspNetCore.Identity;
+using offers.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +9,8 @@ using System.Threading.Tasks;
 
 namespace offers.Domain.Models
 {
-    public class Account
+    public class Account : IdentityUser<int>
     {
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string PasswordHash { get; set; }
         public AccountRole Role { get; set; }
         public UserDetail? UserDetail { get; set; }
         public CompanyDetail? CompanyDetail { get; set; }

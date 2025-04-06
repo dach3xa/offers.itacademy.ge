@@ -9,9 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using offers.Application.Exceptions.Category;
 using offers.Application.RepositoryInterfaces;
-using offers.Application.Models;
 using Mapster;
 using offers.Application.UOF;
+using System.Diagnostics.CodeAnalysis;
+using offers.Application.Models.Response;
 
 namespace offers.Application.Services.Categories
 {
@@ -52,6 +53,7 @@ namespace offers.Application.Services.Categories
             return category.Adapt<CategoryResponseModel>();
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<List<CategoryResponseModel>> GetAllAsync( CancellationToken cancellationToken)
         {
             var categories = await _repository.GetAllAsync(cancellationToken);

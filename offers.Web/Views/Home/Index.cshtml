@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to offers ITAcademy</h1>
+    <p class="lead">Please choose how you'd like to proceed:</p>
+
+    <div style="margin-top: 30px;">
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary m-2">Login</a>
+        <a asp-controller="Account" asp-action="RegisterUser" class="btn btn-success m-2">Register as User</a>
+        <a asp-controller="Account" asp-action="RegisterCompany" class="btn btn-warning m-2">Register as Company</a>
+    </div>
+</div>

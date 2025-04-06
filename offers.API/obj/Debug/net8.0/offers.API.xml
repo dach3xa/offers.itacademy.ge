@@ -4,7 +4,7 @@
         <name>offers.API</name>
     </assembly>
     <members>
-        <member name="M:offers.API.Controllers.V1.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.Post(offers.Application.Models.DTO.CategoryDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new category.
             </summary>
@@ -54,7 +54,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.Application.Models.DTO.UserRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new user account.
             </summary>
@@ -68,7 +68,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.Application.Models.DTO.CompanyRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new company account.
             </summary>
@@ -82,7 +82,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AuthController.LogIn(offers.Application.Models.DTO.AccountLoginDTO,System.Threading.CancellationToken)">
             <summary>
             Authenticates an account and returns a JWT token.
             </summary>
@@ -96,7 +96,7 @@
             <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.Post(offers.Application.Models.DTO.OfferDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new offer for the currently authenticated account.
             </summary>
@@ -251,7 +251,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.CreateTransaction(offers.Application.Models.DTO.TransactionDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new transaction for the authenticated user based on the selected offer.
             </summary>
@@ -265,7 +265,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error </response>
         </member>
-        <member name="M:offers.API.Controllers.V1.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.Deposit(offers.Application.Models.DTO.DepositRequestDTO,System.Threading.CancellationToken)">
             <summary>
             Adds funds to the authenticated user's account.
             </summary>
@@ -348,7 +348,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AdminController.Post(offers.API.Models.CategoryDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.Post(offers.Application.Models.DTO.CategoryDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new category for version 2.
             </summary>
@@ -398,7 +398,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.API.Models.UserRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.Application.Models.DTO.UserRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new user account for version 2.
             </summary>
@@ -412,7 +412,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.API.Models.CompanyRegisterDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.Register(offers.Application.Models.DTO.CompanyRegisterDTO,System.Threading.CancellationToken)">
             <summary>
             Registers a new company account for version 2.
             </summary>
@@ -426,7 +426,7 @@
             <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
             <response code="500">Internal server error during registration</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AuthController.LogIn(offers.API.Models.AccountLoginDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AuthController.LogIn(offers.Application.Models.DTO.AccountLoginDTO,System.Threading.CancellationToken)">
             <summary>
             Authenticates an account and returns a JWT token for version 2.
             </summary>
@@ -440,7 +440,7 @@
             <response code="404">Account not found or invalid credentials (AccountNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.CompanyController.Post(offers.API.Models.OfferDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.Post(offers.Application.Models.DTO.OfferDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new offer for the currently authenticated account for version 2.
             </summary>
@@ -595,7 +595,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.UserController.CreateTransaction(offers.API.Models.TransactionDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.CreateTransaction(offers.Application.Models.DTO.TransactionDTO,System.Threading.CancellationToken)">
             <summary>
             Creates a new transaction for the authenticated user based on the selected offer for version 2.
             </summary>
@@ -609,7 +609,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error </response>
         </member>
-        <member name="M:offers.API.Controllers.V2.UserController.Deposit(offers.API.Models.DepositRequestDTO,System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.Deposit(offers.Application.Models.DTO.DepositRequestDTO,System.Threading.CancellationToken)">
             <summary>
             Adds funds to the authenticated user's account for version 2.
             </summary>

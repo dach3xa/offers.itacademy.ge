@@ -9,6 +9,7 @@ using offers.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using offers.Domain.Models;
 using offers.Domain.Enums;
+using Microsoft.AspNetCore.Identity;
 
 namespace offers.Persistance.Seed
 {
@@ -30,20 +31,27 @@ namespace offers.Persistance.Seed
             context.Database.Migrate();
         }
 
-        private static async Task SeedAdmin(ApplicationDbContext context)
+        private static async Task SeedAdmin(UserManager<Account> userManager)
         {
+            string email = "randomuser@example.com";
+            string password = "dachidachi";
+
+            var existingUser = await userManager.FindByEmailAsync(email);
+            if (existingUser != null)
+                return;
+
             var admin = new Account
             {
-                Email = "randomuser@example.com",
-                Phone = "+1-800-555-1234",
-                PasswordHash = "15C6EA984B2717BF0B9E9A51DC48451612EA380055337FBD38510A0C3E3EF16332B0DF3362E5C83DC89D6FCA336FB124FFDEF33F317391482C228FE0F63944E3",
+                Email = email,
+                UserName = "Admin Dachi",
                 Role = AccountRole.Admin
             };
 
-            if (!context.Accounts.Any(x => x.Role == AccountRole.Admin))
+            var result = await userManager.CreateAsync(admin, password);
+
+            if (!result.Succeeded)
             {
-                context.Accounts.Add(admin);
-                await context.SaveChangesAsync();
+                throw new Exception("Could not create admin: " + string.Join(", ", result.Errors.Select(e => e.Description)));
             }
         }
     }

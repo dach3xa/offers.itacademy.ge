@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using offers.API.Models;
+using offers.Application.Models.DTO;
+using offers.Application.Models.Response;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Token;
 using offers.Application.Exceptions.Transaction;
@@ -13,10 +14,10 @@ using offers.Domain.Models;
 using offers.Application.Exceptions.Deposit;
 using offers.Application.Services.Transactions;
 using Mapster;
-using offers.Application.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
+using offers.Application.Models.Response;
 
 namespace offers.API.Controllers.V1
 {

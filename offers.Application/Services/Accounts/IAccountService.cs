@@ -1,4 +1,4 @@
-﻿using offers.Application.Models;
+﻿using offers.Application.Models.Response;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace offers.Application.Services.Accounts
 {
     public interface IAccountService
     {
-        Task<AccountResponseModel> LoginAsync(string username, string password, CancellationToken cancellationToken);
+        Task<AccountResponseModel> LoginAsync(string email, string password, CancellationToken cancellationToken);
         Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken);
         Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken);
         Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);

@@ -1,7 +1,6 @@
 using FluentValidation;
 using offers.API.Infrastructure.Extensions;
 using System.Reflection;
-using offers.API.Infrastructure.Mappings;
 using offers.API.Infrastructure.Auth.JWT;
 using Serilog;
 using offers.Application.BackgroundServices;
@@ -18,6 +17,10 @@ using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 using Asp.Versioning.Conventions;
 using Asp.Versioning.ApiExplorer;
+using Microsoft.AspNetCore.Identity;
+using offers.Domain.Models;
+using offers.Application.Mappings;
+using offers.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,11 +97,21 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 
+builder.Services.AddIdentityCore<Account>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireUppercase = true;
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddSignInManager();
+
+
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CategoryDTOMultipleExamples>();
 
 builder.Services.AddServices();
 
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+builder.Services.AddValidatorsFromAssemblyContaining<AccountLoginDTOValidator>();
 
 builder.Services.AddProblemDetails();
 

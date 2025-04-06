@@ -1,6 +1,8 @@
 using Azure.Core;
 using FluentAssertions;
 using FluentAssertions.Execution;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Identity.Client;
 using Moq;
 using offers.Application.Exceptions;
@@ -27,13 +29,31 @@ namespace offers.Application.Tests
         private readonly Mock<IUnitOfWork> _unitOfWork;
         private readonly Mock<IAccountRepository> _repository;
 
+        private readonly Mock<UserManager<Account>> _userManager;
+        private readonly Mock<SignInManager<Account>> _signInManager;
+
         private readonly AccountService _accountService;
 
         public AccountServiceTests()
         {
             _repository = new Mock<IAccountRepository>();
             _unitOfWork = new Mock<IUnitOfWork>();
-            _accountService = new AccountService(_repository.Object, _unitOfWork.Object);
+
+            var store = new Mock<IUserStore<Account>>();
+            _userManager = new Mock<UserManager<Account>>(
+                store.Object, null, null, null, null, null, null, null, null
+            );
+
+            var contextAccessor = new Mock<IHttpContextAccessor>();
+            var claimsFactory = new Mock<IUserClaimsPrincipalFactory<Account>>();
+            _signInManager = new Mock<SignInManager<Account>>(
+                _userManager.Object,
+                contextAccessor.Object,
+                claimsFactory.Object,
+                null, null, null, null
+            );
+
+            _accountService = new AccountService(_repository.Object, _userManager.Object, _signInManager.Object, _unitOfWork.Object);
         }
 
         [Theory(DisplayName = "when an email exists return an account response model")]
@@ -46,7 +66,7 @@ namespace offers.Application.Tests
                 {
                     Id = 1,
                     Email = email,
-                    Phone = "123-456-7890",
+                    PhoneNumber = "123-456-7890",
                     PasswordHash = "15C6EA984B2717BF0B9E9A51DC48451612EA380055337FBD38510A0C3E3EF16332B0DF3362E5C83DC89D6FCA336FB124FFDEF33F317391482C228FE0F63944E3",
                     Role = AccountRole.User,
                     UserDetail = new UserDetail
@@ -78,7 +98,7 @@ namespace offers.Application.Tests
                 {
                     Id = 1,
                     Email = email,
-                    Phone = "123-456-7890",
+                    PhoneNumber = "123-456-7890",
                     PasswordHash = "wrong_password_hash",
                     Role = AccountRole.User,
                     UserDetail = new UserDetail

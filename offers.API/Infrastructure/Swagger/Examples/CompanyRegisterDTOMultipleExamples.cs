@@ -1,4 +1,5 @@
-﻿using offers.API.Models;
+﻿using offers.Application.Models.DTO;
+using offers.Application.Models.Response;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace offers.API.Infrastructure.Swagger.Examples
@@ -11,7 +12,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
             {
                 CompanyName = "InnoTech",
                 Email = "contact@innotech.com",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "Innovate@2024",
                 PhotoURL = "https://images.unsplash.com/photo-1537432376769-00aabc3d3e6b"
             });
@@ -20,7 +21,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
             {
                 CompanyName = "BrandWise",
                 Email = "info@brandwise.io",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "Branding123!",
                 PhotoURL = "https://images.unsplash.com/photo-1581091870622-7e0cdfbb6799"
             });
@@ -29,7 +30,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
             {
                 CompanyName = "ShopifyClone",
                 Email = "support@shopifyclone.net",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "EcomSecure!9",
                 PhotoURL = "https://images.unsplash.com/photo-1515169067865-d6f7efb04b03"
             });
@@ -38,7 +39,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
             {
                 CompanyName = "StratEdge",
                 Email = "hello@stratedge.org",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "Consult@2023",
                 PhotoURL = "https://images.unsplash.com/photo-1551836022-d5d88e9218df"
             });

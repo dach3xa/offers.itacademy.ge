@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "categoryDTO",
-        "Type": "offers.API.Models.CategoryDTO",
+        "Type": "offers.Application.Models.DTO.CategoryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CategoryResponseModel",
+        "Type": "offers.Application.Models.Response.CategoryResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -61,7 +61,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -136,7 +136,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -168,13 +168,13 @@
     "Parameters": [
       {
         "Name": "companyDTO",
-        "Type": "offers.API.Models.CompanyRegisterDTO",
+        "Type": "offers.Application.Models.DTO.CompanyRegisterDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CompanyResponseModel",
+        "Type": "offers.Application.Models.Response.CompanyResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -213,13 +213,13 @@
     "Parameters": [
       {
         "Name": "accountLoginDTO",
-        "Type": "offers.API.Models.AccountLoginDTO",
+        "Type": "offers.Application.Models.DTO.AccountLoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.API.Models.LoginResponseDTO",
+        "Type": "offers.Application.Models.DTO.LoginResponseDTO",
         "MediaTypes": [
           "application/json"
         ],
@@ -258,13 +258,13 @@
     "Parameters": [
       {
         "Name": "userDTO",
-        "Type": "offers.API.Models.UserRegisterDTO",
+        "Type": "offers.Application.Models.DTO.UserRegisterDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.UserResponseModel",
+        "Type": "offers.Application.Models.Response.UserResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -303,7 +303,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CompanyResponseModel",
+        "Type": "offers.Application.Models.Response.CompanyResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -342,13 +342,13 @@
     "Parameters": [
       {
         "Name": "offerDTO",
-        "Type": "offers.API.Models.OfferDTO",
+        "Type": "offers.Application.Models.DTO.OfferDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -401,7 +401,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -453,7 +453,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -563,7 +563,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -594,7 +594,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CategoryResponseModel",
+        "Type": "offers.Application.Models.Response.CategoryResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -626,7 +626,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -657,7 +657,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -689,7 +689,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.UserResponseModel",
+        "Type": "offers.Application.Models.Response.UserResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -728,7 +728,7 @@
     "Parameters": [
       {
         "Name": "depositDTO",
-        "Type": "offers.API.Models.DepositRequestDTO",
+        "Type": "offers.Application.Models.DTO.DepositRequestDTO",
         "IsRequired": true
       }
     ],
@@ -791,7 +791,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -830,13 +830,13 @@
     "Parameters": [
       {
         "Name": "transactionDTO",
-        "Type": "offers.API.Models.TransactionDTO",
+        "Type": "offers.Application.Models.DTO.TransactionDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.TransactionResponseModel",
+        "Type": "offers.Application.Models.Response.TransactionResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -875,7 +875,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -913,7 +913,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.TransactionResponseModel",
+        "Type": "offers.Application.Models.Response.TransactionResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1016,13 +1016,13 @@
     "Parameters": [
       {
         "Name": "categoryDTO",
-        "Type": "offers.API.Models.CategoryDTO",
+        "Type": "offers.Application.Models.DTO.CategoryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CategoryResponseModel",
+        "Type": "offers.Application.Models.Response.CategoryResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1068,7 +1068,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1143,7 +1143,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.AccountResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1175,7 +1175,7 @@
     "Parameters": [
       {
         "Name": "companyDTO",
-        "Type": "offers.API.Models.CompanyRegisterDTO",
+        "Type": "offers.Application.Models.DTO.CompanyRegisterDTO",
         "IsRequired": true
       }
     ],
@@ -1220,7 +1220,7 @@
     "Parameters": [
       {
         "Name": "accountLoginDTO",
-        "Type": "offers.API.Models.AccountLoginDTO",
+        "Type": "offers.Application.Models.DTO.AccountLoginDTO",
         "IsRequired": true
       }
     ],
@@ -1265,7 +1265,7 @@
     "Parameters": [
       {
         "Name": "userDTO",
-        "Type": "offers.API.Models.UserRegisterDTO",
+        "Type": "offers.Application.Models.DTO.UserRegisterDTO",
         "IsRequired": true
       }
     ],
@@ -1310,7 +1310,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CompanyResponseModel",
+        "Type": "offers.Application.Models.Response.CompanyResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1349,13 +1349,13 @@
     "Parameters": [
       {
         "Name": "offerDTO",
-        "Type": "offers.API.Models.OfferDTO",
+        "Type": "offers.Application.Models.DTO.OfferDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1408,7 +1408,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1460,7 +1460,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1570,7 +1570,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1601,7 +1601,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.CategoryResponseModel",
+        "Type": "offers.Application.Models.Response.CategoryResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1633,7 +1633,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1664,7 +1664,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.OfferResponseModel",
+        "Type": "offers.Application.Models.Response.OfferResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1696,7 +1696,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.UserResponseModel",
+        "Type": "offers.Application.Models.Response.UserResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1735,7 +1735,7 @@
     "Parameters": [
       {
         "Name": "depositDTO",
-        "Type": "offers.API.Models.DepositRequestDTO",
+        "Type": "offers.Application.Models.DTO.DepositRequestDTO",
         "IsRequired": true
       }
     ],
@@ -1798,7 +1798,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1837,13 +1837,13 @@
     "Parameters": [
       {
         "Name": "transactionDTO",
-        "Type": "offers.API.Models.TransactionDTO",
+        "Type": "offers.Application.Models.DTO.TransactionDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.TransactionResponseModel",
+        "Type": "offers.Application.Models.Response.TransactionResponseModel",
         "MediaTypes": [
           "application/json"
         ],
@@ -1882,7 +1882,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[offers.Application.Models.Response.TransactionResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -1920,7 +1920,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "offers.Application.Models.TransactionResponseModel",
+        "Type": "offers.Application.Models.Response.TransactionResponseModel",
         "MediaTypes": [
           "application/json"
         ],

@@ -1,5 +1,4 @@
 ﻿using offers.Application.Exceptions;
-using offers.Application.Models;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -17,51 +16,77 @@ using offers.Application.RepositoryInterfaces;
 using Mapster;
 using offers.Application.Exceptions.Account.User;
 using offers.Application.UOF;
+using System.Diagnostics.CodeAnalysis;
+using offers.Application.Models.Response;
+using Microsoft.AspNetCore.Identity;
+using MediatR;
+using System.Security.Claims;
+
 
 namespace offers.Application.Services.Accounts
 {
     public class AccountService : IAccountService
     {
-        const string SECRET_KEY = "Secret_Hashing_Key";
         private readonly IAccountRepository _repository;
+        private readonly UserManager<Account> _userManager;
+        private readonly SignInManager<Account> _signInManager;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AccountService(IAccountRepository repository, IUnitOfWork unitOfWork)
+        public AccountService(IAccountRepository repository, UserManager<Account> userManager, SignInManager<Account> signInManager, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public async Task<AccountResponseModel> LoginAsync(string Email, string password, CancellationToken cancellationToken)
+        public async Task<AccountResponseModel> LoginAsync(string email, string password, CancellationToken cancellationToken)
         {
-            var hashPassword = GenerateHash(password);
-            var account = await _repository.GetAsync(Email, cancellationToken);
+            Account user = null;
+            try
+            {
+                user = await _userManager.FindByEmailAsync(email);
+            }
+            catch(Exception ex)
+            {
 
-            if (account == null || account.PasswordHash != hashPassword)
+            }
+            SignInResult signInResult = null;
+            try
+            {
+                signInResult = await _signInManager.PasswordSignInAsync(email, password, false, false);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (user == null || !signInResult.Succeeded)
             {
                 throw new AccountNotFoundException("Email or password is incorrect");
             }
 
-            return account.Adapt<AccountResponseModel>();
+            await _userManager.AddClaimsAsync(user,
+                new List<Claim>() {
+                    new Claim(ClaimTypes.Email, email),
+                    new Claim(ClaimTypes.Role, user.Role.ToString()),
+                    new Claim("id", user.Id.ToString())
+                });
+
+            return user.Adapt<AccountResponseModel>();
         }
 
         public async Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken)
         {
-            var exists = await _repository.ExistsAsync(account.Email, cancellationToken);
-
-            if (exists)
-            {    
+            var user = await _userManager.FindByEmailAsync(account.Email);
+            if (user != null)
+            {
                 throw new AccountAlreadyExistsException("There already is an account with this email");
             }
 
-            account.PasswordHash = GenerateHash(account.PasswordHash);
+            var result = await _userManager.CreateAsync(account, account.PasswordHash);//password is not hashed yet
 
-            try
-            {
-                await _repository.RegisterAsync(account, cancellationToken);
-                await _unitOfWork.SaveChangeAsync(cancellationToken);
-            }
-            catch(Exception ex)
+            if (!result.Succeeded)
             {
                 throw new AccountCouldNotBeCreatedException("Account could not be created because of an unknown error");
             }
@@ -69,6 +94,7 @@ namespace offers.Application.Services.Accounts
             return account.Adapt<AccountResponseModel>();
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
         {
             var companies = await _repository.GetAllCompaniesAsync(cancellationToken);
@@ -77,6 +103,7 @@ namespace offers.Application.Services.Accounts
             return companies.Adapt<List<CompanyResponseModel>>() ?? new List<CompanyResponseModel>();
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
             var users = await _repository.GetAllUsersAsync(cancellationToken);
@@ -152,24 +179,6 @@ namespace offers.Application.Services.Accounts
                 throw new AccountCouldNotDepositException($"Deposit to account ID {accountId} failed the expected ammount could not be deposited because of an unknown issue");
             }
             await _unitOfWork.SaveChangeAsync(cancellationToken);
-        }
-
-        private string GenerateHash(string input)
-        {
-            using (SHA512 sha = SHA512.Create())
-            {
-                byte[] bytes = Encoding.ASCII.GetBytes(input + SECRET_KEY);
-                byte[] hashBytes = sha.ComputeHash(bytes);
-
-                StringBuilder sb = new StringBuilder();
-
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("X2"));
-                }
-
-                return sb.ToString();
-            }
         }
 
         public async Task<UserResponseModel> GetUserAsync(int id, CancellationToken cancellationToken)

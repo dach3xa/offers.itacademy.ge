@@ -1,4 +1,5 @@
-﻿using offers.API.Models;
+﻿using offers.Application.Models.DTO;
+using offers.Application.Models.Response;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace offers.API.Infrastructure.Swagger.Examples
@@ -12,7 +13,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 FirstName = "John",
                 LastName = "Doe",
                 Email = "john.doe@example.com",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "P@ssw0rd123"
             });
 
@@ -21,7 +22,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 FirstName = "Alice",
                 LastName = "Smith",
                 Email = "alice.smith@example.com",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "C0mpl3x!Pass2024"
             });
 
@@ -30,7 +31,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 FirstName = "Test",
                 LastName = "User",
                 Email = "test.user@sample.org",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "Test123!"
             });
 
@@ -39,7 +40,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 FirstName = "Liam",
                 LastName = "Nguyen",
                 Email = "liam.nguyen@mail.com",
-                Phone = "599889988",
+                PhoneNumber = "599889988",
                 Password = "Password123"
             });
         }

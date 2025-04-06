@@ -271,16 +271,16 @@
               },
               "examples": {
                 "Basic User": {
-                  "value": {"firstName":"John","lastName":"Doe","email":"john.doe@example.com","phone":"599889988","password":"P@ssw0rd123"}
+                  "value": {"firstName":"John","lastName":"Doe","email":"john.doe@example.com","phoneNumber":"599889988","password":"P@ssw0rd123"}
                 },
                 "User with complex password": {
-                  "value": {"firstName":"Alice","lastName":"Smith","email":"alice.smith@example.com","phone":"599889988","password":"C0mpl3x!Pass2024"}
+                  "value": {"firstName":"Alice","lastName":"Smith","email":"alice.smith@example.com","phoneNumber":"599889988","password":"C0mpl3x!Pass2024"}
                 },
                 "Test User": {
-                  "value": {"firstName":"Test","lastName":"User","email":"test.user@sample.org","phone":"599889988","password":"Test123!"}
+                  "value": {"firstName":"Test","lastName":"User","email":"test.user@sample.org","phoneNumber":"599889988","password":"Test123!"}
                 },
                 "Minimal Valid User": {
-                  "value": {"firstName":"Liam","lastName":"Nguyen","email":"liam.nguyen@mail.com","phone":"599889988","password":"Password123"}
+                  "value": {"firstName":"Liam","lastName":"Nguyen","email":"liam.nguyen@mail.com","phoneNumber":"599889988","password":"Password123"}
                 }
               }
             }
@@ -345,16 +345,16 @@
               },
               "examples": {
                 "Tech Startup": {
-                  "value": {"companyName":"InnoTech","email":"contact@innotech.com","phone":"599889988","password":"Innovate@2024","photoURL":"https://images.unsplash.com/photo-1537432376769-00aabc3d3e6b"}
+                  "value": {"companyName":"InnoTech","email":"contact@innotech.com","phoneNumber":"599889988","password":"Innovate@2024","photoURL":"https://images.unsplash.com/photo-1537432376769-00aabc3d3e6b"}
                 },
                 "Marketing Agency": {
-                  "value": {"companyName":"BrandWise","email":"info@brandwise.io","phone":"599889988","password":"Branding123!","photoURL":"https://images.unsplash.com/photo-1581091870622-7e0cdfbb6799"}
+                  "value": {"companyName":"BrandWise","email":"info@brandwise.io","phoneNumber":"599889988","password":"Branding123!","photoURL":"https://images.unsplash.com/photo-1581091870622-7e0cdfbb6799"}
                 },
                 "E-Commerce Platform": {
-                  "value": {"companyName":"ShopifyClone","email":"support@shopifyclone.net","phone":"599889988","password":"EcomSecure!9","photoURL":"https://images.unsplash.com/photo-1515169067865-d6f7efb04b03"}
+                  "value": {"companyName":"ShopifyClone","email":"support@shopifyclone.net","phoneNumber":"599889988","password":"EcomSecure!9","photoURL":"https://images.unsplash.com/photo-1515169067865-d6f7efb04b03"}
                 },
                 "Consulting Firm": {
-                  "value": {"companyName":"StratEdge","email":"hello@stratedge.org","phone":"599889988","password":"Consult@2023","photoURL":"https://images.unsplash.com/photo-1551836022-d5d88e9218df"}
+                  "value": {"companyName":"StratEdge","email":"hello@stratedge.org","phoneNumber":"599889988","password":"Consult@2023","photoURL":"https://images.unsplash.com/photo-1551836022-d5d88e9218df"}
                 }
               }
             }
@@ -502,13 +502,13 @@
               },
               "examples": {
                 "Bakery Clearance": {
-                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-05T16:32:29.7973229Z","photoURL":"https://example.com/images/croissants.jpg"}
+                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-06T17:48:55.2952294Z","photoURL":"https://example.com/images/croissants.jpg"}
                 },
                 "Sushi Leftovers": {
-                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-05T15:32:29.8760217Z","photoURL":"https://example.com/images/sushi-combo.jpg"}
+                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-06T16:48:55.3395098Z","photoURL":"https://example.com/images/sushi-combo.jpg"}
                 },
                 "Fruit Clearance Box": {
-                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-05T17:32:29.8824214Z","photoURL":"https://example.com/images/fruit-box.jpg"}
+                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-06T18:48:55.3401915Z","photoURL":"https://example.com/images/fruit-box.jpg"}
                 }
               }
             }
@@ -1649,7 +1649,7 @@
             "type": "string",
             "nullable": true
           },
-          "phone": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
@@ -1898,7 +1898,7 @@
             "type": "string",
             "nullable": true
           },
-          "phone": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },

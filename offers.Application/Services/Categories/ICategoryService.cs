@@ -1,4 +1,4 @@
-﻿using offers.Application.Models;
+﻿using offers.Application.Models.Response;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;

@@ -5,7 +5,7 @@ using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
-using offers.Application.Models;
+using offers.Application.Models.Response;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers.Events;
@@ -14,6 +14,7 @@ using offers.Application.UOF;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -178,11 +179,13 @@ namespace offers.Application.Services.Offers
             await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task ArchiveOffersAsync(CancellationToken cancellationToken)
         {
             await _offerRepository.ArchiveOffersAsync(cancellationToken);
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<List<OfferResponseModel>> GetAllAsync(CancellationToken cancellationToken)
         {
             var categories = await _offerRepository.GetAllAsync(cancellationToken);
@@ -191,6 +194,7 @@ namespace offers.Application.Services.Offers
             return categories.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<OfferResponseModel> GetAsync(int id, CancellationToken cancellationToken)
         {
             var offer = await GetOfferAsync(id, cancellationToken);

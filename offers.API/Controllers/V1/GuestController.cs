@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using offers.API.Infrastructure.Middlewares;
-using offers.Application.Models;
+using offers.Application.Models.Response;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;

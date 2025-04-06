@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -9,14 +11,12 @@ using System.Threading.Tasks;
 
 namespace offers.Persistance.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<Account, IdentityRole<int>, int>
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
-
-        public DbSet<Account> Accounts { get; set; }
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<CompanyDetail> CompanyDetails { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -25,6 +25,7 @@ namespace offers.Persistance.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }

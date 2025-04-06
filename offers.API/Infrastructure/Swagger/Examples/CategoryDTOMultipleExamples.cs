@@ -1,4 +1,5 @@
-﻿using offers.API.Models;
+﻿using offers.Application.Models.DTO;
+using offers.Application.Models.Response;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace offers.API.Infrastructure.Swagger.Examples

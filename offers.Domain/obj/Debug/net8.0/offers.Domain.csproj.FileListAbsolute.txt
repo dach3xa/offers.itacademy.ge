@@ -10,3 +10,4 @@ C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\refint\offers.Domain.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\ref\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Domain\obj\Debug\net8.0\offers.Domain.csproj.AssemblyReference.cache

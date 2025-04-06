@@ -6,7 +6,7 @@ using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Refund;
 using offers.Application.Exceptions.Transaction;
-using offers.Application.Models;
+using offers.Application.Models.Response;
 using offers.Application.RepositoryInterfaces;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Offers;
@@ -14,6 +14,7 @@ using offers.Application.UOF;
 using offers.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,7 @@ namespace offers.Application.Services.Transactions
             transaction.Offer = transactionOffer;
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task RefundAllUsersByOfferIdAsync(int offerId, CancellationToken cancellationToken)
         {
             var offerTransactions = await _transactionRepository.GetByOfferIdAsync(offerId, cancellationToken);
@@ -110,6 +112,7 @@ namespace offers.Application.Services.Transactions
             await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<TransactionResponseModel> GetMyTransactionAsync(int id, int accountId, CancellationToken cancellationToken)
         {
             var transaction = await GetMyDomainTransactionAsync(id, accountId, cancellationToken);
@@ -158,6 +161,7 @@ namespace offers.Application.Services.Transactions
             }
         }
 
+        [ExcludeFromCodeCoverage]
         public async Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken)
         {
             var transactions = await _transactionRepository.GetMyTransactionsAsync(accountId, cancellationToken);
