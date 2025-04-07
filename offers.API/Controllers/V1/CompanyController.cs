@@ -2,7 +2,7 @@
 using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using offers.API.Controllers.Helper;
+using offers.Application.Helper;
 using offers.API.Infrastructure.Middlewares;
 using offers.API.Infrastructure.Swagger.Examples;
 using offers.Application.Models.DTO;
@@ -11,7 +11,6 @@ using offers.Application.Exceptions.Category;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Exceptions.Token;
 using offers.Application.Exceptions.Transaction;
-using offers.Application.Models.Response;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Offers;
 using offers.Domain.Enums;

@@ -21,6 +21,9 @@ using Microsoft.AspNetCore.Identity;
 using offers.Domain.Models;
 using offers.Application.Mappings;
 using offers.Application.Validators;
+using offers.Application.ServicesExtension;
+using offers.Infrastructure.RepositoryExtension;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -110,8 +113,10 @@ builder.Services.AddIdentityCore<Account>(options =>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CategoryDTOMultipleExamples>();
 
 builder.Services.AddServices();
+builder.Services.AddRepositories();
 
 builder.Services.AddValidatorsFromAssemblyContaining<AccountLoginDTOValidator>();
+builder.Services.AddFluentValidationAutoValidation();
 
 builder.Services.AddProblemDetails();
 
@@ -130,12 +135,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.UseMiddleware<ExceptionHandler>();
 app.UseExceptionHandler();
-
-var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
-foreach (var description in provider.ApiVersionDescriptions)
-{
-    Log.Information("Discovered API version: {Version}", description.GroupName);
-}
 
 if (app.Environment.IsDevelopment())
 {
@@ -157,7 +156,7 @@ app.MapControllers();
 try
 {
     Log.Information("starting web host");
-    AdminSeed.Initialize(app.Services);
+    await AdminSeed.Initialize(app.Services);
     app.Run();
 }
 catch (Exception ex)

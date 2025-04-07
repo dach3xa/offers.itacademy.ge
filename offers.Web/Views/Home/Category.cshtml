@@ -1,0 +1,16 @@
+﻿@model offers.Application.Models.Response.CategoryResponseModel
+
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<h2>@Model.Name</h2>
+
+@if (!string.IsNullOrEmpty(Model.Description))
+{
+    <p>@Model.Description</p>
+}
+else
+{
+    <p><em>No description provided.</em></p>
+}

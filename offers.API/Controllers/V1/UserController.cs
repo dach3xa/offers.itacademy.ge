@@ -8,7 +8,7 @@ using offers.Application.Exceptions.Transaction;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
-using offers.API.Controllers.Helper;
+using offers.Application.Helper;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using offers.Application.Exceptions.Deposit;
@@ -17,7 +17,6 @@ using Mapster;
 using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
-using offers.Application.Models.Response;
 
 namespace offers.API.Controllers.V1
 {

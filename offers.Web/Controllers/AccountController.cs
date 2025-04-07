@@ -1,10 +1,13 @@
 ﻿using Mapster;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using offers.Application.Models.DTO;
+using offers.Application.Models.ViewModel;
 using offers.Application.Services.Accounts;
 using offers.Domain.Enums;
 using offers.Domain.Models;
+using offers.Web.Controllers.FileSaver;
 using System.Data;
 using System.Security.Claims;
 
@@ -15,11 +18,13 @@ namespace offers.Web.Controllers
         private readonly UserManager<Account> _userManager;
         private readonly SignInManager<Account> _signInManager;
         private readonly IAccountService _accountService;
-        public AccountController(UserManager<Account> userManager, SignInManager<Account> signInManager, IAccountService accountService)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public AccountController(UserManager<Account> userManager, SignInManager<Account> signInManager, IAccountService accountService, IWebHostEnvironment webHostEnvironment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _accountService = accountService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Login()
@@ -43,19 +48,36 @@ namespace offers.Web.Controllers
             if (!ModelState.IsValid)
                 return View();
 
-            var user = await _accountService.LoginAsync(request.Email, request.Password, cancellationToken);
+            var user = await _accountService.LoginMvcAsync(request.Email, request.Password, cancellationToken);
 
             return RedirectToAction("Home", user.Role.ToString());
         }
 
         [HttpPost]
-        public async Task<IActionResult> RegisterCompany([FromForm] CompanyRegisterDTO companyDTO, CancellationToken cancellation)
+        public async Task<IActionResult> RegisterCompany([FromForm] CompanyRegisterViewModel companyRegister, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return View();
 
-            var companyAccount = companyDTO.Adapt<Account>();
-            var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
+            string photoUrl = null;
+            try
+            {
+                if (companyRegister.Photo != null && companyRegister.Photo.Length > 0)
+                {
+                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyRegister.Photo, _webHostEnvironment);
+                }
+            }
+            catch(Exception ex)
+            {
+                ModelState.AddModelError("Photo", "Only image files are allowed.");
+                return View(companyRegister);
+            }
+
+            var account = companyRegister.Adapt<Account>();
+
+            account.CompanyDetail.PhotoURL = photoUrl;
+
+            await _accountService.RegisterAsync(account, cancellationToken);
 
             return RedirectToAction(nameof(Login));
         }

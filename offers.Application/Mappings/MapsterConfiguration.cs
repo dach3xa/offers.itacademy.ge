@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using offers.Application.Models.DTO;
 using offers.Application.Models.Response;
+using offers.Application.Models.ViewModel;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using System;
@@ -20,12 +21,28 @@ namespace offers.Application.Mappings
                 .Map(dest => dest.Role, src => AccountRole.Company)
                 .Map(dest => dest.PasswordHash, src => src.Password)
                 .Map(dest => dest.NormalizedEmail, src => src.Email.ToUpper())
-                .Map(dest => dest.UserName, src => src.CompanyName)
+                .Map(dest => dest.UserName, src => src.Email)
                 .Map(dest => dest.CompanyDetail, src => new CompanyDetail()) 
                 .AfterMapping((src, dest) =>
                 {
                     dest.CompanyDetail.CompanyName = src.CompanyName;
                     dest.CompanyDetail.IsActive = false;
+                    dest.CompanyDetail.PhotoURL = src.PhotoURL;
+                });
+
+            TypeAdapterConfig<CompanyRegisterViewModel, Account>
+                .NewConfig()
+                .Map(dest => dest.Id, src => 0)
+                .Map(dest => dest.Role, src => AccountRole.Company)
+                .Map(dest => dest.PasswordHash, src => src.Password)
+                .Map(dest => dest.NormalizedEmail, src => src.Email.ToUpper())
+                .Map(dest => dest.UserName, src => src.Email)
+                .Map(dest => dest.CompanyDetail, src => new CompanyDetail())
+                .AfterMapping((src, dest) =>
+                {
+                    dest.CompanyDetail.CompanyName = src.CompanyName;
+                    dest.CompanyDetail.IsActive = false;
+                    dest.CompanyDetail.PhotoURL = "";
                 });
 
 
@@ -35,7 +52,7 @@ namespace offers.Application.Mappings
                 .Map(dest => dest.Role, src => AccountRole.User)
                 .Map(dest => dest.PasswordHash, src => src.Password)
                 .Map(dest => dest.NormalizedEmail, src => src.Email.ToUpper())
-                .Map(dest => dest.UserName, src => src.FirstName)
+                .Map(dest => dest.UserName, src => src.Email)
                 .Map(dest => dest.UserDetail, src => new UserDetail())
                 .AfterMapping((src, dest) =>
                 {
@@ -52,6 +69,13 @@ namespace offers.Application.Mappings
                 .Map(dest => dest.Id, src => 0)
                 .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
                 .Map(dest => dest.IsArchived, src => false);
+
+            TypeAdapterConfig<OfferCreateViewModel, Offer>
+                .NewConfig()
+                .Map(dest => dest.Id, src => 0)
+                .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
+                .Map(dest => dest.IsArchived, src => false)
+                .Map(dest => dest.PhotoURL, src => "");
 
             TypeAdapterConfig<Account, UserResponseModel>
                 .NewConfig()

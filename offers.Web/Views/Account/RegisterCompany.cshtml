@@ -1,4 +1,4 @@
-﻿@model offers.Application.Models.DTO.CompanyRegisterDTO
+﻿@model offers.Application.Models.ViewModel.CompanyRegisterViewModel;
 
 @{
     ViewData["Title"] = "Register Company";
@@ -6,7 +6,7 @@
 
 <h2>Register as Company</h2>
 
-<form asp-action="RegisterCompany" method="post">
+<form asp-action="RegisterCompany" enctype="multipart/form-data" method="post">
     <div>
         <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" />
@@ -23,6 +23,18 @@
         <label asp-for="CompanyName"></label>
         <input asp-for="CompanyName" class="form-control" />
         <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Photo">Company Logo</label>
+        <input asp-for="Photo" type="file" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Register</button>

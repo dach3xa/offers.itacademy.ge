@@ -19,11 +19,12 @@ namespace offers.Persistance.Seed
         {
             using var scope = service.CreateAsyncScope();
 
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Account>>();
             var database = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
             Migrate(database);
 
-            await SeedAdmin(database);
+            await SeedAdmin(userManager);
         }
 
         private static void Migrate(ApplicationDbContext context)
@@ -34,7 +35,7 @@ namespace offers.Persistance.Seed
         private static async Task SeedAdmin(UserManager<Account> userManager)
         {
             string email = "randomuser@example.com";
-            string password = "dachidachi";
+            string password = "Dachidachi1.";
 
             var existingUser = await userManager.FindByEmailAsync(email);
             if (existingUser != null)
@@ -43,16 +44,12 @@ namespace offers.Persistance.Seed
             var admin = new Account
             {
                 Email = email,
-                UserName = "Admin Dachi",
+                NormalizedEmail = email.ToUpper(),
+                UserName = email,
                 Role = AccountRole.Admin
             };
 
             var result = await userManager.CreateAsync(admin, password);
-
-            if (!result.Succeeded)
-            {
-                throw new Exception("Could not create admin: " + string.Join(", ", result.Errors.Select(e => e.Description)));
-            }
         }
     }
 }

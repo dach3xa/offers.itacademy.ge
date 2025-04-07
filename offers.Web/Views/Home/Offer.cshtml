@@ -1,0 +1,12 @@
+﻿@model offers.Application.Models.Response.OfferResponseModel
+
+@{
+    ViewData["Title"] = "Offer Details";
+}
+
+<h2>@Model.Name</h2>
+
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Category:</strong> @Model.CategoryName</p>
+<p><strong>Price:</strong> $@Model.Price</p>
+<p><strong>Available Count:</strong> @Model.Count</p>

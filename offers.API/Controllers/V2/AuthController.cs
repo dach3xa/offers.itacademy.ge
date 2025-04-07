@@ -11,7 +11,7 @@ using offers.Application.Exceptions.Account;
 using offers.Application.Models.DTO;
 using offers.Application.Models.Response;
 using offers.Application.Services.Accounts;
-using offers.API.Controllers.Helper;
+using offers.Application.Helper;
 using Azure;
 using offers.API.Infrastructure.Swagger.Examples;
 using Swashbuckle.AspNetCore.Filters;

@@ -1,5 +1,27 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
+@{
+    var user = HttpContextAccessor.HttpContext?.User;
+
+    string homeController = "Home";
+    string homeAction = "Index";
+
+    if (user?.Identity?.IsAuthenticated ?? false)
+    {
+        if (user.IsInRole("Admin"))
+        {
+            homeController = "Admin";
+            homeAction = "Home";
+        }
+        else if (user.IsInRole("User"))
+        {
+            homeController = "User";
+            homeAction = "Home";
+        }
+    }
+}
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,10 +42,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="@homeController" asp-action="@homeAction">Home</a>
                         </li>
                     </ul>
                 </div>

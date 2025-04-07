@@ -10,7 +10,7 @@ namespace offers.Application.Services.Categories
 {
     public interface ICategoryService
     {
-        Task<CategoryResponseModel> CreateAsync(Category account, CancellationToken cancellationToken);
+        Task<CategoryResponseModel> CreateAsync(Category category, CancellationToken cancellationToken);
         Task<CategoryResponseModel> GetAsync(int id, CancellationToken cancellationToken);
         Task<List<CategoryResponseModel>> GetAllAsync(CancellationToken cancellationToken);
     }

@@ -42,36 +42,26 @@ namespace offers.Application.Services.Accounts
 
         public async Task<AccountResponseModel> LoginAsync(string email, string password, CancellationToken cancellationToken)
         {
-            Account user = null;
-            try
-            {
-                user = await _userManager.FindByEmailAsync(email);
-            }
-            catch(Exception ex)
-            {
+            var user = await _userManager.FindByEmailAsync(email);
 
-            }
-            SignInResult signInResult = null;
-            try
-            {
-                signInResult = await _signInManager.PasswordSignInAsync(email, password, false, false);
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            if (user == null || !signInResult.Succeeded)
+            if (user == null || !await _userManager.CheckPasswordAsync(user, password))
             {
                 throw new AccountNotFoundException("Email or password is incorrect");
             }
 
-            await _userManager.AddClaimsAsync(user,
-                new List<Claim>() {
-                    new Claim(ClaimTypes.Email, email),
-                    new Claim(ClaimTypes.Role, user.Role.ToString()),
-                    new Claim("id", user.Id.ToString())
-                });
+            return user.Adapt<AccountResponseModel>();
+        }
+
+        public async Task<AccountResponseModel> LoginMvcAsync(string email, string password, CancellationToken cancellationToken)
+        {
+            var result = await _signInManager.PasswordSignInAsync(email, password, false, false);
+
+            if (!result.Succeeded)
+            {
+                throw new AccountNotFoundException("Email or password is incorrect");
+            }
+
+            var user = await _userManager.FindByEmailAsync(email);
 
             return user.Adapt<AccountResponseModel>();
         }
@@ -90,6 +80,13 @@ namespace offers.Application.Services.Accounts
             {
                 throw new AccountCouldNotBeCreatedException("Account could not be created because of an unknown error");
             }
+
+            await _userManager.AddClaimsAsync(account,
+                new List<Claim>() {
+                    new Claim(ClaimTypes.Email, account.Email),
+                    new Claim(ClaimTypes.Role, account.Role.ToString()),
+                    new Claim("id", account.Id.ToString())
+                });
 
             return account.Adapt<AccountResponseModel>();
         }

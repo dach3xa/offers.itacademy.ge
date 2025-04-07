@@ -13,6 +13,7 @@ namespace offers.Application.Services.Accounts
     public interface IAccountService
     {
         Task<AccountResponseModel> LoginAsync(string email, string password, CancellationToken cancellationToken);
+        Task<AccountResponseModel> LoginMvcAsync(string email, string password, CancellationToken cancellationToken);
         Task<AccountResponseModel> RegisterAsync(Account account, CancellationToken cancellationToken);
         Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken);
         Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken);

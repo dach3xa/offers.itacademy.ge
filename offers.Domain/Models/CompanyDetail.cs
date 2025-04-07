@@ -11,6 +11,7 @@ namespace offers.Domain.Models
         public int AccountId { get; set; }
         public string CompanyName { get; set; }
         public bool IsActive { get; set; }
+        public string PhotoURL { get; set; }
         public Account Account { get; set; }
     }
 }

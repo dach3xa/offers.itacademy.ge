@@ -30,14 +30,14 @@ namespace offers.Application.Validators
             .Matches(@"^\+?[0-9]{7,15}$").WithMessage("Phone number must be digits only and between 7 and 15 characters.");
 
             RuleFor(x => x.Password)
-            .NotEmpty().WithMessage("Password is required")
-            .MinimumLength(6).WithMessage("Password must be a minimum length of 6")
-            .MaximumLength(100).WithMessage("Password must not exceed 100 characters")
-            .Matches(@"[A-Z]").WithMessage("Password must contain at least one uppercase latter")
-            .Matches(@"[a-z]").WithMessage("Password must contain at least one lowercase latter")
-            .Matches(@"[0-9]").WithMessage("Password must contain at least one digit")
-            .Matches(@"[!@#$%^&*()\-_=+{}\[\]:;""'<>,.?\\|/~`]").WithMessage("Password must contain at least one special character")
-            .Matches(@"^\S+$").WithMessage("Password must not contain spaces");
+                .NotEmpty().WithMessage("Password is required")
+                .MinimumLength(6).WithMessage("Password must be at least 6 characters")
+                .MaximumLength(100).WithMessage("Password must not exceed 100 characters")
+                .Matches(@"[A-Z]").WithMessage("Password must contain at least one uppercase letter")
+                .Matches(@"[a-z]").WithMessage("Password must contain at least one lowercase letter")
+                .Matches(@"[0-9]").WithMessage("Password must contain at least one digit")
+                .Matches(@"[^\w\d\s]").WithMessage("Password must contain at least one special character")
+                .Matches(@"^\S+$").WithMessage("Password must not contain spaces");
         }
     }
 }
