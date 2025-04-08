@@ -10,6 +10,7 @@ namespace offers.Application.Models.Response
     public class CompanyResponseModel : AccountResponseModel
     {
         public string CompanyName { get; set; }
+        public string PhotoURL { get; set; }
         public bool IsActive { get; set; }
     }
 }

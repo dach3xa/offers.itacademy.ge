@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<h2 class="mb-3">Welcome, Admin</h2>
+
+<div class="mb-4">
+    <p><strong>Email:</strong> @ViewBag.Email</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Categories</h5>
+                <p class="card-text">Manage job categories for listings.</p>
+                <a asp-action="CreateCategory" asp-controller="Admin" class="btn btn-primary">Create New Category</a>
+                <a asp-action="Categories" asp-controller="Home" class="btn btn-outline-secondary ms-2">View All Categories</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Offers</h5>
+                <p class="card-text">Review all available job offers.</p>
+                <a asp-action="Offers" asp-controller="Home" class="btn btn-outline-secondary">View All Offers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Users</h5>
+                <p class="card-text">Manage and inspect registered users.</p>
+                <a asp-action="GetAllUsers" asp-controller="Admin" class="btn btn-outline-secondary">View All Users</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Companies</h5>
+                <p class="card-text">Review companies and confirm registrations.</p>
+                <a asp-action="GetAllCompanies" asp-controller="Admin" class="btn btn-outline-secondary">View All Companies</a>
+            </div>
+        </div>
+    </div>
+</div>

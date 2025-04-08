@@ -1,0 +1,21 @@
+﻿@model offers.Application.Models.Response.TransactionResponseModel
+
+@{
+    ViewData["Title"] = "Transaction Details";
+}
+
+<h2 class="mb-4">Transaction #@Model.Id</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <p><strong>Offer:</strong> @Model.OfferName</p>
+        <p><strong>Count:</strong> @Model.Count</p>
+        <p><strong>Total Paid:</strong> @Model.Paid.ToString("C")</p>
+        <p><strong>Account:</strong> @Model.AccountName</p>
+
+        <form asp-action="DeleteOffer" asp-controller="User" asp-route-id="@Model.Id" method="post" class="mt-4">
+            <button type="submit" class="btn btn-danger">Request Refund</button>
+            <a asp-action="GetMyTransactions" asp-controller="User" class="btn btn-secondary ms-2">Back to Transactions</a>
+        </form>
+    </div>
+</div>

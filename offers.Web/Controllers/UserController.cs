@@ -9,9 +9,12 @@ using offers.Application.Services.Offers;
 using offers.Application.Services.Transactions;
 using offers.Domain.Enums;
 using offers.Domain.Models;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace offers.Web.Controllers
 {
+    [Route("user")]
     [Authorize(Roles = nameof(AccountRole.User))]
     public class UserController : Controller
     {
@@ -29,15 +32,17 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("home")]
-        public IActionResult Home()
+        public async Task<IActionResult> Home(CancellationToken cancellationToken)
         {
-            return View();
+            var user = await _accountService.GetUserAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            return View(user);
         }
 
         [HttpGet("offers")]
-        public IActionResult Offers()
+        public async Task<IActionResult> Offers(CancellationToken cancellationToken)
         {
-            return View();
+            var categories = await _categoryService.GetAllAsync(cancellationToken);
+            return View(categories);
         }
 
         [HttpGet("offers/search")]
@@ -64,6 +69,12 @@ namespace offers.Web.Controllers
             return View(offer);
         }
 
+        [HttpGet("offers/{id}/purchase")]
+        public IActionResult CreateTransaction()
+        {
+            return View();
+        }
+
         [HttpPost("offers/{id}/purchase")]
         public async Task<IActionResult> CreateTransaction([FromRoute]int id, [FromForm] TransactionCreateViewModel transactionViewModel, CancellationToken cancellationToken)
         {
@@ -80,6 +91,7 @@ namespace offers.Web.Controllers
                 Paid = transactionViewModel.Count * offer.Price,
                 UserId = ControllerHelper.GetUserIdFromClaims(User),
                 OfferId = id,
+                CreatedAt = DateTime.UtcNow
             };
 
             await _transactionService.CreateAsync(transaction, cancellationToken);

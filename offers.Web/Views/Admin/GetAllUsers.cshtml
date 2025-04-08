@@ -1,0 +1,39 @@
+﻿@model IEnumerable<offers.Application.Models.Response.UserResponseModel>
+
+@{
+    ViewData["Title"] = "All Users";
+}
+
+<h2 class="mb-4">Registered Users</h2>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Balance</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Role</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Balance.ToString("C")</td>
+                <td>
+                    <a asp-action="GetUser" asp-controller="Admin" asp-route-id="@user.Id" class="btn btn-sm btn-outline-info">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

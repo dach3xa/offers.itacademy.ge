@@ -86,7 +86,8 @@ namespace offers.Application.Mappings
             TypeAdapterConfig<Account, CompanyResponseModel>
                 .NewConfig()
                 .Map(dest => dest.CompanyName, src => src.CompanyDetail.CompanyName)
-                .Map(dest => dest.IsActive, src => src.CompanyDetail.IsActive);
+                .Map(dest => dest.IsActive, src => src.CompanyDetail.IsActive)
+                .Map(dest => dest.PhotoURL, src => src.CompanyDetail.PhotoURL);
 
             TypeAdapterConfig<Account, AccountResponseModel>
                 .NewConfig();

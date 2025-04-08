@@ -32,12 +32,60 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/GetAllCompanies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0QWxsQ29tcGFuaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/GetAllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0QWxsVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/GetCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0Q29tcGFueS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/GetUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Admin/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Company/CreateOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxDcmVhdGVPZmZlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Company/GetCurrentCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxHZXRDdXJyZW50Q29tcGFueS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Company/GetMyOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxHZXRNeU9mZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Company/GetMyOffers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxHZXRNeU9mZmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Company/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Home/Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Home/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Home/Index.cshtml]
@@ -58,6 +106,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/CreateTransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVUcmFuc2FjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/Deposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXBvc2l0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/GetCurrentUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRDdXJyZW50VXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/GetMyTransaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRNeVRyYW5zYWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/GetMyTransactions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRNeVRyYW5zYWN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/GetOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRPZmZlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/GetOffersByCategoryIds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRPZmZlcnNCeUNhdGVnb3J5SWRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/User/Offers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPZmZlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/misho/Desktop/Project/offers.itacademy.ge/offers.Web/Views/_ViewImports.cshtml]

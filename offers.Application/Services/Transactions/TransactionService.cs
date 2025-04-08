@@ -62,7 +62,7 @@ namespace offers.Application.Services.Transactions
             catch
             {
                 await _unitOfWork.RollbackAsync(cancellationToken);
-                throw new TransactionCouldNotBeCreatedException("Failed to create a transaction because of an unknown issue");
+                throw;
             }
 
             return transaction.Adapt<TransactionResponseModel>();
@@ -140,7 +140,7 @@ namespace offers.Application.Services.Transactions
         {
             var transaction = await GetMyDomainTransactionAsync(id,accountId,cancellationToken);
 
-            if (transaction.CreatedAt > DateTime.UtcNow.AddMinutes(5))
+            if (transaction.CreatedAt.AddMinutes(5) < DateTime.UtcNow)
             {
                 throw new TransactionCouldNotBeRefundedException("you can only refund a transaction within 5 minutes");
             }

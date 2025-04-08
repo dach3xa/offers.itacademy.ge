@@ -54,14 +54,13 @@ namespace offers.Application.Services.Accounts
 
         public async Task<AccountResponseModel> LoginMvcAsync(string email, string password, CancellationToken cancellationToken)
         {
-            var result = await _signInManager.PasswordSignInAsync(email, password, false, false);
-
-            if (!result.Succeeded)
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null || !await _userManager.CheckPasswordAsync(user, password))
             {
                 throw new AccountNotFoundException("Email or password is incorrect");
             }
 
-            var user = await _userManager.FindByEmailAsync(email);
+            await _signInManager.SignInAsync(user, isPersistent: false);
 
             return user.Adapt<AccountResponseModel>();
         }

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<offers.Application.Models.Response.TransactionResponseModel>
+
+@{
+    ViewData["Title"] = "My Transactions";
+}
+
+<h2 class="mb-4">My Transactions</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You haven't made any transactions yet.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Offer</th>
+                <th>Count</th>
+                <th>Paid</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tx in Model)
+            {
+                <tr>
+                    <td>@tx.Id</td>
+                    <td>@tx.OfferName</td>
+                    <td>@tx.Count</td>
+                    <td>@tx.Paid.ToString("C")</td>
+                    <td>
+                        <a asp-action="GetMyTransaction"
+                           asp-controller="User"
+                           asp-route-id="@tx.Id"
+                           class="btn btn-sm btn-outline-primary">
+                            View
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

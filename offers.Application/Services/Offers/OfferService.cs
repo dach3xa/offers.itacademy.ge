@@ -50,7 +50,7 @@ namespace offers.Application.Services.Offers
 
             if (!account.CompanyDetail.IsActive)
             {
-                throw new CompanyIsNotActiveException("you can't create an offer on a not activated account");
+                throw new CompanyIsNotActiveException("you can't create or view your offer on a not activated account");
             }
         }
         public async Task<OfferResponseModel> CreateAsync(Offer offer, CancellationToken cancellationToken)

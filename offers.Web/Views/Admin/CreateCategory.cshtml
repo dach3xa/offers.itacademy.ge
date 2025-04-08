@@ -1,0 +1,24 @@
+﻿@model offers.Application.Models.DTO.CategoryDTO
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<h2 class="mb-4">Create New Category</h2>
+
+<form asp-action="CreateCategory" asp-controller="Admin" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create Category</button>
+    <a asp-action="Home" asp-controller="Admin" class="btn btn-secondary ms-2">Cancel</a>
+</form>

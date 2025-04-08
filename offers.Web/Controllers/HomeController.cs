@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
 using offers.Web.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace offers.Web.Controllers
 {
@@ -20,6 +22,12 @@ namespace offers.Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                string role = User.FindFirst(ClaimTypes.Role)?.Value;
+                return RedirectToAction("Home", role);
+            }
+
             return View();
         }
 
@@ -49,6 +57,24 @@ namespace offers.Web.Controllers
         {
             var offer = await _offerService.GetAsync(id, cancellationToken);
             return View(offer);
+        }
+
+        [HttpGet("/error")]
+        [HttpPost("/error")]
+        [HttpGet("/error/{statusCode?}")]
+        public IActionResult Error(int? statusCode = null)
+        {
+            var model = new ErrorViewModel();
+
+            var exceptionFeature = HttpContext.Features.Get<IExceptionHandlerFeature>();
+            if (exceptionFeature != null)
+            {
+                model.Message = exceptionFeature.Error.Message;
+            }
+
+            model.StatusCode = statusCode ?? 500;
+
+            return View(model);
         }
     }
 }

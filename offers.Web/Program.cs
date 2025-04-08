@@ -23,12 +23,13 @@ builder.Services.RegisterMaps();
 builder.Services.AddValidatorsFromAssemblyContaining<AccountLoginDTOValidator>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(option =>
-    {
-        option.LoginPath = "/Account/Login";
-        option.Cookie.Name = "AuthCookie";
-    });
+
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.Cookie.Name = "AuthCookie";
+});
 
 builder.Services.AddIdentityCore<Account>(options =>
 {
@@ -36,11 +37,19 @@ builder.Services.AddIdentityCore<Account>(options =>
     options.Password.RequiredLength = 8;
     options.Password.RequireUppercase = true;
 })
-.AddSignInManager()
-.AddEntityFrameworkStores<ApplicationDbContext>();
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddSignInManager();
+
+builder.Services.AddAuthentication("Identity.Application")
+    .AddCookie("Identity.Application", options =>
+    {
+        options.LoginPath = "/account/login";
+        options.Cookie.Name = "AuthCookie";
+    });
 
 builder.Services.AddServices();
 builder.Services.AddRepositories();
+builder.Services.AddHealthChecks();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnection))));
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
@@ -48,13 +57,14 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Offer
 builder.Services.AddHostedService<OfferArchivingService>();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseExceptionHandler("/error");
+app.UseStatusCodePagesWithReExecute("/error/{0}");
+
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.MapHealthChecks("/health");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

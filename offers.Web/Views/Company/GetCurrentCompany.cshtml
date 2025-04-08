@@ -1,0 +1,36 @@
+﻿@model offers.Application.Models.Response.CompanyResponseModel
+
+@{
+    ViewData["Title"] = "Company Profile";
+}
+
+<h2 class="mb-4">Company Profile</h2>
+
+<div class="card shadow-sm">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="@Model.PhotoURL" class="img-fluid rounded-start" alt="@Model.CompanyName Logo" style="object-fit: cover; width: 100%; height: 100%;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h4 class="card-title">@Model.CompanyName</h4>
+                <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+                <p class="card-text"><strong>Phone:</strong> @Model.PhoneNumber</p>
+                <p class="card-text"><strong>Role:</strong> @Model.Role</p>
+                <p class="card-text">
+                    <strong>Status:</strong>
+                    @if (Model.IsActive)
+                    {
+                        <span class="badge bg-success">Active</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Pending</span>
+                    }
+                </p>
+
+                <a asp-action="Home" asp-controller="Company" class="btn btn-secondary mt-3">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>

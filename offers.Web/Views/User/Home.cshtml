@@ -1,0 +1,73 @@
+﻿@model offers.Application.Models.Response.UserResponseModel
+
+@{
+    ViewData["Title"] = "User Dashboard";
+}
+
+<h2 class="mb-3">Welcome, @Model.FirstName @Model.LastName</h2>
+
+<div class="mb-4">
+    <p><strong>Email:</strong> @Model.Email</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Offers</h5>
+                <p class="card-text">Explore and purchase offers.</p>
+                <a asp-action="Offers" asp-controller="User" class="btn btn-outline-primary">Browse Offers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Transactions</h5>
+                <p class="card-text">View your past purchases.</p>
+                <a asp-action="GetMyTransactions" asp-controller="User" class="btn btn-outline-secondary">View Transactions</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">See your account details.</p>
+                <a asp-action="GetCurrentUser" asp-controller="User" class="btn btn-outline-info">View Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Deposit</h5>
+                <p class="card-text">Add funds to your account.</p>
+                <a asp-action="Deposit" asp-controller="User" class="btn btn-success">Deposit Money</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Explore All Offers</h5>
+                <p class="card-text">See all offers posted by all companies.</p>
+                <a asp-action="Offers" asp-controller="Home" class="btn btn-outline-info">View All Offers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Explore Categories</h5>
+                <p class="card-text">Browse available categories across the platform.</p>
+                <a asp-action="Categories" asp-controller="Home" class="btn btn-outline-info">View All Categories</a>
+            </div>
+        </div>
+    </div>
+</div>

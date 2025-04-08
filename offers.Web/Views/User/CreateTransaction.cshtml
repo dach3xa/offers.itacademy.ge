@@ -1,0 +1,18 @@
+﻿@model offers.Application.Models.ViewModel.TransactionCreateViewModel;
+
+@{
+    ViewData["Title"] = "Purchase Offer";
+}
+
+<h2 class="mb-4">Purchase Offer</h2>
+
+<form asp-action="CreateTransaction" asp-controller="User" method="post">
+    <div class="mb-3">
+        <label asp-for="Count" class="form-label"></label>
+        <input asp-for="Count" type="number" class="form-control" min="1" />
+        <span asp-validation-for="Count" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Confirm Purchase</button>
+    <a asp-action="Offers" asp-controller="User" class="btn btn-secondary ms-2">Cancel</a>
+</form>

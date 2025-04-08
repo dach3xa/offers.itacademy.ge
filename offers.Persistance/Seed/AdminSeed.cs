@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using offers.Domain.Models;
 using offers.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace offers.Persistance.Seed
 {
@@ -50,6 +51,16 @@ namespace offers.Persistance.Seed
             };
 
             var result = await userManager.CreateAsync(admin, password);
+
+            if (result.Succeeded)
+            {
+                await userManager.AddClaimsAsync(admin, new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Email, admin.Email),
+                    new Claim(ClaimTypes.Role, admin.Role.ToString()),
+                    new Claim("id", admin.Id.ToString())
+                });
+            }
         }
     }
 }

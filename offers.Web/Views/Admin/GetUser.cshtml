@@ -1,0 +1,20 @@
+﻿@model offers.Application.Models.Response.UserResponseModel
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h2 class="mb-4">User Details</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
+        <p><strong>ID:</strong> @Model.Id</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+        <p><strong>Role:</strong> @Model.Role</p>
+        <p><strong>Balance:</strong> @Model.Balance.ToString("C")</p>
+    </div>
+</div>
+
+<a asp-action="GetAllUsers" asp-controller="Admin" class="btn btn-secondary mt-3">Back to User List</a>

@@ -1,16 +1,19 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using offers.Application.Helper;
 using offers.Application.Models.DTO;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Domain.Enums;
 using offers.Domain.Models;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace offers.Web.Controllers
 {
     [Authorize(Roles = nameof(AccountRole.Admin))]
+    [Route("admin")]
     public class AdminController : Controller
     {
         private readonly ICategoryService _categoryService;
@@ -25,6 +28,8 @@ namespace offers.Web.Controllers
         [HttpGet("home")]
         public IActionResult Home()
         {
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            ViewBag.Email = email;
             return View();
         }
 

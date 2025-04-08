@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,34 +16,38 @@ namespace offers.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<Account> _userManager;
-        private readonly SignInManager<Account> _signInManager;
         private readonly IAccountService _accountService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public AccountController(UserManager<Account> userManager, SignInManager<Account> signInManager, IAccountService accountService, IWebHostEnvironment webHostEnvironment)
+        public AccountController(IAccountService accountService, IWebHostEnvironment webHostEnvironment)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
             _accountService = accountService;
             _webHostEnvironment = webHostEnvironment;
         }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync("Identity.Application");
+            return RedirectToAction("Index", "Home");
+        }
 
+        [HttpGet("login")]
         public IActionResult Login()
         {
             return View();
         }
 
+        [HttpGet("company/register")]
         public IActionResult RegisterCompany()
         {
             return View();
         }
-
+        [HttpGet("user/register")]
         public IActionResult RegisterUser()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromForm] AccountLoginDTO request, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
@@ -53,7 +58,7 @@ namespace offers.Web.Controllers
             return RedirectToAction("Home", user.Role.ToString());
         }
 
-        [HttpPost]
+        [HttpPost("company/register")]
         public async Task<IActionResult> RegisterCompany([FromForm] CompanyRegisterViewModel companyRegister, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
@@ -82,7 +87,7 @@ namespace offers.Web.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-        [HttpPost]
+        [HttpPost("user/register")]
         public async Task<IActionResult> RegisterUser([FromForm] UserRegisterDTO userDTO, CancellationToken cancellation)
         {
             if (!ModelState.IsValid)

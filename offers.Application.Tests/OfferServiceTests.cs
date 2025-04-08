@@ -171,7 +171,7 @@ namespace offers.Application.Tests
             var task = () => _offerService.CreateAsync(offer, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyIsNotActiveException>(task);
-            Assert.Equal("you can't create an offer on a not activated account", exception.Message);
+            Assert.Equal("you can't create or view your offer on a not activated account", exception.Message);
         }
 
 
@@ -321,7 +321,7 @@ namespace offers.Application.Tests
             var task = () => _offerService.GetMyOfferAsync(1, accountId, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyIsNotActiveException>(task);
-            Assert.Equal("you can't create an offer on a not activated account", exception.Message);
+            Assert.Equal("you can't create or view your offer on a not activated account", exception.Message);
         }
 
         [Fact(DisplayName = "when offer id does not exist get my offer should throw offer not found exception")]
@@ -555,7 +555,7 @@ namespace offers.Application.Tests
             var task = () => _offerService.GetMyOffersAsync(accountId, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyIsNotActiveException>(task);
-            Assert.Equal("you can't create an offer on a not activated account", exception.Message);
+            Assert.Equal("you can't create or view your offer on a not activated account", exception.Message);
         }
 
         [Theory(DisplayName = "when account id does not exist Delete offer should throw company not found exception")]
@@ -630,7 +630,7 @@ namespace offers.Application.Tests
             var task = () => _offerService.DeleteAsync(1, accountId, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyIsNotActiveException>(task);
-            Assert.Equal("you can't create an offer on a not activated account", exception.Message);
+            Assert.Equal("you can't create or view your offer on a not activated account", exception.Message);
         }
 
         [Fact(DisplayName = "when id does not exist delete should throw offer not found exception")]

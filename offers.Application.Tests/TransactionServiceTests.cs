@@ -368,7 +368,7 @@ namespace offers.Application.Tests
                     Id = 1,
                     Count = 3,
                     Paid = 150m,
-                    CreatedAt = DateTime.UtcNow.AddDays(1),
+                    CreatedAt = DateTime.UtcNow.AddDays(-1),
                     UserId = 2,
                     OfferId = 3
                 });

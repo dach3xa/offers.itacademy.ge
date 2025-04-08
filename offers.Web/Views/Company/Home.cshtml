@@ -1,0 +1,58 @@
+﻿@model offers.Application.Models.Response.CompanyResponseModel
+
+@{
+    ViewData["Title"] = "Company Dashboard";
+}
+
+<h2 class="mb-4">Welcome, @Model.CompanyName</h2>
+
+<div class="mb-4 d-flex align-items-center">
+    <img src="@Model.PhotoURL" alt="Company Photo" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+    <div>
+        <p class="mb-0"><strong>Email:</strong> @Model.Email</p>
+        <p class="mb-0"><strong>Phone:</strong> @Model.PhoneNumber</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">My Offers</h5>
+                <p class="card-text">View and manage the offers you've posted.</p>
+                <a asp-action="GetMyOffers" asp-controller="Company" class="btn btn-outline-primary">View My Offers</a>
+                <a asp-action="CreateOffer" asp-controller="Company" class="btn btn-success ms-2">Create New Offer</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">See your company information and status.</p>
+                <a asp-action="GetCurrentCompany" asp-controller="Company" class="btn btn-outline-secondary">View Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Explore Offers</h5>
+                <p class="card-text">See all offers across the platform.</p>
+                <a asp-action="Offers" asp-controller="Home" class="btn btn-outline-info">View All Offers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Explore Categories</h5>
+                <p class="card-text">Browse available categories.</p>
+                <a asp-action="Categories" asp-controller="Home" class="btn btn-outline-info">View All Categories</a>
+            </div>
+        </div>
+    </div>
+</div>

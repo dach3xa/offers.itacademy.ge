@@ -61,30 +61,33 @@ namespace offers.Application.Tests
         [InlineData("chkheidzeguram@gmail.com")]
         public async Task LoginAccount_WhenEmailExists_ShouldReturnAccount(string email)
         {
-            _repository.Setup(x => x.GetAsync(It.Is<string>(s => s == email), It.IsAny<CancellationToken>())).
-                ReturnsAsync(new Account()
+            var hasher = new PasswordHasher<Account>();
+            var account = new Account()
+            {
+                Id = 1,
+                Email = email,
+                PhoneNumber = "123-456-7890",
+                Role = AccountRole.User,
+                UserDetail = new UserDetail
                 {
-                    Id = 1,
-                    Email = email,
-                    PhoneNumber = "123-456-7890",
-                    PasswordHash = "15C6EA984B2717BF0B9E9A51DC48451612EA380055337FBD38510A0C3E3EF16332B0DF3362E5C83DC89D6FCA336FB124FFDEF33F317391482C228FE0F63944E3",
-                    Role = AccountRole.User,
-                    UserDetail = new UserDetail
-                    {
-                        FirstName = "John",
-                        LastName = "Doe",
-                    },
-                    CompanyDetail = null, 
-                    Offers = new List<Offer>()
+                    FirstName = "John",
+                    LastName = "Doe",
+                },
+                CompanyDetail = null,
+                Offers = new List<Offer>()
 
-                });
+            };
 
-            var account = await _accountService.LoginAsync(email, "dachidachi", CancellationToken.None);
+            account.PasswordHash = hasher.HashPassword(account, "Dachidachi1.");
+            _repository.Setup(x => x.GetAsync(It.Is<string>(s => s == email), It.IsAny<CancellationToken>())).
+                ReturnsAsync(account);
+
+            var accountResponse = await _accountService.LoginAsync(email, "Dachidachi1.", CancellationToken.None);
 
             using (new AssertionScope())
             {
-                account.Should().NotBeNull();
-                account.Email.Should().Be(email);
+                accountResponse.Should().NotBeNull();
+                accountResponse.Email.Should().Be(email);
             }
         }
 
@@ -147,9 +150,12 @@ namespace offers.Application.Tests
                 },
                 Offers = new List<Offer>()
             };
-            _repository
-                .Setup(x => x.ExistsAsync(account.Email, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(true);
+            _userManager
+                .Setup(x => x.FindByEmailAsync(account.Email))
+                .ReturnsAsync(new Account
+                {
+                     Id = 1,
+                });
 
             var task =  () => _accountService.RegisterAsync(account, CancellationToken.None);
 
@@ -174,9 +180,9 @@ namespace offers.Application.Tests
                 Offers = new List<Offer>()
             };
 
-            _repository
-                .Setup(x => x.ExistsAsync(account.Email, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(false);
+            _userManager
+                .Setup(x => x.FindByEmailAsync(account.Email))
+                .ReturnsAsync((Account)null);
 
             var accountResponse = await _accountService.RegisterAsync(account, CancellationToken.None);
 

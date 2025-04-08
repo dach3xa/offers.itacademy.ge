@@ -10,40 +10,52 @@ using offers.Domain.Models;
 using offers.Application.Helper;
 using offers.Web.Controllers.FileSaver;
 using System.Threading;
+using offers.Application.Services.Categories;
 
 namespace offers.Web.Controllers
 {
     [Authorize(Roles = nameof(AccountRole.Company))]
+    [Route("company")]
     public class CompanyController : Controller
     {
         private readonly IOfferService _offerService;
         private readonly IAccountService _accountService;
+        private readonly ICategoryService _categoryService;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CompanyController(IOfferService offerService, IAccountService accountService, IWebHostEnvironment webHostEnvironment)
+        public CompanyController(IOfferService offerService, IAccountService accountService, ICategoryService categoryService, IWebHostEnvironment webHostEnvironment)
         {
             _offerService = offerService;
             _accountService = accountService;
             _webHostEnvironment = webHostEnvironment;
+            _categoryService = categoryService;
         }
 
         [HttpGet("home")]
-        public IActionResult Home()
+        public async Task<IActionResult> Home(CancellationToken cancellationToken)
         {
-            return View();
+            var company = await _accountService.GetCompanyAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            return View(company);
         }
 
         [HttpGet("offers/create")]
-        public IActionResult CreateOffer()
+        public async Task<IActionResult> CreateOffer(CancellationToken cancellationToken)
         {
+            var categories = await _categoryService.GetAllAsync(cancellationToken);
+            ViewBag.Categories = categories;
             return View();
         }
 
         [HttpPost("offers/create")]
         public async Task<IActionResult> CreateOffer([FromForm] OfferCreateViewModel offerViewModel, CancellationToken cancellationToken)
         {
+            var categories = await _categoryService.GetAllAsync(cancellationToken);
+            ViewBag.Categories = categories;
+
             if (!ModelState.IsValid)
-                return View();
+            {
+                return View(offerViewModel); 
+            }
 
             string photoUrl = null;
             try
@@ -61,6 +73,7 @@ namespace offers.Web.Controllers
 
             var offer = offerViewModel.Adapt<Offer>();
             offer.PhotoURL = photoUrl;
+            offer.AccountId = ControllerHelper.GetUserIdFromClaims(User);
 
             await _offerService.CreateAsync(offer, cancellationToken);
 

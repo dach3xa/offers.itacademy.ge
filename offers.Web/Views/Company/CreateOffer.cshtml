@@ -1,0 +1,60 @@
+﻿@model offers.Application.Models.ViewModel.OfferCreateViewModel
+@{
+    ViewData["Title"] = "Create Offer";
+    var categories = ViewBag.Categories as List<offers.Application.Models.Response.CategoryResponseModel>;
+}
+
+<h2 class="mb-4">Create New Offer</h2>
+
+<form asp-action="CreateOffer" asp-controller="Company" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Count" class="form-label"></label>
+        <input asp-for="Count" class="form-control" />
+        <span asp-validation-for="Count" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select asp-for="CategoryId" class="form-select">
+            <option disabled selected value="">-- Select Category --</option>
+            @foreach (var category in categories)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ArchiveAt" class="form-label"></label>
+        <input asp-for="ArchiveAt" type="datetime-local" class="form-control" />
+        <span asp-validation-for="ArchiveAt" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Photo" class="form-label"></label>
+        <input asp-for="Photo" type="file" class="form-control" accept="image/*" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create Offer</button>
+    <a asp-action="Home" asp-controller="Company" class="btn btn-secondary ms-2">Cancel</a>
+</form>
