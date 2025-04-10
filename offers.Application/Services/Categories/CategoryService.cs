@@ -13,6 +13,7 @@ using Mapster;
 using offers.Application.UOF;
 using System.Diagnostics.CodeAnalysis;
 using offers.Application.Models.Response;
+using System.Threading;
 
 namespace offers.Application.Services.Categories
 {
@@ -54,10 +55,17 @@ namespace offers.Application.Services.Categories
         }
 
         [ExcludeFromCodeCoverage]
-        public async Task<List<CategoryResponseModel>> GetAllAsync( CancellationToken cancellationToken)
+        public async Task<List<CategoryResponseModel>> GetAllAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default)
+        {
+            var categories = await _repository.GetAllAsync(pageNumber, pageSize, cancellationToken);
+
+            return categories.Adapt<List<CategoryResponseModel>>() ?? new List<CategoryResponseModel>();
+        }
+
+        [ExcludeFromCodeCoverage]
+        public async Task<List<CategoryResponseModel>> GetAllAsync(CancellationToken cancellationToken)
         {
             var categories = await _repository.GetAllAsync(cancellationToken);
-
 
             return categories.Adapt<List<CategoryResponseModel>>() ?? new List<CategoryResponseModel>();
         }

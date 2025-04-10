@@ -57,9 +57,9 @@ namespace offers.Application.Tests
         }
 
         [Theory(DisplayName = "when an email exists return an account response model")]
-        [InlineData("kirvalidzedachi@gmail.com")]
-        [InlineData("chkheidzeguram@gmail.com")]
-        public async Task LoginAccount_WhenEmailExists_ShouldReturnAccount(string email)
+        [InlineData("kirvalidzedachi@gmail.com", "ThisPass123.")]
+        [InlineData("chkheidzeguram@gmail.com", "OtherPass12.")]
+        public async Task LoginAccount_WhenEmailExists_ShouldReturnAccount(string email, string password)
         {
             var hasher = new PasswordHasher<Account>();
             var account = new Account()
@@ -77,12 +77,12 @@ namespace offers.Application.Tests
                 Offers = new List<Offer>()
 
             };
+            account.PasswordHash = hasher.HashPassword(account, password);
 
-            account.PasswordHash = hasher.HashPassword(account, "Dachidachi1.");
-            _repository.Setup(x => x.GetAsync(It.Is<string>(s => s == email), It.IsAny<CancellationToken>())).
-                ReturnsAsync(account);
+            _userManager.Setup(x => x.FindByEmailAsync(email)).ReturnsAsync(account);
+            _userManager.Setup(x => x.CheckPasswordAsync(account, password)).ReturnsAsync(true);
 
-            var accountResponse = await _accountService.LoginAsync(email, "Dachidachi1.", CancellationToken.None);
+            var accountResponse = await _accountService.LoginAsync(email, password, CancellationToken.None);
 
             using (new AssertionScope())
             {
@@ -180,9 +180,11 @@ namespace offers.Application.Tests
                 Offers = new List<Offer>()
             };
 
+
             _userManager
                 .Setup(x => x.FindByEmailAsync(account.Email))
                 .ReturnsAsync((Account)null);
+            _userManager.Setup(x => x.CreateAsync(account, account.PasswordHash)).ReturnsAsync(IdentityResult.Success);
 
             var accountResponse = await _accountService.RegisterAsync(account, CancellationToken.None);
 

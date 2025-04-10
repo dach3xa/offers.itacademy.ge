@@ -19,7 +19,7 @@
             <response code="409">Category already exists (CategoryAlreadyExistsException)</response>
             <response code="500">Internal server error during category creation (CategoryCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.AdminController.GetAllUsers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.GetAllUsers(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered users.
             </summary>
@@ -43,7 +43,7 @@
             <response code="404">Company account not found (AccountNotFoundException)</response>
             <response code="500">Internal server error during confirmation (AccountCouldNotActivateException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.AdminController.GetAllCompanies(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered companies.
             </summary>
@@ -120,7 +120,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.CompanyController.GetMyOffers(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all offers created by the currently authenticated account.
             </summary>
@@ -191,7 +191,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all available categories.
             </summary>
@@ -214,7 +214,7 @@
             <response code="404">Category not found (CategoryNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.GuestController.GetAllOffersAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all available offers.
             </summary>
@@ -237,7 +237,7 @@
             <response code="404">Offer not found (OfferNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves offers that belong to the specified categories.
             </summary>
@@ -311,7 +311,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V1.UserController.GetMyTransactions(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V1.UserController.GetMyTransactions(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all transactions associated with the currently authenticated user.
             </summary>
@@ -363,7 +363,7 @@
             <response code="409">Category already exists (CategoryAlreadyExistsException)</response>
             <response code="500">Internal server error during category creation (CategoryCouldNotBeCreatedException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AdminController.GetAllUsers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.GetAllUsers(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered users for version 2.
             </summary>
@@ -387,7 +387,7 @@
             <response code="404">Company account not found (AccountNotFoundException)</response>
             <response code="500">Internal server error during confirmation (AccountCouldNotActivateException)</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.AdminController.GetAllCompanies(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.AdminController.GetAllCompanies(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all registered companies for version 2.
             </summary>
@@ -464,7 +464,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.CompanyController.GetMyOffers(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.CompanyController.GetMyOffers(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all offers created by the currently authenticated account for version 2.
             </summary>
@@ -535,7 +535,7 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.GuestController.GetAllCategoriesAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetAllCategoriesAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all available categories for version 2.
             </summary>
@@ -558,7 +558,7 @@
             <response code="404">Category not found (CategoryNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.GuestController.GetAllOffersAsync(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.GuestController.GetAllOffersAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all available offers for version 2.
             </summary>
@@ -581,7 +581,7 @@
             <response code="404">Offer not found (OfferNotFoundException)</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetOffersByCategories(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves offers that belong to the specified categories for version 2.
             </summary>
@@ -655,7 +655,7 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error</response>
         </member>
-        <member name="M:offers.API.Controllers.V2.UserController.GetMyTransactions(System.Threading.CancellationToken)">
+        <member name="M:offers.API.Controllers.V2.UserController.GetMyTransactions(System.Int32,System.Int32,System.Threading.CancellationToken)">
             <summary>
             Retrieves all transactions associated with the currently authenticated user for version 2.
             </summary>

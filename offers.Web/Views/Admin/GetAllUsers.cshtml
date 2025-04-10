@@ -37,3 +37,22 @@
         }
     </tbody>
 </table>
+<div class="d-flex justify-content-center mt-4 gap-2">
+    @if ((int)ViewBag.currentPage > 1)
+    {
+        <a asp-action="GetAllUsers"
+           asp-route-pageNumber="@(ViewBag.currentPage - 1)"
+           class="btn btn-outline-secondary">
+            ← Previous
+        </a>
+    }
+
+    @if ((bool)ViewBag.CanGoRight)
+    {
+        <a asp-action="GetAllUsers"
+           asp-route-pageNumber="@(ViewBag.currentPage + 1)"
+           class="btn btn-outline-primary">
+            Next →
+        </a>
+    }
+</div>

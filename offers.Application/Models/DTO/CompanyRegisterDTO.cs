@@ -1,4 +1,6 @@
-﻿namespace offers.Application.Models.DTO
+﻿using Microsoft.AspNetCore.Http;
+
+namespace offers.Application.Models.DTO
 {
     public class CompanyRegisterDTO
     {
@@ -6,7 +8,7 @@
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
-        public string PhotoURL { get; set; }
+        public IFormFile Photo { get; set; }
 
     }
 }

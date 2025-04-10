@@ -38,9 +38,9 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<CategoryResponseModel>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("categories")]
-        public async Task<IActionResult> GetAllCategoriesAsync(CancellationToken cancellation)
+        public async Task<IActionResult> GetAllCategoriesAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var categories = await _categoryService.GetAllAsync(cancellation);
+            var categories = await _categoryService.GetAllAsync(pageNumber, pageSize, cancellation);
 
             return Ok(categories);
         }
@@ -80,9 +80,9 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<OfferResponseModel>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("offers")]
-        public async Task<IActionResult> GetAllOffersAsync(CancellationToken cancellation)
+        public async Task<IActionResult> GetAllOffersAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var offers = await _offerService.GetAllAsync(cancellation);
+            var offers = await _offerService.GetAllAsync(pageNumber, pageSize, cancellation);
 
             return Ok(offers);
         }

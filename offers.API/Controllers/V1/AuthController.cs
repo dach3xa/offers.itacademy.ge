@@ -17,6 +17,8 @@ using offers.API.Infrastructure.Swagger.Examples;
 using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
+using Microsoft.AspNetCore.Hosting;
+using offers.Application.FileSaver;
 
 namespace offers.API.Controllers.V1
 {
@@ -85,22 +87,28 @@ namespace offers.API.Controllers.V1
         /// <response code="409">An account with the given email already exists (AccountAlreadyExistsException)</response>
         /// <response code="500">Internal server error during registration</response>
         [Produces("application/json")]
-        [Consumes("application/json")]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CompanyResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(CompanyRegisterDTO), typeof(CompanyRegisterDTOMultipleExamples))]
         [HttpPost("company/register")]
-        public async Task<IActionResult> Register([FromBody] CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
+        public async Task<IActionResult> Register([FromForm] CompanyRegisterDTO companyDTO, CancellationToken cancellation = default)
         {
             ControllerHelper.ValidateModelState(
             ModelState,
             errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Register attempt for {Email}", companyDTO.Email);
+            string photoUrl = "";
+            if (companyDTO.Photo != null )
+            {
+                photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyDTO.Photo, cancellation);
+            }
 
             var companyAccount = companyDTO.Adapt<Account>();
+            companyAccount.CompanyDetail.PhotoURL = photoUrl;
             var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
 
             return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);

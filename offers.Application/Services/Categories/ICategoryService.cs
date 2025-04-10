@@ -12,6 +12,7 @@ namespace offers.Application.Services.Categories
     {
         Task<CategoryResponseModel> CreateAsync(Category category, CancellationToken cancellationToken);
         Task<CategoryResponseModel> GetAsync(int id, CancellationToken cancellationToken);
+        Task<List<CategoryResponseModel>> GetAllAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
         Task<List<CategoryResponseModel>> GetAllAsync(CancellationToken cancellationToken);
     }
 }

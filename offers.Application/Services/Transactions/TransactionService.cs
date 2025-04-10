@@ -162,9 +162,9 @@ namespace offers.Application.Services.Transactions
         }
 
         [ExcludeFromCodeCoverage]
-        public async Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken)
+        public async Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId,int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
-            var transactions = await _transactionRepository.GetMyTransactionsAsync(accountId, cancellationToken);
+            var transactions = await _transactionRepository.GetMyTransactionsAsync(accountId,pageNumber, pageSize, cancellationToken);
 
             return transactions.Adapt<List<TransactionResponseModel>>() ?? new List<TransactionResponseModel>();
         }

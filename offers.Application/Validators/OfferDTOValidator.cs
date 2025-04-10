@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using offers.Application.Models.DTO;
+using offers.Application.Validators;
 
 namespace offers.Application.Validators
 {

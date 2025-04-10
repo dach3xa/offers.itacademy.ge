@@ -8,7 +8,7 @@ using offers.Application.Models.ViewModel;
 using offers.Application.Services.Accounts;
 using offers.Domain.Enums;
 using offers.Domain.Models;
-using offers.Web.Controllers.FileSaver;
+using offers.Application.FileSaver;
 using System.Data;
 using System.Security.Claims;
 
@@ -17,11 +17,9 @@ namespace offers.Web.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
         public AccountController(IAccountService accountService, IWebHostEnvironment webHostEnvironment)
         {
             _accountService = accountService;
-            _webHostEnvironment = webHostEnvironment;
         }
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -59,7 +57,7 @@ namespace offers.Web.Controllers
         }
 
         [HttpPost("company/register")]
-        public async Task<IActionResult> RegisterCompany([FromForm] CompanyRegisterViewModel companyRegister, CancellationToken cancellationToken)
+        public async Task<IActionResult> RegisterCompany([FromForm] CompanyRegisterDTO companyRegister, CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -69,7 +67,7 @@ namespace offers.Web.Controllers
             {
                 if (companyRegister.Photo != null && companyRegister.Photo.Length > 0)
                 {
-                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyRegister.Photo, _webHostEnvironment);
+                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyRegister.Photo, cancellationToken);
                 }
             }
             catch(Exception ex)

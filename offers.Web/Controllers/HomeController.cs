@@ -32,9 +32,12 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("categories")]
-        public async Task<IActionResult> Categories(CancellationToken cancellationToken)
+        public async Task<IActionResult> Categories([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var categories = await _categoryService.GetAllAsync(cancellationToken);
+            var categories = await _categoryService.GetAllAsync(pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = categories.Count == pageSize;
+
             return View(categories);
         }
 
@@ -46,9 +49,12 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("offers")]
-        public async Task<IActionResult> Offers(CancellationToken cancellationToken)
+        public async Task<IActionResult> Offers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var offers = await _offerService.GetAllAsync(cancellationToken);
+            var offers = await _offerService.GetAllAsync(pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = offers.Count == pageSize;
+
             return View(offers);
         }
 

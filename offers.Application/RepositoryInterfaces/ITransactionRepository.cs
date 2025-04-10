@@ -14,6 +14,6 @@ namespace offers.Application.RepositoryInterfaces
         Task DeleteByOfferIdAsync(int offerId, CancellationToken cancellationToken);
         Task<Transaction?> GetAsync(int id, CancellationToken cancellationToken);
         Task DeleteAsync(int id, CancellationToken cancellationToken);
-        Task<List<Transaction>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken);
+        Task<List<Transaction>> GetMyTransactionsAsync(int accountId, int pageNumber, int pageSize, CancellationToken cancellationToken);
     }
 }

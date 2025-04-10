@@ -58,9 +58,9 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("offers")]
-        public async Task<IActionResult> GetOffersByCategories([FromQuery] List<int> categoryIds, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetOffersByCategories([FromQuery] List<int> categoryIds, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var responseOffers = await _offerService.GetOffersByCategoriesAsync(categoryIds, cancellationToken);
+            var responseOffers = await _offerService.GetOffersByCategoriesAsync(categoryIds, pageNumber, pageSize, cancellationToken);
 
             var responseV2 = new
             {
@@ -224,9 +224,9 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("transactions")]
-        public async Task<IActionResult> GetMyTransactions(CancellationToken cancellation)
+        public async Task<IActionResult> GetMyTransactions([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), cancellation);
+            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellation);
             var responseV2 = new
             {
                 transactions,

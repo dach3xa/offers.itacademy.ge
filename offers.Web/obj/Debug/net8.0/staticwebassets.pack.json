@@ -245,34 +245,6 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\4777b59b-04d6-43ff-99a2-ba3dbe9a85e0.png",
-      "PackagePath": "staticwebassets\\uploads\\4777b59b-04d6-43ff-99a2-ba3dbe9a85e0.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\66ec5e54-bfb6-4f22-b306-8089b5a05ac8.png",
-      "PackagePath": "staticwebassets\\uploads\\66ec5e54-bfb6-4f22-b306-8089b5a05ac8.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\7e67704e-f219-4e0b-90b9-64f75e002ea1.png",
-      "PackagePath": "staticwebassets\\uploads\\7e67704e-f219-4e0b-90b9-64f75e002ea1.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\c9c196f7-1b1a-4b25-827d-0cf4b987f309.png",
-      "PackagePath": "staticwebassets\\uploads\\c9c196f7-1b1a-4b25-827d-0cf4b987f309.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\d5abf1e2-ad52-4eb9-846f-9eefb1656c1e.png",
-      "PackagePath": "staticwebassets\\uploads\\d5abf1e2-ad52-4eb9-846f-9eefb1656c1e.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\f49f473c-640d-4274-a367-2e43f4a6227f.png",
-      "PackagePath": "staticwebassets\\uploads\\f49f473c-640d-4274-a367-2e43f4a6227f.png"
-    },
-    {
-      "Id": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\wwwroot\\uploads\\ffa24d01-d6f8-43ab-8cc4-1f34642e957e.jpg",
-      "PackagePath": "staticwebassets\\uploads\\ffa24d01-d6f8-43ab-8cc4-1f34642e957e.jpg"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.offers.Web.props",
       "PackagePath": "build\\offers.Web.props"
     },

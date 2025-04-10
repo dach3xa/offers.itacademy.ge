@@ -91,18 +91,18 @@ namespace offers.Application.Services.Accounts
         }
 
         [ExcludeFromCodeCoverage]
-        public async Task<List<CompanyResponseModel>> GetAllCompaniesAsync(CancellationToken cancellationToken)
+        public async Task<List<CompanyResponseModel>> GetAllCompaniesAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var companies = await _repository.GetAllCompaniesAsync(cancellationToken);
+            var companies = await _repository.GetAllCompaniesAsync(pageNumber, pageSize, cancellationToken);
 
 
             return companies.Adapt<List<CompanyResponseModel>>() ?? new List<CompanyResponseModel>();
         }
 
         [ExcludeFromCodeCoverage]
-        public async Task<List<UserResponseModel>> GetAllUsersAsync(CancellationToken cancellationToken)
+        public async Task<List<UserResponseModel>> GetAllUsersAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var users = await _repository.GetAllUsersAsync(cancellationToken);
+            var users = await _repository.GetAllUsersAsync(pageNumber, pageSize, cancellationToken);
 
             return users.Adapt<List<UserResponseModel>>() ?? new List<UserResponseModel>();
         }

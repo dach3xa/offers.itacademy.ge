@@ -1,5 +1,7 @@
 ﻿
 
+using Microsoft.AspNetCore.Http;
+
 namespace offers.Application.Models.DTO
 {
     public class OfferDTO
@@ -10,7 +12,7 @@ namespace offers.Application.Models.DTO
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public DateTime ArchiveAt { get; set; }
-        public string PhotoURL { get; set; }
+        public IFormFile Photo { get; set; }
 
     }
 }

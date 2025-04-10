@@ -14,6 +14,6 @@ namespace offers.Application.Services.Transactions
         public Task RefundAllUsersByOfferIdAsync(int offerId, CancellationToken cancellationToken);
         public Task<TransactionResponseModel> GetMyTransactionAsync(int id, int accountId, CancellationToken cancellationToken);
         public Task RefundAsync(int id, int accountId, CancellationToken cancellationToken);
-        public Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken);
+        public Task<List<TransactionResponseModel>> GetMyTransactionsAsync(int accountId, int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
     }
 }

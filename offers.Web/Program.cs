@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using offers.Application.BackgroundServices;
 using offers.Application.Mappings;
 using offers.Application.Services.Offers.Events;
@@ -67,7 +68,13 @@ if (!app.Environment.IsDevelopment())
 app.MapHealthChecks("/health");
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); 
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(@"C:\Users\misho\Desktop\Project\offers.itacademy.ge\UploadedFiles\uploads"),
+    RequestPath = "/uploads"
+});
 
 app.UseRouting();
 

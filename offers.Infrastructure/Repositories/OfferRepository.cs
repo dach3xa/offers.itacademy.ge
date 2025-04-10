@@ -34,11 +34,13 @@ namespace offers.Infrastructure.Repositories
             offer.Count -= count;
         }
 
-        public async Task<List<Offer>> GetOffersByAccountIdAsync(int accountId, CancellationToken cancellationToken)
+        public async Task<List<Offer>> GetOffersByAccountIdAsync(int accountId,int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
                 .Include(off => off.Category)
-                .Where(off => off.AccountId == accountId)
+                .Where(off => off.AccountId == accountId && off.Count != 0)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
@@ -46,14 +48,16 @@ namespace offers.Infrastructure.Repositories
         {
             return await _dbSet
                 .Include(off => off.Category)
-                .SingleOrDefaultAsync(off => off.Id == id, cancellationToken)
+                .SingleOrDefaultAsync(off => off.Id == id && off.Count != 0, cancellationToken)
                 .ConfigureAwait(false);
         }
 
-        public async Task<List<Offer>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken)
+        public async Task<List<Offer>> GetOffersByCategoriesAsync(List<int> categoryIds, int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
-                .Where(off => categoryIds.Contains(off.CategoryId) && off.IsArchived == false)
+                .Where(off => categoryIds.Contains(off.CategoryId) && off.IsArchived == false && off.Count != 0)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
@@ -72,9 +76,13 @@ namespace offers.Infrastructure.Repositories
         {
              base.Delete(offer);
         }
-        public async Task<List<Offer>> GetAllAsync(CancellationToken cancellationToken)
+        public async Task<List<Offer>> GetAllAsync(int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
-            return await _dbSet.Include(off => off.Category).Where(off => !off.IsArchived).ToListAsync(cancellationToken).ConfigureAwait(false);
+            return await _dbSet.Include(off => off.Category)
+                .Where(off => !off.IsArchived && off.Count != 0)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken).ConfigureAwait(false);
         }
     }
 }

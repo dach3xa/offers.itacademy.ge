@@ -77,10 +77,10 @@ namespace offers.Application.Services.Offers
             offer.Account = offerAccount;
             offer.Category = offerCategory;
         }
-        public async Task<List<OfferResponseModel>> GetMyOffersAsync(int accountId, CancellationToken cancellationToken)
+        public async Task<List<OfferResponseModel>> GetMyOffersAsync(int accountId,int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             await AccountIsActiveCheck(accountId, cancellationToken);
-            var offers = await _offerRepository.GetOffersByAccountIdAsync(accountId, cancellationToken);
+            var offers = await _offerRepository.GetOffersByAccountIdAsync(accountId, pageNumber, pageSize, cancellationToken);
           
             return offers.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();
         }
@@ -134,16 +134,16 @@ namespace offers.Application.Services.Offers
             }
         }
 
-        public async Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, CancellationToken cancellationToken)
+        public async Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds,int pageNumber, int pageSize, CancellationToken cancellationToken = default)
         {
 
-            var categories = await _categoryRepository.GetAllWithIdsAsync(categoryIds, cancellationToken);
+            var categories = await _categoryRepository.GetAllWithIdsAsync(categoryIds, pageNumber, pageSize, cancellationToken);
             if(categories.Count < categoryIds.Count)
             {
                 throw new CategoryNotFoundException("One or more categories that you provided were not found");
             }
 
-            var offers = await _offerRepository.GetOffersByCategoriesAsync(categoryIds, cancellationToken);
+            var offers = await _offerRepository.GetOffersByCategoriesAsync(categoryIds, pageNumber, pageSize, cancellationToken);
 
             return offers?.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();
         }
@@ -186,9 +186,9 @@ namespace offers.Application.Services.Offers
         }
 
         [ExcludeFromCodeCoverage]
-        public async Task<List<OfferResponseModel>> GetAllAsync(CancellationToken cancellationToken)
+        public async Task<List<OfferResponseModel>> GetAllAsync(int pageNumber, int pageSize, CancellationToken cancellationToken = default)
         {
-            var categories = await _offerRepository.GetAllAsync(cancellationToken);
+            var categories = await _offerRepository.GetAllAsync(pageNumber, pageSize, cancellationToken);
 
 
             return categories.Adapt<List<OfferResponseModel>>() ?? new List<OfferResponseModel>();

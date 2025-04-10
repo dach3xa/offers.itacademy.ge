@@ -20,9 +20,12 @@ namespace offers.Infrastructure.Repositories.Base
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<List<T>> GetAllAsync(CancellationToken token)
+        public async Task<List<T>> GetAllAsync(int pageNumber, int pageSize, CancellationToken token)
         {
-            return await _dbSet.ToListAsync(token);
+            return await _dbSet
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync(token);
         }
 
         public async Task<T?> GetAsync(int id, CancellationToken token)

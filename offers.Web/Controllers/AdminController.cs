@@ -54,10 +54,11 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("users")]
-        public async Task<IActionResult> GetAllUsers(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAllUsers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 1, CancellationToken cancellationToken = default)
         {
-            var users = await _accountService.GetAllUsersAsync(cancellationToken);
-
+            var users = await _accountService.GetAllUsersAsync(pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = users.Count == pageSize;
             return View(users);
         }
 
@@ -78,9 +79,11 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("companies")]
-        public async Task<IActionResult> GetAllCompanies(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAllCompanies([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var companies =  await _accountService.GetAllCompaniesAsync(cancellationToken);
+            var companies =  await _accountService.GetAllCompaniesAsync(pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = companies.Count == pageSize;
 
             return View(companies);
         }

@@ -19,7 +19,6 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 Price = 3.99m,
                 CategoryId = 1,
                 ArchiveAt = DateTime.UtcNow.AddHours(2),
-                PhotoURL = "https://example.com/images/croissants.jpg"
             });
 
             yield return SwaggerExample.Create(
@@ -32,7 +31,6 @@ namespace offers.API.Infrastructure.Swagger.Examples
                     Price = 7.50m,
                     CategoryId = 2,
                     ArchiveAt = DateTime.UtcNow.AddHours(1),
-                    PhotoURL = "https://example.com/images/sushi-combo.jpg"
                 });
 
             yield return SwaggerExample.Create(
@@ -45,7 +43,6 @@ namespace offers.API.Infrastructure.Swagger.Examples
                     Price = 4.25m,
                     CategoryId = 3,
                     ArchiveAt = DateTime.UtcNow.AddHours(3),
-                    PhotoURL = "https://example.com/images/fruit-box.jpg"
                 });
         }
     }

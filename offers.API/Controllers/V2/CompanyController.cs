@@ -16,6 +16,7 @@ using offers.Application.Services.Offers;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
+using offers.Application.FileSaver;
 
 namespace offers.API.Controllers.V2
 {
@@ -60,7 +61,7 @@ namespace offers.API.Controllers.V2
         /// <response code="401">Unauthorized</response>
         /// <response code="500">Internal server error</response>
         [Produces("application/json")]
-        [Consumes("application/json")]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(OfferResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
@@ -69,7 +70,7 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [SwaggerRequestExample(typeof(OfferDTO), typeof(OfferDTOMultipleExamples))]
         [HttpPost("offers")]
-        public async Task<IActionResult> Post([FromBody] OfferDTO offerDTO, CancellationToken cancellation)
+        public async Task<IActionResult> Post([FromForm] OfferDTO offerDTO, CancellationToken cancellation)
         {
             ControllerHelper.ValidateModelState(
                 ModelState,
@@ -77,8 +78,14 @@ namespace offers.API.Controllers.V2
 
             _logger.LogInformation("attempt to add a new Offer {Name}", offerDTO.Name);
 
+            string photoUrl = "";
+            if (offerDTO.Photo != null)
+            {
+                photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(offerDTO.Photo, cancellation);
+            }
             var offer = offerDTO.Adapt<Offer>();
             offer.AccountId = ControllerHelper.GetUserIdFromClaims(User);
+            offer.PhotoURL = photoUrl;
             var offerResponse = await _offerService.CreateAsync(offer, cancellation);
 
             var responseV2 = new
@@ -110,9 +117,9 @@ namespace offers.API.Controllers.V2
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("offers")]
-        public async Task<IActionResult> GetMyOffers(CancellationToken cancellation)
+        public async Task<IActionResult> GetMyOffers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), cancellation);
+            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellation);
 
             var responseV2 = new
             {

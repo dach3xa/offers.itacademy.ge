@@ -106,6 +106,26 @@
           "Admin"
         ],
         "summary": "Retrieves all registered users for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns a list of all users",
@@ -214,6 +234,26 @@
           "Admin"
         ],
         "summary": "Retrieves all registered companies for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns a list of all companies",
@@ -280,7 +320,7 @@
                   "value": {"firstName":"Test","lastName":"User","email":"test.user@sample.org","phoneNumber":"599889988","password":"Test123!"}
                 },
                 "Minimal Valid User": {
-                  "value": {"firstName":"Liam","lastName":"Nguyen","email":"liam.nguyen@mail.com","phoneNumber":"599889988","password":"Password123"}
+                  "value": {"firstName":"Liam","lastName":"Nguyen","email":"liam.nguyen@mail.com","phoneNumber":"599889988","password":"Password123."}
                 }
               }
             }
@@ -335,24 +375,58 @@
         ],
         "summary": "Registers a new company account for version 2.",
         "requestBody": {
-          "description": "The company registration data.",
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/CompanyRegisterDTO"
+                "type": "object",
+                "properties": {
+                  "CompanyName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "Password": {
+                    "type": "string"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
               },
               "examples": {
                 "Tech Startup": {
-                  "value": {"companyName":"InnoTech","email":"contact@innotech.com","phoneNumber":"599889988","password":"Innovate@2024","photoURL":"https://images.unsplash.com/photo-1537432376769-00aabc3d3e6b"}
+                  "value": {"companyName":"InnoTech","email":"contact@innotech.com","phoneNumber":"599889988","password":"Innovate@2024","photo":null}
                 },
                 "Marketing Agency": {
-                  "value": {"companyName":"BrandWise","email":"info@brandwise.io","phoneNumber":"599889988","password":"Branding123!","photoURL":"https://images.unsplash.com/photo-1581091870622-7e0cdfbb6799"}
+                  "value": {"companyName":"BrandWise","email":"info@brandwise.io","phoneNumber":"599889988","password":"Branding123!","photo":null}
                 },
                 "E-Commerce Platform": {
-                  "value": {"companyName":"ShopifyClone","email":"support@shopifyclone.net","phoneNumber":"599889988","password":"EcomSecure!9","photoURL":"https://images.unsplash.com/photo-1515169067865-d6f7efb04b03"}
+                  "value": {"companyName":"ShopifyClone","email":"support@shopifyclone.net","phoneNumber":"599889988","password":"EcomSecure!9","photo":null}
                 },
                 "Consulting Firm": {
-                  "value": {"companyName":"StratEdge","email":"hello@stratedge.org","phoneNumber":"599889988","password":"Consult@2023","photoURL":"https://images.unsplash.com/photo-1551836022-d5d88e9218df"}
+                  "value": {"companyName":"StratEdge","email":"hello@stratedge.org","phoneNumber":"599889988","password":"Consult@2023","photo":null}
+                }
+              },
+              "encoding": {
+                "CompanyName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "PhoneNumber": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
                 }
               }
             }
@@ -415,7 +489,7 @@
               },
               "examples": {
                 "Admin Login": {
-                  "value": {"email":"randomuser@example.com","password":"dachidachi"}
+                  "value": {"email":"randomuser@example.com","password":"Dachidachi1."}
                 },
                 "User - John Doe": {
                   "value": {"email":"john.doe@example.com","password":"P@ssw0rd123"}
@@ -488,21 +562,71 @@
         ],
         "summary": "Creates a new offer for the currently authenticated account for version 2.",
         "requestBody": {
-          "description": "The offer data to be created.",
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/OfferDTO"
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Count": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Price": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "CategoryId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ArchiveAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
               },
               "examples": {
                 "Bakery Clearance": {
-                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-07T13:55:04.9502005Z","photoURL":"https://example.com/images/croissants.jpg"}
+                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-10T17:25:02.7123792Z","photo":null}
                 },
                 "Sushi Leftovers": {
-                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-07T12:55:04.9508478Z","photoURL":"https://example.com/images/sushi-combo.jpg"}
+                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-10T16:25:02.7129848Z","photo":null}
                 },
                 "Fruit Clearance Box": {
-                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-07T14:55:04.9513331Z","photoURL":"https://example.com/images/fruit-box.jpg"}
+                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-10T18:25:02.7133169Z","photo":null}
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Count": {
+                  "style": "form"
+                },
+                "Price": {
+                  "style": "form"
+                },
+                "CategoryId": {
+                  "style": "form"
+                },
+                "ArchiveAt": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
                 }
               }
             }
@@ -581,6 +705,26 @@
           "Company"
         ],
         "summary": "Retrieves all offers created by the currently authenticated account for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns a list of offers created by the authenticated user",
@@ -869,6 +1013,26 @@
           "Guest"
         ],
         "summary": "Retrieves all available categories for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns a list of all categories",
@@ -954,6 +1118,26 @@
           "Guest"
         ],
         "summary": "Retrieves all available offers for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns a list of all offers",
@@ -1050,6 +1234,24 @@
                 "type": "integer",
                 "format": "int32"
               }
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
             }
           }
         ],
@@ -1464,6 +1666,26 @@
           "User"
         ],
         "summary": "Retrieves all transactions associated with the currently authenticated user for version 2.",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns the list of transactions for the current user",
@@ -1534,12 +1756,16 @@
             "type": "string",
             "nullable": true
           },
-          "phone": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
           "role": {
             "$ref": "#/components/schemas/AccountRole"
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1632,32 +1858,6 @@
         },
         "additionalProperties": false
       },
-      "CompanyRegisterDTO": {
-        "type": "object",
-        "properties": {
-          "companyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "photoURL": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CompanyResponseModel": {
         "type": "object",
         "properties": {
@@ -1669,14 +1869,22 @@
             "type": "string",
             "nullable": true
           },
-          "phone": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
           "role": {
             "$ref": "#/components/schemas/AccountRole"
           },
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
           "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "photoURL": {
             "type": "string",
             "nullable": true
           },
@@ -1713,40 +1921,6 @@
         "type": "integer",
         "format": "int32"
       },
-      "OfferDTO": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "archiveAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "photoURL": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "OfferResponseModel": {
         "type": "object",
         "properties": {
@@ -1762,6 +1936,13 @@
             "type": "string",
             "nullable": true
           },
+          "photoURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "isArchived": {
+            "type": "boolean"
+          },
           "count": {
             "type": "integer",
             "format": "int32"
@@ -1769,6 +1950,10 @@
           "price": {
             "type": "number",
             "format": "double"
+          },
+          "archiveAt": {
+            "type": "string",
+            "format": "date-time"
           },
           "categoryId": {
             "type": "integer",
@@ -1897,12 +2082,16 @@
             "type": "string",
             "nullable": true
           },
-          "phone": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
           "role": {
             "$ref": "#/components/schemas/AccountRole"
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
           },
           "firstName": {
             "type": "string",

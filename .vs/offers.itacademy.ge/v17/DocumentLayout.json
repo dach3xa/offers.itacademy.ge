@@ -3,8 +3,324 @@
   "WorkspaceRootPath": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\backgroundservices\\offerarchivingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\backgroundservices\\offerarchivingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositories\\offerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositories\\offerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getmyoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getmyoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getmyoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getmyoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\offers\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\offers\\offerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositories\\base\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositories\\base\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4083BFF-49BC-4CBE-902E-90741C2D8097}|offers.Persistance\\offers.Persistance.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.persistance\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4083BFF-49BC-4CBE-902E-90741C2D8097}|offers.Persistance\\offers.Persistance.csproj|solutionrelative:offers.persistance\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\transactionresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\transactionresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\offerresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\offerresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\companyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\companyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\categoryresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\categoryresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\accountresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\accountresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\userresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\userresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|solutionrelative:offers.domain\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\accounts\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\accounts\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getcurrentcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getcurrentcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\filesaver\\uploadedfilesaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\filesaver\\uploadedfilesaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\admin\\getallcompanies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\admin\\getallcompanies.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\getoffersbycategoryids.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\getoffersbycategoryids.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\getmytransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\getmytransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\home\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\home\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\account\\registercompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\account\\registercompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\offerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\offerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\accountlogindtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\accountlogindtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositoryextension\\repositoryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositoryextension\\repositoryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\repositoryinterfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\repositoryinterfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\categories\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\categories\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\categories\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\categories\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\depositrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\depositrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\companyregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\companyregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\accountlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\accountlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\accountlogindtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\swagger\\examples\\accountlogindtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\categorydtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\swagger\\examples\\categorydtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\userregisterdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\swagger\\examples\\userregisterdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\offerdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\swagger\\examples\\offerdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\companyregisterdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\swagger\\examples\\companyregisterdtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\offersearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\offersearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\transactioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\transactioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE2A9098-E91A-4E44-BA6A-D8A789B69065}|offers.Application.Tests\\offers.Application.Tests.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application.tests\\accountservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE2A9098-E91A-4E44-BA6A-D8A789B69065}|offers.Application.Tests\\offers.Application.Tests.csproj|solutionrelative:offers.application.tests\\accountservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\transactiondtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\transactiondtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\userregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\userregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\transactions\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\transactions\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\transactions\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\transactions\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositories\\transactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositories\\transactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\repositoryinterfaces\\itransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\repositoryinterfaces\\itransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\repositoryinterfaces\\iofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\repositoryinterfaces\\iofferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\repositoryinterfaces\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\repositoryinterfaces\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,92 +335,12 @@
       "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\admin\\getallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getcurrentcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getcurrentcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\accountresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\accountresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|solutionrelative:offers.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\userresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\userresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\companyregisterviewmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\companyregisterviewmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\offercreateviewmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\offercreateviewmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\offerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\offerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\transactioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\transactioncreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\offersearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\offersearchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\offercreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\offercreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\viewmodel\\companyregisterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\viewmodel\\companyregisterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\getmytransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\getmytransactions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\transactionresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\transactionresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\deposit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -123,148 +359,28 @@
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\getoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\getoffersbycategoryids.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\getoffersbycategoryids.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\user\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\user\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\admin\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\admin\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getmyoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getmyoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\getmyoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\getmyoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\offerresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\offerresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\offerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE2A9098-E91A-4E44-BA6A-D8A789B69065}|offers.Application.Tests\\offers.Application.Tests.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application.tests\\categoryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE2A9098-E91A-4E44-BA6A-D8A789B69065}|offers.Application.Tests\\offers.Application.Tests.csproj|solutionrelative:offers.application.tests\\categoryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\companyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\companyresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\admin\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\admin\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\account\\registercompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\account\\registercompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\offer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\home\\offer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\home\\offers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\response\\categoryresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\response\\categoryresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\home\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\home\\categories.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\transactiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v2\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v2\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\categories\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\categories\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\transactions\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\transactions\\itransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\extensions\\authextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\infrastructure\\extensions\\authextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\repositoryextension\\repositoryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\repositoryextension\\repositoryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\models\\dto\\companyregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\models\\dto\\companyregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\companydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|solutionrelative:offers.domain\\models\\companydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|solutionrelative:offers.domain\\models\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\offers.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\offers.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -277,14 +393,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|solutionrelative:offers.domain\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\userregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\userregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\transactiondtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\transactiondtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4083BFF-49BC-4CBE-902E-90741C2D8097}|offers.Persistance\\offers.Persistance.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.persistance\\configurations\\accountconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -306,7 +414,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -326,67 +434,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\AccountService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Accounts\\AccountService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\AccountService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Accounts\\AccountService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAADcAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "OfferRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\OfferRepository.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\OfferRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\OfferRepository.cs",
+              "RelativeToolTip": "offers.Infrastructure\\Repositories\\OfferRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T15:54:35.348Z",
+              "WhenOpened": "2025-04-10T07:49:47.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Category.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Category.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Category.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Category.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Home\\Category.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T15:52:11.125Z",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T12:40:43.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:45:35.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OfferArchivingService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\BackgroundServices\\OfferArchivingService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\BackgroundServices\\OfferArchivingService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\BackgroundServices\\OfferArchivingService.cs",
+              "RelativeToolTip": "offers.Application\\BackgroundServices\\OfferArchivingService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T15:11:44.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\appsettings.json",
-              "RelativeDocumentMoniker": "offers.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\appsettings.json",
-              "RelativeToolTip": "offers.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-07T11:24:05.472Z",
+              "Title": "GetMyOffers.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffers.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffers.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffers.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Company\\GetMyOffers.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:44:56.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\appsettings.json",
-              "RelativeDocumentMoniker": "offers.Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\appsettings.json",
-              "RelativeToolTip": "offers.Web\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-07T11:24:03.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateOffer.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\CreateOffer.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\CreateOffer.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\CreateOffer.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Company\\CreateOffer.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAADcAAAAKAAAAAAAAAA==",
+              "Title": "GetMyOffer.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffer.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffer.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffer.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Company\\GetMyOffer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:40:41.045Z",
+              "WhenOpened": "2025-04-08T09:47:32.083Z",
               "EditorCaption": ""
             },
             {
@@ -397,7 +518,7 @@
               "RelativeDocumentMoniker": "offers.Web\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\UserController.cs",
               "RelativeToolTip": "offers.Web\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAEgAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJMAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T14:37:44.671Z",
               "EditorCaption": ""
@@ -405,240 +526,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T15:26:54.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CompanyController.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
               "RelativeDocumentMoniker": "offers.Web\\Controllers\\CompanyController.cs",
               "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
               "RelativeToolTip": "offers.Web\\Controllers\\CompanyController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAADgAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T13:42:20.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetAllUsers.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAMwB0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:15:05.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetCurrentCompany.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAMwBUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T12:04:24.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "OfferService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\OfferService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Offers\\OfferService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\OfferService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Offers\\OfferService.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAlwLkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T15:45:35.785Z",
+              "WhenOpened": "2025-04-10T07:30:34.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Account.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Account.cs",
-              "RelativeDocumentMoniker": "offers.Domain\\Models\\Account.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Account.cs",
-              "RelativeToolTip": "offers.Domain\\Models\\Account.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "offers.Infrastructure\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T10:47:02.888Z",
+              "WhenOpened": "2025-04-10T07:47:50.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AccountResponseModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\AccountResponseModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\AccountResponseModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\AccountResponseModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\Response\\AccountResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\AccountRepository.cs",
+              "RelativeToolTip": "offers.Infrastructure\\Repositories\\AccountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:03:03.922Z",
+              "WhenOpened": "2025-04-10T07:45:44.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "UserResponseModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\UserResponseModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\UserResponseModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\UserResponseModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\Response\\UserResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\Base\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\Base\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\Base\\BaseRepository.cs",
+              "RelativeToolTip": "offers.Infrastructure\\Repositories\\Base\\BaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:13:24.689Z",
+              "WhenOpened": "2025-04-10T07:49:03.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Context\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "offers.Persistance\\Context\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Context\\ApplicationDbContext.cs",
+              "RelativeToolTip": "offers.Persistance\\Context\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:39:17.217Z",
+              "WhenOpened": "2025-04-10T09:06:59.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T11:46:22.973Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Program.cs",
+              "RelativeDocumentMoniker": "offers.API\\Program.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Program.cs",
+              "RelativeToolTip": "offers.API\\Program.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAIAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T15:12:15.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "CompanyRegisterViewModelValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterViewModelValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\CompanyRegisterViewModelValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterViewModelValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\CompanyRegisterViewModelValidator.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:53:16.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TransactionCreateViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:52:37.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OfferCreateViewModelValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferCreateViewModelValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\OfferCreateViewModelValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferCreateViewModelValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\OfferCreateViewModelValidator.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:54:49.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CompanyRegisterDTOValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:49:18.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "OfferDTOValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferDTOValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\OfferDTOValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferDTOValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\OfferDTOValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:54:55.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "OfferSearchViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:52:36.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CompanyRegisterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\CompanyRegisterViewModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\CompanyRegisterViewModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\CompanyRegisterViewModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\CompanyRegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:52:32.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "OfferCreateViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferCreateViewModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\OfferCreateViewModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferCreateViewModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\OfferCreateViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:35:56.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "GetMyTransactions.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetMyTransactions.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetMyTransactions.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetMyTransactions.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\GetMyTransactions.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:34:54.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "TransactionResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\TransactionResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\TransactionResponseModel.cs",
@@ -651,176 +642,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Deposit.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Deposit.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Deposit.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Deposit.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\Deposit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:29:28.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UserRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
-              "RelativeToolTip": "offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "MapsterConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Mappings\\MapsterConfiguration.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Mappings\\MapsterConfiguration.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Mappings\\MapsterConfiguration.cs",
+              "RelativeToolTip": "offers.Application\\Mappings\\MapsterConfiguration.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:05:36.137Z",
+              "WhenOpened": "2025-04-07T09:45:05.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "CreateTransaction.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\CreateTransaction.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\CreateTransaction.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\CreateTransaction.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\CreateTransaction.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:27:19.541Z",
+              "DocumentIndex": 19,
+              "Title": "AccountResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\AccountResponseModel.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\AccountResponseModel.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\AccountResponseModel.cs",
+              "RelativeToolTip": "offers.Application\\Models\\Response\\AccountResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T11:03:03.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:25:26.987Z",
+              "DocumentIndex": 18,
+              "Title": "CategoryResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CategoryResponseModel.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\CategoryResponseModel.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CategoryResponseModel.cs",
+              "RelativeToolTip": "offers.Application\\Models\\Response\\CategoryResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:49:09.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "GetOffer.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffer.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetOffer.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffer.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\GetOffer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:24:58.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "GetOffersByCategoryIds.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:17:22.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Offers.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Offers.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Offers.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Offers.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\User\\Offers.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:15:02.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Home.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\Home.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\Home.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\Home.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Admin\\Home.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:05:41.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "GetMyOffer.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffer.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffer.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffer.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Company\\GetMyOffer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:47:32.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "GetMyOffers.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffers.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffers.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffers.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Company\\GetMyOffers.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:44:56.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 16,
               "Title": "OfferResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\OfferResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\OfferResponseModel.cs",
               "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\OfferResponseModel.cs",
               "RelativeToolTip": "offers.Application\\Models\\Response\\OfferResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T11:03:09.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "OfferDTO.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\OfferDTO.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\OfferDTO.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\OfferDTO.cs",
-              "RelativeToolTip": "offers.Application\\Models\\DTO\\OfferDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:02:53.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "CategoryServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\CategoryServiceTests.cs",
-              "RelativeDocumentMoniker": "offers.Application.Tests\\CategoryServiceTests.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\CategoryServiceTests.cs",
-              "RelativeToolTip": "offers.Application.Tests\\CategoryServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:24:29.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 17,
               "Title": "CompanyResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CompanyResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\CompanyResponseModel.cs",
@@ -833,46 +707,514 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "MapsterConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Mappings\\MapsterConfiguration.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Mappings\\MapsterConfiguration.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Mappings\\MapsterConfiguration.cs",
-              "RelativeToolTip": "offers.Application\\Mappings\\MapsterConfiguration.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFgAAABOAAAAAAAAAA==",
+              "DocumentIndex": 21,
+              "Title": "UserResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\UserResponseModel.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\UserResponseModel.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\UserResponseModel.cs",
+              "RelativeToolTip": "offers.Application\\Models\\Response\\UserResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T09:45:05.364Z",
+              "WhenOpened": "2025-04-08T09:13:24.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "CreateCategory.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\CreateCategory.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\CreateCategory.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\CreateCategory.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Admin\\CreateCategory.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "Offer.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Offer.cs",
+              "RelativeDocumentMoniker": "offers.Domain\\Models\\Offer.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Offer.cs",
+              "RelativeToolTip": "offers.Domain\\Models\\Offer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T10:46:42.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Program.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Program.cs",
+              "RelativeToolTip": "offers.Web\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAtwDYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T13:27:22.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GetOffersByCategoryIds.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwC8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:11:10.551Z",
+              "WhenOpened": "2025-04-08T10:17:22.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 25,
+              "Title": "GetCurrentCompany.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAMwAsAAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T12:04:24.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateOffer.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\CreateOffer.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\CreateOffer.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\CreateOffer.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Company\\CreateOffer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:40:41.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\AccountService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Accounts\\AccountService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\AccountService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Accounts\\AccountService.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAlwMcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T15:54:35.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\Home.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\Home.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\Home.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Company\\Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T14:42:26.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AuthController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\AuthController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AuthController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\AuthController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAwwHMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T11:49:27.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "GetAllCompanies.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwCUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T09:11:52.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UploadedFileSaver.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\FileSaver\\UploadedFileSaver.cs",
+              "RelativeDocumentMoniker": "offers.Application\\FileSaver\\UploadedFileSaver.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\FileSaver\\UploadedFileSaver.cs",
+              "RelativeToolTip": "offers.Application\\FileSaver\\UploadedFileSaver.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:29:08.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Offers.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Offers.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Offers.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Offers.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\Offers.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:15:02.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GetMyTransactions.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetMyTransactions.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetMyTransactions.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetMyTransactions.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\GetMyTransactions.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwDkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:34:54.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Offers.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offers.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Offers.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offers.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Home\\Offers.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAACcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T13:00:15.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Categories.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Categories.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Categories.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Categories.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Home\\Categories.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwCEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-07T15:51:01.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "GetAllUsers.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:15:05.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CompanyRegisterDTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
+              "RelativeToolTip": "offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:49:18.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "RegisterCompany.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\RegisterCompany.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\RegisterCompany.cshtml",
               "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\RegisterCompany.cshtml",
               "RelativeToolTip": "offers.Web\\Views\\Account\\RegisterCompany.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-07T11:03:43.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "OfferDTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferDTOValidator.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Validators\\OfferDTOValidator.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\OfferDTOValidator.cs",
+              "RelativeToolTip": "offers.Application\\Validators\\OfferDTOValidator.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:54:55.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AccountLoginDTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\AccountLoginDTOValidator.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Validators\\AccountLoginDTOValidator.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\AccountLoginDTOValidator.cs",
+              "RelativeToolTip": "offers.Application\\Validators\\AccountLoginDTOValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:52:25.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 42,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AuthController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\AuthController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AuthController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V2\\AuthController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHIAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:28:07.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\CompanyController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\CompanyController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V2\\CompanyController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:15:33.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AdminController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\AdminController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AdminController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V2\\AdminController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:27:56.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\CompanyController.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T13:52:41.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\AdminController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\AdminController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAFoAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:42:16.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\GuestController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\GuestController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:27:39.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "RepositoryExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
+              "RelativeToolTip": "offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T11:34:27.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:43:01.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\CategoryService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Categories\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\CategoryService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Categories\\CategoryService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:30:16.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Categories\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\ICategoryService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Categories\\ICategoryService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAhwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T13:16:12.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UserRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T11:05:36.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "TransactionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\TransactionDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\TransactionDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\TransactionDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\TransactionDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T15:10:37.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "OfferDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\OfferDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\OfferDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\OfferDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\OfferDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T11:02:53.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "LoginResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\LoginResponseDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\LoginResponseDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\LoginResponseDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\LoginResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:57:53.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DepositRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:57:54.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "CompanyRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:57:49.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "AccountLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
+              "RelativeToolTip": "offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:57:52.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "UserRegisterDTOMultipleExamples.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
+              "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
+              "RelativeToolTip": "offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:23:49.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "CategoryDTOMultipleExamples.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\CategoryDTOMultipleExamples.cs",
+              "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\CategoryDTOMultipleExamples.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\CategoryDTOMultipleExamples.cs",
+              "RelativeToolTip": "offers.API\\Infrastructure\\Swagger\\Examples\\CategoryDTOMultipleExamples.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:23:20.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
               "Title": "CategoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CategoryDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\CategoryDTO.cs",
@@ -885,31 +1227,398 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "CategoryResponseModel.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CategoryResponseModel.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\CategoryResponseModel.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CategoryResponseModel.cs",
-              "RelativeToolTip": "offers.Application\\Models\\Response\\CategoryResponseModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "DocumentIndex": 59,
+              "Title": "AccountLoginDTOMultipleExamples.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
+              "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
+              "RelativeToolTip": "offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T15:49:09.067Z"
+              "WhenOpened": "2025-04-10T08:22:57.366Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Offers.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offers.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Offers.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offers.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Home\\Offers.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 62,
+              "Title": "OfferDTOMultipleExamples.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
+              "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
+              "RelativeToolTip": "offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:23:22.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CompanyRegisterDTOMultipleExamples.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
+              "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
+              "RelativeToolTip": "offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwCcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:23:33.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "OfferSearchViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
+              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\OfferSearchViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:52:36.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "TransactionCreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
+              "RelativeToolTip": "offers.Application\\Models\\ViewModel\\TransactionCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:52:37.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "AccountServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\AccountServiceTests.cs",
+              "RelativeDocumentMoniker": "offers.Application.Tests\\AccountServiceTests.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\AccountServiceTests.cs",
+              "RelativeToolTip": "offers.Application.Tests\\AccountServiceTests.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T09:27:52.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "TransactionDTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\TransactionDTOValidator.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Validators\\TransactionDTOValidator.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\TransactionDTOValidator.cs",
+              "RelativeToolTip": "offers.Application\\Validators\\TransactionDTOValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T09:38:49.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "UserRegisterDTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\UserRegisterDTOValidator.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Validators\\UserRegisterDTOValidator.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\UserRegisterDTOValidator.cs",
+              "RelativeToolTip": "offers.Application\\Validators\\UserRegisterDTOValidator.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T09:38:51.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "ITransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\ITransactionService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Transactions\\ITransactionService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\ITransactionService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Transactions\\ITransactionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T13:16:27.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "IOfferService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\IOfferService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Offers\\IOfferService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\IOfferService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Offers\\IOfferService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAIA1wBQAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T13:16:22.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Accounts\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Accounts\\IAccountService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAawBIAAACSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T11:39:17.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\TransactionService.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Services\\Transactions\\TransactionService.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\TransactionService.cs",
+              "RelativeToolTip": "offers.Application\\Services\\Transactions\\TransactionService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAADAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:40:44.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\UserController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\UserController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\UserController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V2\\UserController.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAAABYBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:28:33.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\UserController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\UserController.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAAAMoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:27:44.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\GuestController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\GuestController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\GuestController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V2\\GuestController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:28:28.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "TransactionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\TransactionRepository.cs",
+              "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\TransactionRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\TransactionRepository.cs",
+              "RelativeToolTip": "offers.Infrastructure\\Repositories\\TransactionRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:55:33.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "ITransactionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
+              "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
+              "RelativeToolTip": "offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:58:08.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "IOfferRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
+              "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
+              "RelativeToolTip": "offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:43:16.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "IAccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
+              "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
+              "RelativeToolTip": "offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T07:42:35.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "offers.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\appsettings.json",
+              "RelativeToolTip": "offers.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-07T11:24:03.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\appsettings.json",
+              "RelativeDocumentMoniker": "offers.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\appsettings.json",
+              "RelativeToolTip": "offers.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-07T11:24:05.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "Category.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Category.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Category.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Category.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Home\\Category.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T15:53:02.573Z"
+              "WhenOpened": "2025-04-07T15:52:11.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 83,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "offers.Domain\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Account.cs",
+              "RelativeToolTip": "offers.Domain\\Models\\Account.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T10:47:02.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-07T11:46:22.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "Deposit.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Deposit.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Deposit.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Deposit.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\Deposit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:29:28.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "CreateTransaction.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\CreateTransaction.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\CreateTransaction.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\CreateTransaction.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\CreateTransaction.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:27:19.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:25:26.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "GetOffer.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffer.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetOffer.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffer.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\User\\GetOffer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:24:58.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\Home.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\Home.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\Home.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Admin\\Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:05:41.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "CategoryServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\CategoryServiceTests.cs",
+              "RelativeDocumentMoniker": "offers.Application.Tests\\CategoryServiceTests.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\CategoryServiceTests.cs",
+              "RelativeToolTip": "offers.Application.Tests\\CategoryServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:24:29.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "CreateCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\CreateCategory.cshtml",
+              "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\CreateCategory.cshtml",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\CreateCategory.cshtml",
+              "RelativeToolTip": "offers.Web\\Views\\Admin\\CreateCategory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:11:10.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
               "Title": "Offer.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offer.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Offer.cshtml",
@@ -921,176 +1630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Categories.cshtml",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Categories.cshtml",
-              "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Categories.cshtml",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Categories.cshtml",
-              "RelativeToolTip": "offers.Web\\Views\\Home\\Categories.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T15:51:01.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\UserController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\UserController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\UserController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V2\\UserController.cs",
-              "ViewState": "AgIAAPUAAAAAAAAAAAAAABEBAAB1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:28:33.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "TransactionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\TransactionDTO.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\TransactionDTO.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\TransactionDTO.cs",
-              "RelativeToolTip": "offers.Application\\Models\\DTO\\TransactionDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T15:10:37.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\CompanyController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\CompanyController.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T13:52:41.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "GuestController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\GuestController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\GuestController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\GuestController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V2\\GuestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:28:28.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AuthController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\AuthController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AuthController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V2\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:28:07.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AdminController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\AdminController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AdminController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V2\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:56.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\UserController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:44.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "GuestController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\GuestController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\GuestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:39.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\AdminController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:04.687Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AuthController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\AuthController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AuthController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:49:27.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "ICategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\ICategoryService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Categories\\ICategoryService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\ICategoryService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Categories\\ICategoryService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T13:16:12.815Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "ITransactionService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\ITransactionService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Transactions\\ITransactionService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\ITransactionService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Transactions\\ITransactionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T13:16:27.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "IOfferService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\IOfferService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Offers\\IOfferService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\IOfferService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Offers\\IOfferService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAB4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T13:16:22.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 93,
               "Title": "AuthExtensions.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Extensions\\AuthExtensions.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Extensions\\AuthExtensions.cs",
@@ -1102,43 +1642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "RepositoryExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
-              "RelativeDocumentMoniker": "offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
-              "RelativeToolTip": "offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T11:34:27.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "Offer.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Offer.cs",
-              "RelativeDocumentMoniker": "offers.Domain\\Models\\Offer.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Offer.cs",
-              "RelativeToolTip": "offers.Domain\\Models\\Offer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T10:46:42.473Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "CompanyRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
-              "RelativeToolTip": "offers.Application\\Models\\DTO\\CompanyRegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T10:25:15.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 94,
               "Title": "CompanyDetail.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\CompanyDetail.cs",
               "RelativeDocumentMoniker": "offers.Domain\\Models\\CompanyDetail.cs",
@@ -1150,7 +1654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 99,
               "Title": "20250407112044_AddedPhotoUrl.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Migrations\\20250407112044_AddedPhotoUrl.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Migrations\\20250407112044_AddedPhotoUrl.cs",
@@ -1162,7 +1666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 96,
               "Title": "RegisterUser.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\RegisterUser.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\RegisterUser.cshtml",
@@ -1174,20 +1678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "offers.Web.csproj",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\offers.Web.csproj",
-              "RelativeDocumentMoniker": "offers.Web\\offers.Web.csproj",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\offers.Web.csproj",
-              "RelativeToolTip": "offers.Web\\offers.Web.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-07T11:13:46.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 95,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\Login.cshtml",
@@ -1199,7 +1690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 97,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Domain\\Models\\Category.cs",
               "RelativeDocumentMoniker": "offers.Domain\\Models\\Category.cs",
@@ -1211,31 +1702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "TransactionDTOValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\TransactionDTOValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\TransactionDTOValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\TransactionDTOValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\TransactionDTOValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T09:38:49.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
-              "Title": "UserRegisterDTOValidator.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\UserRegisterDTOValidator.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Validators\\UserRegisterDTOValidator.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\UserRegisterDTOValidator.cs",
-              "RelativeToolTip": "offers.Application\\Validators\\UserRegisterDTOValidator.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T09:38:51.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 98,
               "Title": "AccountConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Configurations\\AccountConfiguration.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Configurations\\AccountConfiguration.cs",
@@ -1247,7 +1714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 100,
               "Title": "20250407093036_ChangedAccountConfig.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Migrations\\20250407093036_ChangedAccountConfig.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Migrations\\20250407093036_ChangedAccountConfig.cs",

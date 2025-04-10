@@ -11,7 +11,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
             yield return SwaggerExample.Create("Admin Login", new AccountLoginDTO
             {
                 Email = "randomuser@example.com",
-                Password = "dachidachi"
+                Password = "Dachidachi1."
             });
 
             yield return SwaggerExample.Create("User - John Doe", new AccountLoginDTO

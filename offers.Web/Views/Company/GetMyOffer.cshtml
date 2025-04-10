@@ -18,7 +18,8 @@
                 <p><strong>Category:</strong> @Model.CategoryName</p>
                 <p><strong>Count:</strong> @Model.Count</p>
                 <p><strong>Price:</strong> @Model.Price.ToString("C")</p>
-                <p><strong>Archived At:</strong> @Model.ArchiveAt.ToString("f")</p>
+                <p><strong>IsArchived:</strong> @Model.IsArchived</p>
+                <p><strong>Archive At:</strong> @Model.ArchiveAt.ToString("f")</p>
 
                 <form asp-action="DeleteOffer" asp-controller="Company" asp-route-id="@Model.Id" method="post" class="mt-3">
                     <button type="submit" class="btn btn-danger">Delete Offer</button>

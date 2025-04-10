@@ -46,10 +46,13 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("offers/search")]
-        public async Task<IActionResult> GetOffersByCategoryIds([FromQuery] List<int> ids, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetOffersByCategoryIds([FromQuery] List<int> ids, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
             var categories = await _categoryService.GetAllAsync(cancellationToken);
-            var offers = await _offerService.GetOffersByCategoriesAsync(ids, cancellationToken);
+            var offers = await _offerService.GetOffersByCategoriesAsync(ids, pageNumber, pageSize, cancellationToken);
+
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = offers.Count == pageSize;
 
             var vm = new OfferSearchViewModel
             {
@@ -125,10 +128,11 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("transactions")]
-        public async Task<IActionResult> GetMyTransactions(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetMyTransactions([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
-
+            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = transactions.Count == pageSize;
             return View(transactions);
         }
 

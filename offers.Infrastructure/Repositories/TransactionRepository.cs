@@ -50,11 +50,13 @@ namespace offers.Infrastructure.Repositories
                 .ConfigureAwait(false);
         }
 
-        public async Task<List<Transaction>> GetMyTransactionsAsync(int accountId, CancellationToken cancellationToken)
+        public async Task<List<Transaction>> GetMyTransactionsAsync(int accountId , int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
                 .Include(tran => tran.Offer)
                 .Include(tran => tran.User)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .Where(tran => tran.UserId == accountId)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
         }

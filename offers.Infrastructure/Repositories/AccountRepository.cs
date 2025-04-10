@@ -33,18 +33,22 @@ namespace offers.Infrastructure.Repositories
             return await base.AnyAsync(acc => acc.Email == Email, cancellationToken);
         }
 
-        public async Task<List<Account>> GetAllCompaniesAsync(CancellationToken cancellationToken)
+        public async Task<List<Account>> GetAllCompaniesAsync(int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
                 .Include(acc => acc.CompanyDetail)
-                .Where(acc => acc.Role == AccountRole.Company).ToListAsync(cancellationToken).ConfigureAwait(false); ;
+                .Where(acc => acc.Role == AccountRole.Company)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize).ToListAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<List<Account>> GetAllUsersAsync(CancellationToken cancellationToken)
+        public async Task<List<Account>> GetAllUsersAsync(int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
                 .Include(acc => acc.UserDetail)
-                .Where(acc => acc.Role == AccountRole.User).ToListAsync(cancellationToken).ConfigureAwait(false); ;
+                .Where(acc => acc.Role == AccountRole.User)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize).ToListAsync(cancellationToken).ConfigureAwait(false); ;
         }
 
         public async Task<Account?> GetAsync(string Email, CancellationToken cancellationToken)

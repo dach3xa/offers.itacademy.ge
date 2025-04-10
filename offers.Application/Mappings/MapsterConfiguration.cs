@@ -27,21 +27,6 @@ namespace offers.Application.Mappings
                 {
                     dest.CompanyDetail.CompanyName = src.CompanyName;
                     dest.CompanyDetail.IsActive = false;
-                    dest.CompanyDetail.PhotoURL = src.PhotoURL;
-                });
-
-            TypeAdapterConfig<CompanyRegisterViewModel, Account>
-                .NewConfig()
-                .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.Role, src => AccountRole.Company)
-                .Map(dest => dest.PasswordHash, src => src.Password)
-                .Map(dest => dest.NormalizedEmail, src => src.Email.ToUpper())
-                .Map(dest => dest.UserName, src => src.Email)
-                .Map(dest => dest.CompanyDetail, src => new CompanyDetail())
-                .AfterMapping((src, dest) =>
-                {
-                    dest.CompanyDetail.CompanyName = src.CompanyName;
-                    dest.CompanyDetail.IsActive = false;
                     dest.CompanyDetail.PhotoURL = "";
                 });
 
@@ -68,12 +53,6 @@ namespace offers.Application.Mappings
                 .NewConfig()
                 .Map(dest => dest.Id, src => 0)
                 .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
-                .Map(dest => dest.IsArchived, src => false);
-
-            TypeAdapterConfig<OfferCreateViewModel, Offer>
-                .NewConfig()
-                .Map(dest => dest.Id, src => 0)
-                .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
                 .Map(dest => dest.IsArchived, src => false)
                 .Map(dest => dest.PhotoURL, src => "");
 
@@ -81,16 +60,20 @@ namespace offers.Application.Mappings
                 .NewConfig()
                 .Map(dest => dest.FirstName, src => src.UserDetail.FirstName)
                 .Map(dest => dest.LastName, src => src.UserDetail.LastName)
-                .Map(dest => dest.Balance, src => src.UserDetail.Balance);
+                .Map(dest => dest.Balance, src => src.UserDetail.Balance)
+                .Map(dest => dest.RoleName, src => src.Role.ToString());
+
 
             TypeAdapterConfig<Account, CompanyResponseModel>
                 .NewConfig()
                 .Map(dest => dest.CompanyName, src => src.CompanyDetail.CompanyName)
                 .Map(dest => dest.IsActive, src => src.CompanyDetail.IsActive)
-                .Map(dest => dest.PhotoURL, src => src.CompanyDetail.PhotoURL);
+                .Map(dest => dest.PhotoURL, src => src.CompanyDetail.PhotoURL)
+                .Map(dest => dest.RoleName, src => src.Role.ToString());
 
             TypeAdapterConfig<Account, AccountResponseModel>
-                .NewConfig();
+                .NewConfig()
+                .Map(dest => dest.RoleName, src => src.Role.ToString());
 
             TypeAdapterConfig<Category, CategoryResponseModel>
                 .NewConfig();

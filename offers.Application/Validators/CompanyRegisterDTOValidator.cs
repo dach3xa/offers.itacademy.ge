@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using offers.Application.Models.DTO;
 using offers.Application.Models.Response;
+using offers.Application.Validators;
 namespace offers.Application.Validators
 {
     public class CompanyRegisterDTOValidator : AbstractValidator<CompanyRegisterDTO>

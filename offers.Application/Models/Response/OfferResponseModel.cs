@@ -13,6 +13,7 @@ namespace offers.Application.Models.Response
         public string Name { get; set; }
         public string Description { get; set; }
         public string PhotoURL { get; set; }
+        public bool IsArchived { get; set; }
         public int Count { get; set; }
         public decimal Price { get; set; }
         public DateTime ArchiveAt { get; set; }

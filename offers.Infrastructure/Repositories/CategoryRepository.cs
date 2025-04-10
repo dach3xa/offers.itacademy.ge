@@ -19,10 +19,12 @@ namespace offers.Infrastructure.Repositories
             return await base.AnyAsync(ctg => ctg.Name == name, cancellationToken);
         }
 
-        public async Task<List<Category>> GetAllWithIdsAsync(List<int> ids, CancellationToken cancellationToken)
+        public async Task<List<Category>> GetAllWithIdsAsync(List<int> ids, int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             return await _dbSet
             .Where(ctg => ids.Contains(ctg.Id))
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
             .ToListAsync(cancellationToken).ConfigureAwait(false); ;
         }
 
@@ -36,9 +38,14 @@ namespace offers.Infrastructure.Repositories
             await base.CreateAsync(category, cancellationToken);
         }
 
+        public async Task<List<Category>> GetAllAsync(int pageNumber, int pageSize, CancellationToken cancellationToken)
+        {
+            return await base.GetAllAsync(pageNumber, pageSize, cancellationToken);
+        }
+
         public async Task<List<Category>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await base.GetAllAsync(cancellationToken);
+            return await _dbSet.ToListAsync(cancellationToken).ConfigureAwait(false);
         }
     }
 }

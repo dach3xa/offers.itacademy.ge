@@ -8,9 +8,10 @@ using offers.Application.Services.Offers;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using offers.Application.Helper;
-using offers.Web.Controllers.FileSaver;
+using offers.Application.FileSaver;
 using System.Threading;
 using offers.Application.Services.Categories;
+using offers.Application.Models.DTO;
 
 namespace offers.Web.Controllers
 {
@@ -21,13 +22,11 @@ namespace offers.Web.Controllers
         private readonly IOfferService _offerService;
         private readonly IAccountService _accountService;
         private readonly ICategoryService _categoryService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CompanyController(IOfferService offerService, IAccountService accountService, ICategoryService categoryService, IWebHostEnvironment webHostEnvironment)
+        public CompanyController(IOfferService offerService, IAccountService accountService, ICategoryService categoryService)
         {
             _offerService = offerService;
             _accountService = accountService;
-            _webHostEnvironment = webHostEnvironment;
             _categoryService = categoryService;
         }
 
@@ -47,7 +46,7 @@ namespace offers.Web.Controllers
         }
 
         [HttpPost("offers/create")]
-        public async Task<IActionResult> CreateOffer([FromForm] OfferCreateViewModel offerViewModel, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateOffer([FromForm] OfferDTO offerViewModel, CancellationToken cancellationToken)
         {
             var categories = await _categoryService.GetAllAsync(cancellationToken);
             ViewBag.Categories = categories;
@@ -62,7 +61,7 @@ namespace offers.Web.Controllers
             {
                 if (offerViewModel.Photo != null && offerViewModel.Photo.Length > 0)
                 {
-                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(offerViewModel.Photo, _webHostEnvironment);
+                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(offerViewModel.Photo, cancellationToken);
                 }
             }
             catch (Exception ex)
@@ -81,9 +80,11 @@ namespace offers.Web.Controllers
         }
 
         [HttpGet("offers")]
-        public async Task<IActionResult> GetMyOffers(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetMyOffers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellationToken);
+            ViewBag.currentPage = pageNumber;
+            ViewBag.CanGoRight = offers.Count == pageSize;
 
             return View(offers);
         }

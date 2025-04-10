@@ -88,9 +88,9 @@ namespace offers.API.Controllers.V1
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("users")]
-        public async Task<IActionResult> GetAllUsers(CancellationToken cancellation)
+        public async Task<IActionResult> GetAllUsers([FromQuery] int pageNumber = 1,[FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var users = await _accountService.GetAllUsersAsync(cancellation);
+            var users = await _accountService.GetAllUsersAsync(pageNumber, pageSize, cancellation);
 
             return Ok(users);
         }
@@ -134,9 +134,9 @@ namespace offers.API.Controllers.V1
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpGet("companies")]
-        public async Task<IActionResult> GetAllCompanies(CancellationToken cancellation)
+        public async Task<IActionResult> GetAllCompanies([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var companies = await _accountService.GetAllCompaniesAsync(cancellation);
+            var companies = await _accountService.GetAllCompaniesAsync(pageNumber, pageSize, cancellation);
 
             return Ok(companies);
         }

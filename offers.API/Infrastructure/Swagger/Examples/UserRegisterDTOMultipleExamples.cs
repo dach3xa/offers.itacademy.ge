@@ -41,7 +41,7 @@ namespace offers.API.Infrastructure.Swagger.Examples
                 LastName = "Nguyen",
                 Email = "liam.nguyen@mail.com",
                 PhoneNumber = "599889988",
-                Password = "Password123"
+                Password = "Password123."
             });
         }
     }
