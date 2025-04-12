@@ -83,6 +83,10 @@ namespace offers.API.Controllers.V1
             {
                 photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(offerDTO.Photo, cancellation);
             }
+            else
+            {
+                photoUrl = "/uploads/company-placeholder.jpg";
+            }
             var offer = offerDTO.Adapt<Offer>();
             offer.AccountId = ControllerHelper.GetUserIdFromClaims(User);
             offer.PhotoURL = photoUrl;
@@ -184,6 +188,82 @@ namespace offers.API.Controllers.V1
         {
             _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
             await _offerService.DeleteAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Changes the profile picture of the company belonging to the authenticated user.
+        /// </summary>
+        /// <param name="changePicture">The DTO containing the new picture file.</param>
+        /// <param name="cancellation">Cancellation token.</param>
+        /// <returns>
+        /// A 204 No Content response if the picture is successfully changed,
+        /// or an error response if validation fails, the company is not found,
+        /// or the file could not be saved.
+        /// </returns>
+        /// <response code="204">Picture successfully changed</response>
+        /// <response code="400">Invalid or missing file in request</response>
+        /// <response code="404">Company not found (CompanyNotFoundException)</response>
+        /// <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">Internal server error</response>
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [HttpPatch("/change-picture")]
+        public async Task<IActionResult> ChangePictureCurrentCompany([FromForm] ChangePictureDTO changePicture, CancellationToken cancellation)
+        {
+            int accountId = ControllerHelper.GetUserIdFromClaims(User);
+            _logger.LogInformation("attempt to change a picture for the company with the id {id}", accountId);
+
+            string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePicture.Photo, cancellation);
+
+            await _accountService.ChangePictureAsync(accountId, newPhotoURL, cancellation);
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Changes the picture of a specific offer belonging to the authenticated user.
+        /// </summary>
+        /// <param name="id">The ID of the offer whose picture is to be changed.</param>
+        /// <param name="changePicture">The DTO containing the new picture file.</param>
+        /// <param name="cancellation">Cancellation token.</param>
+        /// <returns>
+        /// A 204 No Content response if the picture is successfully changed,
+        /// or an error response if validation fails, the offer is not found,
+        /// access is denied, or the file could not be saved.
+        /// </returns>
+        /// <response code="204">Picture successfully changed</response>
+        /// <response code="400">Invalid or missing file in request</response>
+        /// <response code="403">Access denied for this offer (OfferAccessDeniedException)</response>
+        /// <response code="404">Offer not found (OfferNotFoundException)</response>
+        /// <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
+        /// <response code="401">Unauthorized</response>
+        /// <response code="500">Internal server error</response>
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [HttpPatch("offers/{id}/change-picture")]
+        public async Task<IActionResult> ChangePictureMyOffer([FromRoute] int id, [FromForm] ChangePictureDTO changePicture, CancellationToken cancellation)
+        {
+            int accountId = ControllerHelper.GetUserIdFromClaims(User);
+
+            _logger.LogInformation("attempt to change a picture of an offer with the ID {id}", id);
+
+            string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePicture.Photo, cancellation);
+
+            await _offerService.ChangePictureAsync(id, accountId, newPhotoURL, cancellation);
 
             return NoContent();
         }

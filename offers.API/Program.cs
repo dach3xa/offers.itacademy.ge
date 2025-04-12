@@ -137,7 +137,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseMiddleware<ExceptionHandler>();
-app.UseExceptionHandler();
 app.MapHealthChecks("/health");
 
 if (app.Environment.IsDevelopment())

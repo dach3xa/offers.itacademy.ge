@@ -16,15 +16,21 @@ namespace offers.Infrastructure.Repositories
     {
         public AccountRepository(ApplicationDbContext context) : base(context) { }
 
+        public async Task ChangePictureAsync(int accountId, string newPhotoUrl, CancellationToken cancellationToken)
+        {
+            var companyAccount = await _dbSet.Include(acc => acc.CompanyDetail).SingleOrDefaultAsync(acc => acc.Id == accountId, cancellationToken);
+            companyAccount.CompanyDetail.PhotoURL = newPhotoUrl;
+        }
+
         public async Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken)
         {
-            var account = await _dbSet.FindAsync(id, cancellationToken).ConfigureAwait(false);
+            var account = await _dbSet.Include(acc => acc.CompanyDetail).SingleOrDefaultAsync(acc => acc.Id == id, cancellationToken).ConfigureAwait(false);
             account.CompanyDetail.IsActive = true;
         }
 
         public async Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
-            var account = await _dbSet.FindAsync(accountId, cancellationToken).ConfigureAwait(false); ;
+            var account = await _dbSet.Include(acc => acc.UserDetail).SingleOrDefaultAsync(acc => acc.Id == accountId, cancellationToken).ConfigureAwait(false); ;
             account.UserDetail.Balance += amount;
         }
 
@@ -75,7 +81,7 @@ namespace offers.Infrastructure.Repositories
 
         public async Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken)
         {
-            var account = await _dbSet.FindAsync(accountId, cancellationToken).ConfigureAwait(false); ;
+            var account = await _dbSet.Include(acc => acc.UserDetail).SingleOrDefaultAsync(acc => acc.Id == accountId, cancellationToken).ConfigureAwait(false); ;
             account.UserDetail.Balance -= amount;
         }
     }

@@ -114,6 +114,10 @@ namespace offers.API.Controllers.V2
             {
                 photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyDTO.Photo, cancellation);
             }
+            else
+            {
+                photoUrl = "/uploads/company-placeholder.jpg";
+            }
 
             var companyAccount = companyDTO.Adapt<Account>();
             companyAccount.CompanyDetail.PhotoURL = photoUrl;
@@ -164,6 +168,7 @@ namespace offers.API.Controllers.V2
                 Token = token,
                 Email = accountResponse.Email,
                 Role = accountResponse.Role,
+                RoleName = accountResponse.Role.ToString(),
                 LoginTimestamp = DateTime.UtcNow 
             };
 

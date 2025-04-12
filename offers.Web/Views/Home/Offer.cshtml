@@ -4,9 +4,24 @@
     ViewData["Title"] = "Offer Details";
 }
 
-<h2>@Model.Name</h2>
+<h2 class="mb-4">Offer: @Model.Name</h2>
 
-<p><strong>Description:</strong> @Model.Description</p>
-<p><strong>Category:</strong> @Model.CategoryName</p>
-<p><strong>Price:</strong> $@Model.Price</p>
-<p><strong>Available Count:</strong> @Model.Count</p>
+<div class="card shadow-sm mb-4">
+    <div class="row g-0">
+        <div class="col-md-5">
+            <img src="@Model.PhotoURL" alt="@Model.Name" class="img-fluid rounded-start" style="object-fit: cover; width: 100%; height: 100%;">
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h4>@Model.Name</h4>
+                <p>@Model.Description</p>
+                <p><strong>Category:</strong> @Model.CategoryName</p>
+                <p><strong>Count:</strong> @Model.Count</p>
+                <p><strong>Price:</strong> @Model.Price.ToString("C")</p>
+                <p><strong>IsArchived:</strong> @Model.IsArchived</p>
+                <p><strong>Archive At:</strong> @Model.ArchiveAt.ToString("f")</p>
+                <a class="btn btn-primary" asp-action="Offers">Offers</a>
+            </div>
+        </div>
+    </div>
+</div>

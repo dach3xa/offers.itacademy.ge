@@ -458,7 +458,7 @@ namespace offers.Application.Tests
                 });
 
             _offerRepository
-                .Setup(x => x.GetOffersByAccountIdAsync(1, It.IsAny<CancellationToken>()))
+                .Setup(x => x.GetOffersByAccountIdAsync(1, 1, 10, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new List<Offer>
                 {
                     new Offer
@@ -474,7 +474,7 @@ namespace offers.Application.Tests
                     }
                 });
 
-            var offerResponses = await _offerService.GetMyOffersAsync(1, CancellationToken.None);
+            var offerResponses = await _offerService.GetMyOffersAsync(1, 1, 10, CancellationToken.None);
 
             using (new AssertionScope())
             {
@@ -493,7 +493,7 @@ namespace offers.Application.Tests
                 .Setup(x => x.GetAsync(accountId, It.IsAny<CancellationToken>()))
                 .ReturnsAsync((Account)null);
 
-            var task = () => _offerService.GetMyOffersAsync(accountId, CancellationToken.None);
+            var task = () => _offerService.GetMyOffersAsync(accountId, 1, 10, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyNotFoundException>(task);
             Assert.Equal($"company with the given account id: {accountId} was not found", exception.Message);
@@ -523,7 +523,7 @@ namespace offers.Application.Tests
                     Offers = new List<Offer>()
                 });
 
-            var task = () => _offerService.GetMyOffersAsync(accountId, CancellationToken.None);
+            var task = () => _offerService.GetMyOffersAsync(accountId, 1, 10, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyNotFoundException>(task);
             Assert.Equal($"company with the given account id: {accountId} was not found", exception.Message);
@@ -552,7 +552,7 @@ namespace offers.Application.Tests
                     Offers = new List<Offer>()
                 });
 
-            var task = () => _offerService.GetMyOffersAsync(accountId, CancellationToken.None);
+            var task = () => _offerService.GetMyOffersAsync(accountId, 1, 10, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CompanyIsNotActiveException>(task);
             Assert.Equal("you can't create or view your offer on a not activated account", exception.Message);
@@ -805,10 +805,10 @@ namespace offers.Application.Tests
         {
             var ids = idsParam.ToList();
             _categoryRepository
-               .Setup(x => x.GetAllWithIdsAsync(ids, It.IsAny<CancellationToken>()))
+               .Setup(x => x.GetAllWithIdsAsync(ids,1, 10, It.IsAny<CancellationToken>()))
                .ReturnsAsync(new List<Category>());
 
-            var task = () => _offerService.GetOffersByCategoriesAsync(ids, CancellationToken.None);
+            var task = () => _offerService.GetOffersByCategoriesAsync(ids, 1, 10, CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<CategoryNotFoundException>(task);
             Assert.Equal("One or more categories that you provided were not found", exception.Message);
@@ -821,7 +821,7 @@ namespace offers.Application.Tests
         {
             var ids = idsParam.ToList();
             _categoryRepository
-               .Setup(x => x.GetAllWithIdsAsync(ids, It.IsAny<CancellationToken>()))
+               .Setup(x => x.GetAllWithIdsAsync(ids, 1, 10, It.IsAny<CancellationToken>()))
                .ReturnsAsync(new List<Category>
                {
                 new Category
@@ -839,7 +839,7 @@ namespace offers.Application.Tests
                });
 
             _offerRepository
-               .Setup(x => x.GetOffersByCategoriesAsync(ids, It.IsAny<CancellationToken>()))
+               .Setup(x => x.GetOffersByCategoriesAsync(ids, 1, 10, It.IsAny<CancellationToken>()))
                .ReturnsAsync(new List<Offer>
                {
                 new Offer
@@ -868,11 +868,11 @@ namespace offers.Application.Tests
                     }
                });
 
-            var offers = await _offerService.GetOffersByCategoriesAsync(ids, CancellationToken.None);
+            var offers = await _offerService.GetOffersByCategoriesAsync(ids, 1, 10, CancellationToken.None);
 
             using (new AssertionScope())
             {
-                _offerRepository.Verify(x => x.GetOffersByCategoriesAsync(ids, It.IsAny<CancellationToken>()), Times.Once);
+                _offerRepository.Verify(x => x.GetOffersByCategoriesAsync(ids, 1, 10, It.IsAny<CancellationToken>()), Times.Once);
                 offers[0].CategoryId.Should().Be(ids[0]);
                 offers[1].CategoryId.Should().Be(ids[1]);
             }

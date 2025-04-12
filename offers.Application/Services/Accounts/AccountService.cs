@@ -21,6 +21,8 @@ using offers.Application.Models.Response;
 using Microsoft.AspNetCore.Identity;
 using MediatR;
 using System.Security.Claims;
+using offers.Application.Models.DTO;
+using offers.Application.Exceptions.File;
 
 
 namespace offers.Application.Services.Accounts
@@ -105,6 +107,23 @@ namespace offers.Application.Services.Accounts
             var users = await _repository.GetAllUsersAsync(pageNumber, pageSize, cancellationToken);
 
             return users.Adapt<List<UserResponseModel>>() ?? new List<UserResponseModel>();
+        }
+
+        public async Task ChangePictureAsync(int accountId, string newPhotoURL, CancellationToken cancellationToken)
+        {
+            var company = await _repository.GetAsync(accountId, cancellationToken);
+            if(company == null || company.CompanyDetail == null)
+            {
+                throw new CompanyNotFoundException("a company with the given id does not exist");
+            }
+
+            if(string.IsNullOrWhiteSpace(newPhotoURL))
+            {
+                throw new FileCouldNotBeAddedException("unexpected error occured while changing the picture");
+            }
+
+            await _repository.ChangePictureAsync(accountId, newPhotoURL, cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
         public async Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken)

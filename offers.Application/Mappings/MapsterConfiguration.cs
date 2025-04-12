@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using offers.Application.Models.DTO;
 using offers.Application.Models.Response;
-using offers.Application.Models.ViewModel;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using System;

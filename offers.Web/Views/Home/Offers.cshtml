@@ -11,14 +11,15 @@
     <div class="row">
         @foreach (var offer in Model)
         {
-            <div class="col-md-4 mb-3">
-                <div class="card">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="@offer.PhotoURL" class="card-img-top" alt="@offer.Name" style="object-fit: cover; height: 200px;">
                     <div class="card-body">
                         <h5 class="card-title">@offer.Name</h5>
                         <p class="card-text">@offer.Description</p>
                         <p class="card-text"><strong>Category:</strong> @offer.CategoryName</p>
-                        <p class="card-text"><strong>Price:</strong> $@offer.Price</p>
-                        <p class="card-text"><strong>In Stock:</strong> @offer.Count</p>
+                        <p class="card-text"><strong>IsArchived:</strong> @offer.IsArchived</p>
+                        <p class="card-text"><strong>Price:</strong> @offer.Price.ToString("C")</p>
                         <a class="btn btn-primary" asp-action="Offer" asp-route-id="@offer.Id">View Details</a>
                     </div>
                 </div>

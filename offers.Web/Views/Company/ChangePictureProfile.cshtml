@@ -1,0 +1,17 @@
+﻿@model offers.Application.Models.DTO.ChangePictureDTO
+
+@{
+    ViewData["Title"] = "Change Profile Picture";
+}
+
+<h2>Change Profile Picture</h2>
+
+<form asp-action="ChangePictureProfile" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Photo" class="control-label"></label>
+        <input asp-for="Photo" class="form-control-file" type="file" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Upload</button>
+</form>

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using offers.Application.Models.ViewModel;
+using offers.Web.Models;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Offers;
 using offers.Domain.Enums;
@@ -63,6 +63,10 @@ namespace offers.Web.Controllers
                 {
                     photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(offerViewModel.Photo, cancellationToken);
                 }
+                else
+                {
+                    photoUrl = "/uploads/company-placeholder.jpg";
+                }
             }
             catch (Exception ex)
             {
@@ -97,6 +101,24 @@ namespace offers.Web.Controllers
             return View(offerResponse);
         }
 
+        [HttpGet("offers/{id}/change-picture")]
+        public IActionResult ChangePictureOffer()
+        {
+            return View();
+        }
+
+        [HttpPost("offers/{id}/change-picture")]
+        public async Task<IActionResult> ChangePictureOffer([FromRoute] int id,[FromForm] ChangePictureDTO changePictureDTO, CancellationToken cancellationToken)
+        {
+            int accountId = ControllerHelper.GetUserIdFromClaims(User);
+
+            string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePictureDTO.Photo, cancellationToken);
+
+            await _offerService.ChangePictureAsync(id, accountId, newPhotoURL, cancellationToken);
+
+            return RedirectToAction("profile");
+        }
+
         [HttpPost("offers/{id}/delete")]//called from front end
         public async Task<IActionResult> DeleteOffer(int id, CancellationToken cancellationToken)
         {
@@ -110,6 +132,24 @@ namespace offers.Web.Controllers
         {
             var company = await _accountService.GetCompanyAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
             return View(company);
+        }
+
+        [HttpGet("profile/change-picture")]
+        public IActionResult ChangePictureProfile()
+        {
+            return View();
+        }
+
+        [HttpPost("profile/change-picture")]
+        public async Task<IActionResult> ChangePictureProfile([FromForm] ChangePictureDTO changePictureDTO,CancellationToken cancellationToken)
+        {
+            int accountId = ControllerHelper.GetUserIdFromClaims(User);
+
+            string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePictureDTO.Photo, cancellationToken);
+
+            await _accountService.ChangePictureAsync(accountId, newPhotoURL, cancellationToken);
+
+            return RedirectToAction("profile");
         }
     }
 }

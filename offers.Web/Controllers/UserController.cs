@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using offers.Application.Helper;
 using offers.Application.Models.DTO;
-using offers.Application.Models.ViewModel;
+using offers.Web.Models;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;

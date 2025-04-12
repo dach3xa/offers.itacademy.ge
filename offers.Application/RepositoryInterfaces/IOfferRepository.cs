@@ -18,6 +18,7 @@ namespace offers.Application.RepositoryInterfaces
         Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken);
         Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken);
         Task ArchiveOffersAsync(CancellationToken cancellationToken);
+        Task ChangePictureAsync(int accountId, string newPhotoUrl, CancellationToken cancellationToken);
 
     }
 }

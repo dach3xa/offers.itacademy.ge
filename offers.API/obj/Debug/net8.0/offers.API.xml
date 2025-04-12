@@ -178,6 +178,44 @@
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>
+        <member name="M:offers.API.Controllers.V1.CompanyController.ChangePictureCurrentCompany(offers.Application.Models.DTO.ChangePictureDTO,System.Threading.CancellationToken)">
+            <summary>
+            Changes the profile picture of the company belonging to the authenticated user.
+            </summary>
+            <param name="changePicture">The DTO containing the new picture file.</param>
+            <param name="cancellation">Cancellation token.</param>
+            <returns>
+            A 204 No Content response if the picture is successfully changed,
+            or an error response if validation fails, the company is not found,
+            or the file could not be saved.
+            </returns>
+            <response code="204">Picture successfully changed</response>
+            <response code="400">Invalid or missing file in request</response>
+            <response code="404">Company not found (CompanyNotFoundException)</response>
+            <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal server error</response>
+        </member>
+        <member name="M:offers.API.Controllers.V1.CompanyController.ChangePictureMyOffer(System.Int32,offers.Application.Models.DTO.ChangePictureDTO,System.Threading.CancellationToken)">
+            <summary>
+            Changes the picture of a specific offer belonging to the authenticated user.
+            </summary>
+            <param name="id">The ID of the offer whose picture is to be changed.</param>
+            <param name="changePicture">The DTO containing the new picture file.</param>
+            <param name="cancellation">Cancellation token.</param>
+            <returns>
+            A 204 No Content response if the picture is successfully changed,
+            or an error response if validation fails, the offer is not found,
+            access is denied, or the file could not be saved.
+            </returns>
+            <response code="204">Picture successfully changed</response>
+            <response code="400">Invalid or missing file in request</response>
+            <response code="403">Access denied for this offer (OfferAccessDeniedException)</response>
+            <response code="404">Offer not found (OfferNotFoundException)</response>
+            <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal server error</response>
+        </member>
         <member name="M:offers.API.Controllers.V1.CompanyController.GetCurrentCompany(System.Threading.CancellationToken)">
             <summary>
             Retrieves the company associated with the currently authenticated user.
@@ -519,6 +557,44 @@
             deletion failed (OfferCouldNotBeDeletedException),
             or transaction could not be refunded (TransactionCouldNotBeRefundedException)
             </response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal server error</response>
+        </member>
+        <member name="M:offers.API.Controllers.V2.CompanyController.ChangePictureCurrentCompany(offers.Application.Models.DTO.ChangePictureDTO,System.Threading.CancellationToken)">
+            <summary>
+            Changes the profile picture of the company for version 2.
+            </summary>
+            <param name="changePicture">The DTO containing the new picture file.</param>
+            <param name="cancellation">Cancellation token.</param>
+            <returns>
+            A 204 No Content response if the picture is successfully changed,
+            or an error response if validation fails, the company is not found,
+            or the file could not be saved.
+            </returns>
+            <response code="204">Picture successfully changed</response>
+            <response code="400">Invalid or missing file in request</response>
+            <response code="404">Company not found (CompanyNotFoundException)</response>
+            <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
+            <response code="401">Unauthorized</response>
+            <response code="500">Internal server error</response>
+        </member>
+        <member name="M:offers.API.Controllers.V2.CompanyController.ChangePictureMyOffer(System.Int32,offers.Application.Models.DTO.ChangePictureDTO,System.Threading.CancellationToken)">
+            <summary>
+            Changes the picture of a specific offer belonging to the authenticated company for version 2.
+            </summary>
+            <param name="id">The ID of the offer whose picture is to be changed.</param>
+            <param name="changePicture">The DTO containing the new picture file.</param>
+            <param name="cancellation">Cancellation token.</param>
+            <returns>
+            A 204 No Content response if the picture is successfully changed,
+            or an error response if validation fails, the offer is not found,
+            access is denied, or the file could not be saved.
+            </returns>
+            <response code="204">Picture successfully changed</response>
+            <response code="400">Invalid or missing file in request</response>
+            <response code="403">Access denied for this offer (OfferAccessDeniedException)</response>
+            <response code="404">Offer not found (OfferNotFoundException)</response>
+            <response code="409">File could not be saved (FileCouldNotBeAddedException)</response>
             <response code="401">Unauthorized</response>
             <response code="500">Internal server error</response>
         </member>

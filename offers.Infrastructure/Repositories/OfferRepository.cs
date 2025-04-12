@@ -71,7 +71,6 @@ namespace offers.Infrastructure.Repositories
         {
             await base.CreateAsync(offer, cancellationToken);
         }
-
         public void Delete(Offer offer)
         {
              base.Delete(offer);
@@ -83,6 +82,11 @@ namespace offers.Infrastructure.Repositories
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync(cancellationToken).ConfigureAwait(false);
+        }
+        public async Task ChangePictureAsync(int id, string newPhotoUrl, CancellationToken cancellationToken)
+        {
+            var offer = await _dbSet.FindAsync(id, cancellationToken);
+            offer.PhotoURL = newPhotoUrl;
         }
     }
 }

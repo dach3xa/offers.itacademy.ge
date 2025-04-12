@@ -19,6 +19,7 @@ namespace offers.Application.Services.Accounts
         Task<List<CompanyResponseModel>> GetAllCompaniesAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
         Task<UserResponseModel> GetUserAsync(int id, CancellationToken cancellationToken);
         Task<CompanyResponseModel> GetCompanyAsync(int id, CancellationToken cancellationToken);
+        Task ChangePictureAsync(int accountId, string newPhotoURL, CancellationToken cancellationToken);
         Task ConfirmCompanyAsync(int id, CancellationToken cancellationToken);
         Task WithdrawAsync(int accountId, decimal amount, CancellationToken cancellationToken);
         Task DepositAsync(int accountId, decimal amount, CancellationToken cancellationToken);

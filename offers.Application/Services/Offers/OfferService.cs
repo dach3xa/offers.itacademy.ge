@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Category;
+using offers.Application.Exceptions.File;
 using offers.Application.Exceptions.Offer;
 using offers.Application.Models.Response;
 using offers.Application.RepositoryInterfaces;
@@ -183,6 +184,7 @@ namespace offers.Application.Services.Offers
         public async Task ArchiveOffersAsync(CancellationToken cancellationToken)
         {
             await _offerRepository.ArchiveOffersAsync(cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
 
         [ExcludeFromCodeCoverage]
@@ -210,6 +212,28 @@ namespace offers.Application.Services.Offers
 
             }
             return offer;
+        }
+
+        public async Task ChangePictureAsync(int id, int accountId, string newPhotoURL, CancellationToken cancellationToken)
+        {
+            var offer = await _offerRepository.GetAsync(id, cancellationToken);
+            if (offer == null)
+            {
+                throw new OfferNotFoundException("an offer with the given id does not exist");
+            }
+
+            if(offer.AccountId != accountId)
+            {
+                throw new OfferAccessDeniedException("this offer does not belong to you!");
+            }
+
+            if (string.IsNullOrWhiteSpace(newPhotoURL))
+            {
+                throw new FileCouldNotBeAddedException("unexpected error occured while changing the picture");
+            }
+
+            await _offerRepository.ChangePictureAsync(id, newPhotoURL, cancellationToken);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
         }
     }
 }

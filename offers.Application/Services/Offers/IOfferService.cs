@@ -17,7 +17,8 @@ namespace offers.Application.Services.Offers
         public Task<List<OfferResponseModel>> GetAllAsync(int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
         public Task<OfferResponseModel> GetAsync(int id, CancellationToken cancellationToken);
         public Task<OfferResponseModel> GetMyOfferAsync(int id, int accountId, CancellationToken cancellationToken);
-        public Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);   
+        public Task<List<OfferResponseModel>> GetOffersByCategoriesAsync(List<int> categoryIds, int pageNumber = 1, int pageSize = 10, CancellationToken cancellationToken = default);
+        public Task ChangePictureAsync(int id,int accountId, string newPhotoURL, CancellationToken cancellationToken);
         public Task DeleteAsync(int id, int accountId, CancellationToken cancellationToken);
         public Task DecreaseStockAsync(int id, int count, CancellationToken cancellationToken);
         public Task IncreaseStockAsync(int id, int count, CancellationToken cancellationToken);

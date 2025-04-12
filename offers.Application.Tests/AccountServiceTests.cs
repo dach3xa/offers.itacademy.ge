@@ -9,6 +9,7 @@ using offers.Application.Exceptions;
 using offers.Application.Exceptions.Account;
 using offers.Application.Exceptions.Account.Company;
 using offers.Application.Exceptions.Account.User;
+using offers.Application.Exceptions.File;
 using offers.Application.Exceptions.Funds;
 using offers.Application.Models;
 using offers.Application.RepositoryInterfaces;
@@ -129,6 +130,84 @@ namespace offers.Application.Tests
                 .ReturnsAsync((Account)null);
 
             var task =  () => _accountService.LoginAsync("kirvalidzedachi@gmail.com","123",CancellationToken.None);
+
+            var exception = await Assert.ThrowsAsync<AccountNotFoundException>(task);
+            Assert.Equal("Email or password is incorrect", exception.Message);
+        }
+
+        [Theory(DisplayName = "when an email exists return an account response model")]
+        [InlineData("kirvalidzedachi@gmail.com", "ThisPass123.")]
+        [InlineData("chkheidzeguram@gmail.com", "OtherPass12.")]
+        public async Task LoginMVCAccount_WhenEmailExists_ShouldReturnAccount(string email, string password)
+        {
+            var hasher = new PasswordHasher<Account>();
+            var account = new Account()
+            {
+                Id = 1,
+                Email = email,
+                PhoneNumber = "123-456-7890",
+                Role = AccountRole.User,
+                UserDetail = new UserDetail
+                {
+                    FirstName = "John",
+                    LastName = "Doe",
+                },
+                CompanyDetail = null,
+                Offers = new List<Offer>()
+
+            };
+            account.PasswordHash = hasher.HashPassword(account, password);
+
+            _userManager.Setup(x => x.FindByEmailAsync(email)).ReturnsAsync(account);
+            _userManager.Setup(x => x.CheckPasswordAsync(account, password)).ReturnsAsync(true);
+
+            var accountResponse = await _accountService.LoginMvcAsync(email, password, CancellationToken.None);
+
+            using (new AssertionScope())
+            {
+                accountResponse.Should().NotBeNull();
+                accountResponse.Email.Should().Be(email);
+            }
+        }
+
+        [Theory(DisplayName = "when Password is incorrect throw account not found excpetion")]
+        [InlineData("kirvalidzedachi@gmail.com")]
+        [InlineData("chkheidzeguram@gmail.com")]
+        public async Task LoginMVCAccount_WhenPasswordIncorrect_ShouldThrowAccountNotFoundException(string email)
+        {
+            _repository.Setup(x => x.GetAsync(It.Is<string>(s => s == email), It.IsAny<CancellationToken>())).
+                ReturnsAsync(new Account()
+                {
+                    Id = 1,
+                    Email = email,
+                    PhoneNumber = "123-456-7890",
+                    PasswordHash = "wrong_password_hash",
+                    Role = AccountRole.User,
+                    UserDetail = new UserDetail
+                    {
+                        FirstName = "John",
+                        LastName = "Doe",
+                    },
+                    CompanyDetail = null,
+                    Offers = new List<Offer>()
+
+                });
+
+            var task = () => _accountService.LoginMvcAsync(email, "123", CancellationToken.None);
+
+            var exception = await Assert.ThrowsAsync<AccountNotFoundException>(task);
+            Assert.Equal("Email or password is incorrect", exception.Message);
+        }
+
+
+        [Fact(DisplayName = "when email does not exist login should throw account not found exception")]
+        public async Task LoginMVCAccount_WhenEmailDoesNotExist_ShouldThrowAccountNotFoundException()
+        {
+            _repository
+                .Setup(x => x.GetAsync("kirvalidzedachi@gmail.com", It.IsAny<CancellationToken>()))
+                .ReturnsAsync((Account)null);
+
+            var task = () => _accountService.LoginMvcAsync("kirvalidzedachi@gmail.com", "123", CancellationToken.None);
 
             var exception = await Assert.ThrowsAsync<AccountNotFoundException>(task);
             Assert.Equal("Email or password is incorrect", exception.Message);
@@ -645,6 +724,95 @@ namespace offers.Application.Tests
             {
                 user.Should().NotBeNull();
                 user.Id.Should().Be(id);
+            }
+        }
+
+        [Fact(DisplayName = "when id does not exist, change picture should throw company not found exception")]
+        public async Task ChangePictureAccount_WhenIdDoesNotExist_ShouldThrowCompanyNotFoundException()
+        {
+            _repository
+                .Setup(x => x.GetAsync(1, It.IsAny<CancellationToken>()))
+                .ReturnsAsync((Account)null);
+
+            var task = () => _accountService.ChangePictureAsync(1, "newpic", CancellationToken.None);
+
+            var exception = await Assert.ThrowsAsync<CompanyNotFoundException>(task);
+            Assert.Equal("a company with the given id does not exist", exception.Message);
+
+        }
+
+        [Fact(DisplayName = "when id exists but is not a company, change picture should throw company not found exception")]
+        public async Task ChangePictureAccount_WhenIdIsNotCompany_ShouldThrowCompanyNotFoundException()
+        {
+            _repository
+            .Setup(x => x.GetAsync(1, It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Account
+            {
+                Id = 1,
+                Email = "john@example.com",
+                PasswordHash = "hashed123",
+                Role = AccountRole.User,
+                UserDetail = null,
+                CompanyDetail = null,
+                Offers = new List<Offer>()
+            });
+
+            var task = () => _accountService.ChangePictureAsync(1, "newpic", CancellationToken.None);
+
+            var exception = await Assert.ThrowsAsync<CompanyNotFoundException>(task);
+            Assert.Equal("a company with the given id does not exist", exception.Message);
+        }
+
+        [Fact(DisplayName = "when photo url is null or whitespace, change picture should throw file could not be added exception")]
+        public async Task ChangePictureAccount_WhenPhotoUrlIsEmpty_ShouldThrowFileCouldNotBeAddedException()
+        {
+            _repository
+                .Setup(x => x.GetAsync(1, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new Account
+                {
+                    Id = 1,
+                    Email = "john@example.com",
+                    PasswordHash = "hashed123",
+                    Role = AccountRole.Company,
+                    UserDetail = null,
+                    CompanyDetail = new CompanyDetail
+                    {
+                        CompanyName = "somecompany"
+                    },
+                    Offers = new List<Offer>()
+                });
+
+            var task = () => _accountService.ChangePictureAsync(1, "", CancellationToken.None);
+
+            var exception = await Assert.ThrowsAsync<FileCouldNotBeAddedException>(task);
+            Assert.Equal("unexpected error occured while changing the picture", exception.Message);
+        }
+
+        [Fact(DisplayName = "when validations are succesful, change picture should change the picture")]
+        public async Task ChangePictureAccount_WhenValidationsAreSuccesful_ShouldChangeThePicture()
+        {
+            _repository
+                .Setup(x => x.GetAsync(1, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new Account
+                {
+                    Id = 1,
+                    Email = "john@example.com",
+                    PasswordHash = "hashed123",
+                    Role = AccountRole.Company,
+                    UserDetail = null,
+                    CompanyDetail = new CompanyDetail
+                    {
+                        CompanyName = "somecompany"
+                    },
+                    Offers = new List<Offer>()
+                });
+
+            await _accountService.ChangePictureAsync(1, "newpic", CancellationToken.None);
+
+
+            using (new AssertionScope())
+            {
+                _repository.Verify(x => x.ChangePictureAsync(1, "newpic", It.IsAny<CancellationToken>()), Times.Once);
             }
         }
     }

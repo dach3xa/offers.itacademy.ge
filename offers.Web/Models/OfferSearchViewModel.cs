@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace offers.Application.Models.ViewModel
+namespace offers.Web.Models
 {
     public class OfferSearchViewModel
     {

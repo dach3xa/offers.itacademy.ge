@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using offers.Application.Models.DTO;
-using offers.Application.Models.ViewModel;
+using offers.Web.Models;
 using offers.Application.Services.Accounts;
 using offers.Domain.Enums;
 using offers.Domain.Models;
@@ -63,18 +63,15 @@ namespace offers.Web.Controllers
                 return View();
 
             string photoUrl = null;
-            try
+            if (companyRegister.Photo != null && companyRegister.Photo.Length > 0)
             {
-                if (companyRegister.Photo != null && companyRegister.Photo.Length > 0)
-                {
-                    photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyRegister.Photo, cancellationToken);
-                }
+                photoUrl = await UploadedFileSaver.SaveUploadedFileAsync(companyRegister.Photo, cancellationToken);
             }
-            catch(Exception ex)
+            else
             {
-                ModelState.AddModelError("Photo", "Only image files are allowed.");
-                return View(companyRegister);
+                photoUrl = "/uploads/company-placeholder.jpg";
             }
+        
 
             var account = companyRegister.Adapt<Account>();
 
