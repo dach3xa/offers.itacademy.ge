@@ -96,6 +96,31 @@ namespace offers.API.Controllers.V1
         }
 
         /// <summary>
+        /// Retrieves a specific user's information by their ID.
+        /// </summary>
+        /// <param name="id">The ID of the user to retrieve.</param>
+        /// <param name="cancellationToken">Token to cancel the operation.</param>
+        /// <returns>
+        /// A 200 OK response with the user's details,
+        /// or a 404 Not Found response if the user does not exist.
+        /// </returns>
+        /// <response code="200">Returns the user's information</response>
+        /// <response code="401">Unauthorized - the requester is not authenticated</response>
+        /// <response code="404">User not found (UserNotFoundException)</response>
+        /// <response code="500">Internal server error</response>
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResponseModel))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [HttpGet("users/{id}")]
+        public async Task<IActionResult> GetUser(int id, CancellationToken cancellationToken)
+        {
+            var user = await _accountService.GetUserAsync(id, cancellationToken);
+            return Ok(user);
+        }
+
+        /// <summary>
         /// Confirms (activates) a company account by its ID.
         /// </summary>
         /// <param name="id">The ID of the company account to confirm.</param>
@@ -139,6 +164,33 @@ namespace offers.API.Controllers.V1
             var companies = await _accountService.GetAllCompaniesAsync(pageNumber, pageSize, cancellation);
 
             return Ok(companies);
+        }
+
+        /// <summary>
+        /// Retrieves a specific company's information by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the company to retrieve.</param>
+        /// <param name="cancellationToken">Token to cancel the operation.</param>
+        /// <returns>
+        /// A 200 OK response with the company's details,
+        /// or a 404 Not Found response if the company does not exist.
+        /// </returns>
+        /// <response code="200">Returns the company's information</response>
+        /// <response code="401">Unauthorized - the requester is not authenticated</response>
+        /// <response code="404">Company not found (CompanyNotFoundException)</response>
+        /// <response code="500">Internal server error</response>
+        [Produces("application/json")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CompanyResponseModel))]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
+        [HttpGet("companies/{id}")]
+
+        public async Task<IActionResult> GetCompany(int id, CancellationToken cancellationToken)
+        {
+            var company = await _accountService.GetCompanyAsync(id, cancellationToken);
+
+            return Ok(company);
         }
     }
 }

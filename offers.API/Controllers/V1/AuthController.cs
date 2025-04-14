@@ -153,6 +153,7 @@ namespace offers.API.Controllers.V1
                 Email = accountResponse.Email,
                 Role = accountResponse.Role,
                 RoleName = accountResponse.Role.ToString(),
+                Id = accountResponse.Id
             });
         }
     }

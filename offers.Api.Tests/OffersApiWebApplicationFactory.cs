@@ -20,7 +20,7 @@ namespace offers.Api.Tests
 
             builder.ConfigureServices((WebHostBuilderContext context, IServiceCollection services) =>
             {
-                services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
+                services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(context.Configuration.GetConnectionString("SecondConnection")));
             });
         }
     }
