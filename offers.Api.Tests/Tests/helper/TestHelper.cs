@@ -9,6 +9,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
 using System.Net.Http.Headers;
+using offers.Domain.Enums;
+using offers.Domain.Models;
 
 namespace offers.Api.Tests.Tests.helper
 {
@@ -22,22 +24,22 @@ namespace offers.Api.Tests.Tests.helper
         public static async Task<LoginResponseDTO> LogInAsCompany(HttpClient httpClient)
         {
             var email = $"testcompany_{Guid.NewGuid()}@example.com";
-            var formData = new Dictionary<string, string>
+
+            var formData = new MultipartFormDataContent
             {
-                { "Email", email },
-                { "Password", "Testpass1!" },
-                { "CompanyName", "Test Corp" },
-                { "PhoneNumber", "599111111" }
+                { new StringContent(email), "Email" },
+                { new StringContent("Testpass1."), "Password" },
+                { new StringContent("Test Corp"), "CompanyName" },
+                { new StringContent("599111111"), "PhoneNumber" },
             };
 
-            var registerContent = new FormUrlEncodedContent(formData);
-            var registerResponse = await httpClient.PostAsync("api/v1/Auth/company/register", registerContent);
+            var registerResponse = await httpClient.PostAsync("api/v1/Auth/company/register", formData);
             registerResponse.StatusCode.Should().Be(HttpStatusCode.Created);
 
             var loginDto = new AccountLoginDTO
             {
                 Email = email,
-                Password = "Testpass1!"
+                Password = "Testpass1."
             };
             var loginJson = JsonSerializer.Serialize(loginDto);
             var loginContent = new StringContent(loginJson, Encoding.UTF8, "application/json");
@@ -56,7 +58,7 @@ namespace offers.Api.Tests.Tests.helper
             var userRegister = new UserRegisterDTO
             {
                 Email =  email,
-                Password = "Testpass1!",
+                Password = "Testpass1.",
                 FirstName = "Tes",
                 LastName = "test",
                 PhoneNumber = "599111111"
@@ -70,7 +72,7 @@ namespace offers.Api.Tests.Tests.helper
             var loginDto = new AccountLoginDTO
             {
                 Email = email,
-                Password = "Testpass1!"
+                Password = "Testpass1."
             };
             var loginJson = JsonSerializer.Serialize(loginDto);
             var loginContent = new StringContent(loginJson, Encoding.UTF8, "application/json");
@@ -90,6 +92,27 @@ namespace offers.Api.Tests.Tests.helper
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginData.Token);
             await httpClient.PatchAsync("api/v1/User/deposit", DepositContent);
+
+            return loginData;
+        }
+
+        public static async Task<LoginResponseDTO> LoginAsAdminAsync(HttpClient httpClient)
+        {
+            string email = "randomuser@example.com";
+            string password = "Dachidachi1.";
+            var loginDto = new AccountLoginDTO
+            {
+                Email = email,
+                Password = password
+            };
+            var loginJson = JsonSerializer.Serialize(loginDto);
+            var loginContent = new StringContent(loginJson, Encoding.UTF8, "application/json");
+ 
+            var loginResponse = await httpClient.PostAsync("api/v1/Auth/login", loginContent);
+
+            var loginBody = await loginResponse.Content.ReadAsStringAsync();
+            var loginData = JsonSerializer.Deserialize<LoginResponseDTO>(loginBody, _jsonSerializerOption);
+            loginResponse.StatusCode.Should().Be(HttpStatusCode.OK);
 
             return loginData;
         }

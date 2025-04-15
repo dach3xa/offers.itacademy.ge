@@ -161,8 +161,10 @@ namespace offers.Api.Tests.Tests
                 { fileContent, "Photo", "testpic.jpg" }
             };
 
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponse.Token);
             var response = await httpClient.PatchAsync($"{_baseRequestUrl}/change-picture", form);
-
+            var responseContent = await response.Content.ReadAsStringAsync();
             using (new AssertionScope())
             {
                 response.StatusCode.Should().Be(HttpStatusCode.NoContent);

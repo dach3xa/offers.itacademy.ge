@@ -515,3 +515,4 @@ C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Api.Tests\obj\Debug\ne
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Api.Tests\obj\Debug\net8.0\offers.Api.Tests.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Api.Tests\obj\Debug\net8.0\offers.Api.Tests.genruntimeconfig.cache
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Api.Tests\obj\Debug\net8.0\ref\offers.Api.Tests.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Api.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

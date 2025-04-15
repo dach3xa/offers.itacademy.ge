@@ -84,9 +84,11 @@ C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\r
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Application.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Domain.dll
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Infrastructure.dll
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Persistance.dll
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Persistance.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Application.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Infrastructure.pdb
+C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Persistance.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Domain.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\offers.Web.csproj.AssemblyReference.cache
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\offers.Web.GeneratedMSBuildEditorConfig.editorconfig
@@ -117,5 +119,3 @@ C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\r
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\offers.Web.pdb
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\offers.Web.genruntimeconfig.cache
 C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\obj\Debug\net8.0\ref\offers.Web.dll
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Infrastructure.dll
-C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.Web\bin\Debug\net8.0\offers.Infrastructure.pdb

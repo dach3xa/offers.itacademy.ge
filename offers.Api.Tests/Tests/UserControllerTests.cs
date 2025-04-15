@@ -159,6 +159,7 @@ namespace offers.Api.Tests.Tests
             }
         }
 
+        [Fact]
         public async Task GetCurrentUser_ShouldReturnCurrentUser()
         {
             var userLoginResponse = await TestHelper.LogInAsUserAsync(httpClient);
@@ -167,6 +168,129 @@ namespace offers.Api.Tests.Tests
             var userResponse = await httpClient.GetAsync($"{_baseRequestUrl}");
             var userBody = await userResponse.Content.ReadAsStringAsync();
             var user = JsonSerializer.Deserialize<UserResponseModel>(userBody, _jsonSerializerOption);
+
+            using (new AssertionScope())
+            {
+                user.Id.Should().Be(userLoginResponse.Id);
+                user.Email.Should().Be(userLoginResponse.Email);
+            }
+        }
+
+        [Fact]
+        public async Task GetMyTransaction_ShouldReturnMyTransaction()
+        {
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponse.Token);
+
+            var form = new MultipartFormDataContent
+            {
+                { new StringContent("Filtered Offer"), "Name" },
+                { new StringContent("Offer for category filtering test"), "Description" },
+                { new StringContent("2"), "Count" },
+                { new StringContent("50.00"), "Price" },
+                { new StringContent("1"), "CategoryId" },
+                { new StringContent(DateTime.UtcNow.AddDays(7).ToString("o")), "ArchiveAt" }
+            };
+
+            var offerResponse = await httpClient.PostAsync("api/v1/Company/offers", form);
+            offerResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var offerBody = await offerResponse.Content.ReadAsStringAsync();
+            var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
+
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
+
+            var Transaction = new TransactionDTO
+            {
+                Count = 1,
+                Paid = 50,
+                OfferId = createdOffer.Id
+            };
+
+            var transactionJson = JsonSerializer.Serialize(Transaction);
+            var transactionContent = new StringContent(transactionJson, Encoding.UTF8, "application/json");
+            var transactionResponse = await httpClient.PostAsync($"{_baseRequestUrl}/transaction", transactionContent);
+            var transactionBody = await transactionResponse.Content.ReadAsStringAsync();
+            var transaction = JsonSerializer.Deserialize<TransactionResponseModel>(transactionBody, _jsonSerializerOption);
+
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
+            var myTransactionResponse = await httpClient.GetAsync($"{_baseRequestUrl}/transactions/{transaction.Id}");
+            var myTransactionBody = await myTransactionResponse.Content.ReadAsStringAsync();
+            var myTransaction = JsonSerializer.Deserialize<TransactionResponseModel>(myTransactionBody, _jsonSerializerOption);
+
+            using (new AssertionScope())
+            {
+                myTransaction.Id.Should().Be(transaction.Id);
+                myTransaction.AccountId.Should().Be(loginResponseUser.Id);
+                myTransaction.OfferId.Should().Be(createdOffer.Id);
+            }
+        }
+
+        [Fact]
+        public async Task GetMyTransactions_ShouldReturnMyTransactions()
+        {
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
+            var myTransactionsResponse = await httpClient.GetAsync($"{_baseRequestUrl}/transactions/");
+            var myTransactionsBody = await myTransactionsResponse.Content.ReadAsStringAsync();
+            var myTransactions = JsonSerializer.Deserialize<List<TransactionResponseModel>>(myTransactionsBody, _jsonSerializerOption);
+
+            using (new AssertionScope())
+            {
+                myTransactions.Should().NotBeNull();
+            }
+        }
+
+        [Fact]
+        public async Task RefundTransaction_ShouldRefundTheTransaction()
+        {
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponse.Token);
+
+            var form = new MultipartFormDataContent
+            {
+                { new StringContent("Filtered Offer"), "Name" },
+                { new StringContent("Offer for category filtering test"), "Description" },
+                { new StringContent("2"), "Count" },
+                { new StringContent("50.00"), "Price" },
+                { new StringContent("1"), "CategoryId" },
+                { new StringContent(DateTime.UtcNow.AddDays(7).ToString("o")), "ArchiveAt" }
+            };
+
+            var offerResponse = await httpClient.PostAsync("api/v1/Company/offers", form);
+            offerResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var offerBody = await offerResponse.Content.ReadAsStringAsync();
+            var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
+
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
+
+            var Transaction = new TransactionDTO
+            {
+                Count = 1,
+                Paid = 50,
+                OfferId = createdOffer.Id
+            };
+
+            var transactionJson = JsonSerializer.Serialize(Transaction);
+            var transactionContent = new StringContent(transactionJson, Encoding.UTF8, "application/json");
+            var transactionResponse = await httpClient.PostAsync($"{_baseRequestUrl}/transaction", transactionContent);
+            var transactionBody = await transactionResponse.Content.ReadAsStringAsync();
+            var transaction = JsonSerializer.Deserialize<TransactionResponseModel>(transactionBody, _jsonSerializerOption);
+
+            var transactionRefundResponse = await httpClient.DeleteAsync($"{_baseRequestUrl}/transactions/{transaction.Id}");
+            transactionRefundResponse.StatusCode.Should().Be(HttpStatusCode.NoContent);
+
+            var transactionRefundGetResponse = await httpClient.GetAsync($"{_baseRequestUrl}/transactions/{transaction.Id}");
+            transactionRefundGetResponse.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
     }
 }

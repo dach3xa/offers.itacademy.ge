@@ -60,17 +60,18 @@ namespace offers.Api.Tests.Tests
         {
             var email = $"testCompany_{Guid.NewGuid()}@example.com";
 
-            var formData = new Dictionary<string, string>
+            var formData = new MultipartFormDataContent
             {
-                { "Email", email },
-                { "Password", "StrongPass123!" },
-                { "CompanyName", "Test Corp" },
-                { "PhoneNumber", "599858078" }
+                { new StringContent(email), "Email" },
+                { new StringContent("StrongPass123!"), "Password" },
+                { new StringContent("Test Corp"), "CompanyName" },
+                { new StringContent("599858078"), "PhoneNumber" }
             };
 
-            var content = new FormUrlEncodedContent(formData);
+            var emptyFileContent = new ByteArrayContent(Array.Empty<byte>());
+            emptyFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
 
-            var response = await httpClient.PostAsync($"{_baseRequestUrl}/company/register", content);
+            var response = await httpClient.PostAsync($"{_baseRequestUrl}/company/register", formData);
 
             var registerBody = await response.Content.ReadAsStringAsync();
             var createdUser = JsonSerializer.Deserialize<UserResponseModel>(registerBody, _jsonSerializerOption);

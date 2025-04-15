@@ -2,6 +2,7 @@
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Microsoft.EntityFrameworkCore;
+using offers.Api.Tests.Tests.helper;
 using offers.Application.Models.DTO;
 using offers.Application.Models.Response;
 using offers.Domain.Enums;
@@ -34,15 +35,19 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task CategoryPost_ShouldReturnCreatedAtAction()
         {
+            var name = $"TestCategory{Guid.NewGuid()}";
             var model = new CategoryDTO
             {
-                Name = "TestCategory",
+                Name = name,
                 Description = "PostingATestCategory"
             };
 
             var json = JsonSerializer.Serialize(model);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
+            var loginResponse = await TestHelper.LoginAsAdminAsync(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
             var postResponse = await httpClient.PostAsync($"{_baseRequestUrl}/category", data);
             var responseContent = await postResponse.Content.ReadAsStringAsync();
 
@@ -56,7 +61,7 @@ namespace offers.Api.Tests.Tests
             {
                 postResponse.StatusCode.Should().Be(HttpStatusCode.Created);
                 postResponse.Headers.Location.Should().NotBeNull();
-                category.Name.Should().Be("TestCategory");
+                category.Name.Should().Be(name);
             }
         }
 
@@ -111,27 +116,36 @@ namespace offers.Api.Tests.Tests
         {
             var email = $"testcompany_{Guid.NewGuid()}@example.com";
 
-            var formData = new Dictionary<string, string>
+            var formData = new MultipartFormDataContent
             {
-                { "Email", email },
-                { "Password", "StrongPass123!" },
-                { "CompanyName", "Test Corp" },
-                { "PhoneNumber", "599858078" }
+                { new StringContent(email), "Email" },
+                { new StringContent("StrongPass123!"), "Password" },
+                { new StringContent("Test Corp"), "CompanyName" },
+                { new StringContent("599858078"), "PhoneNumber" }
             };
 
-            var content = new FormUrlEncodedContent(formData);
+            var emptyFileContent = new ByteArrayContent(Array.Empty<byte>());
+            emptyFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
 
-            var response = await httpClient.PostAsync($"api/v1/Auth/company/register", content);
+            // ✅ Add file correctly
+            formData.Add(emptyFileContent, "Photo", "empty.jpg");
+
+            var response = await httpClient.PostAsync($"api/v1/Auth/company/register", formData);
 
             var registerBody = await response.Content.ReadAsStringAsync();
             var createdCompany = JsonSerializer.Deserialize<AccountResponseModel>(registerBody, _jsonSerializerOption);
-            var confirmResponse = await httpClient.PostAsync($"{_baseRequestUrl}/companies/{createdCompany.Id}/confirm", null);
+            var loginResponse = await TestHelper.LoginAsAdminAsync(httpClient);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
+            var confirmResponse = await httpClient.PatchAsync($"{_baseRequestUrl}/companies/{createdCompany.Id}/confirm", null);
 
             using (new AssertionScope())
             {
                 confirmResponse.StatusCode.Should().Be(HttpStatusCode.NoContent);
             }
 
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
             var getResponse = await httpClient.GetAsync($"{_baseRequestUrl}/companies/{createdCompany.Id}");
             var companyContent = await getResponse.Content.ReadAsStringAsync();
             var company = JsonSerializer.Deserialize<CompanyResponseModel>(companyContent, _jsonSerializerOption);
@@ -159,17 +173,18 @@ namespace offers.Api.Tests.Tests
         {
             var email = $"testCompany_{Guid.NewGuid()}@example.com";
 
-            var formData = new Dictionary<string, string>
+            var formData = new MultipartFormDataContent
             {
-                { "Email", email },
-                { "Password", "StrongPass123!" },
-                { "CompanyName", "Test Corp" },
-                { "PhoneNumber", "599858078" }
+                { new StringContent(email), "Email" },
+                { new StringContent("StrongPass123!"), "Password" },
+                { new StringContent("Test Corp"), "CompanyName" },
+                { new StringContent("599858078"), "PhoneNumber" }
             };
 
-            var content = new FormUrlEncodedContent(formData);
+            var emptyFileContent = new ByteArrayContent(Array.Empty<byte>());
+            emptyFileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
 
-            var response = await httpClient.PostAsync($"api/v1/Auth/company/register", content);
+            var response = await httpClient.PostAsync($"api/v1/Auth/company/register", formData);
 
             var registerBody = await response.Content.ReadAsStringAsync();
             var createdCompany = JsonSerializer.Deserialize<CompanyResponseModel>(registerBody, _jsonSerializerOption);

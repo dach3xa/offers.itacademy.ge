@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Gt+CTz0nmRU=",
+  "dgSpecHash": "PDtSyJ6vN3o=",
   "success": true,
   "projectFilePath": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\offers.Api.Tests.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,7 @@
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.3\\microsoft.entityframeworkcore.9.0.3.nupkg.sha512",
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.3\\microsoft.entityframeworkcore.abstractions.9.0.3.nupkg.sha512",
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.3\\microsoft.entityframeworkcore.analyzers.9.0.3.nupkg.sha512",
+    "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.15\\microsoft.entityframeworkcore.inmemory.8.0.15.nupkg.sha512",
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.3\\microsoft.entityframeworkcore.relational.9.0.3.nupkg.sha512",
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\9.0.3\\microsoft.entityframeworkcore.sqlserver.9.0.3.nupkg.sha512",
     "C:\\Users\\misho\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

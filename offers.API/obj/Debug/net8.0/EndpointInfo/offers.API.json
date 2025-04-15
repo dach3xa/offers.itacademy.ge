@@ -168,6 +168,73 @@
         ]
       }
     },
+    "/api/v1/Admin/users/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Retrieves a specific user's information by their ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the user to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the user's information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponseModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - the requester is not authenticated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found (UserNotFoundException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
     "/api/v1/Admin/companies/{id}/confirm": {
       "patch": {
         "tags": [
@@ -280,6 +347,73 @@
           },
           "500": {
             "description": "Internal server error if something unexpected goes wrong",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Admin/companies/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Retrieves a specific company's information by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the company to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the company's information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyResponseModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - the requester is not authenticated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Company not found (CompanyNotFoundException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
             "content": {
               "application/json": {
                 "schema": {
@@ -603,13 +737,13 @@
               },
               "examples": {
                 "Bakery Clearance": {
-                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-11T10:30:16.5920589Z","photo":null}
+                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-15T13:31:14.7929369Z","photo":null}
                 },
                 "Sushi Leftovers": {
-                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-11T09:30:16.6552075Z","photo":null}
+                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-15T12:31:14.8153223Z","photo":null}
                 },
                 "Fruit Clearance Box": {
-                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-11T11:30:16.6561357Z","photo":null}
+                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-15T14:31:14.8174694Z","photo":null}
                 }
               },
               "encoding": {
@@ -922,6 +1056,226 @@
           },
           "409": {
             "description": "Company is not active (CompanyIsNotActiveException),\r\ndeletion failed (OfferCouldNotBeDeletedException),\r\nor transaction could not be refunded (TransactionCouldNotBeRefundedException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/change-picture": {
+      "patch": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Changes the profile picture of the company belonging to the authenticated user.",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Photo"
+                ],
+                "type": "object",
+                "properties": {
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Photo": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Picture successfully changed"
+          },
+          "400": {
+            "description": "Invalid or missing file in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Company not found (CompanyNotFoundException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "File could not be saved (FileCouldNotBeAddedException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/api/v1/Company/offers/{id}/change-picture": {
+      "patch": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Changes the picture of a specific offer belonging to the authenticated user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the offer whose picture is to be changed.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Photo"
+                ],
+                "type": "object",
+                "properties": {
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Photo": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Picture successfully changed"
+          },
+          "400": {
+            "description": "Invalid or missing file in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied for this offer (OfferAccessDeniedException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Offer not found (OfferNotFoundException)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "File could not be saved (FileCouldNotBeAddedException)",
             "content": {
               "application/json": {
                 "schema": {
@@ -1941,6 +2295,10 @@
           "roleName": {
             "type": "string",
             "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           },
           "role": {
             "$ref": "#/components/schemas/AccountRole"

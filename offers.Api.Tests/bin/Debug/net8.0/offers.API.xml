@@ -30,6 +30,21 @@
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
         </member>
+        <member name="M:offers.API.Controllers.V1.AdminController.GetUser(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a specific user's information by their ID.
+            </summary>
+            <param name="id">The ID of the user to retrieve.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>
+            A 200 OK response with the user's details,
+            or a 404 Not Found response if the user does not exist.
+            </returns>
+            <response code="200">Returns the user's information</response>
+            <response code="401">Unauthorized - the requester is not authenticated</response>
+            <response code="404">User not found (UserNotFoundException)</response>
+            <response code="500">Internal server error</response>
+        </member>
         <member name="M:offers.API.Controllers.V1.AdminController.ConfirmCompany(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Confirms (activates) a company account by its ID.
@@ -53,6 +68,21 @@
             <response code="200">Returns a list of all companies</response>
             <response code="401">Unauthorized - the user is not authenticated</response>
             <response code="500">Internal server error if something unexpected goes wrong</response>
+        </member>
+        <member name="M:offers.API.Controllers.V1.AdminController.GetCompany(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a specific company's information by its ID.
+            </summary>
+            <param name="id">The ID of the company to retrieve.</param>
+            <param name="cancellationToken">Token to cancel the operation.</param>
+            <returns>
+            A 200 OK response with the company's details,
+            or a 404 Not Found response if the company does not exist.
+            </returns>
+            <response code="200">Returns the company's information</response>
+            <response code="401">Unauthorized - the requester is not authenticated</response>
+            <response code="404">Company not found (CompanyNotFoundException)</response>
+            <response code="500">Internal server error</response>
         </member>
         <member name="M:offers.API.Controllers.V1.AuthController.Register(offers.Application.Models.DTO.UserRegisterDTO,System.Threading.CancellationToken)">
             <summary>

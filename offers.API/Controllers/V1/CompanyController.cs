@@ -215,7 +215,7 @@ namespace offers.API.Controllers.V1
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
-        [HttpPatch("/change-picture")]
+        [HttpPatch("change-picture")]
         public async Task<IActionResult> ChangePictureCurrentCompany([FromForm] ChangePictureDTO changePicture, CancellationToken cancellation)
         {
             int accountId = ControllerHelper.GetUserIdFromClaims(User);
