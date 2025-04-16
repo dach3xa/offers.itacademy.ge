@@ -88,7 +88,8 @@ namespace offers.Application.Mappings
             TypeAdapterConfig<Transaction, TransactionResponseModel>
                 .NewConfig()
                 .Map(dest => dest.AccountName, src => src.User.FirstName)
-                .Map(dest => dest.OfferName, src => src.Offer.Name);
+                .Map(dest => dest.OfferName, src => src.Offer.Name)
+                .Map(dest => dest.AccountId, src => src.UserId);
 
         }
     }

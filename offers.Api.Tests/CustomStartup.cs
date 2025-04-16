@@ -26,6 +26,7 @@ using offers.Persistance.Connection;
 using offers.Application.Services.Offers.Events;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using offers.Api.Tests.Tests.helper;
 
 namespace offers.Api.Tests
 {
@@ -102,6 +103,7 @@ namespace offers.Api.Tests
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

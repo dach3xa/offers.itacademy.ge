@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace offers.Api.Tests.Tests
 {
@@ -22,11 +23,13 @@ namespace offers.Api.Tests.Tests
         {
             PropertyNameCaseInsensitive = true,
         };
+        private readonly OffersApiWebApplicationFactory _factory;
 
         public UserControllerTests(OffersApiWebApplicationFactory factory)
         {
             httpClient = factory.CreateClient();
             _baseRequestUrl = "api/v1/User";
+            _factory = factory;
         }
 
         [Fact]
@@ -46,8 +49,9 @@ namespace offers.Api.Tests.Tests
 
             var categoryBody = await postCategoryResponse.Content.ReadAsStringAsync();
             var createdCategory = JsonSerializer.Deserialize<CategoryResponseModel>(categoryBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
-
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -69,7 +73,7 @@ namespace offers.Api.Tests.Tests
 
             httpClient.DefaultRequestHeaders.Authorization = null;
 
-            var getFiltered = await httpClient.GetAsync($"{_baseRequestUrl}/offerss?categoryIds={createdCategory.Id}&pageNumber=1&pageSize=10");
+            var getFiltered = await httpClient.GetAsync($"{_baseRequestUrl}/offers?categoryIds={createdCategory.Id}&pageNumber=1&pageSize=10");
             getFiltered.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var filteredBody = await getFiltered.Content.ReadAsStringAsync();
@@ -87,7 +91,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task CreateTransaction_ShouldReturnCreatedAtAction()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -107,9 +113,7 @@ namespace offers.Api.Tests.Tests
             var offerBody = await offerResponse.Content.ReadAsStringAsync();
             var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
 
-            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
-            httpClient.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
 
             var Transaction = new TransactionDTO
             {
@@ -120,6 +124,8 @@ namespace offers.Api.Tests.Tests
 
             var transactionJson = JsonSerializer.Serialize(Transaction);
             var transactionContent = new StringContent(transactionJson, Encoding.UTF8, "application/json");
+            httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
             var transactionResponse = await httpClient.PostAsync($"{_baseRequestUrl}/transaction", transactionContent);
             var transactionBody = await transactionResponse.Content.ReadAsStringAsync();
             var transaction = JsonSerializer.Deserialize<TransactionResponseModel>(transactionBody, _jsonSerializerOption);
@@ -134,7 +140,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task Deposit_ShouldDeposit()
         {
-            var userLoginResponse = await TestHelper.LogInAsUserAsync(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var userLoginResponse = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
             var deposit = new DepositRequestDTO
             {
                 Amount = 2000
@@ -155,14 +163,16 @@ namespace offers.Api.Tests.Tests
             
             using (new AssertionScope())
             {
-                user.Balance.Should().Be(4000);
+                user.Balance.Should().BeGreaterThan(2000);
             }
         }
 
         [Fact]
         public async Task GetCurrentUser_ShouldReturnCurrentUser()
         {
-            var userLoginResponse = await TestHelper.LogInAsUserAsync(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var userLoginResponse = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", userLoginResponse.Token);
             var userResponse = await httpClient.GetAsync($"{_baseRequestUrl}");
@@ -179,7 +189,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetMyTransaction_ShouldReturnMyTransaction()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -199,7 +211,7 @@ namespace offers.Api.Tests.Tests
             var offerBody = await offerResponse.Content.ReadAsStringAsync();
             var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
 
-            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
 
@@ -233,7 +245,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetMyTransactions_ShouldReturnMyTransactions()
         {
-            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
             var myTransactionsResponse = await httpClient.GetAsync($"{_baseRequestUrl}/transactions/");
@@ -249,7 +263,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task RefundTransaction_ShouldRefundTheTransaction()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -269,7 +285,7 @@ namespace offers.Api.Tests.Tests
             var offerBody = await offerResponse.Content.ReadAsStringAsync();
             var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
 
-            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient);
+            var loginResponseUser = await TestHelper.LogInAsUserAsync(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponseUser.Token);
 

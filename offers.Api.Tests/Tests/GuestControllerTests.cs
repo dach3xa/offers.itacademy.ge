@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using offers.Application.Models.DTO;
 using offers.Api.Tests.Tests.helper;
 using offers.Domain.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace offers.Api.Tests.Tests
 {
@@ -22,11 +23,12 @@ namespace offers.Api.Tests.Tests
         {
             PropertyNameCaseInsensitive = true,
         };
-
+        private readonly OffersApiWebApplicationFactory _factory;
         public GuestControllerTests(OffersApiWebApplicationFactory factory)
         {
             httpClient = factory.CreateClient();
             _baseRequestUrl = "api/v1/Guest";
+            _factory = factory; 
         }
 
         [Fact]
@@ -47,16 +49,19 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetCategory_ShouldReturnCategory()
         {
+            var loginResponse = await TestHelper.LoginAsAdminAsync(httpClient);
+            var name = "Name_" + Guid.NewGuid().ToString("N");
             var model = new CategoryDTO
             {
-                Name = "TestCategory",
+                Name = name,
                 Description = "PostingATestCategory"
             };
 
             var json = JsonSerializer.Serialize(model);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var postResponse = await httpClient.PostAsync($"{_baseRequestUrl}/category", data);
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
+            var postResponse = await httpClient.PostAsync($"api/v1/Admin/category", data);
             var responseContent = await postResponse.Content.ReadAsStringAsync();
 
             var category = JsonSerializer.Deserialize<CategoryResponseModel>(
@@ -95,10 +100,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetOffer_ShouldReturnOffer()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
-
-            httpClient.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
 
             var form = new MultipartFormDataContent
             {
@@ -109,11 +113,12 @@ namespace offers.Api.Tests.Tests
                 { new StringContent("1"), "CategoryId" },
                 { new StringContent(DateTime.UtcNow.AddDays(7).ToString("o")), "ArchiveAt" }
             };
+            httpClient.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
-            var offerResponse = await httpClient.PostAsync($"{_baseRequestUrl}/Offers", form);
-            offerResponse.StatusCode.Should().Be(HttpStatusCode.Created);
-
+            var offerResponse = await httpClient.PostAsync($"api/v1/Company/Offers", form);
             var offerBody = await offerResponse.Content.ReadAsStringAsync();
+            offerResponse.StatusCode.Should().Be(HttpStatusCode.Created);
             var createdOffer = JsonSerializer.Deserialize<OfferResponseModel>(offerBody, _jsonSerializerOption);
 
             var offerGetResponse = await httpClient.GetAsync($"{_baseRequestUrl}/offers/{createdOffer.Id}");

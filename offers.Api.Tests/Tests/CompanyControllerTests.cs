@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using Azure;
 using offers.Api.Tests.Tests.helper;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace offers.Api.Tests.Tests
 {
@@ -19,6 +20,7 @@ namespace offers.Api.Tests.Tests
     {
         private readonly HttpClient httpClient;
         private readonly string _baseRequestUrl;
+        private readonly OffersApiWebApplicationFactory _factory;
         private readonly JsonSerializerOptions _jsonSerializerOption = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true,
@@ -28,12 +30,15 @@ namespace offers.Api.Tests.Tests
         {
             httpClient = factory.CreateClient();
             _baseRequestUrl = "api/v1/Company";
+            _factory = factory;
         }
 
         [Fact]
         public async Task OfferPost_ShouldReturnCreatedAtAction()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -65,7 +70,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetMyOffers_ShouldReturnMyOffers()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -84,7 +91,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetMyOffer_ShouldReturnMyOffer()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -118,7 +127,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task DeleteOffer_ShouldDeleteTheOffer()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -148,7 +159,10 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task ChangeCompanyPicture_ShouldUpdateSuccessfully()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -174,7 +188,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task ChangeOfferPicture_ShouldUpdateSuccessfully()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
@@ -215,7 +231,9 @@ namespace offers.Api.Tests.Tests
         [Fact]
         public async Task GetCurrentCompany_ShouldReturnTheCurrentCompany()
         {
-            var loginResponse = await TestHelper.LogInAsCompany(httpClient);
+            using var scope = _factory.Services.CreateScope();
+            var serviceProvider = scope.ServiceProvider;
+            var loginResponse = await TestHelper.LogInAsCompany(httpClient, serviceProvider);
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", loginResponse.Token);
 
