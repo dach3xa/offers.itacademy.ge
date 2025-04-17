@@ -23,7 +23,12 @@ using offers.Application.Mappings;
 using offers.Application.Validators;
 using offers.Application.ServicesExtension;
 using offers.Infrastructure.RepositoryExtension;
+using HealthChecks.UI;
 using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using HealthChecks.SqlServer;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +42,23 @@ builder.Host.UseSerilog();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddHealthChecks()
+.AddSqlServer(
+    connectionString: builder.Configuration.GetConnectionString("DefaultConnection"),
+    healthQuery: "SELECT 1",
+    name: "SQL Server",
+    failureStatus: HealthStatus.Unhealthy,
+    tags: new[] { "db", "sql" }
+);
+
+builder.Services.AddHealthChecksUI(opt =>
+{
+    opt.SetEvaluationTimeInSeconds(60);
+    opt.MaximumHistoryEntriesPerEndpoint(60);
+    opt.SetApiMaxActiveRequests(1);
+    opt.AddHealthCheckEndpoint("API", "/api/health");
+}).AddInMemoryStorage();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -100,7 +122,6 @@ builder.Services.AddApiVersioning(options =>
     options.GroupNameFormat = "'v'V";
     options.SubstituteApiVersionInUrl = true;
 });
-builder.Services.AddHealthChecks();
 
 builder.Services.AddIdentityCore<Account>(options =>
 {
@@ -137,7 +158,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseMiddleware<ExceptionHandler>();
-app.MapHealthChecks("/health");
+app.MapHealthChecks("/api/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 if (app.Environment.IsDevelopment())
 {

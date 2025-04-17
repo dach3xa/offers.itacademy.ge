@@ -3,6 +3,8 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.FileProviders;
 using offers.Application.BackgroundServices;
 using offers.Application.Mappings;
@@ -14,7 +16,11 @@ using offers.Infrastructure.RepositoryExtension;
 using offers.Persistance.Connection;
 using offers.Persistance.Context;
 using offers.Persistance.Seed;
+using HealthChecks.UI;
+using HealthChecks.SqlServer;
+using HealthChecks.UI.Client;
 using System;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,7 +56,23 @@ builder.Services.AddAuthentication("Identity.Application")
 
 builder.Services.AddServices();
 builder.Services.AddRepositories();
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+.AddSqlServer(
+    connectionString: builder.Configuration.GetConnectionString("DefaultConnection"),
+    healthQuery: "SELECT 1",
+    name: "SQL Server",
+    failureStatus: HealthStatus.Unhealthy,
+    tags: new[] { "db", "sql" }
+);
+
+// UI (optional)
+builder.Services.AddHealthChecksUI(opt =>
+{
+    opt.SetEvaluationTimeInSeconds(60);
+    opt.MaximumHistoryEntriesPerEndpoint(60);
+    opt.SetApiMaxActiveRequests(1);
+    opt.AddHealthCheckEndpoint("API", "/api/health");
+}).AddInMemoryStorage();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnection))));
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection(nameof(ConnectionStrings)));
@@ -60,12 +82,15 @@ var app = builder.Build();
 
 app.UseExceptionHandler("/error");
 app.UseStatusCodePagesWithReExecute("/error/{0}");
+app.MapHealthChecks("/api/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
 }
-app.MapHealthChecks("/health");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles(); 
