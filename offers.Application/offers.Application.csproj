@@ -21,4 +21,9 @@
     <ProjectReference Include="..\offers.Domain\offers.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Guest\" />
+    <Folder Include="Queries\Guest\" />
+  </ItemGroup>
+
 </Project>

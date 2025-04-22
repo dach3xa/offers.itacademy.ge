@@ -1,4 +1,5 @@
 ﻿using Asp.Versioning;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using offers.API.Infrastructure.Middlewares;
@@ -17,13 +18,11 @@ namespace offers.API.Controllers.V1
     [ApiExplorerSettings(GroupName = "v1")]
     public class GuestController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
-        private readonly IOfferService _offerService;
+        private readonly IMediator _mediator;
 
-        public GuestController(IOfferService offerService, ICategoryService categoryService)
+        public GuestController(IMediator mediator)
         {
-            _offerService = offerService;
-            _categoryService = categoryService;
+            _mediator = mediator;
         }
 
         /// <summary>

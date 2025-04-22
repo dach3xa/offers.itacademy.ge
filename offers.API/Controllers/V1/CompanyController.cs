@@ -18,6 +18,10 @@ using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.AspNetCore.Hosting;
 using offers.Application.FileSaver;
+using MediatR;
+using offers.Application.Commands.Company;
+using offers.Application.Queries.Company;
+using offers.Application.Queries.Admin;
 
 namespace offers.API.Controllers.V1
 {
@@ -28,14 +32,12 @@ namespace offers.API.Controllers.V1
     [ApiExplorerSettings(GroupName = "v1")]
     public class CompanyController : ControllerBase
     {
-        private readonly IOfferService _offerService;
-        private readonly IAccountService _accountService;
         private readonly ILogger<CompanyController> _logger;
+        private readonly IMediator _mediator;
 
-        public CompanyController(IOfferService offerService, IAccountService accountService, ILogger<CompanyController> logger)
+        public CompanyController(IMediator mediator, ILogger<CompanyController> logger)
         {
-            _offerService = offerService;
-            _accountService = accountService;
+            _mediator = mediator;
             _logger = logger;
         }
 
@@ -90,7 +92,7 @@ namespace offers.API.Controllers.V1
             var offer = offerDTO.Adapt<Offer>();
             offer.AccountId = ControllerHelper.GetUserIdFromClaims(User);
             offer.PhotoURL = photoUrl;
-            var offerResponse = await _offerService.CreateAsync(offer, cancellation);
+            var offerResponse = await _mediator.Send(new CreateOfferCommand(offer), cancellation);
 
             return CreatedAtAction(nameof(GetMyOffer), new { id = offerResponse.Id }, offerResponse);
         }
@@ -116,7 +118,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("offers")]
         public async Task<IActionResult> GetMyOffers([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var offers = await _offerService.GetMyOffersAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellation);
+            var offers = await _mediator.Send(new GetMyOffersQuery(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize), cancellation);
 
             return Ok(offers);
         }
@@ -149,7 +151,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("offers/{id}")]
         public async Task<IActionResult> GetMyOffer([FromRoute] int id, CancellationToken cancellation) 
         {
-            var offerResponse = await _offerService.GetMyOfferAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
+            var offerResponse = await _mediator.Send(new GetMyOfferQuery(id, ControllerHelper.GetUserIdFromClaims(User)));
 
             return Ok(offerResponse);
         }
@@ -187,7 +189,7 @@ namespace offers.API.Controllers.V1
         public async Task<IActionResult> Delete([FromRoute] int id, CancellationToken cancellation)
         {
             _logger.LogInformation("attempt to Delete an offer with the id {id}", id);
-            await _offerService.DeleteAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellation);
+            await _mediator.Send(new DeleteOfferCommand(id, ControllerHelper.GetUserIdFromClaims(User)), cancellation);
 
             return NoContent();
         }
@@ -223,7 +225,7 @@ namespace offers.API.Controllers.V1
 
             string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePicture.Photo, cancellation);
 
-            await _accountService.ChangePictureAsync(accountId, newPhotoURL, cancellation);
+            await _mediator.Send(new ChangePictureCommand(accountId, newPhotoURL), cancellation);
 
             return NoContent();
         }
@@ -263,7 +265,7 @@ namespace offers.API.Controllers.V1
 
             string newPhotoURL = await UploadedFileSaver.SaveUploadedFileAsync(changePicture.Photo, cancellation);
 
-            await _offerService.ChangePictureAsync(id, accountId, newPhotoURL, cancellation);
+            await _mediator.Send(new ChangeOfferPictureCommand(id, accountId, newPhotoURL), cancellation);
 
             return NoContent();
         }
@@ -287,7 +289,7 @@ namespace offers.API.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetCurrentCompany(CancellationToken cancellationToken)
         {
-            var currentCompany = await _accountService.GetCompanyAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            var currentCompany = await _mediator.Send(new GetCompanyQuery(ControllerHelper.GetUserIdFromClaims(User)), cancellationToken);
             return Ok(currentCompany);
         }
 

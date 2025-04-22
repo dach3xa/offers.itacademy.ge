@@ -19,6 +19,8 @@ using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
 using Microsoft.AspNetCore.Hosting;
 using offers.Application.FileSaver;
+using MediatR;
+using offers.Application.Commands.Auth;
 
 namespace offers.API.Controllers.V1
 {
@@ -29,13 +31,13 @@ namespace offers.API.Controllers.V1
     [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ControllerBase
     {
-        private readonly IAccountService _accountService;
         private readonly IOptions<JWTConfiguration> _options;
         private readonly ILogger<AuthController> _logger;
+        private readonly IMediator _mediator;
 
-        public AuthController(IAccountService accountService, IOptions<JWTConfiguration> options, ILogger<AuthController> logger)
+        public AuthController(IMediator mediator, IOptions<JWTConfiguration> options, ILogger<AuthController> logger)
         {
-            _accountService = accountService;
+            _mediator = mediator;
             _options = options;
             _logger = logger;
         }
@@ -69,7 +71,7 @@ namespace offers.API.Controllers.V1
             _logger.LogInformation("Register attempt for {Email}", userDTO.Email);
 
             var userAccount = userDTO.Adapt<Account>();
-            var userResponse = await _accountService.RegisterAsync(userAccount, cancellation);
+            var userResponse = await _mediator.Send(new RegisterUserCommand(userAccount), cancellation);
 
             return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
         }
@@ -112,7 +114,7 @@ namespace offers.API.Controllers.V1
             }
             var companyAccount = companyDTO.Adapt<Account>();
             companyAccount.CompanyDetail.PhotoURL = photoUrl;
-            var companyResponse = await _accountService.RegisterAsync(companyAccount, cancellation);
+            var companyResponse = await _mediator.Send(new RegisterCompanyCommand(companyAccount), cancellation);
 
             return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);
 
@@ -145,7 +147,7 @@ namespace offers.API.Controllers.V1
             errors => throw new AccountCouldNotValidateException("Could not validate the given Account", errors));
 
             _logger.LogInformation("Login attempt for {Email}", accountLoginDTO.Email);
-            var accountResponse = await _accountService.LoginAsync(accountLoginDTO.Email, accountLoginDTO.Password, cancellation);
+            var accountResponse = await _mediator.Send(new LoginCommand(accountLoginDTO.Email, accountLoginDTO.Password), cancellation);
             var token = JWTHelper.GenerateSecurityToken(accountResponse.Email, accountResponse.Id, accountResponse.Role, _options);
             return Ok(new LoginResponseDTO
             {

@@ -16,6 +16,9 @@ using offers.Application.Services.Categories;
 using offers.Domain.Enums;
 using offers.Domain.Models;
 using Swashbuckle.AspNetCore.Filters;
+using offers.Application.Commands.Admin;
+using MediatR;
+using offers.Application.Queries.Admin;
 
 namespace offers.API.Controllers.V1
 {
@@ -26,15 +29,13 @@ namespace offers.API.Controllers.V1
     [ApiExplorerSettings(GroupName = "v1")]
     public class AdminController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
-        private readonly IAccountService _accountService;
+        private readonly IMediator _mediator;
         private readonly ILogger<AdminController> _logger;
 
-        public AdminController(IAccountService accountService, ICategoryService categoryService, ILogger<AdminController> logger)
+        public AdminController(IMediator mediator, ILogger<AdminController> logger)
         {
-            _accountService = accountService;
-            _categoryService = categoryService;
             _logger = logger;
+            _mediator = mediator;
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace offers.API.Controllers.V1
             _logger.LogInformation("attempt to add a new category {Name}", categoryDTO.Name);
 
             var category = categoryDTO.Adapt<Category>();
-            var categoryResponse = await _categoryService.CreateAsync(category, cancellation);
+            var categoryResponse = await _mediator.Send(new CreateCategoryCommand(category), cancellation);
 
             return CreatedAtAction(nameof(GuestController.GetCategoryById), "Guest", new { id = categoryResponse.Id }, categoryResponse);
 
@@ -90,7 +91,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsers([FromQuery] int pageNumber = 1,[FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var users = await _accountService.GetAllUsersAsync(pageNumber, pageSize, cancellation);
+            var users = await _mediator.Send(new GetAllUsersQuery(pageNumber, pageSize), cancellation);
 
             return Ok(users);
         }
@@ -116,7 +117,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("users/{id}")]
         public async Task<IActionResult> GetUser(int id, CancellationToken cancellationToken)
         {
-            var user = await _accountService.GetUserAsync(id, cancellationToken);
+            var user = await _mediator.Send(new GetUserQuery(id), cancellationToken);
             return Ok(user);
         }
 
@@ -137,10 +138,10 @@ namespace offers.API.Controllers.V1
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
         [HttpPatch("companies/{id}/confirm")]
-        public async Task<IActionResult> ConfirmCompany([FromRoute] int id, CancellationToken cancellation)
+        public async Task<IActionResult> ConfirmCompany([FromRoute] int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("attempt to Confirm a company with the ID {id}", id);
-            await _accountService.ConfirmCompanyAsync(id, cancellation);
+            await _mediator.Send(new ConfirmCompanyCommand(id), cancellationToken);
 
             return NoContent();
         }
@@ -161,7 +162,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("companies")]
         public async Task<IActionResult> GetAllCompanies([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var companies = await _accountService.GetAllCompaniesAsync(pageNumber, pageSize, cancellation);
+            var companies = await _mediator.Send(new GetAllCompaniesQuery(pageNumber,pageSize), cancellation);
 
             return Ok(companies);
         }
@@ -188,7 +189,7 @@ namespace offers.API.Controllers.V1
 
         public async Task<IActionResult> GetCompany(int id, CancellationToken cancellationToken)
         {
-            var company = await _accountService.GetCompanyAsync(id, cancellationToken);
+            var company = await _mediator.Send(new GetCompanyQuery(id), cancellationToken);
 
             return Ok(company);
         }
