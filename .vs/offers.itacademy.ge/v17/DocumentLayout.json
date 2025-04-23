@@ -3,20 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\user\\refundtransactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\user\\refundtransactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\user\\deposithandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\user\\deposithandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\queries\\user\\getmytransactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\queries\\user\\getmytransactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\queries\\company\\getmyofferquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\queries\\company\\getmyofferquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\user\\depositcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\user\\depositcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\offers\\iofferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\company\\changepicturehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\company\\changepicturehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\queries\\admin\\getcompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\company\\changepicturecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\queries\\company\\getmyofferhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\queries\\company\\getmyofferhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\company\\createoffercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\company\\createoffercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\auth\\registeruserhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\commands\\auth\\registercompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\commands\\auth\\registercompanyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -69,10 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\offers\\events\\offerdeletedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\offers\\events\\offerdeletedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.infrastructure\\offers.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{07F90282-1E54-4455-AD8A-40403C527642}|offers.Infrastructure\\offers.Infrastructure.csproj|solutionrelative:offers.infrastructure\\offers.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2FEF3CB-FEC0-44D1-9B00-30B24C7778F3}|offers.Api.Tests\\offers.Api.Tests.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api.tests\\offers.api.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -93,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\mappings\\mapsterconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|solutionrelative:offers.api\\controllers\\v1\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\transactions\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -251,28 +271,12 @@
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\changepictureoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\validators\\companyregisterdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\views\\company\\createoffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\services\\accounts\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\repositoryinterfaces\\iaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -285,10 +289,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.application\\exceptions\\file\\filecouldnotbeaddedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26827981-E9BC-4058-9C96-DB1F884A23B8}|offers.Application\\offers.Application.csproj|solutionrelative:offers.application\\exceptions\\file\\filecouldnotbeaddedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C07E49BC-2ED8-450E-8713-122C8B5D4EF6}|offers.Domain\\offers.Domain.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -369,10 +369,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B285BC-0B3B-4885-8B79-99401EDD1207}|offers.Web\\offers.Web.csproj|solutionrelative:offers.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E06B09B-5108-4594-9FE7-6FD7EB9F193F}|offers.API\\offers.API.csproj|c:\\users\\misho\\desktop\\project\\offers.itacademy.ge\\offers.api\\infrastructure\\swagger\\examples\\accountlogindtomultipleexamples.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -510,7 +506,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -529,47 +525,155 @@
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\CompanyController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\CompanyController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\CompanyController.cs",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAAAP0AAABLAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:46:51.743Z",
+              "WhenOpened": "2025-04-07T15:45:35.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ChangePictureHandler.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
-              "RelativeToolTip": "offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\CompanyController.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAuwJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:45:15.95Z",
+              "WhenOpened": "2025-04-12T10:04:20.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GuestController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\GuestController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\GuestController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\GuestController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACQAAABHAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:39.03Z",
+              "WhenOpened": "2025-04-10T15:26:54.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\UserController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:37:44.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "offers.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T10:03:31.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
+              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\UserController.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
+              "RelativeToolTip": "offers.API\\Controllers\\V1\\UserController.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAAAO8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T14:27:44.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RefundTransactionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\RefundTransactionHandler.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Commands\\User\\RefundTransactionHandler.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\RefundTransactionHandler.cs",
+              "RelativeToolTip": "offers.Application\\Commands\\User\\RefundTransactionHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:15:30.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DepositHandler.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\DepositHandler.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Commands\\User\\DepositHandler.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\DepositHandler.cs",
+              "RelativeToolTip": "offers.Application\\Commands\\User\\DepositHandler.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:15:44.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetMyTransactionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\User\\GetMyTransactionHandler.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Queries\\User\\GetMyTransactionHandler.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\User\\GetMyTransactionHandler.cs",
+              "RelativeToolTip": "offers.Application\\Queries\\User\\GetMyTransactionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:06:09.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetMyOfferQuery.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Company\\GetMyOfferQuery.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Queries\\Company\\GetMyOfferQuery.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Company\\GetMyOfferQuery.cs",
+              "RelativeToolTip": "offers.Application\\Queries\\Company\\GetMyOfferQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T08:30:55.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DepositCommand.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\DepositCommand.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Commands\\User\\DepositCommand.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\User\\DepositCommand.cs",
+              "RelativeToolTip": "offers.Application\\Commands\\User\\DepositCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T08:53:05.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IOfferService.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\IOfferService.cs",
               "RelativeDocumentMoniker": "offers.Application\\Services\\Offers\\IOfferService.cs",
@@ -582,7 +686,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
+              "Title": "ChangePictureHandler.cs",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
+              "RelativeDocumentMoniker": "offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
+              "RelativeToolTip": "offers.Application\\Commands\\Company\\ChangePictureHandler.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T09:45:15.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "GetCompanyHandler.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Admin\\GetCompanyHandler.cs",
               "RelativeDocumentMoniker": "offers.Application\\Queries\\Admin\\GetCompanyHandler.cs",
@@ -590,12 +706,11 @@
               "RelativeToolTip": "offers.Application\\Queries\\Admin\\GetCompanyHandler.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:56:13.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T09:56:13.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "GetCompanyQuery.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Admin\\GetCompanyQuery.cs",
               "RelativeDocumentMoniker": "offers.Application\\Queries\\Admin\\GetCompanyQuery.cs",
@@ -603,12 +718,11 @@
               "RelativeToolTip": "offers.Application\\Queries\\Admin\\GetCompanyQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:56:11.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T09:56:11.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "ChangeOfferPictureCommand.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangeOfferPictureCommand.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Company\\ChangeOfferPictureCommand.cs",
@@ -616,12 +730,11 @@
               "RelativeToolTip": "offers.Application\\Commands\\Company\\ChangeOfferPictureCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:49:57.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T09:49:57.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "ChangePictureCommand.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\ChangePictureCommand.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Company\\ChangePictureCommand.cs",
@@ -629,12 +742,11 @@
               "RelativeToolTip": "offers.Application\\Commands\\Company\\ChangePictureCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:43:29.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T09:43:29.104Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "CreateOfferCommand.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Company\\CreateOfferCommand.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Company\\CreateOfferCommand.cs",
@@ -642,25 +754,11 @@
               "RelativeToolTip": "offers.Application\\Commands\\Company\\CreateOfferCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:32:46.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T09:32:46.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetMyOfferHandler.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Company\\GetMyOfferHandler.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Queries\\Company\\GetMyOfferHandler.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Company\\GetMyOfferHandler.cs",
-              "RelativeToolTip": "offers.Application\\Queries\\Company\\GetMyOfferHandler.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:26:55.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "LoginHandler.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Auth\\LoginHandler.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Auth\\LoginHandler.cs",
@@ -672,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "CreateCategoryHandler.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Admin\\CreateCategoryHandler.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Admin\\CreateCategoryHandler.cs",
@@ -684,7 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "RegisterUserHandler.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Auth\\RegisterUserHandler.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Auth\\RegisterUserHandler.cs",
@@ -696,19 +794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\AdminController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\AdminController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T09:01:27.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "RegisterCompanyHandler.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Commands\\Auth\\RegisterCompanyHandler.cs",
               "RelativeDocumentMoniker": "offers.Application\\Commands\\Auth\\RegisterCompanyHandler.cs",
@@ -720,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "GetUserQuery.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Queries\\Admin\\GetUserQuery.cs",
               "RelativeDocumentMoniker": "offers.Application\\Queries\\Admin\\GetUserQuery.cs",
@@ -732,7 +818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "OfferDeletedEvent.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Offers\\Events\\OfferDeletedEvent.cs",
               "RelativeDocumentMoniker": "offers.Application\\Services\\Offers\\Events\\OfferDeletedEvent.cs",
@@ -744,19 +830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "offers.Infrastructure.csproj",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\offers.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "offers.Infrastructure\\offers.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\offers.Infrastructure.csproj",
-              "RelativeToolTip": "offers.Infrastructure\\offers.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-17T07:57:31.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "offers.Application.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application.Tests\\offers.Application.Tests.csproj",
               "RelativeDocumentMoniker": "offers.Application.Tests\\offers.Application.Tests.csproj",
@@ -768,7 +842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "offers.Persistance.csproj",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\offers.Persistance.csproj",
               "RelativeDocumentMoniker": "offers.Persistance\\offers.Persistance.csproj",
@@ -780,7 +854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "offers.Api.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\offers.Api.Tests.csproj",
               "RelativeDocumentMoniker": "offers.Api.Tests\\offers.Api.Tests.csproj",
@@ -792,7 +866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "MapsterConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Mappings\\MapsterConfiguration.cs",
               "RelativeDocumentMoniker": "offers.Application\\Mappings\\MapsterConfiguration.cs",
@@ -804,20 +878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
-              "RelativeDocumentMoniker": "offers.API\\Controllers\\V1\\UserController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V1\\UserController.cs",
-              "RelativeToolTip": "offers.API\\Controllers\\V1\\UserController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAIBJwGcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:27:44.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "UserControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\UserControllerTests.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\UserControllerTests.cs",
@@ -829,7 +890,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "TestHelper.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\helper\\TestHelper.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\helper\\TestHelper.cs",
@@ -841,7 +902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "TransactionService.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Transactions\\TransactionService.cs",
               "RelativeDocumentMoniker": "offers.Application\\Services\\Transactions\\TransactionService.cs",
@@ -854,7 +915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "OfferRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\OfferRepository.cs",
               "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\OfferRepository.cs",
@@ -866,7 +927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Context\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Context\\ApplicationDbContext.cs",
@@ -878,7 +939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "OffersApiWebApplicationFactory.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\OffersApiWebApplicationFactory.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\OffersApiWebApplicationFactory.cs",
@@ -890,7 +951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "offers.Infrastructure\\Repositories\\CategoryRepository.cs",
@@ -902,7 +963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Categories\\CategoryService.cs",
               "RelativeDocumentMoniker": "offers.Application\\Services\\Categories\\CategoryService.cs",
@@ -914,7 +975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "GuestControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\GuestControllerTests.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\GuestControllerTests.cs",
@@ -926,7 +987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "AuthControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\AuthControllerTests.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\AuthControllerTests.cs",
@@ -938,7 +999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "CustomStartup.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\CustomStartup.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\CustomStartup.cs",
@@ -950,7 +1011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "AdminControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\AdminControllerTests.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\AdminControllerTests.cs",
@@ -963,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "CompanyControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\Tests\\CompanyControllerTests.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\Tests\\CompanyControllerTests.cs",
@@ -976,7 +1037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "CustomWebApplicationFactory.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Api.Tests\\CustomWebApplicationFactory.cs",
               "RelativeDocumentMoniker": "offers.Api.Tests\\CustomWebApplicationFactory.cs",
@@ -988,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 42,
               "Title": "CompanyDetailConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Configurations\\CompanyDetailConfiguration.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Configurations\\CompanyDetailConfiguration.cs",
@@ -1000,7 +1061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\appsettings.json",
               "RelativeDocumentMoniker": "offers.API\\appsettings.json",
@@ -1012,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "JWTConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Auth\\JWT\\JWTConfiguration.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Auth\\JWT\\JWTConfiguration.cs",
@@ -1024,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "AdminSeed.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Seed\\AdminSeed.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Seed\\AdminSeed.cs",
@@ -1036,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 46,
               "Title": "offers.API.csproj",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\offers.API.csproj",
               "RelativeDocumentMoniker": "offers.API\\offers.API.csproj",
@@ -1048,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 47,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\appsettings.json",
               "RelativeDocumentMoniker": "offers.Web\\appsettings.json",
@@ -1060,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 48,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\UserController.cs",
               "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\UserController.cs",
@@ -1072,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 49,
               "Title": "CompanyController.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\CompanyController.cs",
               "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\CompanyController.cs",
@@ -1084,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 50,
               "Title": "TransactionDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\TransactionDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\TransactionDTO.cs",
@@ -1096,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 51,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\AdminController.cs",
               "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\AdminController.cs",
@@ -1108,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 52,
               "Title": "TransactionConfiguration.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Configurations\\TransactionConfiguration.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Configurations\\TransactionConfiguration.cs",
@@ -1120,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 53,
               "Title": "GetOffersByCategoryIds.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetOffersByCategoryIds.cshtml",
@@ -1132,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 54,
               "Title": "UserRegisterDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\UserRegisterDTO.cs",
@@ -1144,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 55,
               "Title": "AccountLoginDTOValidator.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\AccountLoginDTOValidator.cs",
               "RelativeDocumentMoniker": "offers.Application\\Validators\\AccountLoginDTOValidator.cs",
@@ -1156,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 56,
               "Title": "GetMyOffer.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffer.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffer.cshtml",
@@ -1168,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 57,
               "Title": "OfferArchivingService.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\BackgroundServices\\OfferArchivingService.cs",
               "RelativeDocumentMoniker": "offers.Application\\BackgroundServices\\OfferArchivingService.cs",
@@ -1180,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 58,
               "Title": "Offer.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offer.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Offer.cshtml",
@@ -1192,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 59,
               "Title": "Offers.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Offers.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Offers.cshtml",
@@ -1204,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 63,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\Login.cshtml",
@@ -1216,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 62,
               "Title": "RegisterCompany.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\RegisterCompany.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\RegisterCompany.cshtml",
@@ -1228,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 60,
               "Title": "GetMyOffers.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetMyOffers.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetMyOffers.cshtml",
@@ -1240,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 61,
               "Title": "RegisterUser.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Account\\RegisterUser.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Account\\RegisterUser.cshtml",
@@ -1252,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 64,
               "Title": "GetCurrentCompany.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\GetCurrentCompany.cshtml",
@@ -1264,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 65,
               "Title": "ChangePictureProfile.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\ChangePictureProfile.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\ChangePictureProfile.cshtml",
@@ -1276,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 66,
               "Title": "ChangePictureOffer.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\ChangePictureOffer.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\ChangePictureOffer.cshtml",
@@ -1288,20 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAswFYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:03:31.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 67,
               "Title": "CompanyRegisterDTOValidator.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
               "RelativeDocumentMoniker": "offers.Application\\Validators\\CompanyRegisterDTOValidator.cs",
@@ -1313,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 68,
               "Title": "CreateOffer.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\CreateOffer.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\CreateOffer.cshtml",
@@ -1325,43 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\CompanyController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\CompanyController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\CompanyController.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAIBZwJsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:04:20.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "RelativeDocumentMoniker": "offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "RelativeToolTip": "offers.Application\\Services\\Accounts\\IAccountService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBZwBUAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T11:39:17.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 67,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAIBZwFQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T15:45:35.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "IAccountRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
               "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\IAccountRepository.cs",
@@ -1373,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "IOfferRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
               "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\IOfferRepository.cs",
@@ -1385,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "FileCouldNotBeAddedException.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Exceptions\\File\\FileCouldNotBeAddedException.cs",
               "RelativeDocumentMoniker": "offers.Application\\Exceptions\\File\\FileCouldNotBeAddedException.cs",
@@ -1394,18 +1406,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T09:43:46.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 71,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\UserController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwCYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T14:37:44.671Z"
             },
             {
               "$type": "Document",
@@ -1649,7 +1649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 92,
               "Title": "AccountLoginDTOMultipleExamples.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\AccountLoginDTOMultipleExamples.cs",
@@ -1661,19 +1661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "offers.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "offers.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T15:26:54.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 93,
               "Title": "AccountResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\AccountResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\AccountResponseModel.cs",
@@ -1685,7 +1673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 94,
               "Title": "TransactionResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\TransactionResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\TransactionResponseModel.cs",
@@ -1697,7 +1685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 97,
               "Title": "CategoryResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CategoryResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\CategoryResponseModel.cs",
@@ -1709,7 +1697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 95,
               "Title": "OfferResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\OfferResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\OfferResponseModel.cs",
@@ -1721,7 +1709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 96,
               "Title": "CompanyResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\CompanyResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\CompanyResponseModel.cs",
@@ -1733,7 +1721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 98,
               "Title": "UserResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\Response\\UserResponseModel.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\Response\\UserResponseModel.cs",
@@ -1745,7 +1733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 99,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Company\\Home.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Company\\Home.cshtml",
@@ -1757,7 +1745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 101,
               "Title": "GetAllCompanies.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\GetAllCompanies.cshtml",
@@ -1769,7 +1757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 100,
               "Title": "Offers.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Offers.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Offers.cshtml",
@@ -1781,7 +1769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 102,
               "Title": "GetMyTransactions.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\GetMyTransactions.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\User\\GetMyTransactions.cshtml",
@@ -1793,7 +1781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 103,
               "Title": "Categories.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Categories.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Categories.cshtml",
@@ -1805,7 +1793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 104,
               "Title": "GetAllUsers.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\GetAllUsers.cshtml",
@@ -1817,7 +1805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 105,
               "Title": "RepositoryExtensions.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
               "RelativeDocumentMoniker": "offers.Infrastructure\\RepositoryExtension\\RepositoryExtensions.cs",
@@ -1829,7 +1817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 106,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\ICategoryRepository.cs",
@@ -1841,7 +1829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 107,
               "Title": "DepositRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\DepositRequestDTO.cs",
@@ -1853,7 +1841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 108,
               "Title": "AccountLoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\AccountLoginDTO.cs",
@@ -1865,7 +1853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 110,
               "Title": "UserRegisterDTOMultipleExamples.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\UserRegisterDTOMultipleExamples.cs",
@@ -1877,7 +1865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 109,
               "Title": "CategoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\Models\\DTO\\CategoryDTO.cs",
               "RelativeDocumentMoniker": "offers.Application\\Models\\DTO\\CategoryDTO.cs",
@@ -1889,7 +1877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 111,
               "Title": "OfferDTOMultipleExamples.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\OfferDTOMultipleExamples.cs",
@@ -1901,7 +1889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 112,
               "Title": "CompanyRegisterDTOMultipleExamples.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
               "RelativeDocumentMoniker": "offers.API\\Infrastructure\\Swagger\\Examples\\CompanyRegisterDTOMultipleExamples.cs",
@@ -1913,7 +1901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 113,
               "Title": "GuestController.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.API\\Controllers\\V2\\GuestController.cs",
               "RelativeDocumentMoniker": "offers.API\\Controllers\\V2\\GuestController.cs",
@@ -1925,7 +1913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 114,
               "Title": "ITransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
               "RelativeDocumentMoniker": "offers.Application\\RepositoryInterfaces\\ITransactionRepository.cs",
@@ -1937,7 +1925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 115,
               "Title": "Category.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Home\\Category.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Home\\Category.cshtml",
@@ -1949,7 +1937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 116,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Shared\\_Layout.cshtml",
@@ -1961,7 +1949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 117,
               "Title": "Deposit.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\Deposit.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\User\\Deposit.cshtml",
@@ -1973,7 +1961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 118,
               "Title": "CreateTransaction.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\User\\CreateTransaction.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\User\\CreateTransaction.cshtml",
@@ -1985,7 +1973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 119,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\_ViewImports.cshtml",
@@ -1997,7 +1985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 120,
               "Title": "Home.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\Home.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\Home.cshtml",
@@ -2009,7 +1997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 121,
               "Title": "CreateCategory.cshtml",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Web\\Views\\Admin\\CreateCategory.cshtml",
               "RelativeDocumentMoniker": "offers.Web\\Views\\Admin\\CreateCategory.cshtml",
@@ -2021,7 +2009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 122,
               "Title": "20250407112044_AddedPhotoUrl.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Migrations\\20250407112044_AddedPhotoUrl.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Migrations\\20250407112044_AddedPhotoUrl.cs",
@@ -2033,7 +2021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 123,
               "Title": "20250407093036_ChangedAccountConfig.cs",
               "DocumentMoniker": "C:\\Users\\misho\\Desktop\\Project\\offers.itacademy.ge\\offers.Persistance\\Migrations\\20250407093036_ChangedAccountConfig.cs",
               "RelativeDocumentMoniker": "offers.Persistance\\Migrations\\20250407093036_ChangedAccountConfig.cs",

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using offers.API.Infrastructure.Middlewares;
 using offers.Application.Models.Response;
+using offers.Application.Queries.Guest;
 using offers.Application.Services.Accounts;
 using offers.Application.Services.Categories;
 using offers.Application.Services.Offers;
@@ -39,7 +40,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("categories")]
         public async Task<IActionResult> GetAllCategoriesAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var categories = await _categoryService.GetAllAsync(pageNumber, pageSize, cancellation);
+            var categories = await _mediator.Send(new GetAllCategoriesQuery(pageNumber,pageSize), cancellation);
 
             return Ok(categories);
         }
@@ -62,7 +63,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("categories/{id}")]
         public async Task<IActionResult> GetCategoryById([FromRoute]int id, CancellationToken cancellation)
         {
-            var category = await _categoryService.GetAsync(id, cancellation);
+            var category = await _mediator.Send(new GetCategoryQuery(id), cancellation);
 
             return Ok(category);
         }
@@ -81,7 +82,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("offers")]
         public async Task<IActionResult> GetAllOffersAsync([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var offers = await _offerService.GetAllAsync(pageNumber, pageSize, cancellation);
+            var offers = await _mediator.Send(new GetAllOffersQuery(pageNumber, pageSize), cancellation);
 
             return Ok(offers);
         }
@@ -104,7 +105,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("offers/{id}")]
         public async Task<IActionResult> GetOfferById([FromRoute]int id, CancellationToken cancellation)
         {
-            var offer = await _offerService.GetAsync(id, cancellation);
+            var offer = await _mediator.Send(new GetOfferQuery(id), cancellation);
 
             return Ok(offer);
         }

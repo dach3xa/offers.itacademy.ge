@@ -1,0 +1,1528 @@
+2025-04-23 13:20:20.434 +04:00 DBG Registered model binder providers, in the following order: ["Asp.Versioning.ApiVersionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-04-23 13:20:20.927 +04:00 INF starting web host
+2025-04-23 13:20:21.264 +04:00 DBG An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-04-23 13:20:22.528 +04:00 DBG The index {'UserId'} was not created on entity type 'IdentityUserRole<int>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2025-04-23 13:20:22.530 +04:00 DBG The index {'UserId'} was not created on entity type 'IdentityUserToken<int>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2025-04-23 13:20:22.920 +04:00 WRN No store type was specified for the decimal property 'Price' on entity type 'Offer'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-23 13:20:22.920 +04:00 WRN No store type was specified for the decimal property 'Balance' on entity type 'UserDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-23 13:20:23.054 +04:00 DBG Entity Framework Core 9.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.3' with options: EngineType=SqlServer 
+2025-04-23 13:20:23.376 +04:00 DBG Creating DbConnection.
+2025-04-23 13:20:23.448 +04:00 DBG Created DbConnection. (70ms).
+2025-04-23 13:20:23.451 +04:00 DBG Migrating using database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:23.470 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.128 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.132 +04:00 DBG Creating DbCommand for 'ExecuteNonQuery'.
+2025-04-23 13:20:24.139 +04:00 DBG Created DbCommand for 'ExecuteNonQuery' (4ms).
+2025-04-23 13:20:24.144 +04:00 DBG Initialized DbCommand for 'ExecuteNonQuery' (11ms).
+2025-04-23 13:20:24.152 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-23 13:20:24.184 +04:00 INF Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-23 13:20:24.188 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.201 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (7ms).
+2025-04-23 13:20:24.201 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.203 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.205 +04:00 INF Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-04-23 13:20:24.209 +04:00 DBG Creating DbCommand for 'ExecuteScalar'.
+2025-04-23 13:20:24.209 +04:00 DBG Created DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.209 +04:00 DBG Initialized DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.210 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-04-23 13:20:24.238 +04:00 INF Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-04-23 13:20:24.333 +04:00 DBG Beginning transaction with isolation level 'Unspecified'.
+2025-04-23 13:20:24.339 +04:00 DBG Began transaction with isolation level 'ReadCommitted'.
+2025-04-23 13:20:24.341 +04:00 DBG Creating DbCommand for 'ExecuteNonQuery'.
+2025-04-23 13:20:24.341 +04:00 DBG Created DbCommand for 'ExecuteNonQuery' (0ms).
+2025-04-23 13:20:24.342 +04:00 DBG Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+2025-04-23 13:20:24.342 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-04-23 13:20:24.347 +04:00 INF Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-04-23 13:20:24.349 +04:00 DBG Committing transaction.
+2025-04-23 13:20:24.352 +04:00 DBG Committed transaction.
+2025-04-23 13:20:24.354 +04:00 DBG Disposing transaction.
+2025-04-23 13:20:24.355 +04:00 DBG Beginning transaction with isolation level 'Unspecified'.
+2025-04-23 13:20:24.356 +04:00 DBG Began transaction with isolation level 'ReadCommitted'.
+2025-04-23 13:20:24.357 +04:00 DBG Creating DbCommand for 'ExecuteNonQuery'.
+2025-04-23 13:20:24.358 +04:00 DBG Created DbCommand for 'ExecuteNonQuery' (0ms).
+2025-04-23 13:20:24.358 +04:00 DBG Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2025-04-23 13:20:24.358 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-23 13:20:24.359 +04:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-04-23 13:20:24.359 +04:00 DBG Creating DbCommand for 'ExecuteScalar'.
+2025-04-23 13:20:24.359 +04:00 DBG Created DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.359 +04:00 DBG Initialized DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.360 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-23 13:20:24.360 +04:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-04-23 13:20:24.362 +04:00 DBG Creating DbCommand for 'ExecuteReader'.
+2025-04-23 13:20:24.362 +04:00 DBG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:20:24.362 +04:00 DBG Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:20:24.363 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-04-23 13:20:24.373 +04:00 INF Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-04-23 13:20:24.377 +04:00 DBG Closing data reader to 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.379 +04:00 DBG A data reader for 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' is being disposed after spending 4ms reading results.
+2025-04-23 13:20:24.385 +04:00 INF No migrations were applied. The database is already up to date.
+2025-04-23 13:20:24.385 +04:00 DBG Committing transaction.
+2025-04-23 13:20:24.386 +04:00 DBG Committed transaction.
+2025-04-23 13:20:24.386 +04:00 DBG Creating DbCommand for 'ExecuteScalar'.
+2025-04-23 13:20:24.386 +04:00 DBG Created DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.386 +04:00 DBG Initialized DbCommand for 'ExecuteScalar' (0ms).
+2025-04-23 13:20:24.387 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-04-23 13:20:24.390 +04:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-04-23 13:20:24.390 +04:00 DBG Disposing transaction.
+2025-04-23 13:20:24.391 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.391 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (0ms).
+2025-04-23 13:20:24.448 +04:00 DBG Compiling query expression: 
+'DbSet<Account>()
+    .Where(u => u.NormalizedEmail == __normalizedEmail_0)
+    .SingleOrDefault()'
+2025-04-23 13:20:24.742 +04:00 DBG Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Account>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Account.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Account.AccessFailedCount (int) Required, 1], [Property: Account.ConcurrencyStamp (string) Concurrency, 2], [Property: Account.Email (string) Required MaxLength(255) ANSI, 3], [Property: Account.EmailConfirmed (bool) Required, 4], [Property: Account.LockoutEnabled (bool) Required, 5], [Property: Account.LockoutEnd (DateTimeOffset?), 6], [Property: Account.NormalizedEmail (string) Index MaxLength(256), 7], [Property: Account.NormalizedUserName (string) Index MaxLength(256), 8], [Property: Account.PasswordHash (string) Required MaxLength(512) ANSI, 9], [Property: Account.PhoneNumber (string) MaxLength(50) ANSI, 10], [Property: Account.PhoneNumberConfirmed (bool) Required, 11], [Property: Account.Role (AccountRole) Required MaxLength(50) ANSI, 12], [Property: Account.SecurityStamp (string), 13], [Property: Account.TwoFactorEnabled (bool) Required, 14], [Property: Account.UserName (string) MaxLength(256), 15] }
+        SELECT TOP(2) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM Accounts AS a
+        WHERE a.NormalizedEmail == @__normalizedEmail_0) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Account.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Account.AccessFailedCount (int) Required, 1], [Property: Account.ConcurrencyStamp (string) Concurrency, 2], [Property: Account.Email (string) Required MaxLength(255) ANSI, 3], [Property: Account.EmailConfirmed (bool) Required, 4], [Property: Account.LockoutEnabled (bool) Required, 5], [Property: Account.LockoutEnd (DateTimeOffset?), 6], [Property: Account.NormalizedEmail (string) Index MaxLength(256), 7], [Property: Account.NormalizedUserName (string) Index MaxLength(256), 8], [Property: Account.PasswordHash (string) Required MaxLength(512) ANSI, 9], [Property: Account.PhoneNumber (string) MaxLength(50) ANSI, 10], [Property: Account.PhoneNumberConfirmed (bool) Required, 11], [Property: Account.Role (AccountRole) Required MaxLength(50) ANSI, 12], [Property: Account.SecurityStamp (string), 13], [Property: Account.TwoFactorEnabled (bool) Required, 14], [Property: Account.UserName (string) MaxLength(256), 15] }
+        SELECT TOP(2) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM Accounts AS a
+        WHERE a.NormalizedEmail == @__normalizedEmail_0, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Account entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Account instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Account);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Account.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("offers.Domain.Models.Account").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Account)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Account | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("offers.Domain.Models.Account")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Account | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("offers.Domain.Models.Account")]: 
+                        {
+                            return 
+                            {
+                                Account instance;
+                                instance = new Account();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                instance.<Email>k__BackingField = dataReader.GetString(3);
+                                instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(4);
+                                instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(5);
+                                instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(6) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(6);
+                                instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(8) ? default(string) : dataReader.GetString(8);
+                                instance.<PasswordHash>k__BackingField = dataReader.GetString(9);
+                                instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10);
+                                instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(11);
+                                instance.<Role>k__BackingField = Invoke(((EnumToStringConverter<AccountRole>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Account.Role (AccountRole) Required MaxLength(50) ANSI | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("offers.Domain.Models.Account").FindProperty("Role")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetString(12));
+                                instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(14);
+                                instance.<UserName>k__BackingField = dataReader.IsDBNull(15) ? default(string) : dataReader.GetString(15);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Account | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("offers.Domain.Models.Account")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Account)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: offers.Persistance.Context.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)
+    .SingleOrDefault()'
+2025-04-23 13:20:24.795 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.795 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.796 +04:00 DBG Creating DbCommand for 'ExecuteReader'.
+2025-04-23 13:20:24.796 +04:00 DBG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:20:24.801 +04:00 DBG Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-04-23 13:20:24.803 +04:00 DBG Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Accounts] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-23 13:20:24.833 +04:00 INF Executed DbCommand (32ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Accounts] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-04-23 13:20:24.893 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Account' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:24.978 +04:00 DBG Closing data reader to 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.978 +04:00 DBG A data reader for 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' is being disposed after spending 145ms reading results.
+2025-04-23 13:20:24.978 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.978 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (0ms).
+2025-04-23 13:20:24.981 +04:00 DBG 'ApplicationDbContext' disposed.
+2025-04-23 13:20:24.984 +04:00 DBG Disposing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:24.985 +04:00 DBG Disposed connection to database '' on server '' (1ms).
+2025-04-23 13:20:24.993 +04:00 DBG Hosting starting
+2025-04-23 13:20:25.072 +04:00 INF User profile is available. Using 'C:\Users\misho\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-23 13:20:25.093 +04:00 INF Initializing UI Database
+2025-04-23 13:20:25.136 +04:00 DBG An additional 'IServiceProvider' was created for internal use by Entity Framework. An existing service provider was not used due to the following configuration changes: configuration changed for 'Core:ConfigureWarnings', configuration removed for 'EngineType', configuration removed for 'UseRetryingStrategyByDefault', configuration removed for 'SqlServerCompatibilityLevel', configuration removed for 'AzureSqlCompatibilityLevel', configuration removed for 'AzureSynapseCompatibilityLevel', configuration added for 'InMemoryDatabase:DatabaseRoot', configuration added for 'InMemoryDatabase:NullabilityChecksEnabled'.
+2025-04-23 13:20:25.229 +04:00 DBG The property 'HealthCheckExecutionEntry.HealthCheckExecutionId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-04-23 13:20:25.229 +04:00 DBG The property 'HealthCheckExecutionHistory.HealthCheckExecutionId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-04-23 13:20:25.240 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:20:25.245 +04:00 DBG Compiling query expression: 
+'DbSet<HealthCheckConfiguration>()
+    .Any()'
+2025-04-23 13:20:25.280 +04:00 DBG Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: new QueryingEnumerable<bool>(
+        queryContext, 
+        new ResultEnumerable(() => new ValueBuffer(new object[]{ (object)InMemoryShapedQueryCompilingExpressionVisitor.Table(
+            queryContext: queryContext, 
+            entityType: EntityType: HealthCheckConfiguration)
+            .Any() })), 
+        Func<QueryContext, ValueBuffer, bool>, 
+        HealthChecks.UI.Data.HealthChecksDb, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-04-23 13:20:25.294 +04:00 INF Saving healthchecks configuration to database
+2025-04-23 13:20:25.334 +04:00 DBG 'HealthChecksDb' generated a value for the property 'HealthCheckConfiguration.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:25.354 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:25.358 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:20:25.361 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:20:25.369 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:20:25.391 +04:00 INF Saved 1 entities to in-memory store.
+2025-04-23 13:20:25.398 +04:00 DBG An entity of type 'HealthCheckConfiguration' tracked by 'HealthChecksDb' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:25.400 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 1 entities written to the database.
+2025-04-23 13:20:25.400 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:20:25.404 +04:00 DBG Reading data from file 'C:\Users\misho\AppData\Local\ASP.NET\DataProtection-Keys\key-557b37cc-37f6-47ec-b065-df0e1794c732.xml'.
+2025-04-23 13:20:25.439 +04:00 DBG Found key {557b37cc-37f6-47ec-b065-df0e1794c732}.
+2025-04-23 13:20:25.454 +04:00 DBG Considering key {557b37cc-37f6-47ec-b065-df0e1794c732} with expiration date 2025-06-29 10:17:47Z as default key.
+2025-04-23 13:20:25.460 +04:00 DBG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-23 13:20:25.461 +04:00 DBG Decrypting secret element using Windows DPAPI.
+2025-04-23 13:20:25.463 +04:00 DBG Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-04-23 13:20:25.465 +04:00 DBG Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-04-23 13:20:25.467 +04:00 DBG Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-04-23 13:20:25.469 +04:00 DBG Using key {557b37cc-37f6-47ec-b065-df0e1794c732} as the default key.
+2025-04-23 13:20:25.470 +04:00 DBG Key ring with default key {557b37cc-37f6-47ec-b065-df0e1794c732} was loaded during application startup.
+2025-04-23 13:20:25.492 +04:00 DBG Entity Framework Core 9.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.3' with options: EngineType=SqlServer 
+2025-04-23 13:20:25.500 +04:00 DBG Compiling query expression: 
+'DbSet<Offer>()
+    .Where(off => off.ArchiveAt <= DateTime.UtcNow)'
+2025-04-23 13:20:25.517 +04:00 DBG Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Offer>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Offer.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Offer.AccountId (int) Required FK Index, 1], [Property: Offer.ArchiveAt (DateTime) Required, 2], [Property: Offer.CategoryId (int) Required FK Index, 3], [Property: Offer.Count (int) Required, 4], [Property: Offer.CreatedAt (DateTime) Required, 5], [Property: Offer.Description (string) Required MaxLength(1000) ANSI, 6], [Property: Offer.IsArchived (bool) Required, 7], [Property: Offer.Name (string) Required MaxLength(255) ANSI, 8], [Property: Offer.PhotoURL (string) Required, 9], [Property: Offer.Price (decimal) Required, 10] }
+        SELECT o.Id, o.AccountId, o.ArchiveAt, o.CategoryId, o.Count, o.CreatedAt, o.Description, o.IsArchived, o.Name, o.PhotoURL, o.Price
+        FROM Offers AS o
+        WHERE o.ArchiveAt <= GETUTCDATE()) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Offer.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Offer.AccountId (int) Required FK Index, 1], [Property: Offer.ArchiveAt (DateTime) Required, 2], [Property: Offer.CategoryId (int) Required FK Index, 3], [Property: Offer.Count (int) Required, 4], [Property: Offer.CreatedAt (DateTime) Required, 5], [Property: Offer.Description (string) Required MaxLength(1000) ANSI, 6], [Property: Offer.IsArchived (bool) Required, 7], [Property: Offer.Name (string) Required MaxLength(255) ANSI, 8], [Property: Offer.PhotoURL (string) Required, 9], [Property: Offer.Price (decimal) Required, 10] }
+        SELECT o.Id, o.AccountId, o.ArchiveAt, o.CategoryId, o.Count, o.CreatedAt, o.Description, o.IsArchived, o.Name, o.PhotoURL, o.Price
+        FROM Offers AS o
+        WHERE o.ArchiveAt <= GETUTCDATE(), 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Offer entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Offer instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Offer);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Offer.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Offer)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")]: 
+                        {
+                            return 
+                            {
+                                Offer instance;
+                                instance = new Offer();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<AccountId>k__BackingField = dataReader.GetInt32(1);
+                                instance.<ArchiveAt>k__BackingField = dataReader.GetDateTime(2);
+                                instance.<CategoryId>k__BackingField = dataReader.GetInt32(3);
+                                instance.<Count>k__BackingField = dataReader.GetInt32(4);
+                                instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(5);
+                                instance.<Description>k__BackingField = dataReader.GetString(6);
+                                instance.<IsArchived>k__BackingField = dataReader.GetBoolean(7);
+                                instance.<Name>k__BackingField = dataReader.GetString(8);
+                                instance.<PhotoURL>k__BackingField = dataReader.GetString(9);
+                                instance.<Price>k__BackingField = dataReader.GetDecimal(10);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Offer)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: offers.Persistance.Context.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2025-04-23 13:20:25.546 +04:00 DBG Creating DbConnection.
+2025-04-23 13:20:25.547 +04:00 DBG Created DbConnection. (1ms).
+2025-04-23 13:20:25.549 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:25.553 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:25.554 +04:00 DBG Creating DbCommand for 'ExecuteReader'.
+2025-04-23 13:20:25.554 +04:00 DBG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:20:25.554 +04:00 DBG Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:20:25.555 +04:00 DBG Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[AccountId], [o].[ArchiveAt], [o].[CategoryId], [o].[Count], [o].[CreatedAt], [o].[Description], [o].[IsArchived], [o].[Name], [o].[PhotoURL], [o].[Price]
+FROM [Offers] AS [o]
+WHERE [o].[ArchiveAt] <= GETUTCDATE()
+2025-04-23 13:20:25.581 +04:00 INF Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[AccountId], [o].[ArchiveAt], [o].[CategoryId], [o].[Count], [o].[CreatedAt], [o].[Description], [o].[IsArchived], [o].[Name], [o].[PhotoURL], [o].[Price]
+FROM [Offers] AS [o]
+WHERE [o].[ArchiveAt] <= GETUTCDATE()
+2025-04-23 13:20:25.589 +04:00 DBG Middleware loaded
+2025-04-23 13:20:25.591 +04:00 DBG Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16505 B).
+2025-04-23 13:20:25.593 +04:00 DBG Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-04-23 13:20:25.597 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Offer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:25.639 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Offer' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:25.643 +04:00 DBG Closing data reader to 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:25.644 +04:00 DBG A data reader for 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' is being disposed after spending 62ms reading results.
+2025-04-23 13:20:25.658 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:25.665 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (5ms).
+2025-04-23 13:20:25.667 +04:00 DBG SaveChanges starting for 'ApplicationDbContext'.
+2025-04-23 13:20:25.667 +04:00 DBG DetectChanges starting for 'ApplicationDbContext'.
+2025-04-23 13:20:25.706 +04:00 DBG Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-04-23 13:20:25.708 +04:00 DBG DetectChanges completed for 'ApplicationDbContext'.
+2025-04-23 13:20:25.713 +04:00 DBG Loaded hosting startup assembly offers.API
+2025-04-23 13:20:25.713 +04:00 DBG Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-04-23 13:20:25.713 +04:00 DBG Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-04-23 13:20:25.714 +04:00 DBG Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-04-23 13:20:25.714 +04:00 DBG SaveChanges completed for 'ApplicationDbContext' with 0 entities written to the database.
+2025-04-23 13:20:25.715 +04:00 DBG 'ApplicationDbContext' disposed.
+2025-04-23 13:20:25.715 +04:00 DBG Disposing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:20:25.715 +04:00 DBG Disposed connection to database '' on server '' (0ms).
+2025-04-23 13:20:25.795 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger - null null
+2025-04-23 13:20:26.596 +04:00 DBG Wildcard detected, all requests with hosts will be allowed.
+2025-04-23 13:20:26.763 +04:00 DBG No candidates found for the request path '/swagger'
+2025-04-23 13:20:26.763 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:28.149 +04:00 DBG Executing HealthCheck collector HostedService.
+2025-04-23 13:20:28.161 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:20:28.162 +04:00 DBG Compiling query expression: 
+'DbSet<HealthCheckConfiguration>()'
+2025-04-23 13:20:28.172 +04:00 DBG Generated query execution expression: 
+'queryContext => new QueryingEnumerable<HealthCheckConfiguration>(
+    queryContext, 
+    InMemoryShapedQueryCompilingExpressionVisitor.Table(
+        queryContext: queryContext, 
+        entityType: EntityType: HealthCheckConfiguration)
+        .Select(valueBuffer => new ValueBuffer(new object[]
+        { 
+            (object)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                valueBuffer: valueBuffer, 
+                index: 0, 
+                property: Property: HealthCheckConfiguration.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+            ExpressionExtensions.ValueBufferTryReadValue<string>(
+                valueBuffer: valueBuffer, 
+                index: 1, 
+                property: Property: HealthCheckConfiguration.DiscoveryService (string) MaxLength(100)), 
+            ExpressionExtensions.ValueBufferTryReadValue<string>(
+                valueBuffer: valueBuffer, 
+                index: 2, 
+                property: Property: HealthCheckConfiguration.Name (string) Required MaxLength(500)), 
+            ExpressionExtensions.ValueBufferTryReadValue<string>(
+                valueBuffer: valueBuffer, 
+                index: 3, 
+                property: Property: HealthCheckConfiguration.Uri (string) Required MaxLength(500)) 
+        })), 
+    Func<QueryContext, ValueBuffer, HealthCheckConfiguration>, 
+    HealthChecks.UI.Data.HealthChecksDb, 
+    False, 
+    True
+)'
+2025-04-23 13:20:28.188 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:28.208 +04:00 DBG Connection ID "18374686489872171021" disconnecting.
+2025-04-23 13:20:28.253 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/index.html - null null
+2025-04-23 13:20:28.284 +04:00 DBG No candidates found for the request path '/swagger/index.html'
+2025-04-23 13:20:28.284 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:28.288 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger - 301 null null 2507.8669ms
+2025-04-23 13:20:28.384 +04:00 DBG Response markup is scheduled to include Browser Link script injection.
+2025-04-23 13:20:28.386 +04:00 DBG Response markup is scheduled to include browser refresh script injection.
+2025-04-23 13:20:28.443 +04:00 INF Start processing HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:20:28.447 +04:00 INF Sending HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:20:28.451 +04:00 DBG Response markup was updated to include Browser Link script injection.
+2025-04-23 13:20:28.451 +04:00 DBG Response markup was updated to include browser refresh script injection.
+2025-04-23 13:20:28.451 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.453 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/index.html - 200 null text/html;charset=utf-8 200.5702ms
+2025-04-23 13:20:28.456 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.459 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.468 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/swagger-ui.css - null null
+2025-04-23 13:20:28.468 +04:00 DBG No candidates found for the request path '/swagger/swagger-ui.css'
+2025-04-23 13:20:28.468 +04:00 INF Request starting HTTP/1.1 GET http://localhost:49467/api/health - null null
+2025-04-23 13:20:28.468 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/swagger-ui-standalone-preset.js - null null
+2025-04-23 13:20:28.468 +04:00 DBG No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2025-04-23 13:20:28.469 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:28.468 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:28.474 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:20:28.475 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:20:28.475 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.476 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.476 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.477 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.477 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.477 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.477 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.477 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.478 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.480 +04:00 INF Application started. Press Ctrl+C to shut down.
+2025-04-23 13:20:28.480 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:20:28.480 +04:00 INF Hosting environment: Development
+2025-04-23 13:20:28.480 +04:00 INF Content root path: C:\Users\misho\Desktop\Project\offers.itacademy.ge\offers.API
+2025-04-23 13:20:28.480 +04:00 DBG Hosting started
+2025-04-23 13:20:28.481 +04:00 DBG Https port '44346' loaded from configuration.
+2025-04-23 13:20:28.483 +04:00 DBG Redirecting to 'https://localhost:44346/api/health'.
+2025-04-23 13:20:28.484 +04:00 INF Request finished HTTP/1.1 GET http://localhost:49467/api/health - 307 null null 18.7292ms
+2025-04-23 13:20:28.491 +04:00 INF Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-04-23 13:20:28.491 +04:00 INF Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-04-23 13:20:28.492 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/swagger-ui-bundle.js - null null
+2025-04-23 13:20:28.493 +04:00 DBG No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2025-04-23 13:20:28.493 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:28.503 +04:00 DBG Connection ID "18230571306091282435" disconnecting.
+2025-04-23 13:20:28.503 +04:00 DBG Connection ID "17870283323016740865" disconnecting.
+2025-04-23 13:20:28.509 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 40.6256ms
+2025-04-23 13:20:28.510 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/swagger-ui.css - 200 152034 text/css 45.0785ms
+2025-04-23 13:20:28.524 +04:00 INF Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-04-23 13:20:28.568 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.568 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.569 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.572 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.572 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.572 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.572 +04:00 DBG Connection ID "18230571297501347841" disconnecting.
+2025-04-23 13:20:28.573 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.573 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.573 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 80.9048ms
+2025-04-23 13:20:28.573 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.574 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.574 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.575 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.590 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.591 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.591 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.607 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.608 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.608 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.608 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.608 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.608 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.609 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.609 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.610 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.617 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-23 13:20:28.618 +04:00 INF Request starting HTTP/1.1 GET https://localhost:44346/api/health - null null
+2025-04-23 13:20:28.619 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:20:28.620 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:20:28.620 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.620 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.621 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.621 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:20:28.622 +04:00 DBG Script injected: /_framework/aspnetcore-browser-refresh.js
+2025-04-23 13:20:28.623 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.623 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.623 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.623 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.6125ms
+2025-04-23 13:20:28.624 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.624 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.624 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.625 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.625 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.626 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.626 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.626 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.627 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.627 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.627 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.628 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.628 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.628 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.628 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.642 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/_vs/browserLink - null null
+2025-04-23 13:20:28.658 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.658 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.658 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.697 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.697 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.698 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.698 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.700 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.701 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.830 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:20:28.835 +04:00 INF Executing endpoint 'Health checks'
+2025-04-23 13:20:28.839 +04:00 DBG Connection ID "18230571297501347843" disconnecting.
+2025-04-23 13:20:28.839 +04:00 DBG Running health checks
+2025-04-23 13:20:28.840 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/_vs/browserLink - 200 null text/javascript; charset=UTF-8 197.8659ms
+2025-04-23 13:20:28.844 +04:00 DBG Running health check SQL Server
+2025-04-23 13:20:28.859 +04:00 DBG Health check SQL Server with status "Healthy" completed after 10.0903ms with message 'null'
+2025-04-23 13:20:28.871 +04:00 DBG Health check processing with combined status "Healthy" completed after 26.8819ms
+2025-04-23 13:20:28.899 +04:00 INF Executed endpoint 'Health checks'
+2025-04-23 13:20:28.903 +04:00 INF Request finished HTTP/1.1 GET https://localhost:44346/api/health - 200 null application/json 284.156ms
+2025-04-23 13:20:28.905 +04:00 INF Received HTTP response headers after 453.216ms - 200
+2025-04-23 13:20:28.906 +04:00 INF End processing HTTP request after 465.0501ms - 200
+2025-04-23 13:20:28.963 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.963 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.963 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.963 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.964 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.964 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.964 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.964 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.964 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.964 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.965 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.965 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.986 +04:00 DBG Compiling query expression: 
+'DbSet<HealthCheckExecution>()
+    .Include(le => le.History)
+    .Include(le => le.Entries)
+    .Where(le => le.Name == __configuration_Name_0)
+    .SingleOrDefault()'
+2025-04-23 13:20:28.996 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.996 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.996 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.997 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.997 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.997 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.997 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.997 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.998 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:28.998 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:28.998 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:28.998 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.008 +04:00 DBG Including navigation: 'HealthCheckExecution.History'.
+2025-04-23 13:20:29.009 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.009 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.009 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.010 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.010 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.010 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.010 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.010 +04:00 DBG Including navigation: 'HealthCheckExecution.Entries'.
+2025-04-23 13:20:29.010 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.010 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.011 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.011 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.011 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.079 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.079 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.080 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.080 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.080 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.080 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.080 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.081 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.081 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.081 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.081 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.081 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.081 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.082 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.082 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.082 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.082 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.082 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.082 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.082 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.083 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.098 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.103 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.104 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.105 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.106 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.106 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.106 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.107 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.107 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.192 +04:00 DBG Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<HealthCheckExecution>(
+    asyncEnumerable: new QueryingEnumerable<HealthCheckExecution>(
+        queryContext, 
+        new ResultEnumerable(() => InMemoryShapedQueryCompilingExpressionVisitor.Table(
+            queryContext: queryContext, 
+            entityType: EntityType: HealthCheckExecution)
+            .Where(valueBuffer => DefaultValueComparer<string>.Equals(
+                left: ExpressionExtensions.ValueBufferTryReadValue<string>(
+                    valueBuffer: valueBuffer, 
+                    index: 3, 
+                    property: Property: HealthCheckExecution.Name (string) Required MaxLength(500)), 
+                right: InMemoryExpressionTranslatingExpressionVisitor.GetParameterValue<string>(
+                    queryContext: queryContext, 
+                    parameterName: "__configuration_Name_0")))
+            .Select(valueBuffer => new ValueBuffer(new object[]
+            { 
+                (object)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                    valueBuffer: valueBuffer, 
+                    index: 0, 
+                    property: Property: HealthCheckExecution.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                ExpressionExtensions.ValueBufferTryReadValue<string>(
+                    valueBuffer: valueBuffer, 
+                    index: 1, 
+                    property: Property: HealthCheckExecution.DiscoveryService (string) MaxLength(50)), 
+                (object)ExpressionExtensions.ValueBufferTryReadValue<DateTime>(
+                    valueBuffer: valueBuffer, 
+                    index: 2, 
+                    property: Property: HealthCheckExecution.LastExecuted (DateTime) Required), 
+                ExpressionExtensions.ValueBufferTryReadValue<string>(
+                    valueBuffer: valueBuffer, 
+                    index: 3, 
+                    property: Property: HealthCheckExecution.Name (string) Required MaxLength(500)), 
+                (object)ExpressionExtensions.ValueBufferTryReadValue<DateTime>(
+                    valueBuffer: valueBuffer, 
+                    index: 4, 
+                    property: Property: HealthCheckExecution.OnStateFrom (DateTime) Required), 
+                (object)ExpressionExtensions.ValueBufferTryReadValue<UIHealthStatus>(
+                    valueBuffer: valueBuffer, 
+                    index: 5, 
+                    property: Property: HealthCheckExecution.Status (UIHealthStatus) Required), 
+                ExpressionExtensions.ValueBufferTryReadValue<string>(
+                    valueBuffer: valueBuffer, 
+                    index: 6, 
+                    property: Property: HealthCheckExecution.Uri (string) Required MaxLength(500)), 
+                InMemoryShapedQueryCompilingExpressionVisitor.Table(
+                    queryContext: queryContext, 
+                    entityType: EntityType: HealthCheckExecutionHistory)
+                    .Where(valueBuffer => (int?)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                        valueBuffer: valueBuffer, 
+                        index: 0, 
+                        property: Property: HealthCheckExecution.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd) != null && object.Equals(
+                        objA: (object)(int?)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                            valueBuffer: valueBuffer, 
+                            index: 0, 
+                            property: Property: HealthCheckExecution.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                        objB: (object)ExpressionExtensions.ValueBufferTryReadValue<int?>(
+                            valueBuffer: valueBuffer, 
+                            index: 2, 
+                            property: Property: HealthCheckExecutionHistory.HealthCheckExecutionId (no field, int?) Shadow FK Index)))
+                    .Select(valueBuffer => new ValueBuffer(new object[]
+                    { 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                            valueBuffer: valueBuffer, 
+                            index: 0, 
+                            property: Property: HealthCheckExecutionHistory.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                        ExpressionExtensions.ValueBufferTryReadValue<string>(
+                            valueBuffer: valueBuffer, 
+                            index: 1, 
+                            property: Property: HealthCheckExecutionHistory.Description (string)), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<int?>(
+                            valueBuffer: valueBuffer, 
+                            index: 2, 
+                            property: Property: HealthCheckExecutionHistory.HealthCheckExecutionId (no field, int?) Shadow FK Index), 
+                        ExpressionExtensions.ValueBufferTryReadValue<string>(
+                            valueBuffer: valueBuffer, 
+                            index: 3, 
+                            property: Property: HealthCheckExecutionHistory.Name (string) MaxLength(500)), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<DateTime>(
+                            valueBuffer: valueBuffer, 
+                            index: 4, 
+                            property: Property: HealthCheckExecutionHistory.On (DateTime) Required), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<UIHealthStatus>(
+                            valueBuffer: valueBuffer, 
+                            index: 5, 
+                            property: Property: HealthCheckExecutionHistory.Status (UIHealthStatus) Required MaxLength(50)) 
+                    })), 
+                InMemoryShapedQueryCompilingExpressionVisitor.Table(
+                    queryContext: queryContext, 
+                    entityType: EntityType: HealthCheckExecutionEntry)
+                    .Where(valueBuffer => (int?)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                        valueBuffer: valueBuffer, 
+                        index: 0, 
+                        property: Property: HealthCheckExecution.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd) != null && object.Equals(
+                        objA: (object)(int?)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                            valueBuffer: valueBuffer, 
+                            index: 0, 
+                            property: Property: HealthCheckExecution.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                        objB: (object)ExpressionExtensions.ValueBufferTryReadValue<int?>(
+                            valueBuffer: valueBuffer, 
+                            index: 3, 
+                            property: Property: HealthCheckExecutionEntry.HealthCheckExecutionId (no field, int?) Shadow FK Index)))
+                    .Select(valueBuffer => new ValueBuffer(new object[]
+                    { 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<int>(
+                            valueBuffer: valueBuffer, 
+                            index: 0, 
+                            property: Property: HealthCheckExecutionEntry.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                        ExpressionExtensions.ValueBufferTryReadValue<string>(
+                            valueBuffer: valueBuffer, 
+                            index: 1, 
+                            property: Property: HealthCheckExecutionEntry.Description (string)), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<TimeSpan>(
+                            valueBuffer: valueBuffer, 
+                            index: 2, 
+                            property: Property: HealthCheckExecutionEntry.Duration (TimeSpan) Required), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<int?>(
+                            valueBuffer: valueBuffer, 
+                            index: 3, 
+                            property: Property: HealthCheckExecutionEntry.HealthCheckExecutionId (no field, int?) Shadow FK Index), 
+                        ExpressionExtensions.ValueBufferTryReadValue<string>(
+                            valueBuffer: valueBuffer, 
+                            index: 4, 
+                            property: Property: HealthCheckExecutionEntry.Name (string) Required MaxLength(500)), 
+                        (object)ExpressionExtensions.ValueBufferTryReadValue<UIHealthStatus>(
+                            valueBuffer: valueBuffer, 
+                            index: 5, 
+                            property: Property: HealthCheckExecutionEntry.Status (UIHealthStatus) Required), 
+                        ExpressionExtensions.ValueBufferTryReadValue<List<string>>(
+                            valueBuffer: valueBuffer, 
+                            index: 6, 
+                            property: Property: HealthCheckExecutionEntry.Tags (List<string>)) 
+                    })) 
+            }))
+            .SingleOrDefault()), 
+        Func<QueryContext, ValueBuffer, HealthCheckExecution>, 
+        HealthChecks.UI.Data.HealthChecksDb, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-04-23 13:20:29.220 +04:00 DBG HealthReportCollector - health report execution history saved.
+2025-04-23 13:20:29.225 +04:00 DBG Creating a new HealthReport history.
+2025-04-23 13:20:29.247 +04:00 DBG 'HealthChecksDb' generated a value for the property 'HealthCheckExecution.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.277 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecution' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.299 +04:00 DBG 'HealthChecksDb' generated a value for the property 'HealthCheckExecutionEntry.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.336 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecutionEntry' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.336 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:20:29.336 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:20:29.369 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:20:29.376 +04:00 INF Saved 2 entities to in-memory store.
+2025-04-23 13:20:29.377 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.377 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:20:29.378 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 2 entities written to the database.
+2025-04-23 13:20:29.378 +04:00 DBG HealthReportCollector has completed.
+2025-04-23 13:20:29.379 +04:00 DBG HealthCheck collector HostedService executed successfully.
+2025-04-23 13:20:29.379 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:20:29.549 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/v1/swagger.json - null null
+2025-04-23 13:20:29.549 +04:00 DBG No candidates found for the request path '/swagger/v1/swagger.json'
+2025-04-23 13:20:29.549 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:29.559 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/swagger/favicon-32x32.png - null null
+2025-04-23 13:20:29.559 +04:00 DBG No candidates found for the request path '/swagger/favicon-32x32.png'
+2025-04-23 13:20:29.559 +04:00 DBG Request did not match any endpoints
+2025-04-23 13:20:29.560 +04:00 INF Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-04-23 13:20:29.560 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/favicon-32x32.png - 200 628 image/png 1.6559ms
+2025-04-23 13:20:29.560 +04:00 DBG Connection ID "18230571301796315137" disconnecting.
+2025-04-23 13:20:29.569 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.569 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.570 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.570 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.570 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.571 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.571 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.572 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.572 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.572 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.572 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.573 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.594 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.594 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.594 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.594 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.595 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.595 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.595 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.596 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.596 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.597 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.597 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.597 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.602 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.602 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.602 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.603 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.603 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.603 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.604 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.604 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.605 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.605 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.605 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.606 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.611 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.611 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.611 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.612 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.612 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.612 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.612 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.613 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.613 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.613 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.613 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.614 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.614 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.614 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.614 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.615 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.615 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.615 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.616 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.616 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.616 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.622 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.623 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.623 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.624 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.624 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.624 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.625 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:20:29.625 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]'.
+2025-04-23 13:20:29.625 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:20:29.701 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 152.661ms
+2025-04-23 13:21:05.561 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/api/v1/Guest/categories?pageNumber=1&pageSize=10 - null null
+2025-04-23 13:21:05.626 +04:00 DBG 2 candidate(s) found for the request path '/api/v1/Guest/categories'
+2025-04-23 13:21:05.629 +04:00 DBG Endpoint 'offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync (offers.API)' with route pattern 'api/v{version:apiVersion}/Guest/categories' is valid for the request path '/api/v1/Guest/categories'
+2025-04-23 13:21:05.629 +04:00 DBG Endpoint 'offers.API.Controllers.V2.GuestController.GetAllCategoriesAsync (offers.API)' with route pattern 'api/v{version:apiVersion}/Guest/categories' is valid for the request path '/api/v1/Guest/categories'
+2025-04-23 13:21:05.638 +04:00 DBG Request matched endpoint 'offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync (offers.API)'
+2025-04-23 13:21:05.638 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:21:05.641 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:21:05.641 +04:00 INF Executing endpoint 'offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync (offers.API)'
+2025-04-23 13:21:05.676 +04:00 INF Route matched with {action = "GetAllCategories", controller = "Guest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoriesAsync(Int32, Int32, System.Threading.CancellationToken) on controller offers.API.Controllers.V1.GuestController (offers.API).
+2025-04-23 13:21:05.677 +04:00 DBG Execution plan of authorization filters (in the following order): ["None"]
+2025-04-23 13:21:05.677 +04:00 DBG Execution plan of resource filters (in the following order): ["None"]
+2025-04-23 13:21:05.678 +04:00 DBG Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2025-04-23 13:21:05.678 +04:00 DBG Execution plan of exception filters (in the following order): ["None"]
+2025-04-23 13:21:05.678 +04:00 DBG Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2025-04-23 13:21:05.680 +04:00 DBG Executing controller factory for controller offers.API.Controllers.V1.GuestController (offers.API)
+2025-04-23 13:21:05.681 +04:00 DBG Executed controller factory for controller offers.API.Controllers.V1.GuestController (offers.API)
+2025-04-23 13:21:05.690 +04:00 DBG Attempting to bind parameter 'pageNumber' of type 'System.Int32' ...
+2025-04-23 13:21:05.694 +04:00 DBG Attempting to bind parameter 'pageNumber' of type 'System.Int32' using the name 'pageNumber' in request data ...
+2025-04-23 13:21:05.695 +04:00 DBG Done attempting to bind parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:05.696 +04:00 DBG Done attempting to bind parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:05.696 +04:00 DBG Attempting to validate the bound parameter 'pageNumber' of type 'System.Int32' ...
+2025-04-23 13:21:05.718 +04:00 DBG Done attempting to validate the bound parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:05.720 +04:00 DBG Attempting to bind parameter 'pageSize' of type 'System.Int32' ...
+2025-04-23 13:21:05.721 +04:00 DBG Attempting to bind parameter 'pageSize' of type 'System.Int32' using the name 'pageSize' in request data ...
+2025-04-23 13:21:05.721 +04:00 DBG Done attempting to bind parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:05.721 +04:00 DBG Done attempting to bind parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:05.721 +04:00 DBG Attempting to validate the bound parameter 'pageSize' of type 'System.Int32' ...
+2025-04-23 13:21:05.722 +04:00 DBG Done attempting to validate the bound parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:05.722 +04:00 DBG Attempting to bind parameter 'cancellation' of type 'System.Threading.CancellationToken' ...
+2025-04-23 13:21:05.723 +04:00 DBG Done attempting to bind parameter 'cancellation' of type 'System.Threading.CancellationToken'.
+2025-04-23 13:21:05.723 +04:00 DBG Attempting to validate the bound parameter 'cancellation' of type 'System.Threading.CancellationToken' ...
+2025-04-23 13:21:05.723 +04:00 DBG Done attempting to validate the bound parameter 'cancellation' of type 'System.Threading.CancellationToken'.
+2025-04-23 13:21:05.792 +04:00 DBG Entity Framework Core 9.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.3' with options: EngineType=SqlServer 
+2025-04-23 13:21:05.800 +04:00 DBG Compiling query expression: 
+'DbSet<Category>()
+    .Skip(__p_0)
+    .Take(__p_1)'
+2025-04-23 13:21:05.804 +04:00 WRN The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-23 13:21:05.806 +04:00 WRN The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-23 13:21:05.811 +04:00 DBG Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Category>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Category.Description (string) MaxLength(1000) ANSI, 1], [Property: Category.Name (string) Required MaxLength(255) ANSI, 2] }
+        SELECT c.Id, c.Description, c.Name
+        FROM Categories AS c
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Category.Description (string) MaxLength(1000) ANSI, 1], [Property: Category.Name (string) Required MaxLength(255) ANSI, 2] }
+        SELECT c.Id, c.Description, c.Name
+        FROM Categories AS c
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Category entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Category instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Category);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Category.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("offers.Domain.Models.Category").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Category)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")]: 
+                        {
+                            return 
+                            {
+                                Category instance;
+                                instance = new Category();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<Description>k__BackingField = dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1);
+                                instance.<Name>k__BackingField = dataReader.GetString(2);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Category)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: offers.Persistance.Context.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2025-04-23 13:21:05.816 +04:00 DBG Creating DbConnection.
+2025-04-23 13:21:05.816 +04:00 DBG Created DbConnection. (0ms).
+2025-04-23 13:21:05.816 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:05.816 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:05.816 +04:00 DBG Creating DbCommand for 'ExecuteReader'.
+2025-04-23 13:21:05.816 +04:00 DBG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:21:05.817 +04:00 DBG Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:21:05.818 +04:00 DBG Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-04-23 13:21:05.830 +04:00 INF Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-04-23 13:21:05.835 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:05.850 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:05.851 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:05.851 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:05.851 +04:00 DBG Context 'ApplicationDbContext' started tracking 'Category' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:05.852 +04:00 DBG Closing data reader to 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:05.852 +04:00 DBG A data reader for 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' is being disposed after spending 21ms reading results.
+2025-04-23 13:21:05.853 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:05.854 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (0ms).
+2025-04-23 13:21:05.942 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:21:05.944 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2025-04-23 13:21:05.944 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:21:05.945 +04:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[offers.Application.Models.Response.CategoryResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-23 13:21:05.962 +04:00 INF Executed action offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync (offers.API) in 278.4541ms
+2025-04-23 13:21:05.963 +04:00 INF Executed endpoint 'offers.API.Controllers.V1.GuestController.GetAllCategoriesAsync (offers.API)'
+2025-04-23 13:21:05.963 +04:00 DBG 'ApplicationDbContext' disposed.
+2025-04-23 13:21:05.963 +04:00 DBG Disposing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:05.963 +04:00 DBG Disposed connection to database '' on server '' (0ms).
+2025-04-23 13:21:05.974 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/api/v1/Guest/categories?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 412.6377ms
+2025-04-23 13:21:15.583 +04:00 INF Request starting HTTP/2 GET https://localhost:44346/api/v1/Guest/offers?pageNumber=1&pageSize=10 - null null
+2025-04-23 13:21:15.586 +04:00 DBG 2 candidate(s) found for the request path '/api/v1/Guest/offers'
+2025-04-23 13:21:15.586 +04:00 DBG Endpoint 'offers.API.Controllers.V1.GuestController.GetAllOffersAsync (offers.API)' with route pattern 'api/v{version:apiVersion}/Guest/offers' is valid for the request path '/api/v1/Guest/offers'
+2025-04-23 13:21:15.586 +04:00 DBG Endpoint 'offers.API.Controllers.V2.GuestController.GetAllOffersAsync (offers.API)' with route pattern 'api/v{version:apiVersion}/Guest/offers' is valid for the request path '/api/v1/Guest/offers'
+2025-04-23 13:21:15.586 +04:00 DBG Request matched endpoint 'offers.API.Controllers.V1.GuestController.GetAllOffersAsync (offers.API)'
+2025-04-23 13:21:15.586 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:21:15.607 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:21:15.607 +04:00 INF Executing endpoint 'offers.API.Controllers.V1.GuestController.GetAllOffersAsync (offers.API)'
+2025-04-23 13:21:15.616 +04:00 INF Route matched with {action = "GetAllOffers", controller = "Guest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOffersAsync(Int32, Int32, System.Threading.CancellationToken) on controller offers.API.Controllers.V1.GuestController (offers.API).
+2025-04-23 13:21:15.616 +04:00 DBG Execution plan of authorization filters (in the following order): ["None"]
+2025-04-23 13:21:15.617 +04:00 DBG Execution plan of resource filters (in the following order): ["None"]
+2025-04-23 13:21:15.617 +04:00 DBG Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)"]
+2025-04-23 13:21:15.617 +04:00 DBG Execution plan of exception filters (in the following order): ["None"]
+2025-04-23 13:21:15.617 +04:00 DBG Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)","Asp.Versioning.ReportApiVersionsAttribute (Order: 0)","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2025-04-23 13:21:15.617 +04:00 DBG Executing controller factory for controller offers.API.Controllers.V1.GuestController (offers.API)
+2025-04-23 13:21:15.617 +04:00 DBG Executed controller factory for controller offers.API.Controllers.V1.GuestController (offers.API)
+2025-04-23 13:21:15.618 +04:00 DBG Attempting to bind parameter 'pageNumber' of type 'System.Int32' ...
+2025-04-23 13:21:15.618 +04:00 DBG Attempting to bind parameter 'pageNumber' of type 'System.Int32' using the name 'pageNumber' in request data ...
+2025-04-23 13:21:15.618 +04:00 DBG Done attempting to bind parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:15.619 +04:00 DBG Done attempting to bind parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:15.619 +04:00 DBG Attempting to validate the bound parameter 'pageNumber' of type 'System.Int32' ...
+2025-04-23 13:21:15.621 +04:00 DBG Done attempting to validate the bound parameter 'pageNumber' of type 'System.Int32'.
+2025-04-23 13:21:15.622 +04:00 DBG Attempting to bind parameter 'pageSize' of type 'System.Int32' ...
+2025-04-23 13:21:15.622 +04:00 DBG Attempting to bind parameter 'pageSize' of type 'System.Int32' using the name 'pageSize' in request data ...
+2025-04-23 13:21:15.622 +04:00 DBG Done attempting to bind parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:15.622 +04:00 DBG Done attempting to bind parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:15.622 +04:00 DBG Attempting to validate the bound parameter 'pageSize' of type 'System.Int32' ...
+2025-04-23 13:21:15.622 +04:00 DBG Done attempting to validate the bound parameter 'pageSize' of type 'System.Int32'.
+2025-04-23 13:21:15.622 +04:00 DBG Attempting to bind parameter 'cancellation' of type 'System.Threading.CancellationToken' ...
+2025-04-23 13:21:15.623 +04:00 DBG Done attempting to bind parameter 'cancellation' of type 'System.Threading.CancellationToken'.
+2025-04-23 13:21:15.623 +04:00 DBG Attempting to validate the bound parameter 'cancellation' of type 'System.Threading.CancellationToken' ...
+2025-04-23 13:21:15.623 +04:00 DBG Done attempting to validate the bound parameter 'cancellation' of type 'System.Threading.CancellationToken'.
+2025-04-23 13:21:15.628 +04:00 DBG Entity Framework Core 9.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.3' with options: EngineType=SqlServer 
+2025-04-23 13:21:15.632 +04:00 DBG Compiling query expression: 
+'DbSet<Offer>()
+    .Include(off => off.Category)
+    .Where(off => !(off.IsArchived) && off.Count != 0)
+    .Skip(__p_0)
+    .Take(__p_1)'
+2025-04-23 13:21:15.639 +04:00 DBG Including navigation: 'Offer.Category'.
+2025-04-23 13:21:15.641 +04:00 WRN The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-23 13:21:15.641 +04:00 WRN The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-23 13:21:15.712 +04:00 DBG Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Offer>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Offer.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Offer.AccountId (int) Required FK Index, 1], [Property: Offer.ArchiveAt (DateTime) Required, 2], [Property: Offer.CategoryId (int) Required FK Index, 3], [Property: Offer.Count (int) Required, 4], [Property: Offer.CreatedAt (DateTime) Required, 5], [Property: Offer.Description (string) Required MaxLength(1000) ANSI, 6], [Property: Offer.IsArchived (bool) Required, 7], [Property: Offer.Name (string) Required MaxLength(255) ANSI, 8], [Property: Offer.PhotoURL (string) Required, 9], [Property: Offer.Price (decimal) Required, 10] }
+            1 -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Category.Description (string) MaxLength(1000) ANSI, 12], [Property: Category.Name (string) Required MaxLength(255) ANSI, 13] }
+        SELECT o0.Id, o0.AccountId, o0.ArchiveAt, o0.CategoryId, o0.Count, o0.CreatedAt, o0.Description, o0.IsArchived, o0.Name, o0.PhotoURL, o0.Price, c.Id, c.Description, c.Name
+        FROM 
+        (
+            SELECT o.Id, o.AccountId, o.ArchiveAt, o.CategoryId, o.Count, o.CreatedAt, o.Description, o.IsArchived, o.Name, o.PhotoURL, o.Price
+            FROM Offers AS o
+            WHERE Not(o.IsArchived) && (o.Count != 0)
+            OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+        ) AS o0
+        INNER JOIN Categories AS c ON o0.CategoryId == c.Id) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Offer.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Offer.AccountId (int) Required FK Index, 1], [Property: Offer.ArchiveAt (DateTime) Required, 2], [Property: Offer.CategoryId (int) Required FK Index, 3], [Property: Offer.Count (int) Required, 4], [Property: Offer.CreatedAt (DateTime) Required, 5], [Property: Offer.Description (string) Required MaxLength(1000) ANSI, 6], [Property: Offer.IsArchived (bool) Required, 7], [Property: Offer.Name (string) Required MaxLength(255) ANSI, 8], [Property: Offer.PhotoURL (string) Required, 9], [Property: Offer.Price (decimal) Required, 10] }
+            1 -> Dictionary<IProperty, int> { [Property: Category.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 11], [Property: Category.Description (string) MaxLength(1000) ANSI, 12], [Property: Category.Name (string) Required MaxLength(255) ANSI, 13] }
+        SELECT o0.Id, o0.AccountId, o0.ArchiveAt, o0.CategoryId, o0.Count, o0.CreatedAt, o0.Description, o0.IsArchived, o0.Name, o0.PhotoURL, o0.Price, c.Id, c.Description, c.Name
+        FROM 
+        (
+            SELECT o.Id, o.AccountId, o.ArchiveAt, o.CategoryId, o.Count, o.CreatedAt, o.Description, o.IsArchived, o.Name, o.PhotoURL, o.Price
+            FROM Offers AS o
+            WHERE Not(o.IsArchived) && (o.Count != 0)
+            OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+        ) AS o0
+        INNER JOIN Categories AS c ON o0.CategoryId == c.Id, 
+        False, 
+        new HashSet<string>(
+            new string[]{ }, 
+            StringComparer.Ordinal
+        )
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Offer entity;
+        Category entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Offer instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Offer);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Offer.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Offer)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")]: 
+                        {
+                            return 
+                            {
+                                Offer instance;
+                                instance = new Offer();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                instance.<AccountId>k__BackingField = dataReader.GetInt32(1);
+                                instance.<ArchiveAt>k__BackingField = dataReader.GetDateTime(2);
+                                instance.<CategoryId>k__BackingField = dataReader.GetInt32(3);
+                                instance.<Count>k__BackingField = dataReader.GetInt32(4);
+                                instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(5);
+                                instance.<Description>k__BackingField = dataReader.GetString(6);
+                                instance.<IsArchived>k__BackingField = dataReader.GetBoolean(7);
+                                instance.<Name>k__BackingField = dataReader.GetString(8);
+                                instance.<PhotoURL>k__BackingField = dataReader.GetString(9);
+                                instance.<Price>k__BackingField = dataReader.GetDecimal(10);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Offer | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Offer)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        entity = 
+        {
+            MaterializationContext materializationContext2;
+            IEntityType entityType2;
+            Category instance2;
+            InternalEntityEntry entry2;
+            bool hasNullKey2;
+            materializationContext2 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance2 = default(Category);
+            entry2 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Category.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("offers.Domain.Models.Category").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetInt32(11) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey2);
+            !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+            {
+                entityType2 = entry2.EntityType;
+                return instance2 = (Category)entry2.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot2;
+                shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType2 = [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")];
+                instance2 = switch (entityType2)
+                {
+                    case [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")]: 
+                        {
+                            return 
+                            {
+                                Category instance;
+                                instance = new Category();
+                                instance.<Id>k__BackingField = dataReader.GetInt32(11);
+                                instance.<Description>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                instance.<Name>k__BackingField = dataReader.GetString(13);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext2.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Category | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Category)
+                }
+                ;
+                entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType2, 
+                    entity: instance2, 
+                    snapshot: shadowSnapshot2);
+                return instance2;
+            } : default(void);
+            return instance2;
+        };
+        ShaperProcessingExpressionVisitor.IncludeReference<Offer, Offer, Category>(
+            queryContext: queryContext, 
+            entity: entity, 
+            relatedEntity: entity, 
+            navigation: [LIFTABLE Constant: Navigation: Offer.Category (Category) ToPrincipal Category Inverse: Offers | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("offers.Domain.Models.Offer").FindNavigation("Category")], 
+            inverseNavigation: [LIFTABLE Constant: Navigation: Category.Offers (List<Offer>) Collection ToDependent Offer Inverse: Category | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category").FindNavigation("Offers")], 
+            fixup: (namelessParameter{8}, namelessParameter{9}) => 
+            {
+                namelessParameter{8}.<Category>k__BackingField = namelessParameter{9};
+                return [LIFTABLE Constant: ClrICollectionAccessor<Category, List<Offer>, Offer> | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("offers.Domain.Models.Category").FindNavigation("Offers").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{9}, 
+                    value: namelessParameter{8}, 
+                    forMaterialization: True);
+            }, 
+            trackingQuery: True);
+        return entity;
+    }, 
+    contextType: offers.Persistance.Context.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2025-04-23 13:21:15.727 +04:00 DBG Creating DbConnection.
+2025-04-23 13:21:15.727 +04:00 DBG Created DbConnection. (0ms).
+2025-04-23 13:21:15.727 +04:00 DBG Opening connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:15.727 +04:00 DBG Opened connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:15.727 +04:00 DBG Creating DbCommand for 'ExecuteReader'.
+2025-04-23 13:21:15.727 +04:00 DBG Created DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:21:15.728 +04:00 DBG Initialized DbCommand for 'ExecuteReader' (0ms).
+2025-04-23 13:21:15.728 +04:00 DBG Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o0].[Id], [o0].[AccountId], [o0].[ArchiveAt], [o0].[CategoryId], [o0].[Count], [o0].[CreatedAt], [o0].[Description], [o0].[IsArchived], [o0].[Name], [o0].[PhotoURL], [o0].[Price], [c].[Id], [c].[Description], [c].[Name]
+FROM (
+    SELECT [o].[Id], [o].[AccountId], [o].[ArchiveAt], [o].[CategoryId], [o].[Count], [o].[CreatedAt], [o].[Description], [o].[IsArchived], [o].[Name], [o].[PhotoURL], [o].[Price]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsArchived] = CAST(0 AS bit) AND [o].[Count] <> 0
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [o0]
+INNER JOIN [Categories] AS [c] ON [o0].[CategoryId] = [c].[Id]
+2025-04-23 13:21:15.739 +04:00 INF Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o0].[Id], [o0].[AccountId], [o0].[ArchiveAt], [o0].[CategoryId], [o0].[Count], [o0].[CreatedAt], [o0].[Description], [o0].[IsArchived], [o0].[Name], [o0].[PhotoURL], [o0].[Price], [c].[Id], [c].[Description], [c].[Name]
+FROM (
+    SELECT [o].[Id], [o].[AccountId], [o].[ArchiveAt], [o].[CategoryId], [o].[Count], [o].[CreatedAt], [o].[Description], [o].[IsArchived], [o].[Name], [o].[PhotoURL], [o].[Price]
+    FROM [Offers] AS [o]
+    WHERE [o].[IsArchived] = CAST(0 AS bit) AND [o].[Count] <> 0
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [o0]
+INNER JOIN [Categories] AS [c] ON [o0].[CategoryId] = [c].[Id]
+2025-04-23 13:21:15.740 +04:00 DBG Closing data reader to 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:15.740 +04:00 DBG A data reader for 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' is being disposed after spending 0ms reading results.
+2025-04-23 13:21:15.740 +04:00 DBG Closing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:15.740 +04:00 DBG Closed connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS' (0ms).
+2025-04-23 13:21:15.747 +04:00 DBG List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-04-23 13:21:15.747 +04:00 DBG Attempting to select an output formatter based on Accept header '["application/json"]' and explicitly specified content types '["application/json"]'. The content types in the accept header must be a subset of the explicitly set content types.
+2025-04-23 13:21:15.747 +04:00 DBG Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2025-04-23 13:21:15.747 +04:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[offers.Application.Models.Response.OfferResponseModel, offers.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-23 13:21:15.749 +04:00 INF Executed action offers.API.Controllers.V1.GuestController.GetAllOffersAsync (offers.API) in 132.135ms
+2025-04-23 13:21:15.749 +04:00 INF Executed endpoint 'offers.API.Controllers.V1.GuestController.GetAllOffersAsync (offers.API)'
+2025-04-23 13:21:15.750 +04:00 DBG 'ApplicationDbContext' disposed.
+2025-04-23 13:21:15.750 +04:00 DBG Connection ID "18302628895834243077" disconnecting.
+2025-04-23 13:21:15.750 +04:00 DBG Disposing connection to database 'OffersDb' on server 'DESKTOP-T9J7KFM\SQLEXPRESS'.
+2025-04-23 13:21:15.750 +04:00 DBG Disposed connection to database '' on server '' (0ms).
+2025-04-23 13:21:15.751 +04:00 INF Request finished HTTP/2 GET https://localhost:44346/api/v1/Guest/offers?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 167.9018ms
+2025-04-23 13:21:29.374 +04:00 DBG Executing HealthCheck collector HostedService.
+2025-04-23 13:21:29.448 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:21:29.450 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.450 +04:00 INF Start processing HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:21:29.450 +04:00 INF Sending HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:21:29.453 +04:00 INF Request starting HTTP/1.1 GET http://localhost:49467/api/health - null null
+2025-04-23 13:21:29.453 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:21:29.453 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:21:29.453 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:21:29.454 +04:00 DBG Redirecting to 'https://localhost:44346/api/health'.
+2025-04-23 13:21:29.454 +04:00 INF Request finished HTTP/1.1 GET http://localhost:49467/api/health - 307 null null 1.268ms
+2025-04-23 13:21:29.456 +04:00 INF Request starting HTTP/1.1 GET https://localhost:44346/api/health - null null
+2025-04-23 13:21:29.456 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:21:29.456 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:21:29.456 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:21:29.457 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:21:29.457 +04:00 INF Executing endpoint 'Health checks'
+2025-04-23 13:21:29.457 +04:00 DBG Running health checks
+2025-04-23 13:21:29.457 +04:00 DBG Running health check SQL Server
+2025-04-23 13:21:29.460 +04:00 DBG Health check SQL Server with status "Healthy" completed after 2.7744ms with message 'null'
+2025-04-23 13:21:29.460 +04:00 DBG Health check processing with combined status "Healthy" completed after 3.388ms
+2025-04-23 13:21:29.461 +04:00 INF Executed endpoint 'Health checks'
+2025-04-23 13:21:29.462 +04:00 INF Request finished HTTP/1.1 GET https://localhost:44346/api/health - 200 null application/json 5.6967ms
+2025-04-23 13:21:29.462 +04:00 INF Received HTTP response headers after 11.1954ms - 200
+2025-04-23 13:21:29.462 +04:00 INF End processing HTTP request after 11.5448ms - 200
+2025-04-23 13:21:29.469 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecution' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.472 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecutionEntry' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.472 +04:00 DBG HealthReportCollector - health report execution history saved.
+2025-04-23 13:21:29.473 +04:00 DBG HealthReport history already exists and is in the same state, updating the values.
+2025-04-23 13:21:29.473 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:21:29.473 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:21:29.475 +04:00 DBG The unchanged property 'HealthCheckExecution.LastExecuted' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:21:29.475 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.476 +04:00 DBG The unchanged property 'HealthCheckExecutionEntry.Duration' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:21:29.476 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.476 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:21:29.478 +04:00 INF Saved 2 entities to in-memory store.
+2025-04-23 13:21:29.478 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.478 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:21:29.478 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 2 entities written to the database.
+2025-04-23 13:21:29.478 +04:00 DBG HealthReportCollector has completed.
+2025-04-23 13:21:29.479 +04:00 DBG HealthCheck collector HostedService executed successfully.
+2025-04-23 13:21:29.479 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:22:25.048 +04:00 DBG HttpMessageHandler expired after 120000ms for client 'k8s-cluster-service'
+2025-04-23 13:22:28.161 +04:00 DBG HttpMessageHandler expired after 120000ms for client 'health-checks-webhooks'
+2025-04-23 13:22:28.162 +04:00 DBG HttpMessageHandler expired after 120000ms for client 'health-checks'
+2025-04-23 13:22:29.482 +04:00 DBG Executing HealthCheck collector HostedService.
+2025-04-23 13:22:29.494 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:22:29.495 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.496 +04:00 INF Start processing HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:22:29.496 +04:00 INF Sending HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:22:29.516 +04:00 INF Request starting HTTP/1.1 GET http://localhost:49467/api/health - null null
+2025-04-23 13:22:29.517 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:22:29.517 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:22:29.517 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:22:29.518 +04:00 DBG Redirecting to 'https://localhost:44346/api/health'.
+2025-04-23 13:22:29.519 +04:00 INF Request finished HTTP/1.1 GET http://localhost:49467/api/health - 307 null null 3.3184ms
+2025-04-23 13:22:29.552 +04:00 INF Request starting HTTP/1.1 GET https://localhost:44346/api/health - null null
+2025-04-23 13:22:29.552 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:22:29.552 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:22:29.552 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:22:29.552 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:22:29.553 +04:00 INF Executing endpoint 'Health checks'
+2025-04-23 13:22:29.553 +04:00 DBG Running health checks
+2025-04-23 13:22:29.553 +04:00 DBG Running health check SQL Server
+2025-04-23 13:22:29.556 +04:00 DBG Health check SQL Server with status "Healthy" completed after 2.5611ms with message 'null'
+2025-04-23 13:22:29.556 +04:00 DBG Health check processing with combined status "Healthy" completed after 3.1153ms
+2025-04-23 13:22:29.557 +04:00 INF Executed endpoint 'Health checks'
+2025-04-23 13:22:29.557 +04:00 INF Received HTTP response headers after 60.6758ms - 200
+2025-04-23 13:22:29.557 +04:00 INF Request finished HTTP/1.1 GET https://localhost:44346/api/health - 200 null application/json 4.7295ms
+2025-04-23 13:22:29.557 +04:00 INF End processing HTTP request after 61.3083ms - 200
+2025-04-23 13:22:29.558 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecution' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.558 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecutionEntry' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.558 +04:00 DBG HealthReportCollector - health report execution history saved.
+2025-04-23 13:22:29.559 +04:00 DBG HealthReport history already exists and is in the same state, updating the values.
+2025-04-23 13:22:29.559 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:22:29.559 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:22:29.559 +04:00 DBG The unchanged property 'HealthCheckExecution.LastExecuted' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:22:29.559 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.559 +04:00 DBG The unchanged property 'HealthCheckExecutionEntry.Duration' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:22:29.559 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.559 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:22:29.560 +04:00 INF Saved 2 entities to in-memory store.
+2025-04-23 13:22:29.560 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.560 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:22:29.560 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 2 entities written to the database.
+2025-04-23 13:22:29.560 +04:00 DBG HealthReportCollector has completed.
+2025-04-23 13:22:29.560 +04:00 DBG HealthCheck collector HostedService executed successfully.
+2025-04-23 13:22:29.560 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:22:35.058 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:22:35.066 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.1407ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:22:45.059 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:22:45.059 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0122ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:22:55.068 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:22:55.069 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0111ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:05.079 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:05.079 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0616ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:15.089 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:15.090 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0052ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:25.095 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:25.095 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0121ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:29.563 +04:00 DBG Executing HealthCheck collector HostedService.
+2025-04-23 13:23:29.565 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:23:29.566 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.567 +04:00 INF Start processing HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:23:29.567 +04:00 INF Sending HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:23:29.592 +04:00 INF Request starting HTTP/1.1 GET http://localhost:49467/api/health - null null
+2025-04-23 13:23:29.592 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:23:29.592 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:23:29.593 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:23:29.593 +04:00 DBG Redirecting to 'https://localhost:44346/api/health'.
+2025-04-23 13:23:29.597 +04:00 INF Request finished HTTP/1.1 GET http://localhost:49467/api/health - 307 null null 4.3409ms
+2025-04-23 13:23:29.601 +04:00 INF Request starting HTTP/1.1 GET https://localhost:44346/api/health - null null
+2025-04-23 13:23:29.601 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:23:29.601 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:23:29.602 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:23:29.602 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:23:29.602 +04:00 INF Executing endpoint 'Health checks'
+2025-04-23 13:23:29.602 +04:00 DBG Running health checks
+2025-04-23 13:23:29.602 +04:00 DBG Running health check SQL Server
+2025-04-23 13:23:29.604 +04:00 DBG Health check SQL Server with status "Healthy" completed after 2.1342ms with message 'null'
+2025-04-23 13:23:29.604 +04:00 DBG Health check processing with combined status "Healthy" completed after 2.4161ms
+2025-04-23 13:23:29.605 +04:00 INF Executed endpoint 'Health checks'
+2025-04-23 13:23:29.605 +04:00 INF Received HTTP response headers after 38.1576ms - 200
+2025-04-23 13:23:29.605 +04:00 INF Request finished HTTP/1.1 GET https://localhost:44346/api/health - 200 null application/json 4.1203ms
+2025-04-23 13:23:29.605 +04:00 INF End processing HTTP request after 38.6711ms - 200
+2025-04-23 13:23:29.606 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecution' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.606 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecutionEntry' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.606 +04:00 DBG HealthReportCollector - health report execution history saved.
+2025-04-23 13:23:29.607 +04:00 DBG HealthReport history already exists and is in the same state, updating the values.
+2025-04-23 13:23:29.607 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:23:29.607 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:23:29.607 +04:00 DBG The unchanged property 'HealthCheckExecution.LastExecuted' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:23:29.607 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.607 +04:00 DBG The unchanged property 'HealthCheckExecutionEntry.Duration' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:23:29.607 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.608 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:23:29.608 +04:00 INF Saved 2 entities to in-memory store.
+2025-04-23 13:23:29.608 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.608 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:23:29.608 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 2 entities written to the database.
+2025-04-23 13:23:29.608 +04:00 DBG HealthReportCollector has completed.
+2025-04-23 13:23:29.609 +04:00 DBG HealthCheck collector HostedService executed successfully.
+2025-04-23 13:23:29.609 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:23:35.105 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:35.106 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0196ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:45.110 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:45.111 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0568ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:23:55.122 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:23:55.123 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.1257ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:24:05.131 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:24:05.131 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0144ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:24:15.140 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:24:15.141 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.4305ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:24:25.145 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 3 items
+2025-04-23 13:24:25.151 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0095ms - processed: 0 items - remaining: 3 items
+2025-04-23 13:24:29.499 +04:00 DBG HttpMessageHandler expired after 120000ms for client 'health-checks'
+2025-04-23 13:24:29.502 +04:00 DBG HttpMessageHandler expired after 120000ms for client 'health-checks-webhooks'
+2025-04-23 13:24:29.608 +04:00 DBG Executing HealthCheck collector HostedService.
+2025-04-23 13:24:29.609 +04:00 DBG Entity Framework Core 9.0.3 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.InMemory:8.0.0' with options: StoreName=HealthChecksUI 
+2025-04-23 13:24:29.609 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckConfiguration' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.609 +04:00 INF Start processing HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:24:29.610 +04:00 INF Sending HTTP request GET http://localhost:49467/api/health
+2025-04-23 13:24:29.614 +04:00 INF Request starting HTTP/1.1 GET http://localhost:49467/api/health - null null
+2025-04-23 13:24:29.614 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:24:29.614 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:24:29.614 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:24:29.614 +04:00 DBG Redirecting to 'https://localhost:44346/api/health'.
+2025-04-23 13:24:29.616 +04:00 INF Request finished HTTP/1.1 GET http://localhost:49467/api/health - 307 null null 1.3495ms
+2025-04-23 13:24:29.628 +04:00 INF Request starting HTTP/1.1 GET https://localhost:44346/api/health - null null
+2025-04-23 13:24:29.629 +04:00 DBG 1 candidate(s) found for the request path '/api/health'
+2025-04-23 13:24:29.629 +04:00 DBG Request matched endpoint 'Health checks'
+2025-04-23 13:24:29.629 +04:00 DBG Static files was skipped as the request already matched an endpoint.
+2025-04-23 13:24:29.629 +04:00 DBG AuthenticationScheme: Bearer was not authenticated.
+2025-04-23 13:24:29.629 +04:00 INF Executing endpoint 'Health checks'
+2025-04-23 13:24:29.629 +04:00 DBG Running health checks
+2025-04-23 13:24:29.630 +04:00 DBG Running health check SQL Server
+2025-04-23 13:24:29.632 +04:00 DBG Health check SQL Server with status "Healthy" completed after 1.9426ms with message 'null'
+2025-04-23 13:24:29.632 +04:00 DBG Health check processing with combined status "Healthy" completed after 2.4983ms
+2025-04-23 13:24:29.632 +04:00 INF Executed endpoint 'Health checks'
+2025-04-23 13:24:29.633 +04:00 INF Received HTTP response headers after 22.9283ms - 200
+2025-04-23 13:24:29.633 +04:00 INF End processing HTTP request after 23.3282ms - 200
+2025-04-23 13:24:29.633 +04:00 INF Request finished HTTP/1.1 GET https://localhost:44346/api/health - 200 null application/json 4.308ms
+2025-04-23 13:24:29.634 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecution' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.634 +04:00 DBG Context 'HealthChecksDb' started tracking 'HealthCheckExecutionEntry' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.634 +04:00 DBG HealthReportCollector - health report execution history saved.
+2025-04-23 13:24:29.634 +04:00 DBG HealthReport history already exists and is in the same state, updating the values.
+2025-04-23 13:24:29.635 +04:00 DBG SaveChanges starting for 'HealthChecksDb'.
+2025-04-23 13:24:29.635 +04:00 DBG DetectChanges starting for 'HealthChecksDb'.
+2025-04-23 13:24:29.635 +04:00 DBG The unchanged property 'HealthCheckExecution.LastExecuted' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:24:29.635 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.635 +04:00 DBG The unchanged property 'HealthCheckExecutionEntry.Duration' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2025-04-23 13:24:29.635 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.635 +04:00 DBG DetectChanges completed for 'HealthChecksDb'.
+2025-04-23 13:24:29.636 +04:00 INF Saved 2 entities to in-memory store.
+2025-04-23 13:24:29.636 +04:00 DBG An entity of type 'HealthCheckExecution' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.636 +04:00 DBG An entity of type 'HealthCheckExecutionEntry' tracked by 'HealthChecksDb' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-04-23 13:24:29.636 +04:00 DBG SaveChanges completed for 'HealthChecksDb' with 2 entities written to the database.
+2025-04-23 13:24:29.636 +04:00 DBG HealthReportCollector has completed.
+2025-04-23 13:24:29.636 +04:00 DBG HealthCheck collector HostedService executed successfully.
+2025-04-23 13:24:29.636 +04:00 DBG 'HealthChecksDb' disposed.
+2025-04-23 13:24:35.157 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 5 items
+2025-04-23 13:24:35.158 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0137ms - processed: 0 items - remaining: 5 items
+2025-04-23 13:24:45.168 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 5 items
+2025-04-23 13:24:45.168 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0048ms - processed: 0 items - remaining: 5 items
+2025-04-23 13:24:55.178 +04:00 DBG Starting HttpMessageHandler cleanup cycle with 5 items
+2025-04-23 13:24:55.178 +04:00 DBG Ending HttpMessageHandler cleanup cycle after 0.0141ms - processed: 0 items - remaining: 5 items

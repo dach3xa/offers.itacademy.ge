@@ -17,6 +17,10 @@ using Mapster;
 using Swashbuckle.AspNetCore.Filters;
 using Asp.Versioning;
 using offers.API.Infrastructure.Middlewares;
+using MediatR;
+using offers.Application.Queries.User;
+using offers.Application.Commands.User;
+using offers.Application.Queries.Admin;
 
 namespace offers.API.Controllers.V1
 {
@@ -27,16 +31,12 @@ namespace offers.API.Controllers.V1
     [ApiExplorerSettings(GroupName = "v1")]
     public class UserController : ControllerBase
     {
-        private readonly IOfferService _offerService;
-        private readonly ITransactionService _transactionService;
-        private readonly IAccountService _accountService;
+        private readonly IMediator _mediator;
 
         private readonly ILogger<UserController> _logger;
-        public UserController(ITransactionService transactionService, IOfferService offerService, IAccountService accountService, ILogger<UserController> logger)
+        public UserController(IMediator mediator, ILogger<UserController> logger)
         {
-            _transactionService = transactionService;
-            _offerService = offerService;
-            _accountService = accountService;
+            _mediator = mediator;
             _logger = logger;
         }
 
@@ -60,7 +60,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("offers")]
         public async Task<IActionResult> GetOffersByCategories([FromQuery] List<int> categoryIds, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellationToken = default)
         {
-            var responseOffers = await _offerService.GetOffersByCategoriesAsync(categoryIds, pageNumber, pageSize, cancellationToken);
+            var responseOffers = await _mediator.Send(new GetOffersByCategoriesQuery(categoryIds, pageNumber, pageSize), cancellationToken);
 
             return Ok(responseOffers);
         }
@@ -94,7 +94,7 @@ namespace offers.API.Controllers.V1
 
             var transaction = transactionDTO.Adapt<Transaction>();
             transaction.UserId = ControllerHelper.GetUserIdFromClaims(User); ;
-            var transactionResponse = await _transactionService.CreateAsync(transaction, cancellationToken);
+            var transactionResponse = await _mediator.Send(new CreateTransactionCommand(transaction));
 
             return CreatedAtAction(nameof(GetMyTransaction), new { id = transactionResponse.Id }, transactionResponse);
         }
@@ -130,7 +130,7 @@ namespace offers.API.Controllers.V1
                 errors => new DepositCouldNotValidateException("Validation failed", errors));
 
             _logger.LogInformation("attempt to make a Deposit");
-            await _accountService.DepositAsync(ControllerHelper.GetUserIdFromClaims(User), depositDTO.Amount, cancellationToken);
+            await _mediator.Send(new DepositCommand(ControllerHelper.GetUserIdFromClaims(User), depositDTO.Amount), cancellationToken);
 
             return NoContent();
         }
@@ -154,7 +154,7 @@ namespace offers.API.Controllers.V1
         [HttpGet]
         public async Task<IActionResult> GetCurrentUser(CancellationToken cancellationToken)
         {
-            var currentUser = await _accountService.GetUserAsync(ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            var currentUser = await _mediator.Send(new GetUserQuery(ControllerHelper.GetUserIdFromClaims(User)), cancellationToken);
             return Ok(currentUser);
         }
 
@@ -181,7 +181,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("transactions/{id}")]
         public async Task<IActionResult> GetMyTransaction(int id, CancellationToken cancellationToken)
         {
-            var myTransaction = await _transactionService.GetMyTransactionAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            var myTransaction = await _mediator.Send(new GetMyTransactionQuery(id, ControllerHelper.GetUserIdFromClaims(User)), cancellationToken);
             return Ok(myTransaction);
         }
 
@@ -202,7 +202,7 @@ namespace offers.API.Controllers.V1
         [HttpGet("transactions")]
         public async Task<IActionResult> GetMyTransactions([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, CancellationToken cancellation = default)
         {
-            var transactions = await _transactionService.GetMyTransactionsAsync(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize, cancellation);
+            var transactions = await _mediator.Send(new GetMyTransactionsQuery(ControllerHelper.GetUserIdFromClaims(User), pageNumber, pageSize), cancellation);
 
             return Ok(transactions);
         }
@@ -241,7 +241,7 @@ namespace offers.API.Controllers.V1
         public async Task<IActionResult> RefundTransaction([FromRoute] int id, CancellationToken cancellationToken)
         {
             _logger.LogInformation("attempt to refund a transaction");
-            await _transactionService.RefundAsync(id, ControllerHelper.GetUserIdFromClaims(User), cancellationToken);
+            await _mediator.Send(new RefundTransactionCommand(id, ControllerHelper.GetUserIdFromClaims(User)), cancellationToken);
 
             return NoContent();
         }

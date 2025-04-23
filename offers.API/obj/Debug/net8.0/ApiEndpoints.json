@@ -466,6 +466,63 @@
   },
   {
     "ContainingType": "offers.API.Controllers.V1.CompanyController",
+    "Method": "ChangePictureCurrentCompany",
+    "RelativePath": "api/v1/Company/change-picture",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 409
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "offers.API.Controllers.V1.CompanyController",
     "Method": "Post",
     "RelativePath": "api/v1/Company/offers",
     "HttpMethod": "POST",
@@ -2462,73 +2519,6 @@
           "application/json"
         ],
         "StatusCode": 403
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 409
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 401
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "offers.API.Controllers.V1.CompanyController",
-    "Method": "ChangePictureCurrentCompany",
-    "RelativePath": "change-picture",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Photo",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "api-version",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "X-Version",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "offers.API.Infrastructure.Middlewares.ApiError",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 400
       },
       {
         "Type": "offers.API.Infrastructure.Middlewares.ApiError",
