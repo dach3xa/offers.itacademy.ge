@@ -54,7 +54,7 @@ namespace offers.API.Controllers.V2
         /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         [Produces("application/json")]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -78,7 +78,7 @@ namespace offers.API.Controllers.V2
                 timestamp = DateTime.UtcNow
             };
 
-            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, responseV2);
+            return Ok(responseV2);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace offers.API.Controllers.V2
         /// <response code="500">Internal server error during registration</response>
         [Produces("application/json")]
         [Consumes("multipart/form-data")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(object))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(object))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -130,7 +130,7 @@ namespace offers.API.Controllers.V2
                 message = "Company registered successfully in v2"
             };
 
-            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, responseV2);
+            return Ok(responseV2);
         }
 
         /// <summary>

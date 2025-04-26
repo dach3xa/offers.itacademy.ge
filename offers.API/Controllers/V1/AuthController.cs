@@ -56,7 +56,7 @@ namespace offers.API.Controllers.V1
         /// <response code="500">Internal server error during registration (AccountCouldNotBeCreatedException)</response>
         [Produces("application/json")]
         [Consumes("application/json")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(UserResponseModel))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -73,7 +73,7 @@ namespace offers.API.Controllers.V1
             var userAccount = userDTO.Adapt<Account>();
             var userResponse = await _mediator.Send(new RegisterUserCommand(userAccount), cancellation);
 
-            return CreatedAtAction(nameof(UserController.GetCurrentUser), "User", null, userResponse);
+            return Ok(userResponse);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace offers.API.Controllers.V1
         /// <response code="500">Internal server error during registration</response>
         [Produces("application/json")]
         [Consumes("multipart/form-data")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CompanyResponseModel))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CompanyResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiError))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ApiError))]
@@ -116,7 +116,7 @@ namespace offers.API.Controllers.V1
             companyAccount.CompanyDetail.PhotoURL = photoUrl;
             var companyResponse = await _mediator.Send(new RegisterCompanyCommand(companyAccount), cancellation);
 
-            return CreatedAtAction(nameof(CompanyController.GetCurrentCompany), "Company", null, companyResponse);
+            return Ok(companyResponse);
 
         }
 

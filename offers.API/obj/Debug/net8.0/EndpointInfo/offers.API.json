@@ -737,13 +737,13 @@
               },
               "examples": {
                 "Bakery Clearance": {
-                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-23T11:20:28.6578632Z","photo":null}
+                  "value": {"name":"End-of-Day Croissant Pack","description":"Fresh croissants left over from the day, heavily discounted.","count":5,"price":3.99,"categoryId":1,"archiveAt":"2025-04-26T10:12:58.2956396Z","photo":null}
                 },
                 "Sushi Leftovers": {
-                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-23T10:20:28.6972509Z","photo":null}
+                  "value": {"name":"Evening Sushi Combo","description":"Mixed sushi rolls that didn’t sell today. Safe to eat and delicious.","count":2,"price":7.50,"categoryId":2,"archiveAt":"2025-04-26T09:12:58.6662815Z","photo":null}
                 },
                 "Fruit Clearance Box": {
-                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-23T12:20:28.6983697Z","photo":null}
+                  "value": {"name":"Mixed Fruits (Slightly Ripe)","description":"Box of assorted ripe fruits nearing expiration — great for smoothies.","count":1,"price":4.25,"categoryId":3,"archiveAt":"2025-04-26T11:12:58.7066878Z","photo":null}
                 }
               },
               "encoding": {
